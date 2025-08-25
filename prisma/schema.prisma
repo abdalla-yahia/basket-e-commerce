@@ -21,13 +21,20 @@ model User {
   password    String
   email       String     @unique
   address     String?
+  gender      Gender?
   role        Role       @default(USER)
   orders      Orders[]
   addresses   Address[]
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
+  passwordresetCode String?
+  passwordExpire    DateTime?      @default(now())
+  passwordVirify    Boolean?       @default(false)
 }
-
+enum Gender{
+  MALE
+  FEMALE
+}
 enum Role {
   USER
   ADMIN
@@ -54,10 +61,10 @@ model Product {
   image       String?
   brandId     String
   categoryId  String
+  cartId      String?
   brand       Brand      @relation(fields: [brandId], references: [id])
   category    Category   @relation(fields: [categoryId], references: [id])
   orders      Orders[]
-  cartId      String?
   cart        Cart?      @relation(fields: [cartId], references: [id])
 }
 
@@ -82,7 +89,7 @@ model Category {
 model Brand {
   id       String   @id @default(uuid())
   title    String
-  image    String
+  image    String?
   products Product[]
 }
 
