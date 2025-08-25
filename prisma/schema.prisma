@@ -1,0 +1,97 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id          String     @id @default(uuid())
+  name        String
+  password    String
+  email       String     @unique
+  address     String?
+  role        Role       @default(USER)
+  orders      Orders[]
+  addresses   Address[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+model Address {
+  id      String @id @default(uuid())
+  title   String
+  phone   String?
+  city    String
+  details String?
+  userId  String
+  user    User   @relation(fields: [userId], references: [id])
+}
+
+model Product {
+  id          String     @id @default(uuid())
+  title       String
+  slug        String     @unique
+  description String?
+  price       Float
+  quantity    Int
+  oldPrice    Float?
+  image       String?
+  brandId     String
+  categoryId  String
+  brand       Brand      @relation(fields: [brandId], references: [id])
+  category    Category   @relation(fields: [categoryId], references: [id])
+  orders      Orders[]
+  cartId      String?
+  cart        Cart?      @relation(fields: [cartId], references: [id])
+}
+
+model Orders {
+  id      String    @id @default(uuid())
+  products Product[]
+  userId   String
+  user     User     @relation(fields: [userId], references: [id])
+  cart     Cart[]
+}
+
+model Category {
+  id          String     @id @default(uuid())
+  title       String
+  image       String?
+  description String?
+  products    Product[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Brand {
+  id       String   @id @default(uuid())
+  title    String
+  image    String
+  products Product[]
+}
+
+model Cart {
+  id        String   @id @default(uuid())
+  title     String
+  products  Product[]
+  orderId   String
+  order     Orders   @relation(fields: [orderId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
