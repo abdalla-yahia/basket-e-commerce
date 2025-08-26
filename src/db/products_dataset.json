@@ -1,0 +1,1575 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "جاكيت أطفال",
+      "price": 4327,
+      "image": "https://static.vecteezy.com/system/resources/previews/057/655/838/non_2x/magnificent-artistic-lolita-fashion-headbow-top-view-premium-free-png.png",
+      "description": "جاكيت أطفال ناعمة للنوم",
+      "category": "أطفالي",
+      "brand": "نايك",
+      "brandImage":"https://www.logo.wine/a/logo/Nike,_Inc./Nike,_Inc.-Logo.wine.svg",
+      "rating": 2.8,
+      "reviews": 111,
+      "stock": 98,
+      "discount": 0,
+      "colors": [
+        "blue",
+        "black"
+      ],
+      "sizes": [
+        "L",
+        "S",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/1_1.jpg",
+        "https://example.com/images/1_2.jpg",
+        "https://example.com/images/1_3.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "جاكيت أطفال",
+      "price": 1261,
+      "image": "https://static.vecteezy.com/system/resources/previews/056/420/929/non_2x/cream-hooded-zip-up-jacket-for-kids-free-png.png",
+      "description": "جاكيت شتوي دافئ",
+      "category": "أطفالي",
+      "brand": "نايك",
+      "brandImage":"https://www.logo.wine/a/logo/Nike,_Inc./Nike,_Inc.-Logo.wine.svg",
+      "rating": 3.6,
+      "reviews": 243,
+      "stock": 78,
+      "discount": 5,
+      "colors": [
+        "green",
+        "red"
+      ],
+      "sizes": [
+        "L",
+        "S",
+        "M"
+      ],
+      "images": [
+        "https://example.com/images/2_1.jpg",
+        "https://example.com/images/2_2.jpg",
+        "https://example.com/images/2_3.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "تيشيرت قطني أطفال",
+      "price": 2843,
+      "image": "https://static.vecteezy.com/system/resources/previews/056/255/350/non_2x/child-in-traditional-clothing-with-headscarf-from-behind-view-free-png.png",
+      "description": "تيشيرت قطني مريح للأطفال",
+      "category": "أطفالي",
+      "brand": "لويس فايتون",
+      "brandImage":"https://www.logo.wine/a/logo/Louis_Vuitton/Louis_Vuitton-Logo.wine.svg",
+      "rating": 3.0,
+      "reviews": 107,
+      "stock": 61,
+      "discount": 15,
+      "colors": [
+        "brown",
+        "white"
+      ],
+      "sizes": [
+        "XXL",
+        "M",
+        "S"
+      ],
+      "images": [
+        "https://example.com/images/3_1.jpg",
+        "https://example.com/images/3_2.jpg",
+        "https://example.com/images/3_3.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "تيشيرت أطفال",
+      "price": 5078,
+      "image": "https://static.vecteezy.com/system/resources/previews/058/271/548/non_2x/cheerful-young-boy-in-yellow-shirt-with-warm-smile-on-white-background-free-png.png",
+      "description": "تيشيرت أطفال عملي بنقشة مرحة",
+      "category": "أطفالي",
+      "brand": "لويس فايتون",
+      "brandImage":"https://www.logo.wine/a/logo/Louis_Vuitton/Louis_Vuitton-Logo.wine.svg",
+      "rating": 3.2,
+      "reviews": 278,
+      "stock": 56,
+      "discount": 0,
+      "colors": [
+        "yellow",
+        "brown"
+      ],
+      "sizes": [
+        "XXL",
+        "XL",
+        "M"
+      ],
+      "images": [
+        "https://example.com/images/4_1.jpg",
+        "https://example.com/images/4_2.jpg",
+        "https://example.com/images/4_3.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "بيجامة أطفال",
+      "price": 4087,
+      "image": "https://static.vecteezy.com/system/resources/previews/055/546/636/non_2x/young-child-in-cozy-pajamas-holding-a-teddy-bear-in-studio-setting-free-png.png",
+      "description": "بيجامة أطفال شتوي دافئ",
+      "category": "أطفالي",
+      "brand": "كوتشي",
+      "brandImage":"https://www.logo.wine/a/logo/Gucci/Gucci-Logo.wine.svg",
+      "rating": 4.4,
+      "reviews": 95,
+      "stock": 15,
+      "discount": 20,
+      "colors": [
+        "white",
+        "green"
+      ],
+      "sizes": [
+        "M",
+        "XXL",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/5_1.jpg",
+        "https://example.com/images/5_2.jpg",
+        "https://example.com/images/5_3.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "فستان أطفال",
+      "price": 5130,
+      "image": "https://static.vecteezy.com/system/resources/previews/057/324/669/non_2x/a-little-girl-in-a-blue-dress-with-flowers-on-it-free-png.png",
+      "description": "فستان أطفال ناعمة للنوم",
+      "category": "أطفالي",
+      "brand": "نايك",
+      "brandImage":"https://www.logo.wine/a/logo/Nike,_Inc./Nike,_Inc.-Logo.wine.svg",
+      "rating": 4.8,
+      "reviews": 107,
+      "stock": 84,
+      "discount": 5,
+      "colors": [
+        "green",
+        "black"
+      ],
+      "sizes": [
+        "L",
+        "XXL",
+        "M"
+      ],
+      "images": [
+        "https://example.com/images/6_1.jpg",
+        "https://example.com/images/6_2.jpg",
+        "https://example.com/images/6_3.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "بنطلون أطفال",
+      "price": 1570,
+      "image": "https://static.vecteezy.com/system/resources/previews/056/255/073/non_2x/boy-with-curly-hair-wearing-orange-sweatshirt-facing-backwards-free-png.png",
+      "description": "بنطلون أطفال أنيق للمناسبات الخاصة",
+      "category": "أطفالي",
+      "brand": "نايك",
+      "brandImage":"https://www.logo.wine/a/logo/Nike,_Inc./Nike,_Inc.-Logo.wine.svg",
+      "rating": 2.5,
+      "reviews": 61,
+      "stock": 46,
+      "discount": 5,
+      "colors": [
+        "white",
+        "red"
+      ],
+      "sizes": [
+        "XXL",
+        "M",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/7_1.jpg",
+        "https://example.com/images/7_2.jpg",
+        "https://example.com/images/7_3.jpg"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "بنطلون أطفال",
+      "price": 4409,
+      "image": "https://static.vecteezy.com/system/resources/previews/057/324/634/non_2x/two-children-dressed-in-traditional-clothing-standing-together-free-png.png",
+      "description": "بنطلون أطفال أنيق للمناسبات الخاصة",
+      "category": "أطفالي",
+      "brand": "نايك",
+      "brandImage":"https://www.logo.wine/a/logo/Nike,_Inc./Nike,_Inc.-Logo.wine.svg",
+      "rating": 4.3,
+      "reviews": 133,
+      "stock": 27,
+      "discount": 20,
+      "colors": [
+        "white",
+        "yellow"
+      ],
+      "sizes": [
+        "XXL",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/8_1.jpg",
+        "https://example.com/images/8_2.jpg",
+        "https://example.com/images/8_3.jpg"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "بنطلون أطفال",
+      "price": 7686,
+      "image": "https://static.vecteezy.com/system/resources/previews/066/632/576/large_2x/full-shot-of-a-stylish-terracotta-colored-kids-sweatpants-free-png.png",
+      "description": "بنطلون أطفال شتوي دافئ",
+      "category": "أطفالي",
+      "brand": "لويس فايتون",
+      "brandImage":"https://www.logo.wine/a/logo/Louis_Vuitton/Louis_Vuitton-Logo.wine.svg",
+      "rating": 3.6,
+      "reviews": 248,
+      "stock": 41,
+      "discount": 0,
+      "colors": [
+        "brown",
+        "blue"
+      ],
+      "sizes": [
+        "XXL",
+        "XL",
+        "S"
+      ],
+      "images": [
+        "https://example.com/images/9_1.jpg",
+        "https://example.com/images/9_2.jpg",
+        "https://example.com/images/9_3.jpg"
+      ]
+    },
+    {
+      "id": 10,
+      "title": "جاكيت أطفال",
+      "price": 1030,
+      "image": "https://static.vecteezy.com/system/resources/previews/057/347/371/non_2x/young-boy-sitting-in-casual-black-hoodie-and-pants-against-a-free-png.png",
+      "description": "جاكيت أطفال ناعمة للنوم",
+      "category": "أطفالي",
+      "brand": "نايك",
+      "brandImage":"https://www.logo.wine/a/logo/Nike,_Inc./Nike,_Inc.-Logo.wine.svg",
+      "rating": 3.4,
+      "reviews": 7,
+      "stock": 25,
+      "discount": 20,
+      "colors": [
+        "brown",
+        "blue"
+      ],
+      "sizes": [
+        "L",
+        "M",
+        "S"
+      ],
+      "images": [
+        "https://example.com/images/10_1.jpg",
+        "https://example.com/images/10_2.jpg",
+        "https://example.com/images/10_3.jpg"
+      ]
+    },
+    {
+      "id": 11,
+      "title": "بنطلون جينز",
+      "price": 1426,
+      "image": "https://static.vecteezy.com/system/resources/previews/040/524/915/large_2x/ai-generated-blue-jeans-on-transparent-background-ai-generated-free-png.png",
+      "description": "بنطلون جينز مناسب للرياضة اليومية",
+      "category": "رجالي",
+      "brand": "شانيل",
+      "brandImage":"https://www.logo.wine/a/logo/Chanel/Chanel-Logo.wine.svg",
+      "rating": 4.6,
+      "reviews": 175,
+      "stock": 39,
+      "discount": 20,
+      "colors": [
+        "black",
+        "yellow"
+      ],
+      "sizes": [
+        "L",
+        "XL",
+        "M"
+      ],
+      "images": [
+        "https://example.com/images/11_1.jpg",
+        "https://example.com/images/11_2.jpg",
+        "https://example.com/images/11_3.jpg"
+      ]
+    },
+    {
+      "id": 12,
+      "title": "قميص رجالي",
+      "price": 6339,
+      "image": "https://static.vecteezy.com/system/resources/previews/053/774/537/non_2x/two-white-shirts-mock-up-on-black-background-free-png.png",
+      "description": "قميص رجالي  عالي الجودة",
+      "category": "رجالي",
+      "brand": "اندر ارمور",
+      "brandImage":"https://www.logo.wine/a/logo/Under_Armour/Under_Armour-Logo.wine.svg",
+      "rating": 3.8,
+      "reviews": 57,
+      "stock": 61,
+      "discount": 0,
+      "colors": [
+        "brown",
+        "yellow"
+      ],
+      "sizes": [
+        "XXL",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/12_1.jpg",
+        "https://example.com/images/12_2.jpg",
+        "https://example.com/images/12_3.jpg"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "قميص رجالي",
+      "price": 3518,
+      "image": "https://static.vecteezy.com/system/resources/previews/035/883/158/non_2x/ai-generated-man-short-sleeve-blue-shirt-on-transparent-background-free-png.png",
+      "description": "تيشيرت مناسب للرياضة اليومية",
+      "category": "رجالي",
+      "brand": "اندر ارمور",
+      "brandImage":"https://www.logo.wine/a/logo/Under_Armour/Under_Armour-Logo.wine.svg",
+      "rating": 3.6,
+      "reviews": 161,
+      "stock": 50,
+      "discount": 15,
+      "colors": [
+        "green",
+        "yellow"
+      ],
+      "sizes": [
+        "XL",
+        "M",
+        "S"
+      ],
+      "images": [
+        "https://example.com/images/13_1.jpg",
+        "https://example.com/images/13_2.jpg",
+        "https://example.com/images/13_3.jpg"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "بدلة رسمية",
+      "price": 6169,
+      "image": "https://static.vecteezy.com/system/resources/previews/036/271/966/non_2x/ai-generated-id-photo-of-man-in-white-shirt-on-transparent-background-free-png.png",
+      "description": "بدلة رسمية أنيق",
+      "category": "رجالي",
+      "brand": "اندر ارمور",
+      "brandImage":"https://www.logo.wine/a/logo/Under_Armour/Under_Armour-Logo.wine.svg",
+      "rating": 3.4,
+      "reviews": 117,
+      "stock": 43,
+      "discount": 15,
+      "colors": [
+        "yellow",
+        "green"
+      ],
+      "sizes": [
+        "XL",
+        "S",
+        "L"
+      ],
+      "images": [
+        "https://example.com/images/14_1.jpg",
+        "https://example.com/images/14_2.jpg",
+        "https://example.com/images/14_3.jpg"
+      ]
+    },
+    {
+      "id": 15,
+      "title": "بدلة رسمية",
+      "price": 7069,
+      "image": "https://static.vecteezy.com/system/resources/previews/056/707/140/non_2x/formal-attire-young-man-smiling-indoor-setting-portrait-photography-elegant-ambiance-close-up-view-confidence-and-style-free-png.png",
+      "description": "بدلة رسمية كلاسيكي للمناسبات",
+      "category": "رجالي",
+      "brand": "شانيل",
+      "brandImage":"https://www.logo.wine/a/logo/Chanel/Chanel-Logo.wine.svg",
+      "rating": 2.7,
+      "reviews": 274,
+      "stock": 51,
+      "discount": 20,
+      "colors": [
+        "red",
+        "white"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "S"
+      ],
+      "images": [
+        "https://example.com/images/15_1.jpg",
+        "https://example.com/images/15_2.jpg",
+        "https://example.com/images/15_3.jpg"
+      ]
+    },
+    {
+      "id": 16,
+      "title": "قميص رجالي",
+      "price": 2094,
+      "image": "https://static.vecteezy.com/system/resources/previews/059/901/006/non_2x/highquality-mustard-yellow-shortsleeve-tshirt-mockup-for-apparel-design-free-png.png",
+      "description": "بدلة رسمية جلد أنيق",
+      "category": "رجالي",
+      "brand": "اندر ارمور",
+      "brandImage":"https://www.logo.wine/a/logo/Under_Armour/Under_Armour-Logo.wine.svg",
+      "rating": 3.3,
+      "reviews": 260,
+      "stock": 97,
+      "discount": 10,
+      "colors": [
+        "brown",
+        "white"
+      ],
+      "sizes": [
+        "M",
+        "S",
+        "XXL"
+      ],
+      "images": [
+        "https://example.com/images/16_1.jpg",
+        "https://example.com/images/16_2.jpg",
+        "https://example.com/images/16_3.jpg"
+      ]
+    },
+    {
+      "id": 17,
+      "title": "بدلة رسمية",
+      "price": 3435,
+      "image": "https://static.vecteezy.com/system/resources/previews/048/044/680/non_2x/portrait-of-a-handsome-young-business-man-isolated-on-transparent-background-free-png.png",
+      "description": "بدلة فاخرة للإطلالة الرسمية",
+      "category": "رجالي",
+      "brand": "اندر ارمور",
+      "brandImage":"https://www.logo.wine/a/logo/Under_Armour/Under_Armour-Logo.wine.svg",
+      "rating": 4.0,
+      "reviews": 68,
+      "stock": 45,
+      "discount": 20,
+      "colors": [
+        "white",
+        "red"
+      ],
+      "sizes": [
+        "L",
+        "XXL",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/17_1.jpg",
+        "https://example.com/images/17_2.jpg",
+        "https://example.com/images/17_3.jpg"
+      ]
+    },
+    {
+      "id": 18,
+      "title": "قميص رجالي",
+      "price": 3983,
+      "image": "https://static.vecteezy.com/system/resources/previews/059/916/111/non_2x/man-in-white-t-shirt-standing-in-front-of-black-background-free-png.png",
+      "description": "قميص رجالي  عالي الجودة",
+      "category": "رجالي",
+      "brand": "اندر ارمور",
+      "brandImage":"https://www.logo.wine/a/logo/Under_Armour/Under_Armour-Logo.wine.svg",
+      "rating": 3.7,
+      "reviews": 183,
+      "stock": 67,
+      "discount": 5,
+      "colors": [
+        "black",
+        "brown"
+      ],
+      "sizes": [
+        "XXL",
+        "S",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/18_1.jpg",
+        "https://example.com/images/18_2.jpg",
+        "https://example.com/images/18_3.jpg"
+      ]
+    },
+    {
+      "id": 19,
+      "title": "تيشيرت رياضي",
+      "price": 1106,
+      "image": "https://static.vecteezy.com/system/resources/previews/055/391/325/non_2x/purple-short-sleeve-crew-neck-tshirt-mockup-for-apparel-design-and-branding-free-png.png",
+      "description": "تيشيرت رياضي كلاسيكي للمناسبات",
+      "category": "رجالي",
+      "brand": "دولسي اند جابانا",
+      "brandImage":"https://www.logo.wine/a/logo/Dolce_%26_Gabbana/Dolce_%26_Gabbana-Logo.wine.svg",
+      "rating": 4.8,
+      "reviews": 136,
+      "stock": 76,
+      "discount": 20,
+      "colors": [
+        "yellow",
+        "green"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/19_1.jpg",
+        "https://example.com/images/19_2.jpg",
+        "https://example.com/images/19_3.jpg"
+      ]
+    },
+    {
+      "id": 20,
+      "title": "تيشيرت رياضي",
+      "price": 1612,
+      "image": "https://static.vecteezy.com/system/resources/previews/049/207/284/non_2x/white-and-teal-gradient-t-shirt-mockup-isolated-on-transparent-background-free-png.png",
+      "description": "تيشيرت رياضي خامة عالية",
+      "category": "رجالي",
+      "brand": "اندر ارمور",
+      "brandImage":"https://www.logo.wine/a/logo/Under_Armour/Under_Armour-Logo.wine.svg",
+      "rating": 2.6,
+      "reviews": 5,
+      "stock": 23,
+      "discount": 15,
+      "colors": [
+        "yellow",
+        "red"
+      ],
+      "sizes": [
+        "XL",
+        "L",
+        "S"
+      ],
+      "images": [
+        "https://example.com/images/20_1.jpg",
+        "https://example.com/images/20_2.jpg",
+        "https://example.com/images/20_3.jpg"
+      ]
+    },
+    {
+      "id": 21,
+      "title": "شبشب مريح",
+      "price": 2140,
+      "image": "https://static.vecteezy.com/system/resources/previews/035/048/622/non_2x/ai-generated-slippers-on-transparent-background-ai-generated-free-png.png",
+      "description": "شبشب مريح رياضي بخامة مريحة",
+      "category": "أحذية",
+      "brand": "ليدر",
+      "brandImage":"https://www.logo.wine/a/logo/L%C3%ADder/L%C3%ADder-Logo.wine.svg",
+      "rating": 4.5,
+      "reviews": 88,
+      "stock": 76,
+      "discount": 10,
+      "colors": [
+        "red",
+        "brown"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/21_1.jpg",
+        "https://example.com/images/21_2.jpg",
+        "https://example.com/images/21_3.jpg"
+      ]
+    },
+    {
+      "id": 22,
+      "title": "شبشب مريح",
+      "price": 7996,
+      "image": "https://static.vecteezy.com/system/resources/previews/057/930/620/non_2x/black-slipper-shoe-free-png.png",
+      "description": "شبشب مريح رياضي بخامة مريحة",
+      "category": "أحذية",
+      "brand": "بوس",
+      "brandImage":"https://www.logo.wine/a/logo/Hugo_Boss/Hugo_Boss-Logo.wine.svg",
+      "rating": 2.9,
+      "reviews": 240,
+      "stock": 97,
+      "discount": 10,
+      "colors": [
+        "black",
+        "green"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/22_1.jpg",
+        "https://example.com/images/22_2.jpg",
+        "https://example.com/images/22_3.jpg"
+      ]
+    },
+    {
+      "id": 23,
+      "title": "بوت شتوي",
+      "price": 5748,
+      "image": "https://static.vecteezy.com/system/resources/previews/057/662/592/non_2x/dramatic-creative-organic-wool-slippers-cozy-design-cutout-high-resolution-free-png.png",
+      "description": "حذاء رياضي بخامة مريحة",
+      "category": "أحذية",
+      "brand": "جول",
+      "brandImage":"https://www.logo.wine/a/logo/Gul_(watersports)/Gul_(watersports)-Logo.wine.svg",
+      "rating": 2.8,
+      "reviews": 228,
+      "stock": 89,
+      "discount": 20,
+      "colors": [
+        "brown",
+        "black"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/23_1.jpg",
+        "https://example.com/images/23_2.jpg",
+        "https://example.com/images/23_3.jpg"
+      ]
+    },
+    {
+      "id": 24,
+      "title": "صندل صيفي",
+      "price": 5870,
+      "image": "https://static.vecteezy.com/system/resources/previews/052/939/260/non_2x/a-pair-of-brown-leather-sandals-on-a-transparent-background-free-png.png",
+      "description": "صندل صيفي مريح",
+      "category": "أحذية",
+      "brand": "بوس",
+      "brandImage":"https://www.logo.wine/a/logo/Hugo_Boss/Hugo_Boss-Logo.wine.svg",
+      "rating": 4.1,
+      "reviews": 173,
+      "stock": 17,
+      "discount": 0,
+      "colors": [
+        "blue",
+        "black"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/24_1.jpg",
+        "https://example.com/images/24_2.jpg",
+        "https://example.com/images/24_3.jpg"
+      ]
+    },
+    {
+      "id": 25,
+      "title": "حذاء رسمي",
+      "price": 3846,
+      "image": "https://static.vecteezy.com/system/resources/previews/047/242/160/non_2x/mens-shoe-isolated-on-transparent-background-free-png.png",
+      "description": "حذاء رسمي مناسب للرحلات",
+      "category": "أحذية",
+      "brand": "ليدر",
+      "brandImage":"https://www.logo.wine/a/logo/L%C3%ADder/L%C3%ADder-Logo.wine.svg",
+      "rating": 4.3,
+      "reviews": 138,
+      "stock": 81,
+      "discount": 20,
+      "colors": [
+        "green",
+        "white"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/25_1.jpg",
+        "https://example.com/images/25_2.jpg",
+        "https://example.com/images/25_3.jpg"
+      ]
+    },
+    {
+      "id": 26,
+      "title": "حذاء رياضي",
+      "price": 6211,
+      "image": "https://static.vecteezy.com/system/resources/previews/036/625/143/large_2x/ai-generated-sports-shoes-for-the-future-running-shoes-for-the-future-isolated-on-transparent-background-free-png.png",
+      "description": "حذاء رسمي أنيق",
+      "category": "أحذية",
+      "brand": "ليدر",
+      "brandImage":"https://www.logo.wine/a/logo/L%C3%ADder/L%C3%ADder-Logo.wine.svg",
+      "rating": 5.0,
+      "reviews": 84,
+      "stock": 27,
+      "discount": 0,
+      "colors": [
+        "black",
+        "brown"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/26_1.jpg",
+        "https://example.com/images/26_2.jpg",
+        "https://example.com/images/26_3.jpg"
+      ]
+    },
+    {
+      "id": 27,
+      "title": "شبشب مريح",
+      "price": 1677,
+      "image": "https://static.vecteezy.com/system/resources/previews/057/177/716/non_2x/colorful-beach-slippers-resting-on-a-transparent-background-perfect-for-summer-adventures-beach-slippers-on-transparent-backgroundfile-free-png.png",
+      "description": "بوت عملي للشتاء",
+      "category": "أحذية",
+      "brand": "ليدر",
+      "brandImage":"https://www.logo.wine/a/logo/L%C3%ADder/L%C3%ADder-Logo.wine.svg",
+      "rating": 3.6,
+      "reviews": 200,
+      "stock": 42,
+      "discount": 20,
+      "colors": [
+        "green",
+        "red"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/27_1.jpg",
+        "https://example.com/images/27_2.jpg",
+        "https://example.com/images/27_3.jpg"
+      ]
+    },
+    {
+      "id": 28,
+      "title": "صندل صيفي",
+      "price": 4281,
+      "image": "https://static.vecteezy.com/system/resources/previews/046/647/291/non_2x/straw-flip-flops-3d-design-free-png.png",
+      "description": "صندل صيفي منزلي مريح",
+      "category": "أحذية",
+      "brand": "ليدر",
+      "brandImage":"https://www.logo.wine/a/logo/L%C3%ADder/L%C3%ADder-Logo.wine.svg",
+      "rating": 3.6,
+      "reviews": 209,
+      "stock": 78,
+      "discount": 10,
+      "colors": [
+        "green",
+        "brown"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/28_1.jpg",
+        "https://example.com/images/28_2.jpg",
+        "https://example.com/images/28_3.jpg"
+      ]
+    },
+    {
+      "id": 29,
+      "title": "صندل صيفي",
+      "price": 2259,
+      "image": "https://static.vecteezy.com/system/resources/previews/057/655/424/non_2x/dramatic-contemporary-leather-sandal-strap-detail-premium-free-png.png",
+      "description": "صندل صيفي رياضي بخامة مريحة",
+      "category": "أحذية",
+      "brand": "ليدر",
+      "brandImage":"https://www.logo.wine/a/logo/L%C3%ADder/L%C3%ADder-Logo.wine.svg",
+      "rating": 2.8,
+      "reviews": 36,
+      "stock": 70,
+      "discount": 0,
+      "colors": [
+        "brown",
+        "white"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/29_1.jpg",
+        "https://example.com/images/29_2.jpg",
+        "https://example.com/images/29_3.jpg"
+      ]
+    },
+    {
+      "id": 30,
+      "title": "صندل صيفي",
+      "price": 1024,
+      "image": "https://static.vecteezy.com/system/resources/previews/057/655/414/non_2x/magnificent-minimalist-leather-sandals-brown-isolated-element-genuine-free-png.png",
+      "description": "صندل صيفي منزلي مريح",
+      "category": "أحذية",
+      "brand": "ليدر",
+      "brandImage":"https://www.logo.wine/a/logo/L%C3%ADder/L%C3%ADder-Logo.wine.svg",
+      "rating": 2.6,
+      "reviews": 77,
+      "stock": 53,
+      "discount": 10,
+      "colors": [
+        "green",
+        "white"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/30_1.jpg",
+        "https://example.com/images/30_2.jpg",
+        "https://example.com/images/30_3.jpg"
+      ]
+    },
+    {
+      "id": 31,
+      "title": "خلاط كهربائي",
+      "price": 415,
+      "image": "https://static.vecteezy.com/system/resources/previews/066/115/248/non_2x/fresh-green-smoothie-in-a-retro-green-blender-healthy-drink-recipe-kitchen-appliance-free-png.png",
+      "description": "خلاط كهربائي  منزلي قوي",
+      "category": "مطبخ",
+      "brand": "سلازينجر",
+      "brandImage":"https://www.logo.wine/a/logo/Slazenger/Slazenger-Logo.wine.svg",
+      "rating": 4.1,
+      "reviews": 184,
+      "stock": 43,
+      "discount": 10,
+      "colors": [
+        "brown",
+        "red"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/31_1.jpg",
+        "https://example.com/images/31_2.jpg",
+        "https://example.com/images/31_3.jpg"
+      ]
+    },
+    {
+      "id": 32,
+      "title": "مفرمة لحم",
+      "price": 4446,
+      "image": "https://static.vecteezy.com/system/resources/previews/036/396/395/non_2x/ai-generated-meat-cutting-machine-on-transparent-background-ai-generated-free-png.png",
+      "description": "مفرمة لحم سريعة التحضير",
+      "category": "مطبخ",
+      "brand": "سلازينجر",
+      "brandImage":"https://www.logo.wine/a/logo/Slazenger/Slazenger-Logo.wine.svg",
+      "rating": 3.4,
+      "reviews": 76,
+      "stock": 63,
+      "discount": 15,
+      "colors": [
+        "red",
+        "black"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/32_1.jpg",
+        "https://example.com/images/32_2.jpg",
+        "https://example.com/images/32_3.jpg"
+      ]
+    },
+    {
+      "id": 33,
+      "title": "مفرمة لحم",
+      "price": 5720,
+      "image": "https://static.vecteezy.com/system/resources/previews/066/632/600/non_2x/vibrant-orange-and-blue-blender-ready-for-use-free-png.png",
+      "description": "مفرمة لحم  سريعة التحضير",
+      "category": "مطبخ",
+      "brand": "سلازينجر",
+      "brandImage":"https://www.logo.wine/a/logo/Slazenger/Slazenger-Logo.wine.svg",
+      "rating": 3.7,
+      "reviews": 99,
+      "stock": 18,
+      "discount": 0,
+      "colors": [
+        "green",
+        "white"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/33_1.jpg",
+        "https://example.com/images/33_2.jpg",
+        "https://example.com/images/33_3.jpg"
+      ]
+    },
+    {
+      "id": 34,
+      "title": "طنجرة ضغط",
+      "price": 7516,
+      "image": "https://static.vecteezy.com/system/resources/previews/042/348/968/non_2x/ai-generated-pressure-cooker-on-transparent-background-ai-generated-free-png.png",
+      "description": "طنجرة ضغط قوي سريعة التحضير",
+      "category": "مطبخ",
+      "brand": "لوران",
+      "brandImage":"https://www.logo.wine/a/logo/Ralph_Lauren_Corporation/Ralph_Lauren_Corporation-Logo.wine.svg",
+      "rating": 4.1,
+      "reviews": 270,
+      "stock": 81,
+      "discount": 5,
+      "colors": [
+        "yellow",
+        "brown"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/34_1.jpg",
+        "https://example.com/images/34_2.jpg",
+        "https://example.com/images/34_3.jpg"
+      ]
+    },
+    {
+      "id": 35,
+      "title": "طنجرة ضغط",
+      "price": 2409,
+      "image": "https://static.vecteezy.com/system/resources/previews/053/449/271/non_2x/sleek-black-pressure-cooker-lid-and-dial-gauge-free-png.png",
+      "description": "طنجرة ضغط لحم منزلية قوية",
+      "category": "مطبخ",
+      "brand": "لوران",
+      "brandImage":"https://www.logo.wine/a/logo/Ralph_Lauren_Corporation/Ralph_Lauren_Corporation-Logo.wine.svg",
+      "rating": 3.4,
+      "reviews": 226,
+      "stock": 83,
+      "discount": 10,
+      "colors": [
+        "blue",
+        "brown"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/35_1.jpg",
+        "https://example.com/images/35_2.jpg",
+        "https://example.com/images/35_3.jpg"
+      ]
+    },
+    {
+      "id": 36,
+      "title": "خلاط كهربائي",
+      "price": 5552,
+      "image": "https://static.vecteezy.com/system/resources/previews/048/719/106/non_2x/juicer-machine-on-transparent-background-free-png.png",
+      "description": "خلاط كهربائي منزلي قوي",
+      "category": "مطبخ",
+      "brand": "سلازينجر",
+      "brandImage":"https://www.logo.wine/a/logo/Slazenger/Slazenger-Logo.wine.svg",
+      "rating": 2.8,
+      "reviews": 220,
+      "stock": 91,
+      "discount": 20,
+      "colors": [
+        "white",
+        "black"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/36_1.jpg",
+        "https://example.com/images/36_2.jpg",
+        "https://example.com/images/36_3.jpg"
+      ]
+    },
+    {
+      "id": 37,
+      "title": "طنجرة ضغط",
+      "price": 1825,
+      "image": "https://static.vecteezy.com/system/resources/previews/046/853/430/non_2x/a-pot-on-a-stove-top-with-a-lid-on-transparent-background-free-png.png",
+      "description": "طنجرة ضغط قوي سريعة التحضير",
+      "category": "مطبخ",
+      "brand": "لوكسوتيكا",
+      "brandImage":"https://www.logo.wine/a/logo/Luxottica/Luxottica-Logo.wine.svg",
+      "rating": 3.7,
+      "reviews": 206,
+      "stock": 89,
+      "discount": 20,
+      "colors": [
+        "red",
+        "blue"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/37_1.jpg",
+        "https://example.com/images/37_2.jpg",
+        "https://example.com/images/37_3.jpg"
+      ]
+    },
+    {
+      "id": 38,
+      "title": "مفرمة لحم",
+      "price": 5689,
+      "image": "https://static.vecteezy.com/system/resources/previews/036/396/385/non_2x/ai-generated-meat-cutting-machine-on-transparent-background-ai-generated-free-png.png",
+      "description": "مفرمة لحم  سريعة التحضير",
+      "category": "مطبخ",
+      "brand": "لوران",
+      "brandImage":"https://www.logo.wine/a/logo/Ralph_Lauren_Corporation/Ralph_Lauren_Corporation-Logo.wine.svg",
+      "rating": 3.8,
+      "reviews": 23,
+      "stock": 21,
+      "discount": 15,
+      "colors": [
+        "black",
+        "brown"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/38_1.jpg",
+        "https://example.com/images/38_2.jpg",
+        "https://example.com/images/38_3.jpg"
+      ]
+    },
+    {
+      "id": 39,
+      "title": "مفرمة لحم",
+      "price": 7146,
+      "image": "https://static.vecteezy.com/system/resources/previews/036/396/401/non_2x/ai-generated-meat-cutting-machine-on-transparent-background-ai-generated-free-png.png",
+      "description": "مفرمة لحم  سريعة التحضير",
+      "category": "مطبخ",
+      "brand": "لوكسوتيكا",
+      "brandImage":"https://www.logo.wine/a/logo/Luxottica/Luxottica-Logo.wine.svg",
+      "rating": 2.8,
+      "reviews": 288,
+      "stock": 70,
+      "discount": 15,
+      "colors": [
+        "blue",
+        "yellow"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/39_1.jpg",
+        "https://example.com/images/39_2.jpg",
+        "https://example.com/images/39_3.jpg"
+      ]
+    },
+    {
+      "id": 40,
+      "title": "مفرمة لحم",
+      "price": 3661,
+      "image": "https://static.vecteezy.com/system/resources/previews/036/396/395/large_2x/ai-generated-meat-cutting-machine-on-transparent-background-ai-generated-free-png.png",
+      "description": "مفرمة لحم منزلية قوية",
+      "category": "مطبخ",
+      "brand": "لوران",
+      "brandImage":"https://www.logo.wine/a/logo/Ralph_Lauren_Corporation/Ralph_Lauren_Corporation-Logo.wine.svg",
+      "rating": 4.6,
+      "reviews": 27,
+      "stock": 19,
+      "discount": 15,
+      "colors": [
+        "black",
+        "yellow"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/40_1.jpg",
+        "https://example.com/images/40_2.jpg",
+        "https://example.com/images/40_3.jpg"
+      ]
+    },
+    {
+      "id": 41,
+      "title": "سماعة بلوتوث",
+      "price": 1872,
+      "image": "https://static.vecteezy.com/system/resources/previews/065/848/628/non_2x/studio-image-of-wireless-headset-free-png.png",
+      "description": "سماعة بجودة صوت عالية",
+      "category": "الكترونيات",
+      "brand": "فيندي",
+      "brandImage":"https://www.logo.wine/a/logo/Fendi/Fendi-Logo.wine.svg",
+      "rating": 4.7,
+      "reviews": 161,
+      "stock": 37,
+      "discount": 0,
+      "colors": [
+        "red",
+        "black"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/41_1.jpg",
+        "https://example.com/images/41_2.jpg",
+        "https://example.com/images/41_3.jpg"
+      ]
+    },
+    {
+      "id": 42,
+      "title": "ساعة ذكية",
+      "price": 1676,
+      "image": "https://static.vecteezy.com/system/resources/previews/009/379/846/large_2x/smartwatch-clipart-design-illustration-free-png.png",
+      "description": "ساعة ذكية للعمل والدراسة",
+      "category": "الكترونيات",
+      "brand": "سامسونج",
+      "brandImage":"https://www.logo.wine/a/logo/Samsung_C%26T_Corporation/Samsung_C%26T_Corporation-Logo.wine.svg",
+      "rating": 2.7,
+      "reviews": 94,
+      "stock": 63,
+      "discount": 5,
+      "colors": [
+        "black",
+        "red"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/42_1.jpg",
+        "https://example.com/images/42_2.jpg",
+        "https://example.com/images/42_3.jpg"
+      ]
+    },
+    {
+      "id": 43,
+      "title": "لاب توب",
+      "price": 6674,
+      "image": "https://static.vecteezy.com/system/resources/previews/051/135/299/non_2x/happy-man-working-on-laptop-in-bean-bag-isolated-on-transparent-free-png.png",
+      "description": "لاب توب بمواصفات متقدمة",
+      "category": "الكترونيات",
+      "brand": "سامسونج",
+      "brandImage":"https://www.logo.wine/a/logo/Samsung_C%26T_Corporation/Samsung_C%26T_Corporation-Logo.wine.svg",
+      "rating": 2.8,
+      "reviews": 3,
+      "stock": 88,
+      "discount": 5,
+      "colors": [
+        "yellow",
+        "red"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/43_1.jpg",
+        "https://example.com/images/43_2.jpg",
+        "https://example.com/images/43_3.jpg"
+      ]
+    },
+    {
+      "id": 44,
+      "title": "ساعة ذكية",
+      "price": 3259,
+      "image": "https://static.vecteezy.com/system/resources/previews/052/934/419/non_2x/smartwatch-with-white-strap-and-gold-case-high-resolution-clipart-free-png.png",
+      "description": "ساعة ذكية بجودة صوت عالية",
+      "category": "الكترونيات",
+      "brand": "سامسونج",
+      "brandImage":"https://www.logo.wine/a/logo/Samsung_C%26T_Corporation/Samsung_C%26T_Corporation-Logo.wine.svg",
+      "rating": 4.1,
+      "reviews": 226,
+      "stock": 58,
+      "discount": 10,
+      "colors": [
+        "black",
+        "blue"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/44_1.jpg",
+        "https://example.com/images/44_2.jpg",
+        "https://example.com/images/44_3.jpg"
+      ]
+    },
+    {
+      "id": 45,
+      "title": "سماعة بلوتوث",
+      "price": 2535,
+      "image": "https://static.vecteezy.com/system/resources/previews/020/032/781/non_2x/headphones-isolated-on-transparent-background-free-png.png",
+      "description": "سماعة بلوتوث للعمل والدراسة",
+      "category": "الكترونيات",
+      "brand": "سامسونج",
+      "brandImage":"https://www.logo.wine/a/logo/Samsung_C%26T_Corporation/Samsung_C%26T_Corporation-Logo.wine.svg",
+      "rating": 2.6,
+      "reviews": 204,
+      "stock": 28,
+      "discount": 20,
+      "colors": [
+        "blue",
+        "red"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/45_1.jpg",
+        "https://example.com/images/45_2.jpg",
+        "https://example.com/images/45_3.jpg"
+      ]
+    },
+    {
+      "id": 46,
+      "title": "لاب توب",
+      "price": 2859,
+      "image": "https://static.vecteezy.com/system/resources/previews/039/324/152/non_2x/ai-generated-laptop-with-transparent-background-generative-ai-free-png.png",
+      "description": "لاب توب للعمل والدراسة",
+      "category": "الكترونيات",
+      "brand": "ريبوك",
+      "brandImage":"https://www.logo.wine/a/logo/Reebok/Reebok-Logo.wine.svg",
+      "rating": 4.8,
+      "reviews": 104,
+      "stock": 22,
+      "discount": 20,
+      "colors": [
+        "blue",
+        "red"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/46_1.jpg",
+        "https://example.com/images/46_2.jpg",
+        "https://example.com/images/46_3.jpg"
+      ]
+    },
+    {
+      "id": 47,
+      "title": "لاب توب",
+      "price": 7811,
+      "image": "https://static.vecteezy.com/system/resources/previews/048/385/473/large_2x/laptop-computer-simple-free-png.png",
+      "description": "لاب توب للتعليم والترفيه",
+      "category": "الكترونيات",
+      "brand": "فيندي",
+      "brandImage":"https://www.logo.wine/a/logo/Fendi/Fendi-Logo.wine.svg",
+      "rating": 4.2,
+      "reviews": 83,
+      "stock": 56,
+      "discount": 5,
+      "colors": [
+        "white",
+        "brown"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/47_1.jpg",
+        "https://example.com/images/47_2.jpg",
+        "https://example.com/images/47_3.jpg"
+      ]
+    },
+    {
+      "id": 48,
+      "title": "تابلت تعليمي",
+      "price": 4573,
+      "image": "https://static.vecteezy.com/system/resources/previews/052/042/322/non_2x/modern-tablet-on-stand-with-stylus-accessory-free-png.png",
+      "description": "تابلت تعليمي بجودة صوت عالية",
+      "category": "الكترونيات",
+      "brand": "ريبوك",
+      "brandImage":"https://www.logo.wine/a/logo/Reebok/Reebok-Logo.wine.svg",
+      "rating": 2.9,
+      "reviews": 225,
+      "stock": 86,
+      "discount": 20,
+      "colors": [
+        "white",
+        "red"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/48_1.jpg",
+        "https://example.com/images/48_2.jpg",
+        "https://example.com/images/48_3.jpg"
+      ]
+    },
+    {
+      "id": 49,
+      "title": "سماعة بلوتوث",
+      "price": 1976,
+      "image": "https://static.vecteezy.com/system/resources/previews/020/032/721/non_2x/headphones-isolated-on-transparent-background-free-png.png",
+      "description": "سماعة بلوتوث مناسب للتعليم والترفيه",
+      "category": "الكترونيات",
+      "brand": "ريبوك",
+      "brandImage":"https://www.logo.wine/a/logo/Reebok/Reebok-Logo.wine.svg",
+      "rating": 3.2,
+      "reviews": 192,
+      "stock": 44,
+      "discount": 0,
+      "colors": [
+        "green",
+        "blue"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/49_1.jpg",
+        "https://example.com/images/49_2.jpg",
+        "https://example.com/images/49_3.jpg"
+      ]
+    },
+    {
+      "id": 50,
+      "title": "هاتف ذكي",
+      "price": 1319,
+      "image": "https://static.vecteezy.com/system/resources/previews/057/463/929/large_2x/sleek-tablet-with-a-high-resolution-screen-and-multiple-app-s-free-png.png",
+      "description": "هاتف بمواصفات متقدمة",
+      "category": "الكترونيات",
+      "brand": "فيندي",
+      "brandImage":"https://www.logo.wine/a/logo/Fendi/Fendi-Logo.wine.svg",
+      "rating": 3.3,
+      "reviews": 290,
+      "stock": 86,
+      "discount": 20,
+      "colors": [
+        "yellow",
+        "green"
+      ],
+      "sizes": [],
+      "images": [
+        "https://example.com/images/50_1.jpg",
+        "https://example.com/images/50_2.jpg",
+        "https://example.com/images/50_3.jpg"
+      ]
+    },
+    {
+      "id": 61,
+      "title": "فستان صيفي مزهر",
+      "price": 1238,
+      "image": "https://static.vecteezy.com/system/resources/previews/057/435/244/non_2x/extraordinary-vintage-fashion-sketch-dress-design-flowing-lines-isolated-professional-free-png.png",
+      "description": "فستان خفيف مناسب لأيام الصيف الحارة",
+      "category": "حريمي",
+      "brand": "دايوور",
+      "brandImage":"https://www.logo.wine/a/logo/Christian_Dior_(fashion_house)/Christian_Dior_(fashion_house)-Logo.wine.svg",
+      "rating": 3.7,
+      "reviews": 83,
+      "stock": 23,
+      "discount": 0,
+      "colors": [
+        "pink",
+        "blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/61_1.jpg",
+        "https://example.com/images/61_2.jpg",
+        "https://example.com/images/61_3.jpg"
+      ]
+    },
+    {
+      "id": 62,
+      "title": "بلوزة دانتيل",
+      "price": 1057,
+      "image": "https://static.vecteezy.com/system/resources/previews/057/552/019/non_2x/serene-traditional-chiffon-blouse-flowing-peach-cutout-free-png.png",
+      "description": "بلوزة دانتيل أنيقة للمناسبات",
+      "category": "حريمي",
+      "brand": "فينشورش",
+      "brandImage":"https://www.logo.wine/a/logo/Fenchurch_(clothing)/Fenchurch_(clothing)-Logo.wine.svg",
+      "rating": 4.9,
+      "reviews": 93,
+      "stock": 19,
+      "discount": 0,
+      "colors": [
+        "red",
+        "blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/62_1.jpg",
+        "https://example.com/images/62_2.jpg",
+        "https://example.com/images/62_3.jpg"
+      ]
+    },
+    {
+      "id": 63,
+      "title": "تنورة طويلة",
+      "price": 741,
+      "image": "https://static.vecteezy.com/system/resources/previews/059/246/972/non_2x/beige-pleated-midi-skirt-on-transparent-background-free-png.png",
+      "description": "تنورة طويلة بخامة ناعمة ومريحة",
+      "category": "حريمي",
+      "brand": "دايوور",
+      "brandImage":"https://www.logo.wine/a/logo/Christian_Dior_(fashion_house)/Christian_Dior_(fashion_house)-Logo.wine.svg",
+      "rating": 3.5,
+      "reviews": 75,
+      "stock": 12,
+      "discount": 15,
+      "colors": [
+        "pink",
+        "blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/63_1.jpg",
+        "https://example.com/images/63_2.jpg",
+        "https://example.com/images/63_3.jpg"
+      ]
+    },
+    {
+      "id": 64,
+      "title": "عباية أنيقة",
+      "price": 962,
+      "image": "https://static.vecteezy.com/system/resources/previews/058/267/328/non_2x/elegant-muslim-woman-in-luxurious-sage-green-abaya-with-embellishments-free-png.png",
+      "description": "عباية عصرية بتصميم جذاب",
+      "category": "حريمي",
+      "brand": "كونفيرس",
+      "brandImage":"https://www.logo.wine/a/logo/Converse_(shoe_company)/Converse_(shoe_company)-Logo.wine.svg",
+      "rating": 3.8,
+      "reviews": 8,
+      "stock": 11,
+      "discount": 10,
+      "colors": [
+        "white",
+        "green"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/64_1.jpg",
+        "https://example.com/images/64_2.jpg",
+        "https://example.com/images/64_3.jpg"
+      ]
+    },
+    {
+      "id": 65,
+      "title": "تيشيرت قطن",
+      "price": 1250,
+      "image": "https://static.vecteezy.com/system/resources/previews/059/046/510/non_2x/elegant-white-women-s-long-sleeve-blouse-with-puffed-shoulders-and-fitted-waist-free-png.png",
+      "description": "تيشيرت قطني مريح للاستخدام اليومي",
+      "category": "حريمي",
+      "brand": "كونفيرس",
+      "brandImage":"https://www.logo.wine/a/logo/Converse_(shoe_company)/Converse_(shoe_company)-Logo.wine.svg",
+      "rating": 4.6,
+      "reviews": 37,
+      "stock": 15,
+      "discount": 10,
+      "colors": [
+        "white",
+        "blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/65_1.jpg",
+        "https://example.com/images/65_2.jpg",
+        "https://example.com/images/65_3.jpg"
+      ]
+    },
+    {
+      "id": 66,
+      "title": "فستان حريمي",
+      "price": 2250,
+      "image": "https://static.vecteezy.com/system/resources/previews/042/154/802/non_2x/ai-generated-beautiful-women-dress-isolated-on-transparent-background-free-png.png",
+      "description": "فستان حريميي مريح للاستخدام اليومي",
+      "category": "حريمي",
+      "brand": "كونفيرس",
+      "brandImage":"https://www.logo.wine/a/logo/Converse_(shoe_company)/Converse_(shoe_company)-Logo.wine.svg",
+      "rating": 4.6,
+      "reviews": 37,
+      "stock": 15,
+      "discount": 10,
+      "colors": [
+        "white",
+        "blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/65_1.jpg",
+        "https://example.com/images/65_2.jpg",
+        "https://example.com/images/65_3.jpg"
+      ]
+    },
+    {
+      "id": 67,
+      "title": "تيشيرت رياضي",
+      "price": 1400,
+      "image": "https://static.vecteezy.com/system/resources/previews/056/422/303/non_2x/plain-pink-t-shirt-free-png.png",
+      "description": "تي شيرت مريح للاستخدام اليومي",
+      "category": "رجالي",
+      "brand": "اندر ارمور",
+      "brandImage":"https://www.logo.wine/a/logo/Under_Armour/Under_Armour-Logo.wine.svg",
+      "rating": 4.6,
+      "reviews": 37,
+      "stock": 15,
+      "discount": 10,
+      "colors": [
+        "white",
+        "blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/65_1.jpg",
+        "https://example.com/images/65_2.jpg",
+        "https://example.com/images/65_3.jpg"
+      ]
+    },
+    {
+      "id": 68,
+      "title": "ماوس ليزر",
+      "price": 140,
+      "image": "https://static.vecteezy.com/system/resources/previews/055/183/983/non_2x/gaming-mouse-design-showcase-digital-space-product-image-free-png.png",
+      "description": "ماوس ليزر للكمبيوتر مريح للاستخدام اليومي",
+      "category": "الكترونيات",
+      "brand": "ريبوك",
+      "brandImage":"https://www.logo.wine/a/logo/Reebok/Reebok-Logo.wine.svg",
+      "rating": 4.6,
+      "reviews": 37,
+      "stock": 15,
+      "discount": 10,
+      "colors": [
+        "white",
+        "blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/65_1.jpg",
+        "https://example.com/images/65_2.jpg",
+        "https://example.com/images/65_3.jpg"
+      ]
+    },
+    {
+      "id": 69,
+      "title": "سماعة رأس",
+      "price": 140,
+      "image": "https://static.vecteezy.com/system/resources/previews/059/250/927/non_2x/stylish-orange-headphones-displayed-on-a-clean-transparent-background-for-modern-audio-enthusiasts-orange-headphone-product-photo-isolated-on-transparent-background-free-png.png",
+      "description": "سماعة رأس للكمبيوتر مريح للاستخدام اليومي",
+      "category": "الكترونيات",
+      "brand": "ريبوك",
+      "brandImage":"https://www.logo.wine/a/logo/Reebok/Reebok-Logo.wine.svg",
+      "rating": 4.6,
+      "reviews": 37,
+      "stock": 15,
+      "discount": 10,
+      "colors": [
+        "white",
+        "blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/65_1.jpg",
+        "https://example.com/images/65_2.jpg",
+        "https://example.com/images/65_3.jpg"
+      ]
+    },
+        {
+      "id": 70,
+      "title": "فستان حريمي",
+      "price": 2250,
+      "image": "https://static.vecteezy.com/system/resources/previews/042/154/776/non_2x/ai-generated-beautiful-women-dress-isolated-on-transparent-background-free-png.png",
+      "description": "فستان حريميي مريح للاستخدام اليومي",
+      "category": "حريمي",
+      "brand": "كونفيرس",
+      "brandImage":"https://www.logo.wine/a/logo/Converse_(shoe_company)/Converse_(shoe_company)-Logo.wine.svg",
+      "rating": 4.6,
+      "reviews": 37,
+      "stock": 15,
+      "discount": 10,
+      "colors": [
+        "white",
+        "blue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://example.com/images/65_1.jpg",
+        "https://example.com/images/65_2.jpg",
+        "https://example.com/images/65_3.jpg"
+      ]
+    }
+ 
+  ]
+}
