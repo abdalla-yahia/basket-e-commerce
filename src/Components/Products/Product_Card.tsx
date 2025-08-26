@@ -12,7 +12,7 @@ export default function Product_Card({img,offer,title,rating,oldprice,price}:{im
         <Image className="w-full" src={img} alt={title} width={100} height={150}/>
         {/*Card Content*/}
         <h1 className="font-[400] text-[#202435] text-sm" style={{lineHeight:'19.6px',letterSpacing:'0%'}}>Blue Diamond Almonds Lightly Salted</h1>
-        <h2 className="font-[600] text-[#00B853] text-[11px]" style={{lineHeight:'16.5px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>In stock</h2>
+        <h2 className="font-[600] text-[#00B853]  uppercase text-[11px]" style={{lineHeight:'16.5px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>In stock</h2>
         {/*Rating*/}
         <div className="flex justify-between items-center gap-2">
             <div className="stars"><svg width="69" height="13" viewBox="0 0 69 13" fill="none" xmlns="http://www.w3.org/2000/svg">

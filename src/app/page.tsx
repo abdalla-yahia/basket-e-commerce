@@ -1,4 +1,5 @@
 import Best_Seller_Container from "@/Components/Home/Best_Sallers/Best_Seller_Container";
+import Hot_Products_Container from "@/Components/Home/Hot_Products/Hot_Products_Container";
 import Home_Landing from "@/Components/Home/Landing_Aside/Home_Landing";
 
 export default function Home() {
@@ -8,6 +9,8 @@ export default function Home() {
       <Home_Landing />
       {/*Best Sellers*/}
       <Best_Seller_Container />
+      {/*Hot Products Container*/}
+      <Hot_Products_Container />
     </main>
   );
 }

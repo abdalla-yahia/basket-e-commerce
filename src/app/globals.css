@@ -127,3 +127,16 @@ select{
   outline: none;
   border: none;
 }
+
+
+.progress_persentage::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(to right, #D51243, #FFCD00);
+  clip-path: polygon(50% 50%, 0 0, 100% 0);
+}

@@ -1,7 +1,7 @@
 import Product_Card from "@/Components/Products/Product_Card";
 import Section_Title from "@/Components/Section_Title/Section_Title";
 
-export default function Best_Seller() {
+export default function Best_Seller_Section() {
   return (
     <section className="w-[75%]">
         {/*Section Title*/}
