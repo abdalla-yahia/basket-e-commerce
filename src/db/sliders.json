@@ -2,63 +2,37 @@
   "sliders": [
     {
       "id": 1,
-      "img1": "https://static.vecteezy.com/system/resources/previews/024/658/870/large_2x/3d-male-character-engaged-in-productive-work-on-a-laptop-free-png.png",
-      "img2": "https://static.vecteezy.com/system/resources/previews/010/176/163/non_2x/cashback-campaign-3d-rendering-illustration-for-off-get-vouchers-discounts-reward-program-color-blue-pink-perfect-for-ui-ux-design-ecommerce-branding-shopping-sale-advertising-marketplace-free-png.png",
-      "text": "تخفيضات الموسم وصلت!",
-      "textColor":"text-white",
-      "paragraph": "استمتع بأفضل العروض الحصرية على جميع المنتجات.",
-      "paragraphColor":"text-gray-100",
-      "paragraph2": "لفترة محدودة فقط — سارع بالشراء!",
-      "paragraph2Color":"text-yellow-300",
-      "bgColor": "bg-[var(--highlight)]"
+      "img1": "https://res.cloudinary.com/dghqvxueq/image/upload/v1756217702/Home-1-Landing_jbqdq9.png",
+      "text": "Specialist in the grocery store!",
+      "textColor":"text-black",
+      "paragraph": "Only this week. Don’t miss...",
+      "paragraphColor":"text-[#202435]",
+      "paragraph2": "$7.99",
+      "paragraph2Color":"text-[#D51243]",
+      "bgColor": "bg-primary"
     },
     {
       "id": 2,
-      "img1": "https://static.vecteezy.com/system/resources/previews/008/508/172/non_2x/3d-rendering-online-payment-for-ecommerce-or-online-shop-isolated-useful-for-business-online-design-free-png.png",
-      "img2": "https://static.vecteezy.com/system/resources/previews/023/743/919/non_2x/courier-delivery-man-holding-parcel-box-with-mobile-phone-fast-online-delivery-service-online-ordering-internet-e-commerce-ideas-for-websites-or-banners-3d-perspective-illustration-free-png.png",
-      "text": "جديدنا لهذا الشهر",
-      "textColor":"text-indigo-600",
-      "paragraph": "اكتشف تشكيلتنا المميزة من المنتجات المضافة حديثًا.",
-      "paragraphColor":"text-gray-800",
-      "paragraph2": "التوصيل مجانًا لأول طلب!",
-      "paragraph2Color":"text-pink-600",
-      "bgColor": "bg-[var(--accent)]/40"
+      "img1": "https://res.cloudinary.com/dghqvxueq/image/upload/v1756220701/Home-1-landing-3_waar6d.png",
+      "text": "Feed your family the best",
+      "textColor":"text-black",
+      "paragraph": "Only this week. Don’t miss...",
+      "paragraphColor":"text-[#202435]",
+      "paragraph2": "$9.99",
+      "paragraph2Color":"text-sky-500",
+      "bgColor": "bg-yellow-500"
     },
     {
       "id": 3,
-      "img1": "https://static.vecteezy.com/system/resources/previews/029/711/164/non_2x/online-shopping-with-ai-generated-free-png.png",
-      "img2": "https://static.vecteezy.com/system/resources/previews/010/793/849/large_2x/50-percent-discount-for-bakery-pastry-or-cake-product-3d-style-free-png.png",
-      "text": "خصومات تصل إلى 50%",
-      "textColor":"text-red-500",
-      "paragraph": "لا تفوّت فرصة التسوّق بأسعار لا تقاوم.",
-      "paragraphColor":"text-gray-100",
-      "paragraph2": "متوفر حتى نفاد الكمية.",
+      "img1": "https://res.cloudinary.com/dghqvxueq/image/upload/v1756220692/Home-1-landing-2_2_xev7cc.png",
+      "text": "Gerthesim Tend Inder Prosur",
+      "textColor":"text-black",
+      "paragraph": "Only this week. Don’t miss...",
+      "paragraphColor":"text-[#202435]",
+      "paragraph2": "$5.78",
       "paragraph2Color":"text-yellow-400",
-      "bgColor": "bg-[var(--primary)]/30"
-    },
-    {
-      "id": 4,
-      "img1": "https://static.vecteezy.com/system/resources/previews/010/176/169/non_2x/credit-card-cashback-3d-rendering-illustration-for-get-vouchers-discounts-reward-program-color-blue-pink-perfect-for-ui-ux-design-ecommerce-branding-shopping-sale-advertising-marketplace-free-png.png",
-      "img2": "https://static.vecteezy.com/system/resources/previews/032/727/150/non_2x/man-customer-add-products-to-cart-while-online-shopping-via-smartphone-on-online-store-free-png.png",
-      "text": "تشكيلات مميزة لجميع الأذواق",
-      "textColor":"text-orange-400",
-      "paragraph": "سواء كنت تبحث عن الأناقة أو الراحة، لدينا ما يناسبك.",
-      "paragraphColor":"text-gray-700",
-      "paragraph2": "منتجات حصرية اونلاين فقط.",
-      "paragraph2Color":"text-yellow-200",
-      "bgColor": "bg-[var(--muted)]/20"
-    },
-    {
-      "id": 5,
-      "img1": "https://static.vecteezy.com/system/resources/previews/022/608/526/non_2x/digital-marketing-concept-illustration-of-an-infographic-display-on-a-mobile-phone-screen-free-png.png",
-      "img2": "https://static.vecteezy.com/system/resources/previews/032/727/152/non_2x/customer-add-products-to-cart-while-online-shopping-via-smartphone-on-online-store-free-png.png",
-      "text": " لا زلت محتار؟ جرّبنا الآن!",
-      "textColor":"text-white",
-      "paragraph": "تسوّق بأمان مع إمكانية الاسترجاع خلال 14 يوم.",
-      "paragraphColor":"text-fuchisa-500",
-      "paragraph2": "اشترك الآن واحصل على كوبون خصم 10%.",
-      "paragraph2Color":"text-orange-300",
-      "bgColor": "bg-gradient-to-r from-[var(--highlight)] to-[var(--accent)]"
+      "bgColor": "bg-red-500"
     }
+ 
   ]
 }
