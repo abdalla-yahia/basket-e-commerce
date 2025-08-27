@@ -3,6 +3,7 @@ import Customer_Comments_Container from "@/Components/Home/Customer_Comments/Cus
 import Hot_Products_Container from "@/Components/Home/Hot_Products/Hot_Products_Container";
 import Home_Landing_Container from "@/Components/Home/Landing_Aside/Home_Landing_Container";
 import New_Products_Container from "@/Components/Home/New_Products/New_Products_Container";
+import Stok_Products_Container from "../Components/Home/Stok_Product/Stok_Products_Container";
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
       <New_Products_Container />
       {/*Customer Comment Container*/}
       <Customer_Comments_Container/>
+      {/*Stoke Products Container*/}
+      <Stok_Products_Container />
     </main>
   );
 }

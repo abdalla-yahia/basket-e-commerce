@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Porduct_Advertising({img,header,title,description,href}:{img:string,header:string,title:string,description:string,href:string}) {
   return (
-    <div className="rounded-2xl w-full bg-no-repeat bg-top-right" style={{backgroundImage:`url(${img})`}}>
+    <div className="rounded-2xl w-full bg-no-repeat bg-top-right bg-cover" style={{backgroundImage:`url(${img})`}}>
         {/*Content*/}
         <div className="flex flex-col justify-start items-start gap-3 p-8">
             <h3 className=" uppercase text-[#00B853] font-[600] text-[14px]" style={{fontFamily:'Dosis',lineHeight:'21px'}}>{header}</h3>
