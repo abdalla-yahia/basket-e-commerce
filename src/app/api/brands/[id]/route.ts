@@ -13,7 +13,7 @@ import { UpdateBrandValidation } from "@/Validation/BrandValidation";
  */
 
 
-export async function GET({params}:{params:Promise<{id:string}>}):Promise<NextResponse>{
+export async function GET(_:unknown,{params}:{params:Promise<{id:string}>}):Promise<NextResponse>{
     try {
         //Get Id From Params
         const {id} = await params;
