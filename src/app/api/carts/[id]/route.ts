@@ -12,7 +12,7 @@ import { prisma } from "@/libs/Prisma/Prisma_Client";
  */
 
 
-export async function GEt(request:NextRequest,{params}:{params:Promise<{id:string}>}):Promise<NextResponse>{
+export async function GET(request:NextRequest,{params}:{params:Promise<{id:string}>}):Promise<NextResponse>{
     try {
         //Get Id
         const {id} = await params;
