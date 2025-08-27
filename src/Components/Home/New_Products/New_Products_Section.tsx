@@ -7,13 +7,13 @@ export default function New_Products_Section() {
   return (
     <section className="w-[75%]">
         {/*Free Advertising Code*/}
-        <div className="rounded-lg p-3 my-3 flex justify-center items-center gap-2 bg-[#FFEEF2]">
+        <div className="rounded-lg px-20 py-6 my-3 flex justify-center items-center gap-2 bg-[#FFEEF2]">
             {/*Link To Purchase*/}
             <p className="text-[#ED174A] text-[16px] font-[400]" style={{lineHeight:'24px',letterSpacing:'-0.1px'}}>Super discount for your 
                 <Link className="mx-2 font-bold underline" href={'/'} >first purchase.</Link>
             </p>
             {/*Code*/}
-            <p className="border border-dotted border-[#FF6048] text-[#FF6048] rounded-2xl px-4 py-2">FREE25BAC</p>
+            <p className="border-2 border-dotted border-[#FF6048] text-[#FF6048] font-extrabold rounded-2xl px-4 py-2">FREE25BAC</p>
             {/*How To Use*/}
             <span className="text-[12px] text-[#9B9BB4] font-[400]">Use discount code in checkout!</span>
         </div>
