@@ -1,4 +1,5 @@
 import Best_Seller_Container  from "@/Components/Home/Best_Sallers/Best_Seller_Container";
+import Customer_Comments_Container from "@/Components/Home/Customer_Comments/Custopmer_Comment_Container";
 import Hot_Products_Container from "@/Components/Home/Hot_Products/Hot_Products_Container";
 import Home_Landing_Container from "@/Components/Home/Landing_Aside/Home_Landing_Container";
 import New_Products_Container from "@/Components/Home/New_Products/New_Products_Container";
@@ -14,6 +15,8 @@ export default function Home() {
       <Hot_Products_Container />
       {/*New Products Container*/}
       <New_Products_Container />
+      {/*Customer Comment Container*/}
+      <Customer_Comments_Container/>
     </main>
   );
 }
