@@ -13,7 +13,7 @@ import { UpdataProductValidation } from "@/Validation/ProductValidation";
 import { NextRequest, NextResponse } from "next/server";
 import { TokenInterFace } from "@/Interfaces/UserInterface";
 
-export async function GET({params}:{params:Promise<{slug:string}>}):Promise<NextResponse>{
+export async function GET(_:unknown,{params}:{params:Promise<{slug:string}>}):Promise<NextResponse>{
     try {
         const {slug} = await params;
         // Check If Product Is Existes
