@@ -1,7 +1,7 @@
 'use client'
 import Link from "next/link";
 import useSvgColor from "@/Utils/Icons/SVG-Color";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Main_NavBar() {
     const [href, setHref] = useState('')
@@ -11,7 +11,7 @@ export default function Main_NavBar() {
     return (
         <div>
             <ul className="flex justify-center items-center gap-4">
-                <li className="hover:bg-[#F0FAFF] hover:text-[#35AFA0] p-2 rounded-full">
+                <li className="hover:bg-[#F0FAFF] hover:text-[#35AFA0] cursor-pointer p-2 rounded-full">
                     <select name="" id="" onChange={(e) => setHref(e.target.value)}>
                         <option className=" capitalize" value="/">Home</option>
                         <option className=" capitalize" value="/about">Home-2</option>
@@ -21,7 +21,7 @@ export default function Main_NavBar() {
                     </select>
                 </li>
                 <li className="hover:bg-[#F0FAFF] hover:text-[#35AFA0] p-2 rounded-full">
-                    <Link className=" capitalize" href="/">Shop</Link>
+                    <Link className=" capitalize" href="/products">Shop</Link>
                 </li>
                 <li className="flex justify-center items-center gap-2 hover:bg-[#F0FAFF] hover:text-[#35AFA0] p-2 rounded-full">
                     {/*Icon*/}

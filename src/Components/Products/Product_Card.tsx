@@ -61,7 +61,7 @@ export default function Product_Card({ img, offer, title, rating, oldprice, pric
             </div>
             {/*Count*/}
             {iscounter && <div className="flex justify-between items-center w-full border overflow-hidden border-[#EDEEF5] rounded-[50px] ">
-                <button onClick={() => setCounter(counter - 1)} className=" flex justify-center cursor-pointer items-center bg-[#EDEEF5] w-1/6 h-full px-4 text-[20px] ">-</button>
+                <button onClick={() => {counter > 0 ? setCounter(counter - 1) : null}} className={`${counter === 0 ? 'cursor-not-allowed':'cursor-pointer'} flex justify-center items-center bg-[#EDEEF5] w-1/6 h-full px-4 text-[20px] `}>-</button>
                 <p className="flex w-full justify-center items-center text-[20px]">{counter}</p>
                 <button onClick={() => setCounter(counter + 1)} className=" flex justify-center cursor-pointer items-center bg-[#FFCD00] w-1/6 h-full px-4 text-[20px] ">+</button>
             </div>}
