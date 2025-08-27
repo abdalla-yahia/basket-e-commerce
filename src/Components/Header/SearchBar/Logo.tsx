@@ -23,7 +23,7 @@ export default function Logo() {
         </div>
     </div>
         {/*Text*/}
-        <p className="text-[11px]">
+        <p className="text-[11px] opacity-50">
             Online Grocery Shopping Center
         </p>
     </div>

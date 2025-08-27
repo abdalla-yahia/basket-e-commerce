@@ -12,9 +12,9 @@ export default function News_Letter_Section() {
               for your first order
             </p>
             {/*Title*/}
-            <h3 className="font-[600] text-[26px] text-white">Join our newsletter and get...</h3>
+            <h3 className="font-[600] text-[26px] text-white ">Join our newsletter and get...</h3>
             {/*Description*/}
-            <p className="font-[400] w-[50%] mb-[20px] text-[13px] text-white">Join our email subscription now to get updates on promotions and coupons.</p>
+            <p className="font-[400] w-[50%] mb-[20px] text-[13px] text-white opacity-50">Join our email subscription now to get updates on promotions and coupons.</p>
             {/*Email Input */}
             <div className="flex justify-between w-[75%] items-center rounded px-1 py-1 pl-4 gap-4 bg-[#E4E5EE]">
               {/*Icon*/}
