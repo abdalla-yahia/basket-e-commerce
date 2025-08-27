@@ -1,16 +1,19 @@
-import Best_Seller_Container from "@/Components/Home/Best_Sallers/Best_Seller_Container";
+import Best_Seller_Container  from "@/Components/Home/Best_Sallers/Best_Seller_Container";
 import Hot_Products_Container from "@/Components/Home/Hot_Products/Hot_Products_Container";
-import Home_Landing from "@/Components/Home/Landing_Aside/Home_Landing";
+import Home_Landing_Container from "@/Components/Home/Landing_Aside/Home_Landing_Container";
+import New_Products_Container from "@/Components/Home/New_Products/New_Products_Container";
 
 export default function Home() {
   return (
     <main className="min-h-screen w-full flex flex-col justify-start items-center">
       {/*Landing Section*/}
-      <Home_Landing />
+      <Home_Landing_Container />
       {/*Best Sellers*/}
       <Best_Seller_Container />
       {/*Hot Products Container*/}
       <Hot_Products_Container />
+      {/*New Products Container*/}
+      <New_Products_Container />
     </main>
   );
 }

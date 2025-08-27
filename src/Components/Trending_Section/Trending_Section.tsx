@@ -1,0 +1,127 @@
+'use client'
+import Link from "next/link";
+import useSvgColor from "@/Utils/Icons/SVG-Color";
+import Image from "next/image";
+
+export default function Trending_Section() {
+  return (
+    <div className="flex w-[20%] flex-col  justify-start items-start">
+        {/*Download App*/}
+        <ul className="flex mb-8 max-w-full  flex-col justify-between items-start gap-3 border border-[#E4E5EE] rounded-lg">
+            <li className="flex gap-2 justify-center items-center  border-b border-b-[#E4E5EE] w-full p-3">
+                {/*Icon*/}
+                <div className="icon">
+                    <svg width="20" height="29" viewBox="0 0 20 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.704 13.256H12.632V9.112C12.632 8.96267 12.576 8.832 12.464 8.72001C12.352 8.608 12.2213 8.552 12.072 8.552H7.92799C7.77866 8.552 7.64799 8.608 7.53599 8.72001C7.42399 8.832 7.36799 8.96267 7.36799 9.112V13.256H5.29599C5.20266 13.256 5.10933 13.284 5.01599 13.34C4.92266 13.396 4.85733 13.4707 4.81999 13.564C4.72666 13.788 4.74533 13.984 4.87599 14.152L9.55199 20.368C9.66399 20.5173 9.81333 20.592 9.99999 20.592C10.1867 20.592 10.336 20.5173 10.448 20.368L15.124 14.152C15.2547 13.984 15.2733 13.788 15.18 13.564C15.1427 13.4707 15.0773 13.396 14.984 13.34C14.8907 13.284 14.7973 13.256 14.704 13.256ZM9.99999 19.136L6.41599 14.376H7.92799C8.07733 14.376 8.20333 14.32 8.30599 14.208C8.40866 14.096 8.45999 13.9653 8.45999 13.816V9.644H11.54V13.816C11.54 13.9653 11.5913 14.096 11.694 14.208C11.7967 14.32 11.9227 14.376 12.072 14.376H13.612L9.99999 19.136ZM16.58 0.880005H3.41999C2.69199 0.880005 2.07133 1.13667 1.55799 1.65C1.04466 2.16334 0.787994 2.784 0.787994 3.512V26.248C0.787994 26.976 1.04466 27.5967 1.55799 28.11C2.07133 28.6233 2.69199 28.88 3.41999 28.88H16.58C17.308 28.88 17.9287 28.6233 18.442 28.11C18.9553 27.5967 19.212 26.976 19.212 26.248V3.512C19.212 2.784 18.9553 2.16334 18.442 1.65C17.9287 1.13667 17.308 0.880005 16.58 0.880005ZM1.87999 3.512C1.87999 3.08267 2.03399 2.71867 2.34199 2.42C2.64999 2.12134 3.00933 1.972 3.41999 1.972H16.58C17.0093 1.972 17.3733 2.12134 17.672 2.42C17.9707 2.71867 18.12 3.08267 18.12 3.512V23.42H1.87999V3.512ZM18.12 26.248C18.12 26.6773 17.9707 27.0413 17.672 27.34C17.3733 27.6387 17.0093 27.788 16.58 27.788H3.41999C3.00933 27.788 2.64999 27.634 2.34199 27.326C2.03399 27.018 1.87999 26.6587 1.87999 26.248V24.512H18.12V26.248ZM9.63599 26.696H10.364C10.5133 26.696 10.644 26.6447 10.756 26.542C10.868 26.4393 10.924 26.3133 10.924 26.164C10.924 26.0147 10.868 25.884 10.756 25.772C10.644 25.66 10.5133 25.604 10.364 25.604H9.63599C9.48666 25.604 9.35599 25.66 9.24399 25.772C9.13199 25.884 9.07599 26.0147 9.07599 26.164C9.07599 26.3133 9.13199 26.4393 9.24399 26.542C9.35599 26.6447 9.48666 26.696 9.63599 26.696ZM7.39599 4.128H12.604C12.7533 4.128 12.8793 4.07667 12.982 3.974C13.0847 3.87134 13.136 3.74534 13.136 3.596C13.136 3.44667 13.0847 3.316 12.982 3.204C12.8793 3.092 12.7533 3.03601 12.604 3.03601H7.39599C7.24666 3.03601 7.12066 3.092 7.01799 3.204C6.91533 3.316 6.86399 3.44667 6.86399 3.596C6.86399 3.74534 6.91533 3.87134 7.01799 3.974C7.12066 4.07667 7.24666 4.128 7.39599 4.128Z" fill={useSvgColor()}/>
+                    </svg>
+                </div>
+                <Link className="text-[#202435] font-[400] text-[12px] cursor-pointer hover:text-primary duration-100" href={'/'}>Download the Bacola App to your Phone.</Link>
+            </li>
+            <li className="flex gap-2 justify-center items-center  border-b border-b-[#E4E5EE] w-full p-3">
+                {/*Icon*/}
+                <div className="icon">
+                    <svg width="20" height="29" viewBox="0 0 20 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.704 13.256H12.632V9.112C12.632 8.96267 12.576 8.832 12.464 8.72001C12.352 8.608 12.2213 8.552 12.072 8.552H7.92799C7.77866 8.552 7.64799 8.608 7.53599 8.72001C7.42399 8.832 7.36799 8.96267 7.36799 9.112V13.256H5.29599C5.20266 13.256 5.10933 13.284 5.01599 13.34C4.92266 13.396 4.85733 13.4707 4.81999 13.564C4.72666 13.788 4.74533 13.984 4.87599 14.152L9.55199 20.368C9.66399 20.5173 9.81333 20.592 9.99999 20.592C10.1867 20.592 10.336 20.5173 10.448 20.368L15.124 14.152C15.2547 13.984 15.2733 13.788 15.18 13.564C15.1427 13.4707 15.0773 13.396 14.984 13.34C14.8907 13.284 14.7973 13.256 14.704 13.256ZM9.99999 19.136L6.41599 14.376H7.92799C8.07733 14.376 8.20333 14.32 8.30599 14.208C8.40866 14.096 8.45999 13.9653 8.45999 13.816V9.644H11.54V13.816C11.54 13.9653 11.5913 14.096 11.694 14.208C11.7967 14.32 11.9227 14.376 12.072 14.376H13.612L9.99999 19.136ZM16.58 0.880005H3.41999C2.69199 0.880005 2.07133 1.13667 1.55799 1.65C1.04466 2.16334 0.787994 2.784 0.787994 3.512V26.248C0.787994 26.976 1.04466 27.5967 1.55799 28.11C2.07133 28.6233 2.69199 28.88 3.41999 28.88H16.58C17.308 28.88 17.9287 28.6233 18.442 28.11C18.9553 27.5967 19.212 26.976 19.212 26.248V3.512C19.212 2.784 18.9553 2.16334 18.442 1.65C17.9287 1.13667 17.308 0.880005 16.58 0.880005ZM1.87999 3.512C1.87999 3.08267 2.03399 2.71867 2.34199 2.42C2.64999 2.12134 3.00933 1.972 3.41999 1.972H16.58C17.0093 1.972 17.3733 2.12134 17.672 2.42C17.9707 2.71867 18.12 3.08267 18.12 3.512V23.42H1.87999V3.512ZM18.12 26.248C18.12 26.6773 17.9707 27.0413 17.672 27.34C17.3733 27.6387 17.0093 27.788 16.58 27.788H3.41999C3.00933 27.788 2.64999 27.634 2.34199 27.326C2.03399 27.018 1.87999 26.6587 1.87999 26.248V24.512H18.12V26.248ZM9.63599 26.696H10.364C10.5133 26.696 10.644 26.6447 10.756 26.542C10.868 26.4393 10.924 26.3133 10.924 26.164C10.924 26.0147 10.868 25.884 10.756 25.772C10.644 25.66 10.5133 25.604 10.364 25.604H9.63599C9.48666 25.604 9.35599 25.66 9.24399 25.772C9.13199 25.884 9.07599 26.0147 9.07599 26.164C9.07599 26.3133 9.13199 26.4393 9.24399 26.542C9.35599 26.6447 9.48666 26.696 9.63599 26.696ZM7.39599 4.128H12.604C12.7533 4.128 12.8793 4.07667 12.982 3.974C13.0847 3.87134 13.136 3.74534 13.136 3.596C13.136 3.44667 13.0847 3.316 12.982 3.204C12.8793 3.092 12.7533 3.03601 12.604 3.03601H7.39599C7.24666 3.03601 7.12066 3.092 7.01799 3.204C6.91533 3.316 6.86399 3.44667 6.86399 3.596C6.86399 3.74534 6.91533 3.87134 7.01799 3.974C7.12066 4.07667 7.24666 4.128 7.39599 4.128Z" fill={useSvgColor()}/>
+</svg>
+                </div>
+                <Link className="text-[#202435] font-[400] text-[12px] cursor-pointer hover:text-primary duration-100" href={'/'}>Download the Bacola App to your Phone.</Link>
+            </li>
+            <li className="flex gap-2  justify-center items-center    w-full p-3">
+                {/*Icon*/}
+                <div className="icon">
+                    <svg width="20" height="29" viewBox="0 0 20 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.704 13.256H12.632V9.112C12.632 8.96267 12.576 8.832 12.464 8.72001C12.352 8.608 12.2213 8.552 12.072 8.552H7.92799C7.77866 8.552 7.64799 8.608 7.53599 8.72001C7.42399 8.832 7.36799 8.96267 7.36799 9.112V13.256H5.29599C5.20266 13.256 5.10933 13.284 5.01599 13.34C4.92266 13.396 4.85733 13.4707 4.81999 13.564C4.72666 13.788 4.74533 13.984 4.87599 14.152L9.55199 20.368C9.66399 20.5173 9.81333 20.592 9.99999 20.592C10.1867 20.592 10.336 20.5173 10.448 20.368L15.124 14.152C15.2547 13.984 15.2733 13.788 15.18 13.564C15.1427 13.4707 15.0773 13.396 14.984 13.34C14.8907 13.284 14.7973 13.256 14.704 13.256ZM9.99999 19.136L6.41599 14.376H7.92799C8.07733 14.376 8.20333 14.32 8.30599 14.208C8.40866 14.096 8.45999 13.9653 8.45999 13.816V9.644H11.54V13.816C11.54 13.9653 11.5913 14.096 11.694 14.208C11.7967 14.32 11.9227 14.376 12.072 14.376H13.612L9.99999 19.136ZM16.58 0.880005H3.41999C2.69199 0.880005 2.07133 1.13667 1.55799 1.65C1.04466 2.16334 0.787994 2.784 0.787994 3.512V26.248C0.787994 26.976 1.04466 27.5967 1.55799 28.11C2.07133 28.6233 2.69199 28.88 3.41999 28.88H16.58C17.308 28.88 17.9287 28.6233 18.442 28.11C18.9553 27.5967 19.212 26.976 19.212 26.248V3.512C19.212 2.784 18.9553 2.16334 18.442 1.65C17.9287 1.13667 17.308 0.880005 16.58 0.880005ZM1.87999 3.512C1.87999 3.08267 2.03399 2.71867 2.34199 2.42C2.64999 2.12134 3.00933 1.972 3.41999 1.972H16.58C17.0093 1.972 17.3733 2.12134 17.672 2.42C17.9707 2.71867 18.12 3.08267 18.12 3.512V23.42H1.87999V3.512ZM18.12 26.248C18.12 26.6773 17.9707 27.0413 17.672 27.34C17.3733 27.6387 17.0093 27.788 16.58 27.788H3.41999C3.00933 27.788 2.64999 27.634 2.34199 27.326C2.03399 27.018 1.87999 26.6587 1.87999 26.248V24.512H18.12V26.248ZM9.63599 26.696H10.364C10.5133 26.696 10.644 26.6447 10.756 26.542C10.868 26.4393 10.924 26.3133 10.924 26.164C10.924 26.0147 10.868 25.884 10.756 25.772C10.644 25.66 10.5133 25.604 10.364 25.604H9.63599C9.48666 25.604 9.35599 25.66 9.24399 25.772C9.13199 25.884 9.07599 26.0147 9.07599 26.164C9.07599 26.3133 9.13199 26.4393 9.24399 26.542C9.35599 26.6447 9.48666 26.696 9.63599 26.696ZM7.39599 4.128H12.604C12.7533 4.128 12.8793 4.07667 12.982 3.974C13.0847 3.87134 13.136 3.74534 13.136 3.596C13.136 3.44667 13.0847 3.316 12.982 3.204C12.8793 3.092 12.7533 3.03601 12.604 3.03601H7.39599C7.24666 3.03601 7.12066 3.092 7.01799 3.204C6.91533 3.316 6.86399 3.44667 6.86399 3.596C6.86399 3.74534 6.91533 3.87134 7.01799 3.974C7.12066 4.07667 7.24666 4.128 7.39599 4.128Z" fill={useSvgColor()}/>
+</svg>
+                </div>
+                <Link className="text-[#202435] font-[400] text-[12px] cursor-pointer hover:text-primary duration-100" href={'/'}>Download the Bacola App to your Phone.</Link>
+            </li>
+        </ul>
+        {/*Trending Section*/}
+        <h2 className="max-w-full uppercase font-[600] text-[15px] text-[#202435]">Trending Search</h2>
+        <div className="max-w-full  flex mt-2 flex-col justify-between items-start gap-3 border border-[#E4E5EE] rounded-lg">
+            {/*Items*/}
+                <Link href={'/'}>
+                    <div className="flex justify-start items-center ">
+                            <Image src={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756252578/product_8_ulqvqt.png'} alt="image-" width={50} height={50} />
+                            {/*Content*/}
+                            <div className="flex flex-col justify-start gap-2 items-start py-4 ">
+                                <h5 className="font-[500] text-[13px]" style={{lineHeight:'18.2px'}}>USDA Choice Angus Beef Stew Meat</h5>
+                                {/*Price*/}
+                                <div className="flex justify-between items-center gap-2">
+                                    {/*Old Price*/}
+                                    <p className="font-[600] text-[#C2C2D3] text-[15.3px] line-through" style={{lineHeight:'22.95px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$79.99</p>
+                                    {/*Price*/}
+                                    <p className="font-[600] text-[#D51243] text-[18px]" style={{lineHeight:'27px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$49.99</p>
+                                </div>
+                            </div>
+                    </div>
+                </Link>
+                <Link href={'/'}>
+                    <div className="flex justify-start items-center ">
+                        <Image src={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} alt="image-" width={50} height={50} />
+                        {/*Content*/}
+                        <div className="flex flex-col justify-start gap-2 items-start py-4 ">
+                            <h5 className="font-[500] text-[13px]" style={{lineHeight:'18.2px'}}>Warrior Blend Organic</h5>
+                            {/*Price*/}
+                            <div className="flex justify-between items-center gap-2">
+                                {/*Old Price*/}
+                                <p className="font-[600] text-[#C2C2D3] text-[15.3px] line-through" style={{lineHeight:'22.95px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$39.00</p>
+                                {/*Price*/}
+                                <p className="font-[600] text-[#D51243] text-[18px]" style={{lineHeight:'27px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$29.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </Link>
+                <Link href={'/'}>
+                    <div className="flex justify-start items-center ">
+                        <Image src={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756246624/product_5_xrazt4.png'} alt="image-" width={50} height={50} />
+                        {/*Content*/}
+                        <div className="flex flex-col justify-start gap-2 items-start py-4 ">
+                            <h5 className="font-[500] text-[13px]" style={{lineHeight:'18.2px'}}>Encore Seafoods Stuffed Alaskan Salmon</h5>
+                            {/*Price*/}
+                            <div className="flex justify-between items-center gap-2">
+                                {/*Old Price*/}
+                                <p className="font-[600] text-[#C2C2D3] text-[15.3px] line-through" style={{lineHeight:'22.95px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$32.49</p>
+                                {/*Price*/}
+                                <p className="font-[600] text-[#D51243] text-[18px]" style={{lineHeight:'27px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$27.49</p>
+                            </div>
+                        </div>
+                    </div>
+                </Link>
+                <Link href={'/'}>
+                    <div className="flex justify-start items-center ">
+                        <Image src={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756246623/product_6_po8mfe.png'} alt="image-" width={50} height={50} />
+                        {/*Content*/}
+                        <div className="flex flex-col justify-start gap-2 items-start py-4 ">
+                            <h5 className="font-[500] text-[13px]" style={{lineHeight:'18.2px'}}>Vital Farms Pasture-Raised Egg Bites Bacon…</h5>
+                            {/*Price*/}
+                            <div className="flex justify-between items-center gap-2">
+                                {/*Old Price*/}
+                                <p className="font-[600] text-[#C2C2D3] text-[15.3px] line-through" style={{lineHeight:'22.95px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$29.00</p>
+                                {/*Price*/}
+                                <p className="font-[600] text-[#D51243] text-[18px]" style={{lineHeight:'27px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$25.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </Link>
+                <Link href={'/'}>
+                    <div className="flex justify-start items-center ">
+                        <Image src={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233984/product_4_t9jl7t.png'} alt="image-" width={50} height={50} />
+                        {/*Content*/}
+                        <div className="flex flex-col justify-start gap-2 items-start py-4 ">
+                            <h5 className="font-[500] text-[13px]" style={{lineHeight:'18.2px'}}>Field Roast Chao Cheese Creamy Original</h5>
+                            {/*Price*/}
+                            <div className="flex justify-between items-center gap-2">
+                                {/*Old Price*/}
+                                <p className="font-[600] text-[#C2C2D3] text-[15.3px] line-through" style={{lineHeight:'22.95px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$24.00</p>
+                                {/*Price*/}
+                                <p className="font-[600] text-[#D51243] text-[18px]" style={{lineHeight:'27px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$19.50</p>
+                            </div>
+                        </div>
+                    </div>
+                </Link>
+            
+        </div>
+    </div>
+  )
+}

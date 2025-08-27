@@ -64,7 +64,7 @@ export default function Hot_Products_Section() {
                <h2 className="font-[600] uppercase text-[#00B853] text-[11px]" style={{lineHeight:'16.5px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>In stock</h2>
                 {/*Progress*/}
                 <div className="w-[80%] h-3 bg-[#EDEEF5] rounded-2xl">
-                    <div style={{width:`${progress}%`}} className={`relative bg-gradient-to-r from-[#D51243] to-[#FFCD00] h-3 rounded-2xl`}>
+                    <div style={{width:`${progress}%`}} className={`relative duration-700 bg-gradient-to-r from-[#D51243] to-[#FFCD00] h-3 rounded-2xl`}>
                         <span className="progress_persentage absolute bg-gradient-to-r from-[#D51243] to-[#FFCD00]  -top-[35px] text-[12px] text-white -right-5 bg-primary px-2 py-1 rounded-sm animate-bounce">{progress.toFixed(0)}%</span>
                     </div>
                 </div>
