@@ -1,7 +1,7 @@
 
 export default function Banar_Section() {
   return (
-    <div className='w-full flex flex-col justify-center items-center gap-2 p-[40px] bg-no-repeat bg-cover' style={{backgroundImage:`url(https://res.cloudinary.com/dghqvxueq/image/upload/v1756307430/shope_n9bjrk.png)`}}>
+    <div className='w-full flex flex-col justify-center rounded-xl items-center gap-2 p-[40px] bg-no-repeat bg-cover' style={{backgroundImage:`url(https://res.cloudinary.com/dghqvxueq/image/upload/v1756307430/shope_n9bjrk.png)`}}>
         {/*Header*/}
         <h2 className="text-[#202435] text-[24px] font-[200]">Organic Meals Prepared</h2>
         {/*Title*/}
