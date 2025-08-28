@@ -8,9 +8,11 @@ import { BsHandbag,BsTwitterX } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
 import { PiShareFatThin } from "react-icons/pi";
 import { SlTag } from "react-icons/sl";
-import { FaPlus,FaMinus } from "react-icons/fa6";
+import { FaPlus,FaMinus,FaLocationDot } from "react-icons/fa6";
 import { IoLogoInstagram } from "react-icons/io";
+import { FiPhoneCall } from "react-icons/fi";
+import { MdOutlineLocalPostOffice } from "react-icons/md";
 
 export {BiSolidErrorAlt,HiOutlineHandRaised,TbError404,RiArrowLeftSLine,RiArrowRightSLine,FaWhatsapp,IoClose,BsHandbag,CiHeart
-,PiShareFatThin,SlTag,FaPlus,FaMinus,FaFacebookF,IoLogoInstagram,BsTwitterX,IoLogoReddit,FaPinterestP
+,PiShareFatThin,SlTag,FaPlus,FaMinus,FaFacebookF,IoLogoInstagram,BsTwitterX,IoLogoReddit,FaPinterestP,FaLocationDot,FiPhoneCall,MdOutlineLocalPostOffice
  }
