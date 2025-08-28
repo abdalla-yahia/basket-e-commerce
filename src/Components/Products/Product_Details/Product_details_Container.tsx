@@ -23,7 +23,7 @@ export default function Product_details_Container({slug="Rice-0"}:{slug:string})
         <div className="w-full bg-black/50  absolute top-8 left-0 h-full z-40 flex justify-center items-center">
         </div>
         {/*Product Details Container*/}
-        <div className="w-[70%] flex flex-col justify-start items-start h-fit px-4 py-2 bg-white absolute top-[50%] left-[50%] -translate-[50%] rounded opacity-100 z-50">
+        <div className="w-[70%] flex flex-col justify-start items-start h-fit p-4 bg-white absolute top-[50%] left-[50%] -translate-[50%] rounded opacity-100 z-50">
             {/*Close Button*/}
             <icon.IoClose className="text-[20px] font-bold absolute top-5 right-5 cursor-pointer duration-150 hover:scale-125" onClick={()=>CloseSectionHandller()} />
             {/*Product Details*/}

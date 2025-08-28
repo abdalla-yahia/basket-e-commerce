@@ -25,9 +25,9 @@ export default function Product_Content() {
         <div className="flex flex-col justify-start items-start gap-2">
             <span className="text-[#000000] opacity-70 text-[10px] font-[400] capitalize">available in:</span>
             <div className="flex justify-between items-start gap-2">
-                <span className="border border-[#E5E7EB] text-[#595959] p-1 rounded">small</span>
-                <span className="border border-[#E5E7EB] text-[#595959] p-1 rounded">medium</span>
-                <span className="border border-[#E5E7EB] text-[#595959] p-1 rounded">large</span>
+                <span className="border border-[#E5E7EB] text-[#595959] p-1 cursor-pointer rounded">small</span>
+                <span className="border border-[#E5E7EB] text-[#595959] p-1 cursor-pointer rounded">medium</span>
+                <span className="border border-[#E5E7EB] text-[#595959] p-1 cursor-pointer rounded">large</span>
             </div>
         </div>
         {/*Product Count*/}
@@ -51,12 +51,12 @@ export default function Product_Content() {
         {/*WishList And Share*/}
         <div className="w-full flex justify-between items-center gap-2">
             {/*Wishlist*/}
-            <button title="Add To Widhlist" className="rounded text-[10px] font-[600] border w-1/2 flex justify-center items-center gap-3 border-[#DEE5EA] p-1 ">
+            <button title="Add To Widhlist" className="rounded text-[10px] cursor-pointer font-[600] border w-1/2 flex justify-center items-center gap-3 border-[#DEE5EA] p-1 ">
                 <icon.CiHeart className="text-black text-[12px]"/>
                 Wishlist
             </button>
             {/*Share*/}
-            <button title="Share" className="rounded text-[10px] font-[600] border w-1/2 flex justify-center items-center gap-3 border-[#DEE5EA] p-1 ">
+            <button title="Share" className="rounded text-[10px] font-[600] cursor-pointer border w-1/2 flex justify-center items-center gap-3 border-[#DEE5EA] p-1 ">
                 <icon.PiShareFatThin className="text-black text-[12px]"/>
                 Share
             </button>
@@ -79,7 +79,14 @@ export default function Product_Content() {
             {/*Description*/}
             <h3 className="text-[#595959] text-[10px] font-[400]">Sugar, Unbleached Enriched Flour (Wheat Flour, Niacin, Reduced
                 Iron, Thiamine Mononitrate Vitamin B1
-                Calcium Phosphate), Cornstarch, Salt,...</h3>
+                Calcium Phosphate), Cornstarch, Salt,...
+                Sugar, Unbleached Enriched Flour (Wheat Flour, Niacin, Reduced
+                Iron, Thiamine Mononitrate Vitamin B1
+                Calcium Phosphate), Cornstarch, Salt,...
+                Sugar, Unbleached Enriched Flour (Wheat Flour, Niacin, Reduced
+                Iron, Thiamine Mononitrate Vitamin B1
+                Calcium Phosphate), Cornstarch, Salt,...
+                </h3>
         </div>
     </div>
   )
