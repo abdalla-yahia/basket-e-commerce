@@ -2,7 +2,7 @@ import * as icon from '@/Utils/Icons/Icons';
 
 export default function Contact_Container() {
   return (
-    <div className="w-[90%] flex flex-col justify-center items-center gap-8">
+    <div className="w-[90%] flex flex-col justify-center items-center gap-9">
         {/*Header*/}
         <div className="w-[50%] flex flex-col justify-center items-center text-center gap-5 ">
            <h1 className="text-[#202435] text-[40px] font-[400]" style={{lineHeight:'48px'}}>Get In Touch</h1>
@@ -11,17 +11,17 @@ export default function Contact_Container() {
         {/*Contact*/}
         <div className="w-full flex justify-between items-center gap-6">
             {/*Map Contact*/}
-            <div className='flex flex-col gap-3 justify-center p-7 rounded-2xl items-center bg-[#F3F3F6] border border-[#EDEEF5]'>
+            <div className='w-1/3 flex flex-col gap-9 justify-center p-7 rounded-2xl items-center bg-[#F3F3F6] border border-[#EDEEF5]'>
                 <icon.FaLocationDot className='text-primary text-[36px]'/>
                 <h2 className='text-[#202435] text-[15px] font-[500] '>102 Street 2714 Donovan</h2>
                 <p className='text-[#202435] text-[13px] font-[400] '>Lorem ipsum dolar site amet discont</p>
             </div>
-            <div className='flex flex-col gap-3 justify-center p-7 rounded-2xl items-center bg-[#F3F3F6] border border-[#EDEEF5]'>
+            <div className='w-1/3 flex flex-col gap-9 justify-center p-7 rounded-2xl items-center bg-[#F3F3F6] border border-[#EDEEF5]'>
                 <icon.FiPhoneCall className='text-primary text-[36px]'/>
                 <h2 className='text-[#202435] text-[15px] font-[500] '>+02 1234 567 88</h2>
                 <p className='text-[#202435] text-[13px] font-[400] '>Lorem ipsum dolar site amet discont</p>
             </div>
-            <div className='flex flex-col gap-3 justify-center p-7 rounded-2xl items-center bg-[#F3F3F6] border border-[#EDEEF5]'>
+            <div className='w-1/3 flex flex-col gap-9 justify-center p-7 rounded-2xl items-center bg-[#F3F3F6] border border-[#EDEEF5]'>
                 <icon.MdOutlineLocalPostOffice className='text-primary text-[36px]'/>
                 <h2 className='text-[#202435] text-[15px] font-[500] '>info@example.com</h2>
                 <p className='text-[#202435] text-[13px] font-[400] '>Lorem ipsum dolar site amet discont</p>
@@ -35,7 +35,7 @@ export default function Contact_Container() {
                 <h5 className='text-[14px] font-[400]' style={{lineHeight:'24px'}}>Contact us for all your questions and opinions, or you can solve your problems in a shorter time with our contact offices.</h5>
             </div>
             {/*Contact Form*/}
-            <form action="" className='w-[70%] flex flex-col justify-center items-center gap-5'>              
+            <form action="" className='w-[70%] flex flex-col justify-center py-8 items-center gap-5'>              
                 {/*Name & Email*/}
                 <div className='w-full flex justify-between items-center gap-5'>
                     {/*Name*/}
