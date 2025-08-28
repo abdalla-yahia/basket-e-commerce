@@ -12,7 +12,9 @@ import { FaPlus,FaMinus,FaLocationDot } from "react-icons/fa6";
 import { IoLogoInstagram } from "react-icons/io";
 import { FiPhoneCall } from "react-icons/fi";
 import { MdOutlineLocalPostOffice } from "react-icons/md";
+import { CiCreditCardOff } from "react-icons/ci";
 
 export {BiSolidErrorAlt,HiOutlineHandRaised,TbError404,RiArrowLeftSLine,RiArrowRightSLine,FaWhatsapp,IoClose,BsHandbag,CiHeart
-,PiShareFatThin,SlTag,FaPlus,FaMinus,FaFacebookF,IoLogoInstagram,BsTwitterX,IoLogoReddit,FaPinterestP,FaLocationDot,FiPhoneCall,MdOutlineLocalPostOffice
+,PiShareFatThin,SlTag,FaPlus,FaMinus,FaFacebookF,IoLogoInstagram,BsTwitterX,IoLogoReddit,FaPinterestP,FaLocationDot,FiPhoneCall,MdOutlineLocalPostOffice,
+CiCreditCardOff
  }
