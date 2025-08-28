@@ -1,7 +1,7 @@
 
 export default function Pagination() {
   return (
-    <div className="w-full flex justify-center items-center">
+    <div className="w-full flex justify-center items-center my-[20px]">
         <div className="w-[50%] flex justify-center items-center gap-2">
             {/*Next Button*/}
             <button>Next</button>

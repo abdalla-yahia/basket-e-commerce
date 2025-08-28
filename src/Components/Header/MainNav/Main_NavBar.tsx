@@ -13,6 +13,7 @@ export default function Main_NavBar() {
             <ul className="flex justify-center items-center gap-4">
                 <li className="hover:bg-[#F0FAFF] hover:text-[#35AFA0] cursor-pointer p-2 rounded-full">
                     <select name="" id="" onChange={(e) => setHref(e.target.value)}>
+                        <option disabled value="" selected>Change HomePage</option>
                         <option className=" capitalize" value="/">Home</option>
                         <option className=" capitalize" value="/about">Home-2</option>
                         <option className=" capitalize" value="/compare">Home-3</option>
@@ -73,10 +74,10 @@ export default function Main_NavBar() {
                     <Link className=" capitalize" href="/">Beverages</Link>
                 </li>
                 <li className="hover:bg-[#F0FAFF] hover:text-[#35AFA0] p-2 rounded-full">
-                    <Link className=" capitalize" href="/">Blog</Link>
+                    <Link className=" capitalize" href="/blog">Blog</Link>
                 </li>
                 <li className="hover:bg-[#F0FAFF] hover:text-[#35AFA0] p-2 rounded-full">
-                    <Link className=" capitalize" href="/">Contact</Link>
+                    <Link className=" capitalize" href="/contact">Contact</Link>
                 </li>
             </ul>
         </div>
