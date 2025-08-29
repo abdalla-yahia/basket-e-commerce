@@ -38,7 +38,7 @@ export const loggedUser = createAsyncThunk('auth/logged',async()=>{
         const data = await GetHook(`/api/auth/me`)
         return data;
     } catch (error) {
-        toast.warn(`No User Logged In Yet!!`)
+        toast.warn(`Attention: You are not logged in yet!`)
         return error
     }
 })
