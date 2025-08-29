@@ -1,79 +1,33 @@
 {
   "users": [
     {
-      "id": 0,
+      "id": 1,
       "title": "لوحة التحكم",
       "icon": "FaChartLine",
-      "href": "/users"
+      "href": "/users/dashboard"
     },
     {
-      "id": 1,
+      "id": 2,
       "title": "الملف الشخصي",
       "icon": "FaAddressCard",
       "href": "/users/personal-data"
     },
     {
-      "id": 2,
+      "id": 3,
       "title": "العناوين",
       "icon": "FaMapLocationDot",
       "href": "/users/addresses"
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "الطلبات",
       "icon": "MdDeliveryDining",
       "href": "/users/orders"
-    },
-    {
-      "id": 4,
-      "title": "المفضلة",
-      "icon": "FaRegGrinHearts",
-      "href": "/users/wishlist"
-    },
-    {
-      "id": 5,
-      "title": "تقييماتي",
-      "icon": "MdOutlineReviews",
-      "href": "/users/reviews"
-    },
-    {
-      "id": 6,
-      "title": "الإشعارات",
-      "icon": "IoIosNotificationsOutline",
-      "href": "/users/notifications"
-    },
-    {
-      "id": 7,
-      "title": "المحفظة أو الرصيد",
-      "icon": "GiWallet",
-      "href": "/users/wallet"
-    },
-    {
-      "id": 8,
-      "title": "الكوبونات",
-      "icon": "RiCoupon3Fill",
-      "href": "/users/coupons"
-    },
-    {
-      "id": 9,
-      "title": "إعدادات الحساب",
-      "icon": "CiSettings",
-      "href": "/users/settings"
-    },
-    {
-      "id": 10,
-      "title": "تسجيل الخروج",
-      "icon": "IoLogOutOutline",
-      "href": "/logout"
     }
+
   ],
   "admins": [
-    {
-      "id": 0,
-      "title": "الرئيسيه",
-      "icon": "FaChartLine",
-      "href": "/admins"
-    },
+
     {
       "id": 1,
       "title": "لوحة التحكم",
@@ -98,172 +52,50 @@
       "icon": "MdDeliveryDining",
       "href": "/admins/orders"
     },
+
     {
       "id": 5,
-      "title": "التقارير",
-      "icon": "HiOutlineChartBar",
-      "href": "/admins/reports"
-    },
-    {
-      "id": 6,
-      "title": "المالية",
-      "icon": "FaMoneyBillWave",
-      "href": "/admins/finance"
-    },
-    {
-      "id": 7,
       "title": "الكوبونات",
       "icon": "RiCoupon3Fill",
       "href": "/admins/coupons"
     },
     {
-      "id": 8,
+      "id": 6,
       "title": "إضافة منتج جديد",
       "icon": "MdAddBox",
       "href": "/admins/products/new"
     },
     {
-      "id": 9,
+      "id": 7,
       "title": "التصنيفات",
       "icon": "BiSolidCategory",
       "href": "/admins/categories/"
     },
     {
-      "id": 10,
+      "id": 8,
       "title": "إضافة تصنيف جديد",
       "icon": "TbCategoryPlus",
       "href": "/admins/categories/new"
     },
     {
-      "id": 11,
-      "title": " التصنيفات الفرعية",
-      "icon": "VscTypeHierarchySub",
-      "href": "/admins/categories/sub"
-    },
-
-    {
-      "id": 13,
+      "id": 9,
       "title": "البراندات",
       "icon": "SiBrandfolder",
       "href": "/admins/brands"
     },
     {
-      "id": 14,
+      "id": 10,
       "title": "إضافة براند جديد",
       "icon": "MdAddToQueue",
       "href": "/admins/brands/new"
     },
-    {
-      "id": 15,
-      "title": "الإعدادات العامة",
-      "icon": "CiSettings",
-      "href": "/admins/settings"
-    },
+
      {
-      "id": 16,
+      "id": 11,
       "title": "الملف الشخصي",
       "icon": "FaAddressCard",
       "href": "/admins/personal-data"
-    },
-    {
-      "id": 17,
-      "title": "تسجيل الخروج",
-      "icon": "IoLogOutOutline",
-      "href": "/logout"
     }
-  ],
-  "delivery": [
-     {
-      "id": 0,
-      "title": "لوحة التحكم",
-      "icon": "FaChartLine",
-      "href": "/drivers"
-    },
-    {
-      "id": 1,
-      "title": "الطلبات المستلمة",
-      "icon": "MdAssignment",
-      "href": "/drivers/orders"
-    },
-    {
-      "id": 2,
-      "title": "طلبات قيد التوصيل",
-      "icon": "MdLocalShipping",
-      "href": "/drivers/pending"
-    },
-    {
-      "id": 3,
-      "title": "طلبات تم تسليمها",
-      "icon": "MdDoneAll",
-      "href": "/drivers/delivered"
-    },
-    {
-      "id": 4,
-      "title": "الإشعارات",
-      "icon": "IoIosNotificationsOutline",
-      "href": "/drivers/notifications"
-    },
-     {
-      "id": 5,
-      "title": "الملف الشخصي",
-      "icon": "FaAddressCard",
-      "href": "/drivers/personal-data"
-    },
-    {
-      "id": 6,
-      "title": "تسجيل الخروج",
-      "icon": "IoLogOutOutline",
-      "href": "/logout"
-    }
-  ],
-  "stockkeepers": [
-    {
-      "id": 0,
-      "title": "لوحة التحكم",
-      "icon": "FaChartLine",
-      "href": "/stockkeepers"
-    },
-    {
-      "id": 1,
-      "title": "إدارة المخزون",
-      "icon": "MdInventory",
-      "href": "/stockkeepers/inventory"
-    },
-    {
-      "id": 2,
-      "title": "إضافة منتج جديد",
-      "icon": "MdAddBox",
-      "href": "/stockkeepers/add-product"
-    },
-    {
-      "id": 3,
-      "title": "تنبيهات النقص",
-      "icon": "MdWarningAmber",
-      "href": "/stockkeepers/low-stock-alerts"
-    },
-    {
-      "id": 4,
-      "title": "الإشعارات",
-      "icon": "IoIosNotificationsOutline",
-      "href": "/stockkeepers/notifications"
-    },
-    {
-      "id": 5,
-      "title": "التقارير",
-      "icon": "HiOutlineChartBar",
-      "href": "/stockkeepers/reports"
-    },
-     {
-      "id": 6,
-      "title": "الملف الشخصي",
-      "icon": "FaAddressCard",
-      "href": "/stockkeepers/personal-data"
-    },
-    {
-      "id": 7,
-      "title": "تسجيل الخروج",
-      "icon": "IoLogOutOutline",
-      "href": "/logout"
-    }
+
   ]
 }

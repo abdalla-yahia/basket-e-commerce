@@ -59,6 +59,7 @@ model Product {
   quantity    Int
   oldPrice    Float?
   image       String?
+  gallery     String[]
   brandId     String
   categoryId  String
   cartId      String?
