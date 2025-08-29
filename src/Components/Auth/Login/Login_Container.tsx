@@ -39,10 +39,10 @@ export default function Login_Container() {
         password:''
     }
     const [,ActionState] = useActionState(UserLogin,InitalState)
-    //Redirect User To Homepage After Login
-    if(LogedUser?.user?.name){
-        router?.replace('/')
-    }
+    // //Redirect User To Homepage After Login
+    // if(LogedUser?.user?.name){
+    //     router?.replace('/')
+    // }
   return ( 
     <div className='w-[50%] flex flex-col justify-center items-center'>
     {/*Main Title*/}

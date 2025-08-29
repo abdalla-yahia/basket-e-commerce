@@ -39,7 +39,7 @@ export async function POST(request:NextRequest){
             role:IsExistes.role,
             image:IsExistes?.image ?? '' 
         })
-        return NextResponse.json({message:'User Login Successfully',user:IsExistes},{
+        return NextResponse.json({message:'User Login Successfully',user:IsExistes,status:200},{
             headers:{
                 'Set-Cookie':token
             },

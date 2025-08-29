@@ -26,11 +26,15 @@ export default function Login_User() {
 
   // Go To Home Page After Login || Logout
   useEffect(() => {
-    if (LogedUser ) {
+    if (LogedUser?.status == 200) {
       router.replace("/")
     }
-  }, [LogedUser, router])
+    if (LogedUser?.status == 201) {
+      router.replace("/")
+      window.location.reload()
+    }
 
+  }, [LogedUser, router])
 
     return (
         <div className="login-icon cursor-pointer">
