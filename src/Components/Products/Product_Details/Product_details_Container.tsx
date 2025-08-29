@@ -1,5 +1,5 @@
 'use client'
-import { getProductById } from "@/Feature/Actions/ProductsActions"
+import { getProductBySlug } from "@/Feature/Actions/ProductsActions"
 import { RootState, useAppDispatch } from "@/libs/store"
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
@@ -11,7 +11,7 @@ export default function Product_details_Container({slug="Rice-0"}:{slug:string})
     const {product,error,loading} = useSelector((state:RootState)=>state.product)
     const dispatch = useAppDispatch()
     useEffect(()=>{
-        dispatch(getProductById(slug))
+        dispatch(getProductBySlug(slug))
     },[])
     //Close Button Handller
     const CloseSectionHandller =()=>{
