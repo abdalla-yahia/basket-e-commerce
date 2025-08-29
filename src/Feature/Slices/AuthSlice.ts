@@ -3,8 +3,7 @@ import {loginUser,logoutUser,loggedUser,forgetPassword,verifyCode,resetPassword}
 import { TokenInterFace } from '@/Interfaces/UserInterface';
 
 const initialState = {
-    LogedUser:{} as {user:TokenInterFace},
-    Logout:{} as {message:string,status:number},
+    LogedUser:{} as {user:TokenInterFace} | null,
     forget_Password:{} as {message:string,status:number},
     Verify_code:{} as {message:string,status:number},
     Reset_Password:{} as {message:string,status:number},
@@ -46,9 +45,9 @@ const AuthSlice = createSlice({
             state.loading = true
             state.error = null
         })
-        .addCase(logoutUser.fulfilled ,(state,action)=>{
+        .addCase(logoutUser.fulfilled ,(state)=>{
             state.loading = false
-            state.Logout = action.payload
+            state.LogedUser = null
         })
         .addCase(logoutUser.rejected ,(state,action)=>{
             state.loading = false

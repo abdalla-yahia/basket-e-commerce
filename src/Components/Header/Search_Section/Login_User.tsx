@@ -9,37 +9,29 @@ import { useSelector } from 'react-redux';
 import { useRouter } from 'next/navigation';
 
 export default function Login_User() {
-    const {LogedUser} = useSelector((state:RootState)=>state.auth)
-    const {Logout} = useSelector((state:RootState)=>state.auth)
-    const dispatch = useAppDispatch()
-    const router= useRouter()
-    //Get Logged in User After Loading Page
-    useEffect(()=>{
-        dispatch(loggedUser())
-    },[])
+ const { LogedUser } = useSelector((state: RootState) => state.auth)
+  const dispatch = useAppDispatch()
+  const router = useRouter()
 
-    //Logout User Handller
-    const LogoutUserHandller =()=>{
-        dispatch(logoutUser())
+  // Get Logged in User After Loading Page
+  useEffect(() => {
+    dispatch(loggedUser())
+  }, [dispatch])
+
+  // Logout handler
+  const LogoutUserHandler = async () => {
+    await dispatch(logoutUser()).unwrap()
+    router.replace("/") // من غير Reload
+  }
+
+  // Go To Home Page After Login || Logout
+  useEffect(() => {
+    if (LogedUser ) {
+      router.replace("/")
     }
-    
-    //Go To Home Page After Login && Logout
-    useEffect(()=>{
-        if(LogedUser){
-            router.replace('/')
-            window.location.reload()            
-        }
+  }, [LogedUser, router])
 
-    },[LogedUser,router])
-    //Go To Home Page After Login && Logout
-    useEffect(()=>{
-        if(Logout?.status === 200){
-            router.replace('/')  
-            window.location.reload()
-        }
-    },[router,Logout])
 
-console.log(Logout)
     return (
         <div className="login-icon cursor-pointer">
             {/*Icon*/}
@@ -50,7 +42,7 @@ console.log(Logout)
                     <div className='flex flex-col justify-center items-center'>
                         <Image src={LogedUser?.user?.image || 'https://static.vecteezy.com/system/resources/previews/060/423/145/non_2x/business-avatar-icon-with-a-simple-clean-design-featuring-a-man-in-a-suit-suitable-for-online-profiles-or-websites-free-png.png'} alt='user-image' width={50} height={50}/>
                         <span>{LogedUser?.user?.name.split(' ')[0]}</span>
-                        <button onClick={()=>LogoutUserHandller()}  className='p-1 bg-primary text-white rounded cursor-pointer'>Logout</button>
+                        <button onClick={()=>LogoutUserHandler()}  className='p-1 bg-primary text-white rounded cursor-pointer'>Logout</button>
 
                     </div>
                     <Link className='flex flex-col justify-center items-center gap-1' href={LogedUser?.user?.role === 'ADMIN'?'/dashboard/admins':'/dashboard/users'}>
