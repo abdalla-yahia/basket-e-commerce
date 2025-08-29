@@ -4,7 +4,7 @@ export default function Customer_Comments_Container() {
   return (
     <section className="w-[90%]  flex justify-between items-start mt-5 gap-5">
         {/*Aside Comment Section*/}
-        <div className="w-[20%] ">
+        <aside className="w-[20%] ">
             {/*Section Title*/}
            <h2 className="max-w-full uppercase font-[600] text-[15px] text-[#202435]">Customer Comment</h2>
             {/*Content*/}
@@ -20,7 +20,7 @@ export default function Customer_Comments_Container() {
                     </div>
                 </div>
             </div>
-        </div> 
+        </aside> 
         {/*Products Advertising*/}
         <div className="w-[75%] flex justify-between items-end h-full gap-5 pt-[27px]">
             {/*Advertising Product Card*/}

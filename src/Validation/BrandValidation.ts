@@ -3,6 +3,7 @@ import {z} from 'zod';
 //Create A new Brand
 export const CreateBrandValidation = z.object({
     title:z.string().min(3,'Name Must Greater Than 3 leeters'),
+    discription:z.string().min(5).optional(),
     image:z.string().optional()
 })
 

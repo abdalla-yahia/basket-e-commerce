@@ -1,7 +1,7 @@
-import React from 'react'
+import Add_New_Product_Container from "@/Components/Dashboards/Admins/Add-Product/Add_New_Product_Container";
 
 export default function Add_New_Product_Page() {
   return (
-    <div>Add_New_Product_Page</div>
+    <Add_New_Product_Container />
   )
 }

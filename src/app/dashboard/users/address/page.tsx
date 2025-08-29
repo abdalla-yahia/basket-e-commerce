@@ -1,7 +1,7 @@
-import React from 'react'
+import Address_Container from '@/Components/Dashboards/Users/Address/Address_Container'
 
 export default function Address_Page() {
   return (
-    <div>Address_Page</div>
+    <Address_Container />
   )
 }

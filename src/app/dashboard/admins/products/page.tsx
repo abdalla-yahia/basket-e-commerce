@@ -1,7 +1,7 @@
-import React from 'react'
+import Products_Container from '@/Components/Dashboards/Admins/Products/Products_Container'
 
 export default function Products_Page() {
   return (
-    <div>Products_Page</div>
+    <Products_Container />
   )
 }

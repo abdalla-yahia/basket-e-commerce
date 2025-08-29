@@ -7,9 +7,9 @@ export default function Shop_Container() {
         {/*Container*/}
         <div className="w-[90%] flex justify-between items center gap-5">
             {/*Aside Filter*/}
-            <div className="w-[20%]">
+            <aside className="w-[20%]">
                 <Aside_Continer />
-            </div>
+            </aside>
             {/*Section Body*/}
             <div className="w-[75%]">
                 <Products_Container />

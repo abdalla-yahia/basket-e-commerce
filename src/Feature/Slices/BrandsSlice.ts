@@ -1,16 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
-  getAllBrand,
+  getAllBrands,
   getBrandById,
   createBrand,
   updateBrand,
   deleteBrand,
 } from "../Actions/BrandsActions";
-import { CreateBrand } from "@/Interfaces/BrandInterface";
+import { CreateBrand, UpdateBrand } from "@/Interfaces/BrandInterface";
 
 const initialState = {
-  AllBrands: [],
-  brand: {} as {brand:CreateBrand},
+  AllBrands: { brands: [] as UpdateBrand[] }, // مصفوفة فاضية من البراندات
+  brand: null as CreateBrand | null,  
   loading: false,
   error: null as string | null,
 };
@@ -21,15 +21,15 @@ const BrandSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getAllBrand.pending, (state) => {
+      .addCase(getAllBrands.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(getAllBrand.fulfilled, (state, action) => {
+      .addCase(getAllBrands.fulfilled, (state, action) => {
         state.AllBrands = action.payload;
         state.loading = false;
       })
-      .addCase(getAllBrand.rejected, (state, action) => {
+      .addCase(getAllBrands.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       })

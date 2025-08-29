@@ -1,7 +1,7 @@
-import React from 'react'
+import Categories_Container from '@/Components/Dashboards/Admins/Categories/Categories_Container'
 
 export default function Categories_Page() {
   return (
-    <div>Categories_Page</div>
+    <Categories_Container />
   )
 }

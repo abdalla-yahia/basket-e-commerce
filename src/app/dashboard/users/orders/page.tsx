@@ -1,7 +1,7 @@
-import React from 'react'
+import Orders_Container from '@/Components/Dashboards/Users/Orders/Orders_Container'
 
 export default function Orders_Page() {
   return (
-    <div>Orders_Page</div>
+    <Orders_Container />
   )
 }

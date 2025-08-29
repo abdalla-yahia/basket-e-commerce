@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Image_Section({img,header,title,description,text,price,href}:{img:string,header:string,title:string,description:string,text:string,price:string,href?:string}) {
   return (
-    <div className="w-[20%] h-[400px] pt-[40px] pl-[40px] rounded-[7px] bg-cover bg-top-right bg-no-repeat bg-green-500" style={{backgroundImage:`url(${img})`}}>
+    <aside className="w-[20%] h-[400px] pt-[40px] pl-[40px] rounded-[7px] bg-cover bg-top-right bg-no-repeat bg-green-500" style={{backgroundImage:`url(${img})`}}>
         {/*Content*/}
         <div className="flex flex-col justify-center items-start gap-3">
             <p className="text-[#FFFFFF] text-[13px] font-[400]" style={{lineHeight:'19.5px'}}>{header}</p>
@@ -15,6 +15,6 @@ export default function Image_Section({img,header,title,description,text,price,h
              &rarr; 
              </button>}
         </div>
-    </div>
+    </aside>
   )
 }

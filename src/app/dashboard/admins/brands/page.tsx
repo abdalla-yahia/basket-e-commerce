@@ -1,7 +1,7 @@
-import React from 'react'
+import Brands_Container from '@/Components/Dashboards/Admins/Brands/Brands_Container'
 
 export default function Brands_Page() {
   return (
-    <div>Brands_Page</div>
+    <Brands_Container />
   )
 }

@@ -1,11 +1,14 @@
 export interface CreateProduct {
     title:string
-    slug:string 
+    slug?:string 
     description?:string
     price:number
-    quantity:number
+    quantity:number 
     oldPrice?:number
-    image?:string
+    image?:string,
+    categoryId:string
+    brandId:string
+    gallery?:string[]
 }
 export interface UpdateProduct {
     id:string

@@ -120,7 +120,7 @@ export default function Register_Container() {
             ) 
             
             :'Save'}
-            </button>
+        </button>
     </form>
     {/* Account Links */}
         <div className="flex flex-col w-[70%] my-[15px] gap-3">

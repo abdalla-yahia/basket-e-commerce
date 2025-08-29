@@ -26,17 +26,20 @@ export const getProductBySlug = createAsyncThunk('products/getbyid',async(slug:s
 })
 
 //Create Product
-export const createProduct = createAsyncThunk('products/create',async(ProductData:CreateProduct)=>{
+export const createProduct = createAsyncThunk('products/create',async(ProductData:CreateProduct, { rejectWithValue })=>{
     try {
         const data = await PostHook(`/api/products`, ProductData)
         if(data){
-            toast.success(`Create Product ${data?.Product?.name} Successfully`)
+            toast.success(`Create Product ${data?.product?.name} Successfully`)
         }
         return data;
-    } catch (error) {
-        toast.error(`Create Anew Product Faild `)
-        return error
+        } catch (error) {
+      const message = "Create a new product failed";
+      toast.error(message);
+      return rejectWithValue(message);
     }
+  
+
 })
 //Update Product 
 export const updateProduct = createAsyncThunk('products/update',async(ProductData:UpdateProduct)=>{

@@ -90,6 +90,7 @@ model Category {
 model Brand {
   id       String   @id @default(uuid())
   title    String
+  description String?
   image    String?
   products Product[]
 }

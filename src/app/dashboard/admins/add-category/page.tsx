@@ -1,7 +1,7 @@
-import React from 'react'
+import Add_New_Category_Container from "@/Components/Dashboards/Admins/Add-Category/Add_New_Category_Container";
 
 export default function Add_New_Category_Page() {
   return (
-    <div>Add_New_Category_Page</div>
+    <Add_New_Category_Container/>
   )
 }

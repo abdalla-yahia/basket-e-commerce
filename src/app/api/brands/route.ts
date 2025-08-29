@@ -14,7 +14,7 @@ import { CreateBrandValidation } from "@/Validation/BrandValidation";
 
 export async function GET(){
     try {
-        const brands = await prisma.category.findMany()
+        const brands = await prisma.brand.findMany()
         return NextResponse.json({message:'Get All Brands Successfully',brands},{status:200})
     } catch (error) {
         return NextResponse.json({message:'Faild To Get All Brands',error},{status:500})

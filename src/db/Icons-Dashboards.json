@@ -2,27 +2,27 @@
   "users": [
     {
       "id": 1,
-      "title": "لوحة التحكم",
+      "title": "Dashboard",
       "icon": "FaChartLine",
-      "href": "/users/dashboard"
+      "href": "/dashboard/users"
     },
     {
       "id": 2,
-      "title": "الملف الشخصي",
+      "title": "Setting",
       "icon": "FaAddressCard",
-      "href": "/users/personal-data"
+      "href": "/dashboard/users/personal-data"
     },
     {
       "id": 3,
-      "title": "العناوين",
+      "title": "Address",
       "icon": "FaMapLocationDot",
-      "href": "/users/addresses"
+      "href": "/dashboard/users/addresses"
     },
     {
       "id": 4,
-      "title": "الطلبات",
+      "title": "Orders",
       "icon": "MdDeliveryDining",
-      "href": "/users/orders"
+      "href": "/dashboard/users/orders"
     }
 
   ],
@@ -30,71 +30,71 @@
 
     {
       "id": 1,
-      "title": "لوحة التحكم",
+      "title": "Dashboard",
       "icon": "MdDashboard",
-      "href": "/admins/dashboard"
+      "href": "/dashboard/admins"
     },
     {
       "id": 2,
-      "title": "المستخدمين",
+      "title": "Users",
       "icon": "FaUsers",
-      "href": "/admins/users"
+      "href": "/dashboard/admins/dashboard/users"
     },
     {
       "id": 3,
-      "title": "المنتجات",
+      "title": "Products",
       "icon": "MdInventory2",
-      "href": "/admins/products"
+      "href": "/dashboard/admins/products"
     },
     {
       "id": 4,
-      "title": "الطلبات",
+      "title": "Orders",
       "icon": "MdDeliveryDining",
-      "href": "/admins/orders"
+      "href": "/dashboard/admins/orders"
     },
 
     {
       "id": 5,
-      "title": "الكوبونات",
+      "title": "Coupons",
       "icon": "RiCoupon3Fill",
-      "href": "/admins/coupons"
+      "href": "/dashboard/admins/coupons"
     },
     {
       "id": 6,
-      "title": "إضافة منتج جديد",
+      "title": "Add New Product",
       "icon": "MdAddBox",
-      "href": "/admins/products/new"
+      "href": "/dashboard/admins/add-product"
     },
     {
       "id": 7,
-      "title": "التصنيفات",
+      "title": "Categories",
       "icon": "BiSolidCategory",
-      "href": "/admins/categories/"
+      "href": "/dashboard/admins/categories"
     },
     {
       "id": 8,
-      "title": "إضافة تصنيف جديد",
+      "title": "Add New Category",
       "icon": "TbCategoryPlus",
-      "href": "/admins/categories/new"
+      "href": "/dashboard/admins/add-category"
     },
     {
       "id": 9,
-      "title": "البراندات",
+      "title": "Brands",
       "icon": "SiBrandfolder",
-      "href": "/admins/brands"
+      "href": "/dashboard/admins/brands"
     },
     {
       "id": 10,
-      "title": "إضافة براند جديد",
+      "title": "Add New Brand",
       "icon": "MdAddToQueue",
-      "href": "/admins/brands/new"
+      "href": "/dashboard/admins/add-brand"
     },
 
      {
       "id": 11,
-      "title": "الملف الشخصي",
+      "title": "Setting",
       "icon": "FaAddressCard",
-      "href": "/admins/personal-data"
+      "href": "/dashboard/admins/personal-data"
     }
 
   ]

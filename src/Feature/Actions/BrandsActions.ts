@@ -4,9 +4,9 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
 //Get All brands
-export const getAllBrand = createAsyncThunk('brands/getAll',async()=>{
+export const getAllBrands = createAsyncThunk('brands/getAll',async()=>{
     try {
-        const res = GetHook('api/brands')
+        const res = GetHook('/api/brands')
         return res;
     } catch (error) {
         toast.error(`Error ${error}`)

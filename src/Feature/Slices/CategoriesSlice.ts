@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
-  getAllCategory,
+  getAllCategories,
   getCategoryById,
   createCategory,
   updateCategory,
@@ -9,7 +9,7 @@ import {
 import { CreateCategory } from "@/Interfaces/CategoryInterface";
 
 const initialState = {
-  AllCategories: [],
+  AllCategories: {categories:[]},
   category: {} as {category:CreateCategory},
   loading: false,
   error: null as string | null,
@@ -21,15 +21,15 @@ const CategorySlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getAllCategory.pending, (state) => {
+      .addCase(getAllCategories.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(getAllCategory.fulfilled, (state, action) => {
+      .addCase(getAllCategories.fulfilled, (state, action) => {
         state.AllCategories = action.payload;
         state.loading = false;
       })
-      .addCase(getAllCategory.rejected, (state, action) => {
+      .addCase(getAllCategories.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       })

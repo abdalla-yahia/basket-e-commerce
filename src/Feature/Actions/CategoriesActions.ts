@@ -4,9 +4,9 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
 //Get All categories
-export const getAllCategory = createAsyncThunk('categories/getAll',async()=>{
+export const getAllCategories = createAsyncThunk('categories/getAll',async()=>{
     try {
-        const res = GetHook('api/categories')
+        const res = GetHook('/api/categories')
         return res;
     } catch (error) {
         toast.error(`Error To Get All categories`)
