@@ -1,6 +1,8 @@
+import Link from "next/link"
 
 export default function Logo() {
   return (
+    <Link href='/' >
     <div className="flex flex-col justify-center items-center">
         {/*Logo And Basket*/}
     <div className="flex justify-center items-center">
@@ -27,5 +29,6 @@ export default function Logo() {
             Online Grocery Shopping Center
         </p>
     </div>
+    </Link>
   )
 }

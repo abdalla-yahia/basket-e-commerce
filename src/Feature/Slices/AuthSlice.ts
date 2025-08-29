@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {loginUser,logoutUser,loggedUser,forgetPassword,verifyCode,resetPassword} from '../Actions/AuthActions';
-import { CreateUser, TokenInterFace } from '@/Interfaces/UserInterface';
+import { TokenInterFace } from '@/Interfaces/UserInterface';
 
 const initialState = {
     LogedUser:{} as {user:TokenInterFace},
-    Logout:{} as {user:CreateUser},
+    Logout:{} as {message:string,status:number},
     forget_Password:{} as {message:string,status:number},
     Verify_code:{} as {message:string,status:number},
     Reset_Password:{} as {message:string,status:number},

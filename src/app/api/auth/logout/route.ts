@@ -19,7 +19,7 @@ export async function POST(request:NextRequest){
 
         // Delete Token From Header
          (await cookies()).delete('authToken')
-        return NextResponse.json({message:'User Logout Successfully'},{
+        return NextResponse.json({message:'User Logout Successfully',status:200},{
             headers:{
                 'Set-Cookie':'authToken='
             },
