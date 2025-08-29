@@ -26,14 +26,16 @@ export default function Login_User() {
     //Go To Home Page After Login && Logout
     useEffect(()=>{
         if(LogedUser){
-            router.replace('/')      
+            router.replace('/')
+            window.location.reload()            
         }
 
     },[LogedUser,router])
     //Go To Home Page After Login && Logout
     useEffect(()=>{
-        if(Logout?.status === +200){
-            router.replace('/login')      
+        if(Logout?.status === 200){
+            router.replace('/')  
+            window.location.reload()
         }
     },[router,Logout])
 
