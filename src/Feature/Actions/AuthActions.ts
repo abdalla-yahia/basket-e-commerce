@@ -1,23 +1,90 @@
-import { PostHook } from "@/Base/Hooks";
+import { GetHook, PostHook } from "@/Base/Hooks";
+import { ForgetPassword, ResetPassword, UserLogineInterface, VerifyCode } from "@/Interfaces/UserInterface";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
 // Logein User
-export const loginUser = createAsyncThunk('users/login',async(loginData)=>{
+export const loginUser = createAsyncThunk('auth/login',async(loginData:UserLogineInterface)=>{
     try {
-        const {data} = await PostHook(`/api/auth/login`,{data:loginData})
+        const data = await PostHook(`/api/auth/login`,loginData)
+        if(data){
+            toast.success(`User ${data?.user?.name} logged in successfully
+`)
+        }
         return data;
     } catch (error) {
-        toast.error(`Faild To Login ${error}`)
+        toast.error(`Failed to log in user`)
+        return error
     }
 })
 
 // Logout User
-export const logoutUser = createAsyncThunk('users/logout',async()=>{
+export const logoutUser = createAsyncThunk('auth/logout',async()=>{
     try {
-        const {data}= await PostHook('/api/auth/logout')
-            return data
+        const data= await PostHook('/api/auth/logout')
+        if(data){
+            toast.success(data?.message)
+        }
+        return data
     } catch (error) {
-        toast.error(`Faild To Logout ${error}`)
+        toast.error(`Faild To Logout`)
+        return error
+    }
+})
+
+// Get Logged User
+export const loggedUser = createAsyncThunk('auth/logged',async()=>{
+    try {
+        const data = await GetHook(`/api/auth/me`)
+        return data;
+    } catch (error) {
+        toast.warn(`No User Logged In Yet!!`)
+        return error
+    }
+})
+
+//Forget Password
+export const forgetPassword  = createAsyncThunk('auth/forget-password',async(email:ForgetPassword)=>{
+    try{
+            const data = await PostHook(`/api/auth/forget-password`,email)
+            if(data){
+                toast.success(data?.message)
+            }
+            return data;
+    }catch(error){
+        toast.error('Faild To Use This Email')
+        return error
+    }
+})
+
+
+//Verify Code
+
+export const verifyCode = createAsyncThunk('auth/verify-code',async(Code:VerifyCode)=>{
+    try{
+            const data = await PostHook(`/api/auth/verify-code`,Code)
+            if(data){
+                toast.success(data?.message)
+            }
+
+            return data;
+    }catch(error:unknown){
+        toast.error('Faild To Use This Code')
+        return error
+    }
+})
+
+//Reset Password
+
+export const resetPassword = createAsyncThunk('auth/reset-password',async(Password:ResetPassword)=>{
+    try{
+            const data = await PostHook(`/api/auth/reset-password`,Password)
+            if(data){
+                toast.success(data?.message)
+            }
+            return data;
+    }catch(error){
+        toast.error('Faild To Reset Password')
+        return error
     }
 })

@@ -53,26 +53,32 @@ export async function POST(request:NextRequest){
         })
         //Set Email On Header
         const SecretKey = process.env.JWT_SECRET_KEY as string
-        const token = jwt.sign(email,SecretKey,{expiresIn:60 * 60 * 24 * 30})
+        const token = jwt.sign({email},SecretKey,{expiresIn:60 * 60 * 24 * 30})
         const cookieOptions = {
                         maxAge:  30 * 24 * 60 * 60,
-                        httpOnly: false,
+                        httpOnly: true,
                         secure:process.env.NODE_ENV === 'production' && true,
                         path:'/',
                     }
         const cookie = serialize('userEmail',token,cookieOptions)
-        //Update Password Reset Code With Hashed Code
-        await prisma.user.update({
-            where:{email:email}
-                ,
-            data:{
-                passwordresetCode: hashCode,
-                passwordExpire: new Date(Date.now() + 10 * 60 * 1000),
-                passwordVirify: true,
+            try {
+                
+                //Update Password Reset Code With Hashed Code
+                await prisma?.user?.update({
+                    where:{email:email}
+                        ,
+                    data:{
+                        passwordresetCode: hashCode,
+                        passwordExpire: (new Date(Date.now() + 10 * 60 * 1000)),
+                        passwordVirify: true,
+                    }
+                }
+                )
+            } catch (error) {
+                return NextResponse.json({message:'Faild To Update This User',error},{status:500})
+
             }
-        }
-        )
-        return NextResponse.json({message:'Send Code To Email Successfully'},{
+        return NextResponse.json({message:'Send Code To Email Successfully',status:200},{
             headers:{
                 'Set-Cookie':cookie
             },

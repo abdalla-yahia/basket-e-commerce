@@ -36,9 +36,10 @@ export async function POST(request:NextRequest){
         const token = SetCookies({
             id:IsExistes?.id,
             name:IsExistes?.name,
-            role:IsExistes.role
+            role:IsExistes.role,
+            image:IsExistes?.image ?? '' 
         })
-        return NextResponse.json({message:'User Login Successfully'},{
+        return NextResponse.json({message:'User Login Successfully',user:IsExistes},{
             headers:{
                 'Set-Cookie':token
             },

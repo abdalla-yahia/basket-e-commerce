@@ -1,5 +1,5 @@
 
-
+import { cookies } from "next/headers";
 /**
  * @access Loged User
  * @method POST
@@ -9,15 +9,16 @@
 
 import { NextRequest, NextResponse } from "next/server";
 
-export function POST(request:NextRequest){
+export async function POST(request:NextRequest){
     try {
         //Check If User Loged In
         const cookie =  request.cookies.get('authToken')
         if(!cookie){
             return NextResponse.json({message:'User Not Login'},{status:401})
         }
+
         // Delete Token From Header
-        request.cookies.delete('authToken')
+         (await cookies()).delete('authToken')
         return NextResponse.json({message:'User Logout Successfully'},{
             headers:{
                 'Set-Cookie':'authToken='

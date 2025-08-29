@@ -1,6 +1,6 @@
-import Main_Nav_Container from './MainNav/Main_Nav_Container';
-import SubNav_Container from './SubNav/SubNav_Container';
-import SearchBar_Container from './SearchBar/SearchBar_Container';
+import Main_Nav_Container from './Main_Nav_Section/Main_Nav_Container';
+import SubNav_Container from './Sub_Nav_Section/SubNav_Container';
+import SearchBar_Container from './Search_Section/SearchBar_Container';
 
 export default function Header() {
   return (

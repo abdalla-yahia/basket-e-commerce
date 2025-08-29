@@ -1,67 +1,86 @@
-import { createSlice } from '@reduxjs/toolkit';
-import {getAllOrder,getOrderById,updateOrder,deleteOrder} from '../Actions/OrdersActions';
+import { createSlice } from "@reduxjs/toolkit";
+import {
+  getAllOrder,
+  getOrderById,
+  createOrder,
+  updateOrder,
+  deleteOrder,
+} from "../Actions/OrdersActions";
+import { CreateOrder } from "@/Interfaces/OrderInterface";
 
 const initialState = {
-    AllOrders :[],
-    order:{},
-    loading:false,
-    error:null as string | null
-}
+  AllOrders: [],
+  order: {} as {order:CreateOrder},
+  loading: false,
+  error: null as string | null,
+};
 
 const OrderSlice = createSlice({
-    name:'orders',
-    initialState,
-    reducers:{},
-    extraReducers:(builder)=>{
-        builder
-        .addCase(getAllOrder.pending,state=>{
-            state.loading = true
-            state.error = null
-        })
-        .addCase(getAllOrder.fulfilled ,(state,action)=>{
-            state.AllOrders = action.payload?.data ?? []
-            state.loading = false
-        })
-        .addCase(getAllOrder.rejected ,(state,action)=>{
-            state.loading = false
-            state.error = action.payload as string
-        })
-        .addCase(getOrderById.pending,state=>{
-            state.loading = true
-            state.error = null
-        })
-        .addCase(getOrderById.fulfilled ,(state,action)=>{
-            state.order = action.payload
-            state.loading = false
-        })
-        .addCase(getOrderById.rejected ,(state,action)=>{
-            state.loading = false
-            state.error = action.payload as string
-        })
-        .addCase(updateOrder.pending,state=>{
-            state.loading = true
-            state.error = null
-        })
-        .addCase(updateOrder.fulfilled ,(state,action)=>{
-            state.order = action.payload
-            state.loading = false
-        })
-        .addCase(updateOrder.rejected ,(state,action)=>{
-            state.loading = false
-            state.error = action.payload as string
-        })
-        .addCase(deleteOrder.pending,state=>{
-            state.loading = true
-            state.error = null
-        })
-        .addCase(deleteOrder.fulfilled ,(state)=>{
-            state.loading = false
-        })
-        .addCase(deleteOrder.rejected ,(state,action)=>{
-            state.loading = false
-            state.error = action.payload as string
-        })
-    }
-})
+  name: "orders",
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(getAllOrder.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getAllOrder.fulfilled, (state, action) => {
+        state.AllOrders = action.payload;
+        state.loading = false;
+      })
+      .addCase(getAllOrder.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(getOrderById.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getOrderById.fulfilled, (state, action) => {
+        state.order = action.payload;
+        state.loading = false;
+      })
+      .addCase(getOrderById.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(createOrder.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(createOrder.fulfilled, (state, action) => {
+        state.order = action.payload;
+        state.loading = false;
+      })
+      .addCase(createOrder.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(updateOrder.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(updateOrder.fulfilled, (state, action) => {
+        state.order = action.payload;
+        state.loading = false;
+      })
+      .addCase(updateOrder.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(deleteOrder.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(deleteOrder.fulfilled, (state) => {
+        state.loading = false;
+      })
+      .addCase(deleteOrder.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      });
+  },
+});
 
-export default OrderSlice.reducer
+export default OrderSlice.reducer;

@@ -71,7 +71,8 @@ export async function POST(request:NextRequest,{params}:{params:Promise<{id:stri
         const token = SetCookies({
             id:user?.id,
             name:user?.name,
-            role:user?.role
+            role:user?.role,
+            image:user?.image ?? ''
         })
         return NextResponse.json({message:'Update User Successfully',user},{
             headers:{

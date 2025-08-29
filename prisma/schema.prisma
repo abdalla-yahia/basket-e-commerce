@@ -20,6 +20,7 @@ model User {
   password    String
   email       String     @unique
   address     String?
+  image       String?
   gender      Gender?
   role        Role       @default(USER)
   orders      Orders[]

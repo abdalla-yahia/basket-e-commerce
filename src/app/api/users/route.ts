@@ -56,20 +56,22 @@ export async function POST(request:NextRequest){
             data:Validation?.data
         })
         // Set Cookies On Header
-        const token = SetCookies({
-            id:user?.id,
-            name:user?.name,
-            role:user?.role
-        })
+        // const token = SetCookies({
+        //     id:user?.id,
+        //     name:user?.name,
+        //     role:user?.role,
+        //     image:user?.image ?? '',
+        // })
         return NextResponse.json({
             message:'Create Anew User Successfully',        
             user
         },
         {   
             status:201,
-            headers:{
-            'Set-Cookie':token
-        }}
+        //     headers:{
+        //     'Set-Cookie':token
+        // }
+    }
     )
     } catch (error) {
         return NextResponse.json({message:'Faild To Create A New User!!',error})
