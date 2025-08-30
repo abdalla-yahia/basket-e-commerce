@@ -7,11 +7,13 @@ import OrderSlice from '@/Feature/Slices/OrdersSlice';
 import CartSlice from '@/Feature/Slices/CartsSlice';
 import CategorySlice from '@/Feature/Slices/CategoriesSlice';
 import AuthSlice from '@/Feature/Slices/AuthSlice';
+import AddresseSlice from '@/Feature/Slices/AddressesSlice';
 
 export const makeStore = () =>
   configureStore({
     reducer: {
         user:UserSlice,
+        addresses:AddresseSlice,
         product:ProductSlice,
         brand:BrandSlice,
         order:OrderSlice,

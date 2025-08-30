@@ -7,12 +7,6 @@
       "href": "/dashboard/users"
     },
     {
-      "id": 2,
-      "title": "Setting",
-      "icon": "FaAddressCard",
-      "href": "/dashboard/users/personal-data"
-    },
-    {
       "id": 3,
       "title": "Address",
       "icon": "FaMapLocationDot",
@@ -23,6 +17,12 @@
       "title": "Orders",
       "icon": "MdDeliveryDining",
       "href": "/dashboard/users/orders"
+    },
+    {
+      "id": 2,
+      "title": "Setting",
+      "icon": "FaAddressCard",
+      "href": "/dashboard/users/personal-data"
     }
 
   ],

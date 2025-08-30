@@ -7,6 +7,7 @@ import { useAppDispatch } from '@/libs/store';
 import { UpdateUser } from '@/Interfaces/UserInterface';
 import { deleteUser } from '@/Feature/Actions/UsersActions';
 import { useState } from 'react';
+import { UpdateOrder } from '@/Interfaces/OrderInterface';
 
 export default function User_Content({User}:{User:UpdateUser}) {
       const [isToggle,setIsToggle] = useState(false)
@@ -49,7 +50,23 @@ export default function User_Content({User}:{User:UpdateUser}) {
         <td className="p-2 border border-[#E4E5EE]">{User?.phone}</td>
         <td className="p-2 border border-[#E4E5EE]">{User?.address}</td>
         <td className="p-2 border border-[#E4E5EE]">{User?.role}</td>
-        <td className="p-2 border border-[#E4E5EE]">{User?.orders}</td>
+        <td className="p-2 border border-[#E4E5EE]">
+          {User?.orders?.map((order:UpdateOrder)=>
+          <div key={order?.id} className='flex flex-col justify-start items-start'>
+          <p >
+             {/*Order Status*/}
+          {
+          order?.status == 'PENDING'   ? <p className='rounded-xl p-0.5 flex justify-center bg-sky-200 text-sky-600'>{order?.status?.toLowerCase()}</p>:
+          order?.status == 'PREPARING' ? <p className='rounded-xl p-0.5 flex justify-center bg-blue-300 text-blue-600'>{order?.status?.toLowerCase()}</p>:
+          order?.status == 'SHIPPED'   ? <p className='rounded-xl p-0.5 flex justify-center bg-green-200 text-green-600'>{order?.status?.toLowerCase()}</p>:
+          order?.status == 'DELIVERED' ? <p className='rounded-xl p-0.5 flex justify-center bg-green-300 text-green-700'>{order?.status?.toLowerCase()}</p>:
+          order?.status == 'CANCELED'  ? <p className='rounded-xl p-0.5 flex justify-center bg-red-200 text-black'>{order?.status?.toLowerCase()}</p>:
+           <p className='rounded-xl p-0.5 flex justify-center bg-red-300 text-black'>{order?.status?.toLowerCase()}</p>
+          }
+            </p>,
+          </div>
+          )}
+          </td>
         <td className="p-2 border border-[#E4E5EE]">
           {/*Actions*/}
           <div className="w-full flex justify-between items-center px-2">

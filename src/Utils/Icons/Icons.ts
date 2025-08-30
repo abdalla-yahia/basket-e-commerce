@@ -18,9 +18,10 @@ import { LuLoader } from "react-icons/lu";
 import { RiCoupon3Fill } from "react-icons/ri";
 import { SiBrandfolder } from "react-icons/si";
 import { GrDocumentUpdate } from "react-icons/gr";
+import { MdDelete } from "react-icons/md";
 
-export {BiSolidErrorAlt,HiOutlineHandRaised,TbError404,RiArrowLeftSLine,RiArrowRightSLine,FaWhatsapp,IoClose,BsHandbag,CiHeart,GrDocumentUpdate
-,PiShareFatThin,SlTag,FaPlus,FaMinus,FaFacebookF,IoLogoInstagram,BsTwitterX,IoLogoReddit,FaPinterestP,FaLocationDot,FiPhoneCall,MdOutlineLocalPostOffice,
+export {BiSolidErrorAlt,HiOutlineHandRaised,TbError404,RiArrowLeftSLine,RiArrowRightSLine,FaWhatsapp,IoClose,BsHandbag,CiHeart,GrDocumentUpdate,MdDelete,
+PiShareFatThin,SlTag,FaPlus,FaMinus,FaFacebookF,IoLogoInstagram,BsTwitterX,IoLogoReddit,FaPinterestP,FaLocationDot,FiPhoneCall,MdOutlineLocalPostOffice,
 CiCreditCardOff,IoPersonCircleOutline,FaRegEye,FaRegEyeSlash,CiSettings,LuLoader,FaChartLine,IoPricetagsSharp,FaTrash,FaRegEdit,IoMdCheckmark,
 FaAddressCard,FaMapLocationDot,MdDeliveryDining,MdDashboard,FaUsers,MdInventory2,RiCoupon3Fill,MdAddBox,BiSolidCategory,TbCategoryPlus,SiBrandfolder,MdAddToQueue
  }

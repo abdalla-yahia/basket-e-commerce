@@ -43,7 +43,20 @@ export async function GET(request:NextRequest,{params}:{params:Promise<{id:strin
         if(UserFromToken.id !== id && UserFromToken?.role !== 'ADMIN'){
             return NextResponse.json({message:'You Are Not Have Authorization To GEt User'},{status:403})
         }
-        const user = await prisma.user.findUnique({where:{id:id}})
+        const user = await prisma.user.findUnique(
+            {where:{id:id},
+            include:{
+                orders:{
+                    select:{
+                        id:true,
+                        status:true,
+                        products:true
+                    }
+                },
+                addresses:true
+            }
+        }
+        )
         return NextResponse.json({message:'Get User Successfully',user},{status:200})
     } catch (error) {
         return NextResponse.json({message:'Faild To Fetch A User',error},{status:400})

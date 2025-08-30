@@ -10,6 +10,7 @@ export interface UpdateOrder{
     user?:{
         id:string
         name:string
+       
     }
     status?:OrderStatus
     cart?:{
@@ -17,8 +18,8 @@ export interface UpdateOrder{
     }
     products?:{
         id:string
-        slug:string
-        title:string
-        image:string
+        slug?:string
+        title?:string
+        image?:string
     }[]
 }

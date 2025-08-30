@@ -1,3 +1,5 @@
+import { OrderStatus } from "@prisma/client"
+import { UpdateAddresse } from "./AddresseInterface"
 
 export interface CreateUser {
     name:string   
@@ -16,9 +18,19 @@ export interface UpdateUser {
     image?:string
     role?:string
     gender?:string
-    orders?:string[]
-    addresses?:string[],
+    orders?:{
+            id:string
+            status:OrderStatus
+            products?:{
+                id:string
+                slug?:string
+                title?:string
+                image?:string
+            }[]
+            }[]
+    addresses?:UpdateAddresse[],
     createdAt?:string
+    
 }
 
 export interface TokenInterFace {
