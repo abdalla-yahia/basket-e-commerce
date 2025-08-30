@@ -11,12 +11,26 @@ export interface CreateProduct {
     gallery?:string[]
 }
 export interface UpdateProduct {
-    id:string
-    title:string
-    slug:string 
+    slug?:string 
+    id?:string
+    title?:string
     description?:string
-    price:number
-    quantity:number
+    price?:number
+    quantity?:number
     oldPrice?:number
     image?:string
+    gallery?:string[]
+    categoryId?:string
+    brandId?:string
+    category?:{
+        id:string,
+        title:string
+        image:string
+    }
+    brand?:{
+        id:string,
+        title:string
+        image:string
+    }
+
 }

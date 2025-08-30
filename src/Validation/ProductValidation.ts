@@ -16,11 +16,11 @@ export const CreateProductValidation = z.object({
 //Updata A New Product Validation
 export const UpdataProductValidation = z.object({
   slug:z.string(),
-  title:z.string().min(3,'Product Name Must Greate Than 3 leeters').optional(),
+  title:z.string().optional(),
   description:z.string().optional(),
-  price:z.number().min(1).optional(),
-  quantity:z.number().min(1).optional(),
-  oldPrice:z.number().min(1).optional(),
+  price:z.number().optional(),
+  quantity:z.number().optional(),
+  oldPrice:z.number().optional(),
   image:z.string().optional(),
   categoryId:z.string().optional(),
   brandId:z.string().optional(),

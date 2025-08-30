@@ -38,12 +38,11 @@ export const createBrand = createAsyncThunk('brands/create',async(brandData:Crea
         return error
     }
 })
+
 //Update Brand 
 export const updateBrand = createAsyncThunk('brands/update',async(BrandData:UpdateBrand)=>{
     try {
-        const data = await PostHook(`/api/brands/${BrandData?.id}`,{
-            data:BrandData
-        })
+        const data = await PostHook(`/api/brands/${BrandData?.id}`,BrandData)
         if(data){
             toast.success(data?.message)
         }

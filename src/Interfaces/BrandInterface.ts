@@ -6,7 +6,7 @@ export interface CreateBrand {
 }
 export interface UpdateBrand {
     id:string
-    title:string
+    title?:string
     description?:string
     image?:string
     products?:string[]

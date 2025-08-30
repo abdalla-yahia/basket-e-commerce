@@ -14,7 +14,14 @@ import { CreateBrandValidation } from "@/Validation/BrandValidation";
 
 export async function GET(){
     try {
-        const brands = await prisma.brand.findMany()
+        const brands = await prisma.brand.findMany({
+            select:{
+                id:true,
+                image:true,
+                description:true,
+                title:true
+            }
+        })
         return NextResponse.json({message:'Get All Brands Successfully',brands},{status:200})
     } catch (error) {
         return NextResponse.json({message:'Faild To Get All Brands',error},{status:500})
@@ -46,7 +53,7 @@ export async function POST(request:NextRequest){
                 return NextResponse.json({message:'These permissions are restricted to admins only'},{status:403})
             }
             //Check Validation Of Data 
-            const Validation = CreateBrandValidation.safeParse(data)
+            const Validation = CreateBrandValidation?.safeParse(data)
             if(!Validation?.success){
                 return NextResponse.json({message:'Data Not Valide',error:Validation.error.issues?.map(e=>e.message).join(', ')})
             }

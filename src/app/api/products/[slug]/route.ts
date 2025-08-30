@@ -50,7 +50,7 @@ export async function POST(request:NextRequest,{params}:{params:Promise<{slug:st
             return NextResponse.json({message:'You Are Not Login'},{status:401})
         }
         const token = cookie?.value;
-        const Decode = Jwt.verify(token,process.env._JWT_SECRET_KEY as string) as TokenInterFace
+        const Decode = Jwt.verify(token,process.env.JWT_SECRET_KEY as string) as TokenInterFace
         if(!Decode){
             return NextResponse.json({message:'You Are Not Login'},{status:401})
         }
@@ -97,8 +97,8 @@ export async function DELETE(request:NextRequest,{params}:{params:Promise<{slug:
         if(!cookie){
             return NextResponse.json({message:'You Are Not Login'},{status:401})
         }
-        const token = cookie?.value;
-        const Decode = Jwt.verify(token,process.env._JWT_SECRET_KEY as string) as TokenInterFace
+        const token = cookie?.value ;
+        const Decode = Jwt.verify(token, process.env.JWT_SECRET_KEY as string) as unknown as TokenInterFace
         if(!Decode){
             return NextResponse.json({message:'You Are Not Login'},{status:401})
         }

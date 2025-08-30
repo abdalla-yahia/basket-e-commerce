@@ -50,7 +50,7 @@ export async function GET(request:NextRequest,{params}:{params:Promise<{id:strin
 export async function POST(request:NextRequest,{params}:{params:Promise<{id:string}>}):Promise<NextResponse> {
     try {
         const {id} = await params
-        const data = request.json()
+        const data =await request.json()
         //Check If User Existes
         const IsExistes = await prisma.user.findUnique({where:{id:id}})
         if(!IsExistes){
@@ -58,7 +58,7 @@ export async function POST(request:NextRequest,{params}:{params:Promise<{id:stri
         }
         //Check Validation Of Data
         const Validation = UpdateUserValidation.safeParse(data)
-        if(!Validation.success){
+        if(!Validation?.success){
             return NextResponse.json({message:'Data Not Valide',error:Validation?.error?.issues?.map(e=>e.message).join(', ')},{status:400})
         }
         const user = await prisma.user.update({

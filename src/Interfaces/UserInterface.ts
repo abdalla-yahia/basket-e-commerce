@@ -8,11 +8,16 @@ export interface CreateUser {
 }
 export interface UpdateUser {
     id:string
-    name:string   
-    password:string 
-    email:string    
+    name?:string   
+    password?:string 
+    email?:string
+    phone?:string,    
     address?:string
-    image?:string  
+    image?:string
+    role?:string
+    gender?:string
+    orders?:string[]
+    addresses?:string[]
 }
 
 export interface TokenInterFace {

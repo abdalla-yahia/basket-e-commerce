@@ -4,9 +4,9 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
 //Get All Users
-export const getAllUser = createAsyncThunk('users/getAll',async()=>{
+export const getAllUsers = createAsyncThunk('users/getAll',async()=>{
     try {
-        const res = GetHook('api/users')
+        const res = GetHook('/api/users')
         return res;
     } catch (error) {
         toast.error(`Error To Get All Users`)
@@ -48,6 +48,7 @@ export const updateUser = createAsyncThunk('users/update',async(userData:UpdateU
         }
         return data;
     } catch (error) {
+        console.log(error)
         toast.error(`Faild To Update User`)
         return error
     }

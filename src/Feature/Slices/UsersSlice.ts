@@ -1,15 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  getAllUser,
-  getUserById,
-  createUser,
-  updateUser,
-  deleteUser,
-} from "../Actions/UsersActions";
-import { CreateUser } from "@/Interfaces/UserInterface";
+import {getAllUsers,getUserById,createUser,updateUser,deleteUser,} from "../Actions/UsersActions";
+import { CreateUser, UpdateUser } from "@/Interfaces/UserInterface";
 
 const initialState = {
-  AllUsers: [],
+  AllUsers: {users:[] as UpdateUser[] | null},
   user: {} as { user: CreateUser },
   loading: false,
   error: null as string | null,
@@ -21,15 +15,15 @@ const UserSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getAllUser.pending, (state) => {
+      .addCase(getAllUsers.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(getAllUser.fulfilled, (state, action) => {
+      .addCase(getAllUsers.fulfilled, (state, action) => {
         state.AllUsers = action.payload;
         state.loading = false;
       })
-      .addCase(getAllUser.rejected, (state, action) => {
+      .addCase(getAllUsers.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       })

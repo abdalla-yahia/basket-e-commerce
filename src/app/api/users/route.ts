@@ -1,5 +1,4 @@
 import { prisma } from "@/libs/Prisma/Prisma_Client"
-import { SetCookies } from "@/Utils/GenerateToken"
 import { CreateUserValidation } from "@/Validation/UserValidation"
 import { NextRequest, NextResponse } from "next/server"
 import bcrypt from 'bcrypt';
@@ -21,10 +20,25 @@ try {
         return NextResponse.json({message:"NoT Have Permision To Fetch All User"},{status:401})
     }
     const AdminFromToken = jwt.verify(cookie?.value,process.env.JWT_SECRET_KEY as string) as TokenInterFace
+    //Check If Is Admin
     if(AdminFromToken?.role !== 'ADMIN'){
         return NextResponse.json({message:'These permissions are restricted to admins only'},{status:403})
     }
-    const users = await prisma.user.findMany()
+    //Get Users
+    const users = await prisma.user.findMany({
+            select:{
+                id:true,
+                name:true,
+                address:true,
+                image:true,
+                gender:true,
+                role:true,
+                phone:true,
+                orders:true,
+                addresses:true,
+                createdAt:true
+            }
+    })
     return NextResponse.json({message:'Get All Users Successfully',users},{status:200})
 } catch (error) {
     return NextResponse.json({message:'Faild To Fetch All Users',error},{status:500})
@@ -55,23 +69,13 @@ export async function POST(request:NextRequest){
         const user = await prisma.user.create({
             data:Validation?.data
         })
-        // Set Cookies On Header
-        // const token = SetCookies({
-        //     id:user?.id,
-        //     name:user?.name,
-        //     role:user?.role,
-        //     image:user?.image ?? '',
-        // })
         return NextResponse.json({
             message:'Create Anew User Successfully',        
             user
         },
         {   
             status:201,
-        //     headers:{
-        //     'Set-Cookie':token
-        // }
-    }
+        }
     )
     } catch (error) {
         return NextResponse.json({message:'Faild To Create A New User!!',error})

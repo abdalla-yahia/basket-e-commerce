@@ -1,16 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  getAllBrands,
-  getBrandById,
-  createBrand,
-  updateBrand,
-  deleteBrand,
-} from "../Actions/BrandsActions";
+import {getAllBrands,getBrandById,createBrand,updateBrand,deleteBrand,} from "../Actions/BrandsActions";
 import { CreateBrand, UpdateBrand } from "@/Interfaces/BrandInterface";
 
 const initialState = {
-  AllBrands: { brands: [] as UpdateBrand[] }, // مصفوفة فاضية من البراندات
-  brand: null as CreateBrand | null,  
+  AllBrands: { brands: [] as UpdateBrand[] }, 
+  brand: {} as {brand:CreateBrand},  
   loading: false,
   error: null as string | null,
 };

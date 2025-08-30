@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {getAllProduct,getProductBySlug,createProduct,updateProduct,deleteProduct} from "../Actions/ProductsActions";
-import { CreateProduct } from "@/Interfaces/ProductInterface";
+import { CreateProduct,UpdateProduct } from "@/Interfaces/ProductInterface";
 
 const initialState = {
-  AllProducts: [],
+  AllProducts: {products : [] as UpdateProduct[]},
   product: {} as {product:CreateProduct},
   loading: false,
   error: null as string | null,

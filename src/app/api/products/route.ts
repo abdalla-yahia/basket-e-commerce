@@ -16,7 +16,24 @@ import { CreateProductValidation } from '@/Validation/ProductValidation';
 export async function GET(){
     try {
         //Get All Products
-        const products = await prisma.product.findMany()
+        const products = await prisma.product.findMany({
+            include:{
+                category:{
+                    select:{
+                        id:true,
+                        title:true,
+                        image:true
+                    },
+                },
+                brand:{
+                    select:{
+                        id:true,
+                        title:true,
+                        image:true
+                    }
+                }
+            }
+        })
         return NextResponse.json({message:'Get All Products Successfully',products},{status:200})
     } catch (error) {
         return NextResponse.json({message:'Faild To Get All Products',error},{status:500})
@@ -54,9 +71,18 @@ export async function POST(requset:NextRequest){
             return NextResponse.json({message:'Data Not Valide',error:Validation.error.issues?.map(e=>e.message).join(', ')})
         }
         //Create Slug 
-        const slugparse = slugify(Validation?.data?.title,{locale:'ar',replacement:'-'})
-        const AllProducts = await prisma.product.findMany({where:{slug:slugparse}})
-        const slug = `${slugparse}-${AllProducts?.length}`
+        const baseSlug = slugify(Validation.data.title, { locale: 'ar', replacement: '-' });
+        //Check Existeng 
+        const existingProducts = await prisma.product.findMany({
+        where: { slug: { startsWith: baseSlug } },
+        select: { slug: true }
+        });
+
+        // Create Unique Slug
+        let slug = baseSlug;
+        if (existingProducts.length > 0) {
+        slug = `${baseSlug}-${existingProducts.length + 1}`;
+        }
         //Create Product
         const product = await prisma.product.create({
             data:{

@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 //Get All carts
 export const getAllCart = createAsyncThunk('carts/getAll',async()=>{
     try {
-        const res = GetHook('api/carts')
+        const res = GetHook('/api/carts')
         return res;
     } catch (error) {
         toast.error(`Error To Get All Carts`)

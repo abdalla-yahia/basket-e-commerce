@@ -6,10 +6,11 @@ import { toast } from "react-toastify";
 //Get All products
 export const getAllProduct = createAsyncThunk('products/getAll',async()=>{
     try {
-        const res = GetHook('api/products')
+        const res = GetHook('/api/products')
         return res;
     } catch (error) {
         toast.error(`Error To Get All Products`)
+        console.log(error)
         return error
     }
 })
@@ -18,6 +19,7 @@ export const getAllProduct = createAsyncThunk('products/getAll',async()=>{
 export const getProductBySlug = createAsyncThunk('products/getbyid',async(slug:string)=>{
     try {
         const data =await GetHook(`/api/products/${slug}`)
+        console.log(data)
         return data;
     } catch (error) {
         toast.error(`Faild To Get Product`)
@@ -35,16 +37,16 @@ export const createProduct = createAsyncThunk('products/create',async(ProductDat
         return data;
         } catch (error) {
       const message = "Create a new product failed";
+      console.log(error)
       toast.error(message);
       return rejectWithValue(message);
     }
-  
-
 })
+
 //Update Product 
 export const updateProduct = createAsyncThunk('products/update',async(ProductData:UpdateProduct)=>{
     try {
-        const data = await PostHook(`/api/products/${ProductData?.id}`,ProductData)
+        const data = await PostHook(`/api/products/${ProductData?.slug}`,ProductData)
         if(data){
             toast.success(data?.message)
         }
@@ -56,14 +58,15 @@ export const updateProduct = createAsyncThunk('products/update',async(ProductDat
 })
 
 //Delete Product
-export const deleteProduct = createAsyncThunk('products/delete',async(id:string)=>{
+export const deleteProduct = createAsyncThunk('products/delete',async(slug:string)=>{
     try {
-        const data = await DeleteHook(`/api/products/${id}`)
+        const data = await DeleteHook(`/api/products/${slug}`)
         if(data){
              toast.success(data?.message)
         }
         return data;
     } catch (error) {
+        console.log(error)
         toast.error(`Faild To Delete Product `)
         return error
     }
