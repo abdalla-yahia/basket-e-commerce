@@ -25,6 +25,7 @@ export default function Register_Container() {
             email:formData.get('UserEmail') as string,
             password:formData.get('UserPassword') as string,
             address:formData.get('UserAddress') as string,
+            phone:formData.get('UserPhone') as string,
             gender:formData.get('UserGender') as string || undefined
         }
         //Check Validation Of Data 
@@ -48,6 +49,7 @@ export default function Register_Container() {
         email:'',
         password:'',
         address:'',
+        phone:'',
         gender:undefined
     }
     const [,ActionForm] = useActionState(RegisterNewUser,InitialState)
@@ -96,6 +98,11 @@ export default function Register_Container() {
             }
             <input onChange={(e)=>setConfirmPassword(e.target.value)} type={isShow ? 'text':'password' } name="ConfirmPassword" id="ConfirmPassword" placeholder="ConfirmPassword" className="w-full h-full outline-none border-none "/>
         </div>
+         {/*User Phone*/}
+          <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
+              <label htmlFor="UserPhone">User Phone:</label>
+              <input type="phone" name="UserPhone" id="UserPhone" className='p-2 bg-[#F3F4F7] rounded w-full'/>
+          </div>
         {/*User Address*/}
         <div className="w-full rounded my-[15px]">
             <label className="" htmlFor="UserAddress">Address:</label>
