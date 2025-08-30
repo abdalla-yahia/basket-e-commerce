@@ -4,7 +4,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
 //Get All orders
-export const getAllOrder = createAsyncThunk('orders/getAll',async()=>{
+export const getAllOrders = createAsyncThunk('orders/getAll',async()=>{
     try {
         const res = GetHook('/api/orders')
         return res;

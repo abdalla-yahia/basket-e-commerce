@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
-  getAllOrder,
+  getAllOrders,
   getOrderById,
   createOrder,
   updateOrder,
   deleteOrder,
 } from "../Actions/OrdersActions";
-import { CreateOrder } from "@/Interfaces/OrderInterface";
+import { CreateOrder, UpdateOrder } from "@/Interfaces/OrderInterface";
 
 const initialState = {
-  AllOrders: [],
+  AllOrders: {orders:[] as UpdateOrder[]},
   order: {} as {order:CreateOrder},
   loading: false,
   error: null as string | null,
@@ -21,15 +21,15 @@ const OrderSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getAllOrder.pending, (state) => {
+      .addCase(getAllOrders.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(getAllOrder.fulfilled, (state, action) => {
+      .addCase(getAllOrders.fulfilled, (state, action) => {
         state.AllOrders = action.payload;
         state.loading = false;
       })
-      .addCase(getAllOrder.rejected, (state, action) => {
+      .addCase(getAllOrders.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       })

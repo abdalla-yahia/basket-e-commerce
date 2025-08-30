@@ -4,6 +4,8 @@ export interface CreateOrder{
 }
 export interface UpdateOrder{
     id:string
-    title?:string
+    userId:string
+    user?:string,
+    cart?:string
     products?:string[]
 }

@@ -41,7 +41,14 @@ export async function GET(request: NextRequest) {
       );
     }
     //Get All Orders
-    const orders = await prisma.orders.findMany();
+    const orders = await prisma.orders.findMany({
+      select:{
+        id:true,
+        user:true,
+        cart:true,
+        products:true
+      }
+    });
     return NextResponse.json(
       { message: "Get All Orders Successfully", orders },
       { status: 200 }

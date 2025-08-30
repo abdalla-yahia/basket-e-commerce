@@ -15,7 +15,6 @@ export default function Users_Container() {
     dispatch(getAllUsers())
   },[dispatch])
 
-console.log(AllUsers)
   return (
     <div className="w-full flex justify-start items-start relative">
       {/*Users Table*/}
