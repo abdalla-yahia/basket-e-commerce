@@ -82,15 +82,15 @@ export default function Register_Container() {
             <input onChange={(e)=>setCheckPasswordValid(e.target.value)} type={isShow ? 'text':'password' } name="UserPassword" id="UserPassword" placeholder="User Password" className="w-full h-full outline-none border-none "/>
         </div>
             {/*Check Valid Rols Password*/}
-                <ul>
-                    <li className={`${/[A-Z]/.test(checkPasswordValid)?'text-green-500':'text-gray-500'} text-[12px] flex justify-start items-center`}> {/[A-Z]/.test(checkPasswordValid) && <icon.IoMdCheckmark className='text-green-500 text-[12px]'/>} Password Must Contain  Minimum 1 Capital Letter</li>
-                    <li className={`${/[a-z]/.test(checkPasswordValid)?'text-green-500':'text-gray-500'} text-[12px] flex justify-start items-center`}> {/[a-z]/.test(checkPasswordValid) && <icon.IoMdCheckmark className='text-green-500 text-[12px]'/>} Password Must Contain  Minimum 1 Small Letter</li>
-                    <li className={`${/[0-9]/.test(checkPasswordValid)?'text-green-500':'text-gray-500'} text-[12px] flex justify-start items-center`}> {/[0-9]/.test(checkPasswordValid) && <icon.IoMdCheckmark className='text-green-500 text-[12px]'/>} Password Must Contain  Minimum 1 Number</li>
-                    <li className={`${checkPasswordValid?.length >= 8 ?'text-green-500':'text-gray-500'} text-[12px] flex justify-start items-center`}> {checkPasswordValid?.length >= 8  && <icon.IoMdCheckmark className='text-green-500 text-[12px]'/>} Password Length Must Equal Or Great Than 8 Leeters</li>
+                <ul className="flex flex-col my-2">
+                    <li className={`${/[A-Z]/.test(checkPasswordValid)?'text-green-500':'text-gray-500'} text-[10px] flex justify-start items-center`}> {/[A-Z]/.test(checkPasswordValid) && <icon.IoMdCheckmark className='text-green-500 text-[10px]'/>} Password Must Contain  Minimum 1 Capital Letter</li>
+                    <li className={`${/[a-z]/.test(checkPasswordValid)?'text-green-500':'text-gray-500'} text-[10px] flex justify-start items-center`}> {/[a-z]/.test(checkPasswordValid) && <icon.IoMdCheckmark className='text-green-500 text-[10px]'/>} Password Must Contain  Minimum 1 Small Letter</li>
+                    <li className={`${/[0-9]/.test(checkPasswordValid)?'text-green-500':'text-gray-500'} text-[10px] flex justify-start items-center`}> {/[0-9]/.test(checkPasswordValid) && <icon.IoMdCheckmark className='text-green-500 text-[10px]'/>} Password Must Contain  Minimum 1 Number</li>
+                    <li className={`${checkPasswordValid?.length >= 8 ?'text-green-500':'text-gray-500'} text-[10px] flex justify-start items-center`}> {checkPasswordValid?.length >= 8  && <icon.IoMdCheckmark className='text-green-500 text-[10px]'/>} Password Length Must Equal Or Great Than 8 Leeters</li>
                 </ul>
         <p></p>
         {/*Confirm Password*/}
-        <label className="" htmlFor="ConfirmPassword">Confirm Password:</label>
+        <label className="mt-3" htmlFor="ConfirmPassword">Confirm Password:</label>
         <div className="w-full rounded flex justify-center items-center mt-3 p-3 border border-[#DEDEDE] text-[#707070] gap-2">
             {
             isShow ? (<icon.FaRegEye onClick={()=>setIsShow(!isShow)} className='text-xl cursor-pointer '/>):
@@ -99,9 +99,9 @@ export default function Register_Container() {
             <input onChange={(e)=>setConfirmPassword(e.target.value)} type={isShow ? 'text':'password' } name="ConfirmPassword" id="ConfirmPassword" placeholder="ConfirmPassword" className="w-full h-full outline-none border-none "/>
         </div>
          {/*User Phone*/}
-          <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
+          <div className='w-full rounded my-[15px]'>
               <label htmlFor="UserPhone">User Phone:</label>
-              <input type="phone" name="UserPhone" id="UserPhone" className='p-2 bg-[#F3F4F7] rounded w-full'/>
+              <input type="phone" name="UserPhone" id="UserPhone" placeholder="Phone" className='w-full mt-3 p-3 rounded border  border-[#DEDEDE] outline-none text-[#707070]'/>
           </div>
         {/*User Address*/}
         <div className="w-full rounded my-[15px]">
@@ -110,8 +110,8 @@ export default function Register_Container() {
         </div >
         {/*User Gender*/}
         <label className="" htmlFor="UserGender">Gender:</label>
-        <div className="w-full my-[15px] rounded border  border-[#DEDEDE]">
-            <select name="UserGender" defaultValue='' id="UserGender" className="w-full mt-3 p-3  outline-none text-[#707070]">
+        <div className="w-full my-[15px] flex justify-start items-center rounded border  border-[#DEDEDE]">
+            <select name="UserGender" defaultValue='' id="UserGender" className="w-full mt-3 px-3 py-2 outline-none text-[#707070]">
                 <option value='' disabled>Select Gender</option>
                 <option value="MALE">Male</option>
                 <option value="FEMAL">FeMale</option>
