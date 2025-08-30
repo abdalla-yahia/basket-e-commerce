@@ -29,6 +29,7 @@ try {
             select:{
                 id:true,
                 name:true,
+                email:true,
                 address:true,
                 image:true,
                 gender:true,

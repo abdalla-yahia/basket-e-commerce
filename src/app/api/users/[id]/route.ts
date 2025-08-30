@@ -98,7 +98,7 @@ export async function DELETE(request:NextRequest,{params}:{params:Promise<{id:st
         const {id}= await params;
         const cookie = request.cookies.get('authToken')
         if(!cookie){
-            return NextResponse.json({message:"You Dont Allow To GEt This User"},{status:401})
+            return NextResponse.json({message:"You Are Not Allow To Get This User"},{status:401})
         }
         const token = cookie?.value 
         const UserFromToken = jwt.verify(token,process.env.JWT_SECRET_KEY as string) as TokenInterFace
