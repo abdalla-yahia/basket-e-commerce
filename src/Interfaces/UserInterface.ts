@@ -17,7 +17,8 @@ export interface UpdateUser {
     role?:string
     gender?:string
     orders?:string[]
-    addresses?:string[]
+    addresses?:string[],
+    createdAt?:string
 }
 
 export interface TokenInterFace {

@@ -1,6 +1,6 @@
 'use client'
 import UploadImages from "@/Utils/UploadImage";
-import { SetStateAction, useActionState, useState } from "react";
+import { SetStateAction, useActionState, useEffect, useState } from "react";
 import * as icon from '@/Utils/Icons/Icons';
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "@/libs/store";
@@ -10,7 +10,8 @@ import { updateUser } from "@/Feature/Actions/UsersActions";
 import { UpdateUser } from "@/Interfaces/UserInterface";
 
 export default function Edit_User_Form({User,setIsToggle}:{User:UpdateUser,setIsToggle:(arg0:boolean)=>void}) {
-    const [imageUrl, setImages] = useState<string[]>([]);
+  const UserImage = [User?.image as string]
+  const [imageUrl, setImages] = useState<string[]>(UserImage || []);
     const {user:EditUser,error,loading} = useSelector((state:RootState)=>state.user)
 
     const dispatch = useAppDispatch()
@@ -45,9 +46,9 @@ export default function Edit_User_Form({User,setIsToggle}:{User:UpdateUser,setIs
     }
 
     const [,ActionStat] = useActionState(UpdateItem,InitialState)
-    if(EditUser?.user?.name){
-      setIsToggle(false)
-    }
+  if (EditUser?.status === 201) {
+    setIsToggle(false);
+  }
   return (
     <div className="w-[50%] absolute -top-[100%] bg-[#ddd] rounded left-0 flex flex-col justify-start items-center gap-5 p-8">
       {/*Close Form*/}
@@ -88,7 +89,7 @@ export default function Edit_User_Form({User,setIsToggle}:{User:UpdateUser,setIs
           error && <p className="text-red-500">{error}</p>
         }
         {
-          EditUser?.user?.name && <p className="text-green-500">Update User Successfully</p>
+          EditUser?.status === 201 && <p className="text-green-500">Update User Successfully</p>
         }
           <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
             <button type="submit" id="UserRole" className='p-2 border border-[#F3F4F7] text-white cursor-pointer bg-primary rounded w-full'>

@@ -46,7 +46,8 @@ export async function GET(request: NextRequest) {
         id:true,
         user:true,
         cart:true,
-        products:true
+        products:true,
+        status:true
       }
     });
     return NextResponse.json(

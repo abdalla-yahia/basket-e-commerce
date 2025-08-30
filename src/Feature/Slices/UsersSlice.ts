@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {getAllUsers,getUserById,createUser,updateUser,deleteUser,} from "../Actions/UsersActions";
-import { CreateUser, UpdateUser } from "@/Interfaces/UserInterface";
+import { UpdateUser } from "@/Interfaces/UserInterface";
 
 const initialState = {
   AllUsers: {users:[] as UpdateUser[] | null},
-  user: {} as { user: CreateUser },
+  user: {} as { user: UpdateUser ,status:number},
   loading: false,
   error: null as string | null,
 };

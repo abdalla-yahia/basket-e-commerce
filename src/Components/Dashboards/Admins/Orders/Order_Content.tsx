@@ -6,6 +6,7 @@ import { useAppDispatch } from '@/libs/store';
 import { UpdateOrder } from '@/Interfaces/OrderInterface';
 import { deleteOrder } from '@/Feature/Actions/OrdersActions';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Order_Content({Order}:{Order:UpdateOrder}) {
       const [isToggle,setIsToggle] = useState(false)
@@ -35,22 +36,28 @@ export default function Order_Content({Order}:{Order:UpdateOrder}) {
       }
   return (
      <tr key={Order?.id}>
-
-        <td className="p-2 border border-[#E4E5EE]">{Order?.id}</td>
-        <td className="p-2 border border-[#E4E5EE]">{Order?.user}</td>
-        <td className="p-2 border border-[#E4E5EE]">{Order?.cart}</td>
+        <td className="p-2 border border-[#E4E5EE]">ORD:0{Order?.id}</td>
+        <td className="p-2 border border-[#E4E5EE]">
+          <Link href={`/users/${Order?.user?.id}`}>
+           {Order?.user?.name}
+          </Link>
+          </td>
         <td className="p-2 border border-[#E4E5EE]">
           {/*Order Status*/}
           {
-          status == 'PENDING'   ? <p className='rounded-xl p-1 bg-sky-200 text-sky-600'>{status?.toLowerCase()}</p>:
-          status == 'PREPARING' ? <p className='rounded-xl p-1 bg-blue-400 text-blue-600'>{status?.toLowerCase()}</p>:
-          status == 'SHIPPED'   ? <p className='rounded-xl p-1 bg-green-200 text-green-600'>{status?.toLowerCase()}</p>:
-          status == 'DELIVERED' ? <p className='rounded-xl p-1 bg-green-300 text-green-700'>{status?.toLowerCase()}</p>:
-          status == 'CANCELED'  ? <p className='rounded-xl p-1 bg-red-200 text-red-600'>{status?.toLowerCase()}</p>:
-           <p className='rounded-xl p-1 bg-red-400 text-red-600'>{status?.toLowerCase()}</p>
+          status == 'PENDING'   ? <p className='rounded-xl p-0.5 flex justify-center bg-sky-200 text-sky-600'>{status?.toLowerCase()}</p>:
+          status == 'PREPARING' ? <p className='rounded-xl p-0.5 flex justify-center bg-blue-300 text-blue-600'>{status?.toLowerCase()}</p>:
+          status == 'SHIPPED'   ? <p className='rounded-xl p-0.5 flex justify-center bg-green-200 text-green-600'>{status?.toLowerCase()}</p>:
+          status == 'DELIVERED' ? <p className='rounded-xl p-0.5 flex justify-center bg-green-300 text-green-700'>{status?.toLowerCase()}</p>:
+          status == 'CANCELED'  ? <p className='rounded-xl p-0.5 flex justify-center bg-red-200 text-black'>{status?.toLowerCase()}</p>:
+           <p className='rounded-xl p-0.5 flex justify-center bg-red-300 text-black'>{status?.toLowerCase()}</p>
           }
           </td>
-        <td className="p-2 border border-[#E4E5EE]">{Order?.products}</td>
+        <td className="p-2 border border-[#E4E5EE]">{Order?.products?.map(product=>
+          <Link key={product?.id} href={`/products/${product?.slug}`}>
+          <span >{product?.title}</span> 
+          </Link> ,
+        )}</td>
         <td className="p-2 border border-[#E4E5EE]">
           <div className="w-full flex justify-between items-center px-2">
               {/*Edit Order Form*/}

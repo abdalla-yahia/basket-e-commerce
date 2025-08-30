@@ -20,7 +20,6 @@ export const getUserById = createAsyncThunk('users/getbyid',async(id:string)=>{
         const data =await GetHook(`/api/users/${id}`)
         return data;
     } catch (error) {
-        toast.error(`Faild To Get User`)
         return error
     }
 })

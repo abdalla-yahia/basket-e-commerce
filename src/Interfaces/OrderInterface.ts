@@ -6,9 +6,19 @@ export interface CreateOrder{
 }
 export interface UpdateOrder{
     id:string
-    userId:string
-    user?:string
+    userId?:string
+    user?:{
+        id:string
+        name:string
+    }
     status?:OrderStatus
-    cart?:string
-    products?:string[]
+    cart?:{
+        id:string
+    }
+    products?:{
+        id:string
+        slug:string
+        title:string
+        image:string
+    }[]
 }

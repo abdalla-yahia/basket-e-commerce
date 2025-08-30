@@ -1,19 +1,51 @@
+import { useRef } from "react";
 import Product_Smal_Card from "../Product_Smal_Card";
+import * as icon from '@/Utils/Icons/Icons';
 
 export default function Related_Products() {
+  const ref = useRef<HTMLDivElement>(null)
+  //Scroll Box Content To Right Handler
+  const ArrowRightHandler = ()=>{
+    ref?.current?.scrollBy({
+      left:25,
+      behavior:'smooth'
+    })
+  }
+  //Scroll Box Content To Left Handler
+  const ArrlowLeftHandler = ()=>{
+    ref?.current?.scrollBy({
+      left:-25,
+      behavior:'smooth'
+    })
+  }
   return (
     <div className="w-full flex flex-col">
         {/*Title Section*/}
         <h2 className="text-black text-[14px] font-[700] my-2">Related products</h2>
         {/*Section Content*/}
-        <div className="flex justify-start items-center gap-3">
-            <Product_Smal_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'On Sale'} title={'All Natural Italian-Style Chicken Meatballs'} oldprice={'$9.35'} price={'$7.25'}/>
-            <Product_Smal_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'On Sale'} title={'All Natural Italian-Style Chicken Meatballs'} oldprice={'$9.35'} price={'$7.25'}/>
-            <Product_Smal_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'On Sale'} title={'All Natural Italian-Style Chicken Meatballs'} oldprice={'$9.35'} price={'$7.25'}/>
-            <Product_Smal_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'On Sale'} title={'All Natural Italian-Style Chicken Meatballs'} oldprice={'$9.35'} price={'$7.25'}/>
-            <Product_Smal_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'On Sale'} title={'All Natural Italian-Style Chicken Meatballs'} oldprice={'$9.35'} price={'$7.25'}/>
-            <Product_Smal_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'On Sale'} title={'All Natural Italian-Style Chicken Meatballs'} oldprice={'$9.35'} price={'$7.25'}/>
-        </div>
+            <div className="relative w-full">
+                {/*Arrow Right Button*/}
+                <div className="h-full w-[10%] flex justify-center items-center bg-transparent  absolute top-0 right-0 z-50">
+                  <icon.RiArrowRightSLine onClick={()=>ArrowRightHandler()} className="text-4xl hover:bg-primary hover:text-white hover:scale-125   w-[25px] h-[25px] duration-150 z-50 text-primary font-extrabold bg-white border border-primary  cursor-pointer rounded-full"/>
+                </div>
+                {/*Products Container*/}
+                <div ref={ref} className="flex justify-between gap-0 items-start mt-3  overflow-x-scroll scrollbar-none">
+                    <Product_Smal_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'On Sale'} title={'All Natural Italian-Style Chicken Meatballs'} oldprice={'$9.35'} price={'$7.25'}/>
+                    <Product_Smal_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'On Sale'} title={'All Natural Italian-Style Chicken Meatballs'} oldprice={'$9.35'} price={'$7.25'}/>
+                    <Product_Smal_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'On Sale'} title={'All Natural Italian-Style Chicken Meatballs'} oldprice={'$9.35'} price={'$7.25'}/>
+                    <Product_Smal_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'On Sale'} title={'All Natural Italian-Style Chicken Meatballs'} oldprice={'$9.35'} price={'$7.25'}/>
+                    <Product_Smal_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'On Sale'} title={'All Natural Italian-Style Chicken Meatballs'} oldprice={'$9.35'} price={'$7.25'}/>
+                    <Product_Smal_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'On Sale'} title={'All Natural Italian-Style Chicken Meatballs'} oldprice={'$9.35'} price={'$7.25'}/>
+                    <Product_Smal_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'On Sale'} title={'All Natural Italian-Style Chicken Meatballs'} oldprice={'$9.35'} price={'$7.25'}/>
+                    <Product_Smal_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'On Sale'} title={'All Natural Italian-Style Chicken Meatballs'} oldprice={'$9.35'} price={'$7.25'}/>
+                    <Product_Smal_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'On Sale'} title={'All Natural Italian-Style Chicken Meatballs'} oldprice={'$9.35'} price={'$7.25'}/>
+                    <Product_Smal_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'On Sale'} title={'All Natural Italian-Style Chicken Meatballs'} oldprice={'$9.35'} price={'$7.25'}/>
+                  </div>
+                {/*Arrow Left button*/}
+              <div className="h-full w-[10%] flex justify-center items-center bg-transparent  absolute top-0 left-0 z-50">
+                <icon.RiArrowLeftSLine onClick={()=>ArrlowLeftHandler()} className="text-4xl hover:bg-primary  hover:text-white hover:scale-125   w-[25px] h-[25px] duration-150 z-50 text-primary font-extrabold bg-white border border-primary  cursor-pointer rounded-full"/>
+              </div>
+            </div>
     </div>
   )
 }

@@ -24,7 +24,6 @@ console.log(AllOrders)
     <tr>
       <th className="p-2 border border-[#E4E5EE]">ID</th>
       <th className="p-2 border border-[#E4E5EE]">User</th>
-      <th className="p-2 border border-[#E4E5EE]">Cart</th>
       <th className="p-2 border border-[#E4E5EE]">Status</th>
       <th className="p-2 border border-[#E4E5EE]">Products</th>
       <th className="p-2 border border-[#E4E5EE]">Actions</th>

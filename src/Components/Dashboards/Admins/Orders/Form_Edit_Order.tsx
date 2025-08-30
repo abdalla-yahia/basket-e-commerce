@@ -15,11 +15,8 @@ export default function Edit_Order_Form({Order,setIsToggle}:{Order:UpdateOrder,s
       const formstate= {
         ...prevState,
         id:Order?.id,
-        userId:formData.get('OrderTitle') as string || Order?.userId,
-        products:formData.get('OrderDescription') || Order?.products,
+        status:formData.get('OrderStatus') || Order?.status
       }
-      //Check Validation 
-      console.log(formstate)
 
       //Send Data 
       dispatch(updateOrder(formstate as UpdateOrder))
@@ -28,8 +25,7 @@ export default function Edit_Order_Form({Order,setIsToggle}:{Order:UpdateOrder,s
     //Initial State
     const InitialState = {
       id:Order?.id,
-      userId:Order?.userId,
-      products:Order?.products,
+      status:Order?.status
     }
 
     const [,ActionStat] = useActionState(UpdateItem,InitialState)
@@ -49,15 +45,17 @@ export default function Edit_Order_Form({Order,setIsToggle}:{Order:UpdateOrder,s
       {/*Form */}
       <form action={ActionStat} className="w-[70%]">
         
-        {/*Order UserId*/}
+        {/*Order Status*/}
+            <label htmlFor="OrderStatus">Order Status:</label>
           <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
-              <label htmlFor="OrderTitle">Order Title:</label>
-              <input placeholder={Order?.userId} type="text" name="OrderTitle" id="OrderTitle" className='p-2 bg-[#F3F4F7] rounded w-full'/>
-          </div>
-        {/*Order */}
-          <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
-              <label htmlFor="OrderDescription">Order Description:</label>
-              <input placeholder='Order Products' type="text" name="OrderDescription" id="OrderDescription" className='p-2 bg-[#F3F4F7] rounded w-full'/>
+            <select name="OrderStatus" id="OrderStatus" className='p-2 bg-[#F3F4F7] rounded w-full'>
+               <option className="capitalize " value="PENDING">{'PENDING'.toLowerCase()}</option>
+               <option className="capitalize " value="PREPARING">{'PREPARING'.toLowerCase()}</option>
+               <option className="capitalize " value="SHIPPED">{'SHIPPED'.toLowerCase()}</option>
+               <option className="capitalize " value="DELIVERED">{'DELIVERED'.toLowerCase()}</option>
+               <option className="capitalize " value="CANCELED">{'CANCELED'.toLowerCase()}</option>
+               <option className="capitalize " value="RETURNED">{'RETURNED'.toLowerCase()}</option>
+              </select>
           </div>
 
         {/*Submit Button*/}

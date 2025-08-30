@@ -23,13 +23,24 @@ export async function GET(request:NextRequest,{params}:{params:Promise<{id:strin
         const UserFromToken = jwt.verify(token,process.env.JWT_SECRET_KEY as string) as TokenInterFace
         //Check If User Existes On DB
         const IsExestes = await prisma.user.findUnique({
-            where:{id:id}
+            where:{id:id},
+            select:{
+                id:true,
+                name:true,
+                email:true,
+                phone:true,
+                gender:true,
+                image:true,
+                address:true,
+                orders:true,
+                createdAt:true
+            }
         })
         if(!IsExestes){
             return NextResponse.json({message:'User Not Found'},{status:404})
         }
         //Check If Same User Or Admin Are Get This User
-        if(UserFromToken.id ! === id || UserFromToken?.role === 'ADMIN'){
+        if(UserFromToken.id !== id && UserFromToken?.role !== 'ADMIN'){
             return NextResponse.json({message:'You Are Not Have Authorization To GEt User'},{status:403})
         }
         const user = await prisma.user.findUnique({where:{id:id}})
@@ -74,7 +85,7 @@ export async function POST(request:NextRequest,{params}:{params:Promise<{id:stri
             role:user?.role,
             image:user?.image ?? ''
         })
-        return NextResponse.json({message:'Update User Successfully',user},{
+        return NextResponse.json({message:'Update User Successfully',user,status:201},{
             headers:{
                 'Set-Cookie':token,
             },

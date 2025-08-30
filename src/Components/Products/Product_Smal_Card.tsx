@@ -9,7 +9,7 @@ export default function Product_Smal_Card({ img, offer, title, oldprice, price }
                 {/*Span Offers*/}
                 {offer && <span className="text-[8px] absolute bg-[#35AFA0] rounded-[4px] px-1 py-1 top-3 left-3 text-white">{offer}</span>}
                 {/*Image Card*/}
-                <Image className='w-full' src={img} alt={title} width={80} height={80} />
+                <Image className='w-full' src={img} alt={title} width={60} height={60} />
                 {/*Card Content*/}
                 <h1 className="font-[600] text-[#202435] text-[10px] " style={{ lineHeight: '19.6px', letterSpacing: '0%' }}>{title.split(' ').splice(0,3)}</h1>
             </Link>
