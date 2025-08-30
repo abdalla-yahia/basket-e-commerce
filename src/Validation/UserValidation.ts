@@ -3,7 +3,11 @@ import { z} from 'zod';
 //Schema Validation Of Create User
 export const CreateUserValidation = z.object({
     name:z.string().min(2,'Username Must Greater Than 3 Letters'),
-    password:z.string().min(8,'Password Must Greate Than 8 letters').max(50),
+    password:z.string().min(8, "Password Must Great Than 8 letters").regex(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/,
+      "Password Must Contain Capital letter, Small Letter And To be Great Than 8 Letters"
+    ),
+
     email:z.string(),
     address:z.string().optional(),
     phone:z.string().optional(),

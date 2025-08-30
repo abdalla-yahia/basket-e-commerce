@@ -81,10 +81,10 @@ export default function Register_Container() {
         </div>
             {/*Check Valid Rols Password*/}
                 <ul>
-                    <li className={`${/[A-Z]/.test(checkPasswordValid)?'text-green-500':'text-gray-500'} text-[12px] flex justify-start items-center`}> {/[A-Z]/.test(checkPasswordValid) && <icon.IoMdCheckmark className='text-green-500 text-[12px]'/>} يجب أن يحتوي الرقم السري على حرف كبير</li>
-                    <li className={`${/[a-z]/.test(checkPasswordValid)?'text-green-500':'text-gray-500'} text-[12px] flex justify-start items-center`}> {/[a-z]/.test(checkPasswordValid) && <icon.IoMdCheckmark className='text-green-500 text-[12px]'/>} يجب أن يحتوي الرقم السري على الأقل 1 حرف صغير</li>
-                    <li className={`${/[0-9]/.test(checkPasswordValid)?'text-green-500':'text-gray-500'} text-[12px] flex justify-start items-center`}> {/[0-9]/.test(checkPasswordValid) && <icon.IoMdCheckmark className='text-green-500 text-[12px]'/>} يجب أن يحتوي الرقم السري على الأقل 1 رقم</li>
-                    <li className={`${checkPasswordValid?.length >= 8 ?'text-green-500':'text-gray-500'} text-[12px] flex justify-start items-center`}> {checkPasswordValid?.length >= 8  && <icon.IoMdCheckmark className='text-green-500 text-[12px]'/>} يجب أن يكون الرقم السري على الأقل 8 أحرف</li>
+                    <li className={`${/[A-Z]/.test(checkPasswordValid)?'text-green-500':'text-gray-500'} text-[12px] flex justify-start items-center`}> {/[A-Z]/.test(checkPasswordValid) && <icon.IoMdCheckmark className='text-green-500 text-[12px]'/>} Password Must Contain  Minimum 1 Capital Letter</li>
+                    <li className={`${/[a-z]/.test(checkPasswordValid)?'text-green-500':'text-gray-500'} text-[12px] flex justify-start items-center`}> {/[a-z]/.test(checkPasswordValid) && <icon.IoMdCheckmark className='text-green-500 text-[12px]'/>} Password Must Contain  Minimum 1 Small Letter</li>
+                    <li className={`${/[0-9]/.test(checkPasswordValid)?'text-green-500':'text-gray-500'} text-[12px] flex justify-start items-center`}> {/[0-9]/.test(checkPasswordValid) && <icon.IoMdCheckmark className='text-green-500 text-[12px]'/>} Password Must Contain  Minimum 1 Number</li>
+                    <li className={`${checkPasswordValid?.length >= 8 ?'text-green-500':'text-gray-500'} text-[12px] flex justify-start items-center`}> {checkPasswordValid?.length >= 8  && <icon.IoMdCheckmark className='text-green-500 text-[12px]'/>} Password Length Must Equal Or Great Than 8 Leeters</li>
                 </ul>
         <p></p>
         {/*Confirm Password*/}
