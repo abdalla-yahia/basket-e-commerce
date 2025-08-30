@@ -74,10 +74,18 @@ model Orders {
   id      String    @id @default(uuid())
   products Product[]
   userId   String
+  status  OrderStatus? @default(PENDING)
   user     User     @relation(fields: [userId], references: [id])
   cart     Cart[]
 }
-
+enum OrderStatus{
+  PENDING
+  PREPARING
+  SHIPPED
+  DELIVERED
+  CANCELED
+  RETURNED
+}
 model Category {
   id          String     @id @default(uuid())
   title       String

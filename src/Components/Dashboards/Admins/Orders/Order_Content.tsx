@@ -11,7 +11,7 @@ export default function Order_Content({Order}:{Order:UpdateOrder}) {
       const [isToggle,setIsToggle] = useState(false)
 
       const dispatch = useAppDispatch()
-    
+    const status = Order?.status
       //Delete Order Handler By Id
       const DeleteHandler =(id:string)=>{
           swal({
@@ -39,6 +39,17 @@ export default function Order_Content({Order}:{Order:UpdateOrder}) {
         <td className="p-2 border border-[#E4E5EE]">{Order?.id}</td>
         <td className="p-2 border border-[#E4E5EE]">{Order?.user}</td>
         <td className="p-2 border border-[#E4E5EE]">{Order?.cart}</td>
+        <td className="p-2 border border-[#E4E5EE]">
+          {/*Order Status*/}
+          {
+          status == 'PENDING'   ? <p className='rounded-xl p-1 bg-sky-200 text-sky-600'>{status?.toLowerCase()}</p>:
+          status == 'PREPARING' ? <p className='rounded-xl p-1 bg-blue-400 text-blue-600'>{status?.toLowerCase()}</p>:
+          status == 'SHIPPED'   ? <p className='rounded-xl p-1 bg-green-200 text-green-600'>{status?.toLowerCase()}</p>:
+          status == 'DELIVERED' ? <p className='rounded-xl p-1 bg-green-300 text-green-700'>{status?.toLowerCase()}</p>:
+          status == 'CANCELED'  ? <p className='rounded-xl p-1 bg-red-200 text-red-600'>{status?.toLowerCase()}</p>:
+           <p className='rounded-xl p-1 bg-red-400 text-red-600'>{status?.toLowerCase()}</p>
+          }
+          </td>
         <td className="p-2 border border-[#E4E5EE]">{Order?.products}</td>
         <td className="p-2 border border-[#E4E5EE]">
           <div className="w-full flex justify-between items-center px-2">
