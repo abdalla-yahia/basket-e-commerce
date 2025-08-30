@@ -2,7 +2,7 @@ import { prisma } from "@/libs/Prisma/Prisma_Client";
 import { SetCookies } from "@/Utils/GenerateToken";
 import { CreateUserValidation } from "@/Validation/UserValidation";
 import { NextRequest, NextResponse } from "next/server";
-
+import bcrypt from 'bcrypt'
 
 /**
  * @access All Users
@@ -31,6 +31,11 @@ export async function POST(request:NextRequest){
         const IsExistes = await prisma.user.findUnique({where:{email:Validation?.data?.email}})
         if(!IsExistes){
             return NextResponse.json({message:'User Not Found'},{status:404})
+        }
+        //Compare Password
+        const Compare =  bcrypt.compareSync(Validation?.data?.password,IsExistes?.password)
+        if(!Compare){
+          return NextResponse.json({message:'Invalid Password Or Email'},{status:404})
         }
         // Set Token On Header
         const token = SetCookies({

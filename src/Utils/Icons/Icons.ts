@@ -9,7 +9,7 @@ import { CiHeart } from "react-icons/ci";
 import { PiShareFatThin } from "react-icons/pi";
 import { SlTag } from "react-icons/sl";
 import { FaPlus,FaMinus,FaLocationDot,FaMapLocationDot } from "react-icons/fa6";
-import { IoLogoInstagram } from "react-icons/io";
+import { IoLogoInstagram,IoMdCheckmark } from "react-icons/io";
 import { FiPhoneCall } from "react-icons/fi";
 import { MdOutlineLocalPostOffice,MdDeliveryDining,MdDashboard,MdInventory2,MdAddBox,MdAddToQueue } from "react-icons/md";
 import { CiCreditCardOff,CiSettings } from "react-icons/ci";
@@ -21,6 +21,6 @@ import { GrDocumentUpdate } from "react-icons/gr";
 
 export {BiSolidErrorAlt,HiOutlineHandRaised,TbError404,RiArrowLeftSLine,RiArrowRightSLine,FaWhatsapp,IoClose,BsHandbag,CiHeart,GrDocumentUpdate
 ,PiShareFatThin,SlTag,FaPlus,FaMinus,FaFacebookF,IoLogoInstagram,BsTwitterX,IoLogoReddit,FaPinterestP,FaLocationDot,FiPhoneCall,MdOutlineLocalPostOffice,
-CiCreditCardOff,IoPersonCircleOutline,FaRegEye,FaRegEyeSlash,CiSettings,LuLoader,FaChartLine,IoPricetagsSharp,FaTrash,FaRegEdit,
+CiCreditCardOff,IoPersonCircleOutline,FaRegEye,FaRegEyeSlash,CiSettings,LuLoader,FaChartLine,IoPricetagsSharp,FaTrash,FaRegEdit,IoMdCheckmark,
 FaAddressCard,FaMapLocationDot,MdDeliveryDining,MdDashboard,FaUsers,MdInventory2,RiCoupon3Fill,MdAddBox,BiSolidCategory,TbCategoryPlus,SiBrandfolder,MdAddToQueue
  }

@@ -3,6 +3,7 @@ import { CreateUserValidation } from '@/Validation/UserValidation';
 import { NextRequest, NextResponse } from "next/server";
 import Jwt from 'jsonwebtoken';
 import { cookies } from 'next/headers';
+import bcrypt from 'bcrypt';
 
 export async function POST(request:NextRequest){
     try {
@@ -26,11 +27,14 @@ export async function POST(request:NextRequest){
         if(!Validation?.success){
             return NextResponse.json({message:'Password Not Valide'},{status:400})
         }
+        //Hash Password
+        const salt = bcrypt.genSaltSync(10)
+        const hashPassword = bcrypt.hashSync(Validation?.data?.password,salt)
         //Update User Password
         const user = await prisma.user.update({
             where:{email:Email?.email},
             data:{
-                password:Validation?.data?.password,
+                password:hashPassword,
                 passwordresetCode:null,
             }
         })

@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 
 export default function Register_Container() {
     const [isShow,setIsShow] = useState(false)
+    const [checkPasswordValid,setCheckPasswordValid]=useState('')
     const [ConfirmPassword,setConfirmPassword] = useState('')
     const {user,error,loading} = useSelector((state:RootState)=>state.user)
     const dispatch = useAppDispatch()
@@ -76,8 +77,16 @@ export default function Register_Container() {
             isShow ? (<icon.FaRegEye onClick={()=>setIsShow(!isShow)} className='text-xl cursor-pointer '/>):
             (<icon.FaRegEyeSlash onClick={()=>setIsShow(!isShow)} className='text-xl cursor-pointer '/>)
             }
-            <input type={isShow ? 'text':'password' } name="UserPassword" id="UserPassword" placeholder="User Password" className="w-full h-full outline-none border-none "/>
+            <input onChange={(e)=>setCheckPasswordValid(e.target.value)} type={isShow ? 'text':'password' } name="UserPassword" id="UserPassword" placeholder="User Password" className="w-full h-full outline-none border-none "/>
         </div>
+            {/*Check Valid Rols Password*/}
+                <ul>
+                    <li className={`${/[A-Z]/.test(checkPasswordValid)?'text-green-500':'text-gray-500'} text-[12px] flex justify-start items-center`}> {/[A-Z]/.test(checkPasswordValid) && <icon.IoMdCheckmark className='text-green-500 text-[12px]'/>} يجب أن يحتوي الرقم السري على حرف كبير</li>
+                    <li className={`${/[a-z]/.test(checkPasswordValid)?'text-green-500':'text-gray-500'} text-[12px] flex justify-start items-center`}> {/[a-z]/.test(checkPasswordValid) && <icon.IoMdCheckmark className='text-green-500 text-[12px]'/>} يجب أن يحتوي الرقم السري على الأقل 1 حرف صغير</li>
+                    <li className={`${/[0-9]/.test(checkPasswordValid)?'text-green-500':'text-gray-500'} text-[12px] flex justify-start items-center`}> {/[0-9]/.test(checkPasswordValid) && <icon.IoMdCheckmark className='text-green-500 text-[12px]'/>} يجب أن يحتوي الرقم السري على الأقل 1 رقم</li>
+                    <li className={`${checkPasswordValid?.length >= 8 ?'text-green-500':'text-gray-500'} text-[12px] flex justify-start items-center`}> {checkPasswordValid?.length >= 8  && <icon.IoMdCheckmark className='text-green-500 text-[12px]'/>} يجب أن يكون الرقم السري على الأقل 8 أحرف</li>
+                </ul>
+        <p></p>
         {/*Confirm Password*/}
         <label className="" htmlFor="ConfirmPassword">Confirm Password:</label>
         <div className="w-full rounded flex justify-center items-center mt-3 p-3 border border-[#DEDEDE] text-[#707070] gap-2">

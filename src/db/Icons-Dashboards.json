@@ -52,13 +52,6 @@
       "icon": "MdDeliveryDining",
       "href": "/dashboard/admins/orders"
     },
-
-    {
-      "id": 5,
-      "title": "Coupons",
-      "icon": "RiCoupon3Fill",
-      "href": "/dashboard/admins/coupons"
-    },
     {
       "id": 6,
       "title": "Add New Product",
