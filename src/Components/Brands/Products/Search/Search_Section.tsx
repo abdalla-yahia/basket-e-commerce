@@ -11,6 +11,9 @@ export default function Search_Section({ProductsCount}:{ProductsCount:number}) {
             <span className="text-[#9B9BB4] text-[12px] font-[400]">Sort by:</span>
             <select name="" id="" className="text-[#202435] text-[13px] font-[500]">
                 <option value="">Alphabetically, A-Z</option>
+                <option value="">Alphabetically, Z-A</option>
+                <option value="">Last Add, New-Old</option>
+                <option value="">Last Add, Old-New</option>
             </select>
         </div>
     </div>
