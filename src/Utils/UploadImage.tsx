@@ -20,6 +20,7 @@ export default function UploadImages({images,setImages,}: {images: string[];setI
       formData.append(
         "upload_preset",
         process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET!
+        
       );
 
       // Upload to Cloudinary
