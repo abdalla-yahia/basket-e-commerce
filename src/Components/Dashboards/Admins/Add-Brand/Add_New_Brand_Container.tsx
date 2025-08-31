@@ -1,5 +1,4 @@
 'use client'
-import UploadImages from "@/Utils/UploadImage";
 import { SetStateAction, useActionState, useState } from "react";
 import * as icon from '@/Utils/Icons/Icons';
 import { useSelector } from "react-redux";
@@ -8,9 +7,10 @@ import { CreateBrand } from "@/Interfaces/BrandInterface";
 import { CreateBrandValidation } from "@/Validation/BrandValidation";
 import { toast } from "react-toastify";
 import { createBrand } from "@/Feature/Actions/BrandsActions";
+import UploadOneImage from "@/Utils/UploadOneImage";
 
 export default function Add_New_Brand_Container() {
-  const [imageUrl, setImages] = useState<string[]>([]);
+  const [imageUrl, setImageUrl] = useState<string>('');
   const { brand, error, loading } = useSelector((state: RootState) => state.brand)
   const dispatch = useAppDispatch()
   //Create Item Handler
@@ -50,11 +50,11 @@ export default function Add_New_Brand_Container() {
       {/*Form */}
       <form action={ActionStat} className="w-[70%]">
         {/*Brand Image*/}
-        <UploadImages images={imageUrl} setImages={setImages as (urls: string[]) => SetStateAction<string[]>} />
+        <UploadOneImage imageUrl={imageUrl} setImageUrl={setImageUrl as (urls: string) => SetStateAction<string>} />
         {/*Brand Image URL*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
-          <label htmlFor="BrnadUrl">Brand Url:</label>
-          <input onChange={(e) => setImages([e.target.value])} type="text" name="BrnadUrl" id="BrnadUrl" className='p-2 bg-[#F3F4F7] rounded w-full' />
+          <label htmlFor="BrnadUrl">Brand Image Url:</label>
+          <input onChange={(e) => setImageUrl(e.target.value)} type="text" name="BrnadUrl" id="BrnadUrl" className='p-2 bg-[#F3F4F7] rounded w-full' />
         </div>
         {/*Brand Title*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>

@@ -1,5 +1,4 @@
 'use client'
-import UploadImages from "@/Utils/UploadImage";
 import { SetStateAction, useActionState, useState } from "react";
 import * as icon from '@/Utils/Icons/Icons';
 import { useSelector } from "react-redux";
@@ -8,9 +7,10 @@ import { CreateCategory } from "@/Interfaces/CategoryInterface";
 import { CreateCategoryValidation } from "@/Validation/CategoryValidation";
 import { toast } from "react-toastify";
 import { createCategory } from "@/Feature/Actions/CategoriesActions";
+import UploadOneImage from "@/Utils/UploadOneImage";
 
 export default function Add_New_Category_Container() {
-  const [imageUrl, setImages] = useState<string[]>([]);
+  const [imageUrl, setImageUrl] = useState<string>('');
   const { category, error, loading } = useSelector((state: RootState) => state.category)
   const dispatch = useAppDispatch()
   //Create Item Handler
@@ -50,11 +50,11 @@ export default function Add_New_Category_Container() {
       {/*Form */}
       <form action={ActionStat} className="w-[70%]">
         {/*Category Image*/}
-        <UploadImages images={imageUrl} setImages={setImages as (urls: string[]) => SetStateAction<string[]>} />
+        <UploadOneImage imageUrl={imageUrl} setImageUrl={setImageUrl as (urls: string) => SetStateAction<string>} />
         {/*Category Image URL*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
-          <label htmlFor="CategoryUrl">Category Url:</label>
-          <input onChange={(e) => setImages([e.target.value])} type="text" name="CategoryUrl" id="CategoryUrl" className='p-2 bg-[#F3F4F7] rounded w-full' />
+          <label htmlFor="CategoryUrl">Category Image Url:</label>
+          <input onChange={(e) => setImageUrl(e.target.value)} type="text" name="CategoryUrl" id="CategoryUrl" className='p-2 bg-[#F3F4F7] rounded w-full' />
         </div>
         {/*Category Title*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>

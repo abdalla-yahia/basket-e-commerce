@@ -1,6 +1,5 @@
 'use client'
-import UploadImages from "@/Utils/UploadImage";
-import { SetStateAction, useActionState, useEffect, useState } from "react";
+import { SetStateAction, useActionState, useState } from "react";
 import * as icon from '@/Utils/Icons/Icons';
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "@/libs/store";
@@ -8,10 +7,10 @@ import { UpdateUserValidation } from "@/Validation/UserValidation";
 import { toast } from "react-toastify";
 import { updateUser } from "@/Feature/Actions/UsersActions";
 import { UpdateUser } from "@/Interfaces/UserInterface";
+import UploadOneImage from "@/Utils/UploadOneImage";
 
 export default function Edit_User_Form({ User, setIsToggle }: { User: UpdateUser, setIsToggle: (arg0: boolean) => void }) {
-  const UserImage = [User?.image as string]
-  const [imageUrl, setImages] = useState<string[]>(UserImage);
+  const [imageUrl, setImageUrl] = useState<string>(User?.image as string);
   const { user: EditUser, error, loading } = useSelector((state: RootState) => state.user)
 
   const dispatch = useAppDispatch()
@@ -42,7 +41,7 @@ export default function Edit_User_Form({ User, setIsToggle }: { User: UpdateUser
     name: User?.name,
     phone: User?.phone,
     address: User?.address,
-    image: User?.image,
+    image: User?.image ? User?.image :'https://static.vecteezy.com/system/resources/previews/060/423/145/non_2x/business-avatar-icon-with-a-simple-clean-design-featuring-a-man-in-a-suit-suitable-for-online-profiles-or-websites-free-png.png',
   }
 
   const [, ActionStat] = useActionState(UpdateItem, InitialState)
@@ -62,11 +61,11 @@ export default function Edit_User_Form({ User, setIsToggle }: { User: UpdateUser
       {/*Form */}
       <form action={ActionStat} className="w-[70%]">
         {/*User Image*/}
-        <UploadImages images={imageUrl} setImages={setImages as (urls: string[]) => SetStateAction<string[]>} />
+        <UploadOneImage imageUrl={imageUrl} setImageUrl={setImageUrl as (urls: string) => SetStateAction<string>} />
         {/*User Image URL*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
           <label htmlFor="UserUrl">User Image Url:</label>
-          <input onChange={(e) => setImages([e.target.value])} type="text" name="UserUrl" id="UserUrl" className='p-2 bg-[#F3F4F7] rounded w-full' />
+          <input onChange={(e) => setImageUrl(e.target.value)} type="text" name="UserUrl" id="UserUrl" className='p-2 bg-[#F3F4F7] rounded w-full' />
         </div>
         {/*User Name*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
