@@ -11,7 +11,7 @@ import { prisma } from "@/libs/Prisma/Prisma_Client";
  * @returns  Get Order By Id
  */
 
-export async function GET(request: NextRequest,{ params }: { params: Promise<{ id: number}> }): Promise<NextResponse> {
+export async function GET(request: NextRequest,{ params }: { params: Promise<{ id: string}> }): Promise<NextResponse> {
   try {
     //Get Id
     const { id } = await params;
@@ -35,12 +35,12 @@ export async function GET(request: NextRequest,{ params }: { params: Promise<{ i
       );
     }
     //Check If Order Is Exiestes
-    const IsExistes = await prisma.orders.findUnique({ where: { id: id } });
+    const IsExistes = await prisma.orders.findUnique({ where: {  id: parseInt(id) } });
     if (!IsExistes) {
       return NextResponse.json({ message: "Order Not Found" }, { status: 404 });
     }
     //Get Order
-    const order = await prisma.orders.findUnique({ where: { id: id } });
+    const order = await prisma.orders.findUnique({ where: {  id: parseInt(id) } });
     return NextResponse.json(
       { message: "Get Order Successfully", order },
       { status: 200 }
@@ -61,10 +61,7 @@ export async function GET(request: NextRequest,{ params }: { params: Promise<{ i
  * @returns  Get Order By Id
  */
 
-export async function POST(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: number}> }
-): Promise<NextResponse> {
+export async function POST(request: NextRequest,{ params }: { params: Promise<{ id: string}> }): Promise<NextResponse> {
   try {
     //Get Id
     const { id } = await params;
@@ -90,13 +87,13 @@ export async function POST(
       );
     }
     //Check If Order Is Exiestes
-    const IsExistes = await prisma.orders.findUnique({ where: { id: id } });
+    const IsExistes = await prisma.orders.findUnique({ where: { id: parseInt(id) } });
     if (!IsExistes) {
       return NextResponse.json({ message: "Order Not Found" }, { status: 404 });
     }
     //Update Order
     const order = await prisma.orders.update({
-      where: { id: id },
+      where: {  id: parseInt(id) },
       data: data,
     });
     return NextResponse.json(
@@ -119,10 +116,7 @@ export async function POST(
  * @returns  null
  */
 
-export async function DELETE(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: number}> }
-) {
+export async function DELETE(request: NextRequest,{ params }: { params: Promise<{ id: string}> }) {
   try {
     //Get Id
     const { id } = await params;
@@ -146,12 +140,12 @@ export async function DELETE(
       );
     }
     //Check If Order Is Exiestes
-    const IsExistes = await prisma.orders.findUnique({ where: { id: id } });
+    const IsExistes = await prisma.orders.findUnique({ where: {  id: parseInt(id) } });
     if (!IsExistes) {
       return NextResponse.json({ message: "Order Not Found" }, { status: 404 });
     }
     //Delete Order
-    await prisma.orders.delete({ where: { id: id } });
+    await prisma.orders.delete({ where: {  id: parseInt(id) } });
     return NextResponse.json(
       { message: "Order Updated Successfully" },
       { status: 200 }
