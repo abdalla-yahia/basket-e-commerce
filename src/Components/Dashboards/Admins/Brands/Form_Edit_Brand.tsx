@@ -10,7 +10,8 @@ import { updateBrand } from "@/Feature/Actions/BrandsActions";
 import { UpdateBrand } from "@/Interfaces/BrandInterface";
 
 export default function Edit_Brand_Form({ brand, setIsToggle }: { brand: UpdateBrand, setIsToggle: (arg0: boolean) => void }) {
-  const [imageUrl, setImages] = useState<string[]>([]);
+    const BrandImage = [brand?.image as string]
+  const [imageUrl, setImages] = useState<string[]>(BrandImage);
   const { brand: EditBrand, error, loading } = useSelector((state: RootState) => state.brand)
 
   const dispatch = useAppDispatch()

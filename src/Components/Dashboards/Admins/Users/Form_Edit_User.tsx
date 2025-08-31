@@ -11,7 +11,7 @@ import { UpdateUser } from "@/Interfaces/UserInterface";
 
 export default function Edit_User_Form({ User, setIsToggle }: { User: UpdateUser, setIsToggle: (arg0: boolean) => void }) {
   const UserImage = [User?.image as string]
-  const [imageUrl, setImages] = useState<string[]>(UserImage || []);
+  const [imageUrl, setImages] = useState<string[]>(UserImage);
   const { user: EditUser, error, loading } = useSelector((state: RootState) => state.user)
 
   const dispatch = useAppDispatch()

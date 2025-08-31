@@ -10,7 +10,8 @@ import { updateCategory } from "@/Feature/Actions/CategoriesActions";
 import { UpdateCategory } from "@/Interfaces/CategoryInterface";
 
 export default function Edit_Category_Form({ Category, setIsToggle }: { Category: UpdateCategory, setIsToggle: (arg0: boolean) => void }) {
-  const [imageUrl, setImages] = useState<string[]>([]);
+  const CategoryImage = [Category?.image as string]
+  const [imageUrl, setImages] = useState<string[]>(CategoryImage);
   const { category: EditCategory, error, loading } = useSelector((state: RootState) => state.category)
 
   const dispatch = useAppDispatch()
