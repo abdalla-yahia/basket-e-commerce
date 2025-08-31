@@ -1,33 +1,42 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function UploadOneImage({imageUrl,setImageUrl}: {imageUrl: string;setImageUrl: (url: string) => void;}) {
+export default function UploadOneImage({imageUrl,setImageUrl,}: {imageUrl: string;setImageUrl: (url: string) => void;}) {
   const [preview, setPreview] = useState<string>(imageUrl);
+  const [uploading, setUploading] = useState(false);
 
   const handleUpload = async (file: File | null) => {
     if (!file) return;
 
-    // Preeview Image Before Upload
+    // Local preview
     setPreview(URL.createObjectURL(file));
+
+    setUploading(true);
 
     const formData = new FormData();
     formData.append("file", file);
-    formData.append(
-      "upload_preset",
-      process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET!
-    );
-    //Upload Image On Cloud
-    const res = await fetch(
-      `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
-      { method: "POST", body: formData }
-    );
+    formData.append("upload_preset",process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET!);
 
-    const data = await res.json();
-    setImageUrl(data.secure_url); 
+    try {
+      const res = await fetch(
+        `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload`,
+        { method: "POST", body: formData }
+      );
+
+      const data = await res.json();
+
+      if (data.secure_url) {
+        setImageUrl(data.secure_url); // هنا بيسجل لينك Cloudinary الجديد
+      }
+    } catch (err) {
+      console.error("Upload failed", err);
+    } finally {
+      setUploading(false);
+    }
   };
 
   return (
-    <div className="w-full flex justify-center" >
+    <div className="w-full flex flex-col items-center gap-2">
       <label htmlFor="uploadimage" className="cursor-pointer" title="Upload One Image">
         <input
           type="file"
@@ -36,13 +45,21 @@ export default function UploadOneImage({imageUrl,setImageUrl}: {imageUrl: string
           className="hidden"
           onChange={(e) => handleUpload(e.target.files?.[0] || null)}
         />
-        <Image loading="lazy"
-          src={preview || imageUrl || "https://static.vecteezy.com/system/resources/previews/009/875/156/large_2x/3d-picture-icon-blue-white-color-free-png.png"}
+        <Image
+          loading="lazy"
+          src={
+            preview ||
+            imageUrl ||
+            "https://static.vecteezy.com/system/resources/previews/009/875/156/large_2x/3d-picture-icon-blue-white-color-free-png.png"
+          }
           alt="Uploaded"
           width={150}
           height={100}
+          className="rounded"
         />
       </label>
+
+      {uploading && <p className="text-sm text-gray-500">Uploading...</p>}
     </div>
   );
 }

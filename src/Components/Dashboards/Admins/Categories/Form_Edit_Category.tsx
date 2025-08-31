@@ -21,7 +21,7 @@ export default function Edit_Category_Form({ Category, setIsToggle }: { Category
       id: Category?.id,
       title: formData.get('CategoryTitle') as string || Category?.title,
       description: formData.get('CategoryDescription') as string || Category?.description,
-      image: imageUrl,
+      image: imageUrl || Category?.image,
     }
     //Check Validation 
     console.log(formstate)

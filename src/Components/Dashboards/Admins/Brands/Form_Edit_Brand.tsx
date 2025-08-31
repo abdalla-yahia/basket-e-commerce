@@ -21,7 +21,7 @@ export default function Edit_Brand_Form({ brand, setIsToggle }: { brand: UpdateB
       id: brand?.id,
       title: formData.get('BrandTitle') as string || brand?.title,
       description: formData.get('BrandDescription') as string || brand?.description,
-      image: imageUrl,
+      image: imageUrl || brand?.image,
     }
     //Check Validation 
     console.log(formstate)
