@@ -1,5 +1,26 @@
+'use client'
+import { getAllCategories } from "@/Feature/Actions/CategoriesActions"
+import { UpdateCategory } from "@/Interfaces/CategoryInterface"
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store"
+import { useEffect } from "react"
+import { useRouter } from "next/navigation";
 
 export default function Categories_Dropdown() {
+  const {AllCategories} = useAppSelector((state:RootState)=>state.category)
+  const router = useRouter()
+  const dispatch = useAppDispatch()
+  useEffect(()=>{
+    dispatch(getAllCategories())
+  },[])
+
+  //Redirect To Link Of Category
+  const ChangeCategoryHandeler =(e:string)=>{
+    router.push(`/categories/${e}`)
+  }
+  //Get Total Count Of Products On All Categories
+  const TotalProducts = AllCategories?.categories?.reduce((acc, rec:UpdateCategory) => {
+  return acc + (rec?.products?.length as number || 0);
+}, 0);
   return (
     <div className="flex px-[15px] py-[16px] gap-2 rounded-[50px] bg-[#35AFA0] text-white relative">
       {/*Icon List*/}
@@ -9,12 +30,19 @@ export default function Categories_Dropdown() {
         </svg>
       </div>
       {/*DropDown List*/}
-      <select name="" id="" className="font-semibold" style={{fontFamily:'Dosis'}}>
-        <option value="">ALL CATEGORIES</option>
+      <select onChange={(e)=>ChangeCategoryHandeler(e.target.value)} name="" id="" className="font-semibold" style={{fontFamily:'Dosis'}}>
+        <option value="" disabled selected>ALL CATEGORIES</option>
+        {
+          AllCategories?.categories && AllCategories?.categories?.map((category:UpdateCategory)=>
+             <option key={category?.id} value={category?.id} className=" appearance-none bg-white uppercase text-primary hover:bg-primary hover:text-white rounded">
+              {category?.title}
+              </option>
+          )
+        }
       </select>
       {/*Products Count*/}
       <p className="bg-[#EDEEF5] text-[#71778E] rounded-[18px] text-[8px] px-1 absolute font-semibold top-10/12 left-9" style={{lineHeight:'15px',fontFamily:'Dosis',letterSpacing:'0px'}}>
-        TOTAL 50 PRODUCTS
+        TOTAL {TotalProducts} PRODUCTS
       </p>
     </div>
   )

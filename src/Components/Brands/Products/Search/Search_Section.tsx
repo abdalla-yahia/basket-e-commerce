@@ -1,9 +1,9 @@
 
-export default function Search_Section() {
+export default function Search_Section({ProductsCount}:{ProductsCount:number}) {
   return (
     <div className="w-full flex justify-between items-center p-5 gap-5  rounded-lg bg-[#F7F8FD]">
         {/*Products Count*/}
-        <span className="text-[#9B9BB4] text-[12px] font-[400]">62 products</span>
+        <span className="text-[#9B9BB4] text-[12px] font-[400]">{ProductsCount} products</span>
         {/*Search Input*/}
         <input type="text" name="" id="" className="outline-none border-none h-full flex-1" placeholder="Search For Product..."/>
         {/*Filter Option*/}

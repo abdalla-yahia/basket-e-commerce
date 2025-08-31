@@ -1,7 +1,8 @@
+import Brands_Container from "@/Components/Brands/Brands_Container"
 
 export default async function Brand_With_Id({params}:{params:Promise<{id:string}>}):Promise<React.ReactNode> {
     const {id} = await params
   return (
-    <div>Brand_With_Id</div>
+    <Brands_Container id={id}/>
   )
 }

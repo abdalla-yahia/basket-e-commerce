@@ -1,7 +1,8 @@
+
 import Aside_Continer from "./Aside_Filter/Aside_Continer";
 import Products_Container from "./Products/Products_Container";
 
-export default function Categories_Container({id}:{id:string}) {
+export default function Brands_Container({id}:{id:string}) {
   return (
         <section className="w-full flex justify-center items-center mt-[40px]">
             {/*Container*/}

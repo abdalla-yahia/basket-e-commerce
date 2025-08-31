@@ -5,6 +5,7 @@ import { UpdateProduct } from "@/Interfaces/ProductInterface";
 import { RootState, useAppDispatch } from "@/libs/store";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import Search_Section from "./Search/Search_Section";
 
 export default function Products_Section({id}:{id:string}) {
   const {category} = useSelector((state:RootState)=>state.category)
@@ -12,7 +13,12 @@ export default function Products_Section({id}:{id:string}) {
   useEffect(()=>{
     dispatch(getCategoryById(id))
   },[id])
+  const ProductsCount = category?.category?.products?.length as number
   return (
+    <>
+    {/*Search Bar*/}
+      <Search_Section ProductsCount={ProductsCount}/>
+      {/*Products*/}
     <div className="w-full  flex justify-between flex-wrap gap-0 items-start mt-3">
       {/*Get All Products Of Specific Category*/}
         {
@@ -23,5 +29,6 @@ export default function Products_Section({id}:{id:string}) {
         }
         
     </div>
+    </>
   )
 }
