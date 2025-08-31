@@ -1,15 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  getAllCart,
-  getCartById,
-  createCart,
-  updateCart,
-  deleteCart,
-} from "../Actions/CartsActions";
-import { CreateCart } from "@/Interfaces/CartInterface";
+import {getAllCart,getCartById,createCart,updateCart,deleteCart,} from "../Actions/CartsActions";
+import { CreateCart, UpdateCart } from "@/Interfaces/CartInterface";
 
 const initialState = {
-  AllCarts: [],
+  AllCarts: {carts:[] as UpdateCart[]},
   cart: {} as {cart:CreateCart},
   loading: false,
   error: null as string | null,

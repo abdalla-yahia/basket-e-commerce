@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { updateCategory } from "@/Feature/Actions/CategoriesActions";
 import { UpdateCategory } from "@/Interfaces/CategoryInterface";
 import UploadOneImage from "@/Utils/UploadOneImage";
-import { resetStatus } from "@/Feature/Slices/CategoriesSlice";
+import { clearCategory } from "@/Feature/Slices/CategoriesSlice";
 
 export default function Edit_Category_Form({ Category, setIsToggle }: { Category: UpdateCategory, setIsToggle: (arg0: boolean) => void }) {
   const [imageUrl, setImageUrl] = useState<string>(Category?.image as string);
@@ -46,7 +46,7 @@ export default function Edit_Category_Form({ Category, setIsToggle }: { Category
   const [, ActionStat] = useActionState(UpdateItem, InitialState)
   if (EditCategory?.category?.title) {
     setIsToggle(false)
-    dispatch(resetStatus())
+    dispatch(clearCategory())
   }
   return (
     <div className="w-[50%] absolute -top-[100%] bg-[#ddd] rounded left-0 flex flex-col justify-start items-center gap-5 p-8">

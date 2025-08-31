@@ -3,8 +3,8 @@ import {getAllCategories,getCategoryById,createCategory,updateCategory,deleteCat
 import { UpdateCategory } from "@/Interfaces/CategoryInterface";
 
 const initialState = {
-  AllCategories: {categories:[]},
-  category: {} as {category:UpdateCategory},
+  AllCategories: {categories:[] as UpdateCategory[]},
+  category: {} as {category:UpdateCategory} | null,
   loading: false,
   error: null as string | null,
 };
@@ -13,9 +13,13 @@ const CategorySlice = createSlice({
   name: "categories",
   initialState,
   reducers: {
-    resetStatus:(state)=>{
-      state.category= {} as {category:UpdateCategory}
-    }
+    resetStatus: (state) => {
+    state.loading = false
+    state.error = null
+  },
+  clearCategory: (state) => {
+    state.category = null
+  }
   },
   extraReducers: (builder) => {
     builder
@@ -82,4 +86,4 @@ const CategorySlice = createSlice({
 });
 
 export default CategorySlice.reducer;
-export const {resetStatus} = CategorySlice.actions
+export const {resetStatus,clearCategory} = CategorySlice.actions

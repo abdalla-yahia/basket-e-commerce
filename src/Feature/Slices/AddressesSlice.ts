@@ -3,7 +3,7 @@ import {getAllAddresses,getAddresseById,createAddresse,updateAddresse,deleteAddr
 import { UpdateAddresse } from "@/Interfaces/AddresseInterface";
 
 const initialState = {
-  AllAddresses: {Addresses:[] as UpdateAddresse[] | null},
+  AllAddresses: {Addresses:[] as UpdateAddresse[]},
   Addresse: {} as { Addresse: UpdateAddresse ,status:number},
   loading: false,
   error: null as string | null,

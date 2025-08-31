@@ -4,7 +4,7 @@ import { CreateBrand, UpdateBrand } from "@/Interfaces/BrandInterface";
 
 const initialState = {
   AllBrands: { brands: [] as UpdateBrand[] }, 
-  brand: {} as {brand:CreateBrand},  
+  brand: {} as {brand:CreateBrand} | null,  
   loading: false,
   error: null as string | null,
 };
@@ -15,6 +15,9 @@ const BrandSlice = createSlice({
   reducers: {
     resetState:(state)=>{
       state.brand = {} as {brand:CreateBrand}
+    },
+    clearBrand:(state)=>{
+      state.brand = null
     }
   },
   extraReducers: (builder) => {
@@ -82,4 +85,4 @@ const BrandSlice = createSlice({
 });
 
 export default BrandSlice.reducer;
-export const {resetState} = BrandSlice.actions
+export const {resetState,clearBrand} = BrandSlice.actions

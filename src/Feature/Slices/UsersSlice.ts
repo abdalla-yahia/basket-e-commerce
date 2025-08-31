@@ -3,7 +3,7 @@ import {getAllUsers,getUserById,createUser,updateUser,deleteUser,} from "../Acti
 import { UpdateUser } from "@/Interfaces/UserInterface";
 
 const initialState = {
-  AllUsers: {users:[] as UpdateUser[] | null},
+  AllUsers: {users:[] as UpdateUser[]},
   user: {} as { user: UpdateUser ,status:number},
   loading: false,
   error: null as string | null,

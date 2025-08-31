@@ -1,11 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  getAllOrders,
-  getOrderById,
-  createOrder,
-  updateOrder,
-  deleteOrder,
-} from "../Actions/OrdersActions";
+import {getAllOrders,getOrderById,createOrder,updateOrder,deleteOrder,} from "../Actions/OrdersActions";
 import { CreateOrder, UpdateOrder } from "@/Interfaces/OrderInterface";
 
 const initialState = {

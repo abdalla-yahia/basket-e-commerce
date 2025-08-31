@@ -13,13 +13,13 @@ export default function MainLayout({children,}: Readonly<{children: React.ReactN
     const dispatch = useAppDispatch()
         useEffect(()=>{
             dispatch(getAllCategories())
-        },[])
+        },[dispatch])
     return(
         <>
         <Header />
-        <main>
-            {children}
-        </main>
+            <main>
+                {children}
+            </main>
         <Footer />
        <ToastContainer/>
         </>
