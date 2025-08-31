@@ -7,11 +7,19 @@ export default function Aside_Dashboard({role}:{role:string}) {
   return (
     <aside className="w-[15%]  flex flex-col justify-start items-start rounded   text-[#3E445A] font-[400] text-sm gap-0 border border-[#E4E5EE]">
           {
-            role === 'users' ? (dashboardIcons?.users?.map(icon=>
-              <Link key={icon?.id} href={icon?.href} className='w-full hover:bg-primary hover:text-white duration-100 cursor-pointer p-3  flex justify-between items-start gap-3'>
+            role === 'users' ? (dashboardIcons?.users?.map(icon=>{
+                     return (icon?.id === 0) ? 
+                (
+                  <Link key={icon?.id} href={icon?.href} className='w-full bg-primary text-white text-2xl border duration-100 cursor-pointer p-3  flex justify-between items-start gap-3'>
                     {icon?.title}
                     <Dashboard_Icon icon={icon?.icon as keyof typeof icons}/>
                 </Link>
+                ):
+                (<Link key={icon?.id} href={icon?.href} className='w-full hover:bg-primary hover:text-white duration-100 cursor-pointer p-3  flex justify-between items-start gap-3'>
+                    {icon?.title}
+                    <Dashboard_Icon icon={icon?.icon as keyof typeof icons}/>
+                </Link>)
+                }
             )):
 
              role === 'admins' ? (dashboardIcons?.admins?.map(icon=>{
