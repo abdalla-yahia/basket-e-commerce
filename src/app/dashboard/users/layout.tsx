@@ -1,10 +1,6 @@
 import Aside_Dashboard from "@/Components/Dashboards/Aside/Aside_Dashboard";
 
-export default function UsersLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function UsersLayout({children,}: Readonly<{children: React.ReactNode;}>) {
   return (
     <section className="w-full flex justify-center items-center mt-[40px]">
       <div className="w-[90%] flex justify-between items-start gap-5">

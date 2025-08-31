@@ -2,7 +2,7 @@ import { TbError404,TbCategoryPlus } from 'react-icons/tb';
 import { HiOutlineHandRaised } from "react-icons/hi2";
 import { BiSolidErrorAlt,BiSolidCategory} from "react-icons/bi";
 import { RiArrowRightSLine,RiArrowLeftSLine } from "react-icons/ri";
-import { FaWhatsapp,FaFacebookF,FaPinterestP,FaRegEye,FaRegEyeSlash,FaChartLine,FaAddressCard,FaUsers,FaTrash,FaRegEdit } from "react-icons/fa";
+import { FaWhatsapp,FaFacebookF,FaPinterestP,FaRegEye,FaRegEyeSlash,FaChartLine,FaAddressCard,FaUsers,FaTrash,FaRegEdit,FaHome } from "react-icons/fa";
 import { IoClose,IoLogoReddit } from "react-icons/io5";
 import { BsHandbag,BsTwitterX } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
@@ -22,6 +22,6 @@ import { MdDelete } from "react-icons/md";
 
 export {BiSolidErrorAlt,HiOutlineHandRaised,TbError404,RiArrowLeftSLine,RiArrowRightSLine,FaWhatsapp,IoClose,BsHandbag,CiHeart,GrDocumentUpdate,MdDelete,
 PiShareFatThin,SlTag,FaPlus,FaMinus,FaFacebookF,IoLogoInstagram,BsTwitterX,IoLogoReddit,FaPinterestP,FaLocationDot,FiPhoneCall,MdOutlineLocalPostOffice,
-CiCreditCardOff,IoPersonCircleOutline,FaRegEye,FaRegEyeSlash,CiSettings,LuLoader,FaChartLine,IoPricetagsSharp,FaTrash,FaRegEdit,IoMdCheckmark,
+CiCreditCardOff,IoPersonCircleOutline,FaRegEye,FaRegEyeSlash,CiSettings,LuLoader,FaChartLine,IoPricetagsSharp,FaTrash,FaRegEdit,IoMdCheckmark,FaHome,
 FaAddressCard,FaMapLocationDot,MdDeliveryDining,MdDashboard,FaUsers,MdInventory2,RiCoupon3Fill,MdAddBox,BiSolidCategory,TbCategoryPlus,SiBrandfolder,MdAddToQueue
  }

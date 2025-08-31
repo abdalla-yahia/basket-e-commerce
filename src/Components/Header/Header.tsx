@@ -1,18 +1,9 @@
-'use client'
-import { useEffect } from "react";
-import { RootState, useAppDispatch } from "@/libs/store";
-import { useSelector } from "react-redux";
-import { getAllCategories } from "@/Feature/Actions/CategoriesActions";
 import Main_Nav_Container from './Main_Nav_Section/Main_Nav_Container';
 import SubNav_Container from './Sub_Nav_Section/SubNav_Container';
 import SearchBar_Container from './Search_Section/SearchBar_Container';
 
 export default function Header() {
-  const {AllCategories} = useSelector((state:RootState)=>state.category)
-        const dispatch = useAppDispatch()
-        useEffect(()=>{
-            dispatch(getAllCategories())
-        },[])
+        
   return (
     <header className=" w-full h-[257.5px]  flex flex-col justify-center items-center">
         {/*Top Header*/}
@@ -26,7 +17,7 @@ export default function Header() {
         {/*Search Bar*/}
         <SearchBar_Container />
         {/*Main Nav*/}
-        <Main_Nav_Container AllCategories={AllCategories}/>
+        <Main_Nav_Container/>
     </header>
   )
 }

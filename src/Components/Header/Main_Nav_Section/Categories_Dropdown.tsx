@@ -1,8 +1,10 @@
 'use client'
 import { UpdateCategory } from "@/Interfaces/CategoryInterface"
+import { RootState, useAppSelector } from "@/libs/store";
 import { useRouter } from "next/navigation";
 
-export default function Categories_Dropdown({AllCategories}:{AllCategories:{categories:UpdateCategory[]}}) {
+export default function Categories_Dropdown() {
+  const {AllCategories} = useAppSelector((state:RootState)=>state.category)
 
   const router = useRouter()
 

@@ -1,6 +1,12 @@
 {
   "users": [
     {
+      "id": 0,
+      "title": "HomePage",
+      "icon": "FaHome",
+      "href": "/"
+    },
+    {
       "id": 1,
       "title": "Dashboard",
       "icon": "FaChartLine",
@@ -27,7 +33,12 @@
 
   ],
   "admins": [
-
+    {
+      "id": 0,
+      "title": "HomePage",
+      "icon": "FaHome",
+      "href": "/"
+    },
     {
       "id": 1,
       "title": "Dashboard",

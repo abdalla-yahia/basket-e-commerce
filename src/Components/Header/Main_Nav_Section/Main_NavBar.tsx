@@ -1,8 +1,11 @@
 import Link from "next/link";
 import { UpdateCategory } from "@/Interfaces/CategoryInterface";
 import Image from "next/image";
+import { RootState, useAppSelector } from "@/libs/store";
 
-export default function Main_NavBar({AllCategories}:{AllCategories:{categories:UpdateCategory[]}}) {
+export default function Main_NavBar() {
+    const {AllCategories} = useAppSelector((state:RootState)=>state.category)
+
     // const [href, setHref] = useState('')
     
 

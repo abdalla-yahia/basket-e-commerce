@@ -14,11 +14,19 @@ export default function Aside_Dashboard({role}:{role:string}) {
                 </Link>
             )):
 
-             role === 'admins' ? (dashboardIcons?.admins?.map(icon=>
-                <Link key={icon?.id} href={icon?.href} className='w-full hover:bg-primary hover:text-white duration-100 cursor-pointer p-3  flex justify-between items-start gap-3'>
+             role === 'admins' ? (dashboardIcons?.admins?.map(icon=>{
+                 return (icon?.id === 0) ? 
+                (
+                  <Link key={icon?.id} href={icon?.href} className='w-full bg-primary text-white text-2xl border duration-100 cursor-pointer p-3  flex justify-between items-start gap-3'>
                     {icon?.title}
                     <Dashboard_Icon icon={icon?.icon as keyof typeof icons}/>
                 </Link>
+                ):
+                (<Link key={icon?.id} href={icon?.href} className='w-full hover:bg-primary hover:text-white duration-100 cursor-pointer p-3  flex justify-between items-start gap-3'>
+                    {icon?.title}
+                    <Dashboard_Icon icon={icon?.icon as keyof typeof icons}/>
+                </Link>)
+                }
             )) :''
           }
         </aside>
