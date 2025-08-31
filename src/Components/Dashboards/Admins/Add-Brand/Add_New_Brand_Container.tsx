@@ -1,8 +1,7 @@
 'use client'
 import { SetStateAction, useActionState, useState } from "react";
 import * as icon from '@/Utils/Icons/Icons';
-import { useSelector } from "react-redux";
-import { RootState, useAppDispatch } from "@/libs/store";
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { CreateBrand } from "@/Interfaces/BrandInterface";
 import { CreateBrandValidation } from "@/Validation/BrandValidation";
 import { toast } from "react-toastify";
@@ -11,7 +10,7 @@ import UploadOneImage from "@/Utils/UploadOneImage";
 
 export default function Add_New_Brand_Container() {
   const [imageUrl, setImageUrl] = useState<string>('');
-  const { brand, error, loading } = useSelector((state: RootState) => state.brand)
+  const { brand, error, loading } = useAppSelector((state: RootState) => state.brand)
   const dispatch = useAppDispatch()
   //Create Item Handler
   const CreateItem = (prevState: CreateBrand, formData: FormData): CreateBrand => {

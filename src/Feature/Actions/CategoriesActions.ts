@@ -6,7 +6,11 @@ import { toast } from "react-toastify";
 //Get All categories
 export const getAllCategories = createAsyncThunk('categories/getAll',async()=>{
     try {
-        const res = GetHook('/api/categories')
+        const res = GetHook('/api/categories',{
+            headers:{
+                'cache':'force-cache'
+            }
+        })
         return res;
     } catch (error) {
         toast.error(`Error To Get All categories`)

@@ -1,8 +1,7 @@
 'use client'
 import { useActionState, useState } from "react";
 import * as icon from '@/Utils/Icons/Icons';
-import { useSelector } from "react-redux";
-import { RootState, useAppDispatch } from "@/libs/store";
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { UpdateUserValidation } from "@/Validation/UserValidation";
 import { toast } from "react-toastify";
 import { updateUser } from "@/Feature/Actions/UsersActions";
@@ -12,7 +11,7 @@ import { resetState } from "@/Feature/Slices/UsersSlice";
 
 export default function Edit_User_Form({ User, setIsToggle }: { User: UpdateUser, setIsToggle: (arg0: boolean) => void }) {
   const [imageUrl, setImageUrl] = useState(User?.image);
-  const { user: EditUser, error, loading } = useSelector((state: RootState) => state.user)
+  const { user: EditUser, error, loading } = useAppSelector((state: RootState) => state.user)
 
   const dispatch = useAppDispatch()
   //Create Item Handler
@@ -42,7 +41,7 @@ export default function Edit_User_Form({ User, setIsToggle }: { User: UpdateUser
     name: User?.name,
     phone: User?.phone,
     address: User?.address,
-    image: User?.image 
+    image: User?.image
   }
 
   const [, ActionStat] = useActionState(UpdateItem, InitialState)
@@ -63,7 +62,7 @@ export default function Edit_User_Form({ User, setIsToggle }: { User: UpdateUser
       {/*Form */}
       <form action={ActionStat} className="w-[70%]">
         {/*User Image*/}
-        <UploadOneImage imageUrl={imageUrl  as string} setImageUrl={setImageUrl} />
+        <UploadOneImage imageUrl={imageUrl as string} setImageUrl={setImageUrl} />
         {/*User Image URL*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
           <label htmlFor="UserUrl">User Image Url:</label>

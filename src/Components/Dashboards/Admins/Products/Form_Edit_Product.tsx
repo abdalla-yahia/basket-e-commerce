@@ -2,8 +2,7 @@
 import UploadImages from "@/Utils/UploadImage";
 import { SetStateAction, useActionState, useEffect, useState } from "react";
 import * as icon from '@/Utils/Icons/Icons';
-import { useSelector } from "react-redux";
-import { RootState, useAppDispatch } from "@/libs/store";
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
 import { UpdataProductValidation } from "@/Validation/ProductValidation";
 import { toast } from "react-toastify";
@@ -15,9 +14,9 @@ import { UpdateCategory } from "@/Interfaces/CategoryInterface";
 
 export default function Edit_Product_Form({ product, setIsToggle }: { product: UpdateProduct, setIsToggle: (arg0: boolean) => void }) {
   const [imageUrl, setImages] = useState<string[]>(product?.gallery || []);
-  const { product: EditProduct, error, loading } = useSelector((state: RootState) => state.product)
-  const { AllBrands } = useSelector((state: RootState) => state.brand)
-  const { AllCategories } = useSelector((state: RootState) => state.category)
+  const { product: EditProduct, error, loading } = useAppSelector((state: RootState) => state.product)
+  const { AllBrands } = useAppSelector((state: RootState) => state.brand)
+  const { AllCategories } = useAppSelector((state: RootState) => state.category)
 
   const dispatch = useAppDispatch()
   //Get All CategoryId And All BrandsId
@@ -31,8 +30,8 @@ export default function Edit_Product_Form({ product, setIsToggle }: { product: U
       ...prevState,
       slig: product?.slug,
       title: formData.get('ProductTitle') as string || product?.title,
-      description: formData.get('ProductDescription') as string ||product?.description,
-      offer: formData.get('ProductOffer') as string ||product?.offer,
+      description: formData.get('ProductDescription') as string || product?.description,
+      offer: formData.get('ProductOffer') as string || product?.offer,
       price: Number(formData.get('ProductPrice')) || product?.price,
       oldPrice: Number(formData.get('ProductOldPrice')),
       quantity: Number(formData.get('ProductQuantity')),

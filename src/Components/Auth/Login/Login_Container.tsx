@@ -2,18 +2,15 @@
 import { useActionState, useState } from "react"
 import * as icon from '@/Utils/Icons/Icons';
 import Link from "next/link";
-import { useSelector } from "react-redux";
-import { RootState, useAppDispatch } from "@/libs/store";
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { CreateUserValidation } from "@/Validation/UserValidation";
 import { toast } from "react-toastify";
 import { loginUser } from "@/Feature/Actions/AuthActions";
 import { UserLogineInterface } from "@/Interfaces/UserInterface";
-import { useRouter } from "next/navigation";
 
 export default function Login_Container() {
-    const {LogedUser,error,loading} = useSelector((state:RootState)=>state.auth)
+    const {LogedUser,error,loading} = useAppSelector((state:RootState)=>state.auth)
     const dispatch = useAppDispatch()
-    const router = useRouter()
     const [isShow,setIsShow] = useState(false)
     //Form Login 
     const UserLogin = (prevState:UserLogineInterface,formData:FormData):UserLogineInterface=>{
@@ -39,10 +36,7 @@ export default function Login_Container() {
         password:''
     }
     const [,ActionState] = useActionState(UserLogin,InitalState)
-    // //Redirect User To Homepage After Login
-    // if(LogedUser?.user?.name){
-    //     router?.replace('/')
-    // }
+
   return ( 
     <div className='w-[50%] flex flex-col justify-center items-center'>
     {/*Main Title*/}

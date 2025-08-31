@@ -1,8 +1,7 @@
 'use client'
 import { useActionState, useState } from "react";
 import * as icon from '@/Utils/Icons/Icons';
-import { useSelector } from "react-redux";
-import { RootState, useAppDispatch } from "@/libs/store";
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { UpdateCategoryValidation } from "@/Validation/CategoryValidation";
 import { toast } from "react-toastify";
 import { updateCategory } from "@/Feature/Actions/CategoriesActions";
@@ -12,7 +11,7 @@ import { clearCategory } from "@/Feature/Slices/CategoriesSlice";
 
 export default function Edit_Category_Form({ Category, setIsToggle }: { Category: UpdateCategory, setIsToggle: (arg0: boolean) => void }) {
   const [imageUrl, setImageUrl] = useState<string>(Category?.image as string);
-  const { category: EditCategory, error, loading } = useSelector((state: RootState) => state.category)
+  const { category: EditCategory, error, loading } = useAppSelector((state: RootState) => state.category)
 
   const dispatch = useAppDispatch()
   //Create Item Handler
@@ -22,7 +21,7 @@ export default function Edit_Category_Form({ Category, setIsToggle }: { Category
       id: Category?.id,
       title: formData.get('CategoryTitle') as string || Category?.title,
       description: formData.get('CategoryDescription') as string || Category?.description,
-      image: formData.get('CategoryUrl') as string || imageUrl ,
+      image: formData.get('CategoryUrl') as string || imageUrl,
     }
     //Check Validation 
     console.log(formstate)
@@ -42,7 +41,7 @@ export default function Edit_Category_Form({ Category, setIsToggle }: { Category
     description: Category?.description,
     image: Category?.image,
   }
- 
+
   const [, ActionStat] = useActionState(UpdateItem, InitialState)
   if (EditCategory?.category?.title) {
     setIsToggle(false)

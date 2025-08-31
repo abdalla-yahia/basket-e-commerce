@@ -3,16 +3,16 @@ import { getAllProduct } from "@/Feature/Actions/ProductsActions"
 import { UpdateProduct } from "@/Interfaces/ProductInterface"
 import { RootState, useAppDispatch } from "@/libs/store"
 import { useEffect } from "react"
-import { useSelector } from "react-redux"
+import { useAppSelector } from "react-redux"
 import Product_content from "./Product_content"
 
 export default function Products_Container() {
-  const {AllProducts} = useSelector((state:RootState)=>state.product)
+  const { AllProducts } = useAppSelector((state: RootState) => state.product)
   const dispatch = useAppDispatch()
   //Fetch All Products
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(getAllProduct())
-  },[dispatch])
+  }, [dispatch])
 
 
   return (
@@ -34,13 +34,13 @@ export default function Products_Container() {
         </thead>
         <tbody>
           {
-            AllProducts?.products?.map((product:UpdateProduct)=>
-              <Product_content key={product?.id} product={product}/>
+            AllProducts?.products?.map((product: UpdateProduct) =>
+              <Product_content key={product?.id} product={product} />
             )
           }
         </tbody>
       </table>
-          
+
     </div>
   )
 }

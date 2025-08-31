@@ -24,10 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-      className={`${geistSans.variable} ${geistMono.variable} antialiased w-full bg-green-500`}
-      >
+    <html lang="en"><body className={`${geistSans.variable} ${geistMono.variable} antialiased w-full bg-green-500`}>
         <ReduxProvider >
           {children}
         </ReduxProvider>

@@ -1,8 +1,7 @@
 'use client'
 import { useActionState, useState } from "react";
 import * as icon from '@/Utils/Icons/Icons';
-import { useSelector } from "react-redux";
-import { RootState, useAppDispatch } from "@/libs/store";
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { UpdateBrandValidation } from "@/Validation/BrandValidation";
 import { toast } from "react-toastify";
 import { updateBrand } from "@/Feature/Actions/BrandsActions";
@@ -12,7 +11,7 @@ import { clearBrand } from "@/Feature/Slices/BrandsSlice";
 
 export default function Edit_Brand_Form({ brand, setIsToggle }: { brand: UpdateBrand, setIsToggle: (arg0: boolean) => void }) {
   const [imageUrl, setImageUrl] = useState<string>(brand?.image as string);
-  const { brand: EditBrand, error, loading } = useSelector((state: RootState) => state.brand)
+  const { brand: EditBrand, error, loading } = useAppSelector((state: RootState) => state.brand)
 
   const dispatch = useAppDispatch()
   //Create Item Handler
@@ -22,7 +21,7 @@ export default function Edit_Brand_Form({ brand, setIsToggle }: { brand: UpdateB
       id: brand?.id,
       title: formData.get('BrandTitle') as string || brand?.title,
       description: formData.get('BrandDescription') as string || brand?.description,
-      image: formData.get('BrandUrl') as string ||imageUrl,
+      image: formData.get('BrandUrl') as string || imageUrl,
     }
     //Check Validation 
     console.log(formstate)

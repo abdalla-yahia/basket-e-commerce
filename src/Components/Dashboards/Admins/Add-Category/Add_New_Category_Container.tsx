@@ -1,8 +1,7 @@
 'use client'
 import { SetStateAction, useActionState, useState } from "react";
 import * as icon from '@/Utils/Icons/Icons';
-import { useSelector } from "react-redux";
-import { RootState, useAppDispatch } from "@/libs/store";
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { CreateCategory } from "@/Interfaces/CategoryInterface";
 import { CreateCategoryValidation } from "@/Validation/CategoryValidation";
 import { toast } from "react-toastify";
@@ -11,7 +10,7 @@ import UploadOneImage from "@/Utils/UploadOneImage";
 
 export default function Add_New_Category_Container() {
   const [imageUrl, setImageUrl] = useState<string>('');
-  const { category, error, loading } = useSelector((state: RootState) => state.category)
+  const { category, error, loading } = useAppSelector((state: RootState) => state.category)
   const dispatch = useAppDispatch()
   //Create Item Handler
   const CreateItem = (prevState: CreateCategory, formData: FormData): CreateCategory => {
