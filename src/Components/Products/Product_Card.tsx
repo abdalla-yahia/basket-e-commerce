@@ -76,13 +76,13 @@ export default function Product_Card({ slug,img, offer, title, rating, oldprice,
                 <p className="font-[600] text-[#D51243] text-[18px]" style={{ lineHeight: '27px', letterSpacing: '-0.1px', fontFamily: 'Dosis' }}>${price}</p>
             </div>
             {/*Count*/}
-            {iscounter && <div className="flex justify-between items-center w-full border overflow-hidden border-[#EDEEF5] rounded-[50px] ">
+            {iscounter && <div className="flex justify-between items-center w-full border overflow-hidden border-[#EDEEF5] rounded-[50px]">
                 {/*Decrement Button*/}
-                    <icon.FaMinus title="Decrement Counter" onClick={() =>DecreamentHandller() } className={`${counter === 0 ? 'cursor-not-allowed':'cursor-pointer'} flex justify-center items-center bg-[#EDEEF5] w-1/6 h-[30px] text-[10px] `}/>
+                    <icon.FaMinus title="Decrement Counter" onClick={() =>DecreamentHandller() } className={`${counter === 0 ? 'cursor-not-allowed':'cursor-pointer'} flex justify-center items-center bg-[#EDEEF5] w-1/6 h-[30px] text-[10px] p-1`}/>
                 {/*Counter*/}
                 <span className="flex w-full justify-center items-center text-[20px]">{counter}</span>
                 {/*Increment Button*/}
-                    <icon.FaPlus title="Increment Counter" onClick={() =>IncreamentHandller() } className=" flex justify-center cursor-pointer items-center bg-[#FFCD00] w-1/6 h-[30px] text-[10px] "/>
+                    <icon.FaPlus title="Increment Counter" onClick={() =>IncreamentHandller() } className=" flex justify-center cursor-pointer items-center bg-[#FFCD00] w-1/6 h-[30px] text-[10px] p-1"/>
             </div>}
         </div>
     )
