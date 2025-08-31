@@ -2,8 +2,17 @@
 import Link from "next/link";
 import useSvgColor from "@/Utils/Icons/SVG-Color";
 import Image from "next/image";
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
+import { useEffect } from "react";
+import { getAllProduct } from "@/Feature/Actions/ProductsActions";
+import { UpdateProduct } from "@/Interfaces/ProductInterface";
 
 export default function Trending_Section() {
+  const {AllProducts} = useAppSelector((state:RootState)=>state.product)
+  const dispatch = useAppDispatch()
+  useEffect(()=>{
+    dispatch(getAllProduct())
+  },[])
   return (
     <aside className="flex w-[20%] flex-col  justify-start items-start">
         {/*Download App*/}
@@ -40,87 +49,28 @@ export default function Trending_Section() {
         <h2 className="max-w-full uppercase font-[600] text-[15px] text-[#202435]">Trending Search</h2>
         <div className="max-w-full  flex mt-2 flex-col justify-between items-start gap-3 border border-[#E4E5EE] rounded-lg">
             {/*Items*/}
-                <Link href={'/'}>
-                    <div className="flex justify-start items-center ">
-                            <Image src={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756252578/product_8_ulqvqt.png'} alt="image-" width={50} height={50} />
-                            {/*Content*/}
-                            <div className="flex flex-col justify-start gap-2 items-start py-4 ">
-                                <h5 className="font-[500] text-[13px]" style={{lineHeight:'18.2px'}}>USDA Choice Angus Beef Stew Meat</h5>
-                                {/*Price*/}
-                                <div className="flex justify-between items-center gap-2">
-                                    {/*Old Price*/}
-                                    <p className="font-[600] text-[#C2C2D3] text-[15.3px] line-through" style={{lineHeight:'22.95px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$79.99</p>
+                {
+                  AllProducts?.products &&  AllProducts?.products?.slice(0,6)?.map((product:UpdateProduct)=>
+                
+                    <Link key={product?.id} href={`/products/${product?.id}`}>
+                        <div className="flex justify-start items-center ">
+                                <Image src={product?.image || 'https://res.cloudinary.com/dghqvxueq/image/upload/v1756252578/product_8_ulqvqt.png'} alt={product?.title as string} width={50} height={50} />
+                                {/*Content*/}
+                                <div className="flex flex-col justify-start gap-2 items-start py-4 ">
+                                    <h5 className="font-[500] text-[13px]" style={{lineHeight:'18.2px'}}>{product?.title as string}</h5>
                                     {/*Price*/}
-                                    <p className="font-[600] text-[#D51243] text-[18px]" style={{lineHeight:'27px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$49.99</p>
+                                    <div className="flex justify-between items-center gap-2">
+                                        {/*Old Price*/}
+                                        <p className="font-[600] text-[#C2C2D3] text-[15.3px] line-through" style={{lineHeight:'22.95px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>${product?.oldPrice as unknown as string}</p>
+                                        {/*Price*/}
+                                        <p className="font-[600] text-[#D51243] text-[18px]" style={{lineHeight:'27px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>${product?.price as unknown as string}</p>
+                                    </div>
                                 </div>
-                            </div>
-                    </div>
-                </Link>
-                <Link href={'/'}>
-                    <div className="flex justify-start items-center ">
-                        <Image src={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} alt="image-" width={50} height={50} />
-                        {/*Content*/}
-                        <div className="flex flex-col justify-start gap-2 items-start py-4 ">
-                            <h5 className="font-[500] text-[13px]" style={{lineHeight:'18.2px'}}>Warrior Blend Organic</h5>
-                            {/*Price*/}
-                            <div className="flex justify-between items-center gap-2">
-                                {/*Old Price*/}
-                                <p className="font-[600] text-[#C2C2D3] text-[15.3px] line-through" style={{lineHeight:'22.95px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$39.00</p>
-                                {/*Price*/}
-                                <p className="font-[600] text-[#D51243] text-[18px]" style={{lineHeight:'27px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$29.00</p>
-                            </div>
                         </div>
-                    </div>
-                </Link>
-                <Link href={'/'}>
-                    <div className="flex justify-start items-center ">
-                        <Image src={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756246624/product_5_xrazt4.png'} alt="image-" width={50} height={50} />
-                        {/*Content*/}
-                        <div className="flex flex-col justify-start gap-2 items-start py-4 ">
-                            <h5 className="font-[500] text-[13px]" style={{lineHeight:'18.2px'}}>Encore Seafoods Stuffed Alaskan Salmon</h5>
-                            {/*Price*/}
-                            <div className="flex justify-between items-center gap-2">
-                                {/*Old Price*/}
-                                <p className="font-[600] text-[#C2C2D3] text-[15.3px] line-through" style={{lineHeight:'22.95px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$32.49</p>
-                                {/*Price*/}
-                                <p className="font-[600] text-[#D51243] text-[18px]" style={{lineHeight:'27px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$27.49</p>
-                            </div>
-                        </div>
-                    </div>
-                </Link>
-                <Link href={'/'}>
-                    <div className="flex justify-start items-center ">
-                        <Image src={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756246623/product_6_po8mfe.png'} alt="image-" width={50} height={50} />
-                        {/*Content*/}
-                        <div className="flex flex-col justify-start gap-2 items-start py-4 ">
-                            <h5 className="font-[500] text-[13px]" style={{lineHeight:'18.2px'}}>Vital Farms Pasture-Raised Egg Bites Bacon…</h5>
-                            {/*Price*/}
-                            <div className="flex justify-between items-center gap-2">
-                                {/*Old Price*/}
-                                <p className="font-[600] text-[#C2C2D3] text-[15.3px] line-through" style={{lineHeight:'22.95px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$29.00</p>
-                                {/*Price*/}
-                                <p className="font-[600] text-[#D51243] text-[18px]" style={{lineHeight:'27px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$25.00</p>
-                            </div>
-                        </div>
-                    </div>
-                </Link>
-                <Link href={'/'}>
-                    <div className="flex justify-start items-center ">
-                        <Image src={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233984/product_4_t9jl7t.png'} alt="image-" width={50} height={50} />
-                        {/*Content*/}
-                        <div className="flex flex-col justify-start gap-2 items-start py-4 ">
-                            <h5 className="font-[500] text-[13px]" style={{lineHeight:'18.2px'}}>Field Roast Chao Cheese Creamy Original</h5>
-                            {/*Price*/}
-                            <div className="flex justify-between items-center gap-2">
-                                {/*Old Price*/}
-                                <p className="font-[600] text-[#C2C2D3] text-[15.3px] line-through" style={{lineHeight:'22.95px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$24.00</p>
-                                {/*Price*/}
-                                <p className="font-[600] text-[#D51243] text-[18px]" style={{lineHeight:'27px',letterSpacing:'-0.1px',fontFamily:'Dosis'}}>$19.50</p>
-                            </div>
-                        </div>
-                    </div>
-                </Link>
-            
+                    </Link>
+                
+                )  
+                }
         </div>
     </aside>
   )

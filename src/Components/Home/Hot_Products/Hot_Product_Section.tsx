@@ -39,7 +39,7 @@ export default function Hot_Products_Section() {
   return (
     <section className="w-[100%]">
         {/*Section Title*/}
-        <Section_Title title={'HOT PRODUCT FOR THIS WEEK'} description={"Don't miss this opportunity at a special discount just for this week."} href={'/'}/>
+        <Section_Title title={'HOT PRODUCT FOR THIS WEEK'} description={"Don't miss this opportunity at a special discount just for this week."} href={'/products'}/>
         {/*Products*/}
         <div className="w-full bg-white flex justify-between rounded-2xl items-start p-5 mt-3 border border-[#ED174A]">
             {/*Image Section*/}
