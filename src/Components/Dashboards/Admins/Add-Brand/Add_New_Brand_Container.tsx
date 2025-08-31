@@ -19,7 +19,7 @@ export default function Add_New_Brand_Container() {
       ...prevState,
       title: formData.get('BrnadTitle') as string,
       description: formData.get('BrnadDescription') as string,
-      image: imageUrl && imageUrl[0]
+      image: imageUrl
     }
     //Check Validation 
     const Validation = CreateBrandValidation.safeParse(formstate)

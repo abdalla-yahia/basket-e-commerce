@@ -22,7 +22,7 @@ export default function Edit_User_Form({ User, setIsToggle }: { User: UpdateUser
       name: formData.get('UserName') as string || User?.name,
       address: formData.get('UserAddress') as string || User?.address,
       phone: formData.get('UserPhone') as string || User?.phone,
-      image: imageUrl && imageUrl[0],
+      image: imageUrl,
     }
     //Check Validation 
     console.log(formstate)

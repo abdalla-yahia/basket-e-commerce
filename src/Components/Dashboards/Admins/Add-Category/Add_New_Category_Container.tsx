@@ -19,7 +19,7 @@ export default function Add_New_Category_Container() {
       ...prevState,
       title: formData.get('CategoryTitle') as string,
       description: formData.get('CategoryDescription') as string,
-      image: imageUrl && imageUrl[0]
+      image: imageUrl
     }
     //Check Validation 
     const Validation = CreateCategoryValidation.safeParse(formstate)
