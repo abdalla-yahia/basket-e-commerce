@@ -32,13 +32,13 @@ export default function Categories_List() {
         {/*List Of Filters*/}
         <ul className="flex flex-col w-full px-6 py-4 justify-between items-start gap-5 ">
             <li>
-                <Link href="">Value of the Day</Link>
+                <Link href="/products">Value of the Day</Link>
             </li>
             <li>
-                <Link href="">Top 100 Offers</Link>
+                <Link href="/products">Top 100 Offers</Link>
             </li>
             <li>
-                <Link href="">New Arrivals</Link>
+                <Link href="/products">New Arrivals</Link>
             </li>
         </ul>
     </div>

@@ -11,10 +11,7 @@ import { prisma } from "@/libs/Prisma/Prisma_Client";
  * @returns  Get Order By Id
  */
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-): Promise<NextResponse> {
+export async function GET(request: NextRequest,{ params }: { params: Promise<{ id: number}> }): Promise<NextResponse> {
   try {
     //Get Id
     const { id } = await params;
@@ -66,7 +63,7 @@ export async function GET(
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ id: number}> }
 ): Promise<NextResponse> {
   try {
     //Get Id
@@ -124,7 +121,7 @@ export async function POST(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ id: number}> }
 ) {
   try {
     //Get Id
