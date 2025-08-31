@@ -1,5 +1,5 @@
 'use client'
-import { SetStateAction, useActionState, useState } from "react";
+import { useActionState, useState } from "react";
 import * as icon from '@/Utils/Icons/Icons';
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "@/libs/store";
@@ -21,7 +21,7 @@ export default function Edit_Category_Form({ Category, setIsToggle }: { Category
       id: Category?.id,
       title: formData.get('CategoryTitle') as string || Category?.title,
       description: formData.get('CategoryDescription') as string || Category?.description,
-      image: imageUrl || Category?.image,
+      image: formData.get('CategoryUrl') as string || imageUrl ,
     }
     //Check Validation 
     console.log(formstate)
@@ -59,11 +59,11 @@ export default function Edit_Category_Form({ Category, setIsToggle }: { Category
       {/*Form */}
       <form action={ActionStat} className="w-[70%]">
         {/*Category Image*/}
-        <UploadOneImage imageUrl={imageUrl} setImageUrl={setImageUrl as (urls: string) => SetStateAction<string>} />
+        <UploadOneImage imageUrl={imageUrl as unknown as string} setImageUrl={setImageUrl} />
         {/*Category Image URL*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
           <label htmlFor="CategoryUrl">Category Image Url:</label>
-          <input onChange={(e) => setImageUrl(e.target.value)} type="text" name="CategoryUrl" id="CategoryUrl" className='p-2 bg-[#F3F4F7] rounded w-full' />
+          <input type="text" name="CategoryUrl" id="CategoryUrl" className='p-2 bg-[#F3F4F7] rounded w-full' />
         </div>
         {/*Category Title*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>

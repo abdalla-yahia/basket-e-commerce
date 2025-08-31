@@ -1,5 +1,5 @@
 'use client'
-import { SetStateAction, useActionState, useState } from "react";
+import { useActionState, useState } from "react";
 import * as icon from '@/Utils/Icons/Icons';
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "@/libs/store";
@@ -21,7 +21,7 @@ export default function Edit_Brand_Form({ brand, setIsToggle }: { brand: UpdateB
       id: brand?.id,
       title: formData.get('BrandTitle') as string || brand?.title,
       description: formData.get('BrandDescription') as string || brand?.description,
-      image: imageUrl || brand?.image,
+      image: formData.get('BrandUrl') as string ||imageUrl,
     }
     //Check Validation 
     console.log(formstate)
@@ -59,11 +59,11 @@ export default function Edit_Brand_Form({ brand, setIsToggle }: { brand: UpdateB
       {/*Form */}
       <form action={ActionStat} className="w-[70%]">
         {/*Brand Image*/}
-        <UploadOneImage imageUrl={imageUrl} setImageUrl={setImageUrl as (urls: string) => SetStateAction<string>} />
+        <UploadOneImage imageUrl={imageUrl} setImageUrl={setImageUrl} />
         {/*Brand Image URL*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
           <label htmlFor="BrandUrl">Brand Image Url:</label>
-          <input onChange={(e) => setImageUrl(e.target.value)} type="text" name="BrandUrl" id="BrandUrl" className='p-2 bg-[#F3F4F7] rounded w-full' />
+          <input type="text" name="BrandUrl" id="BrandUrl" className='p-2 bg-[#F3F4F7] rounded w-full' />
         </div>
         {/*Brand Title*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>

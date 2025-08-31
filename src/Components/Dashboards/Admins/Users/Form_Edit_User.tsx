@@ -22,7 +22,7 @@ export default function Edit_User_Form({ User, setIsToggle }: { User: UpdateUser
       name: formData.get('UserName') as string || User?.name,
       address: formData.get('UserAddress') as string || User?.address,
       phone: formData.get('UserPhone') as string || User?.phone,
-      image: imageUrl || User?.image,
+      image: formData.get('UserUrl') as string || imageUrl,
     }
     //Check Validation 
     console.log(formstate)
@@ -46,7 +46,7 @@ export default function Edit_User_Form({ User, setIsToggle }: { User: UpdateUser
 
   const [, ActionStat] = useActionState(UpdateItem, InitialState)
   if (EditUser?.status === 201) {
-    setIsToggle(false);
+    setIsToggle(false)
   }
   return (
     <div className="w-[50%] absolute -top-[100%] bg-[#ddd] rounded left-0 flex flex-col justify-start items-center gap-5 p-8">
@@ -65,7 +65,7 @@ export default function Edit_User_Form({ User, setIsToggle }: { User: UpdateUser
         {/*User Image URL*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
           <label htmlFor="UserUrl">User Image Url:</label>
-          <input onChange={(e) => setImageUrl(e.target.value)} type="text" name="UserUrl" id="UserUrl" className='p-2 bg-[#F3F4F7] rounded w-full' />
+          <input type="text" name="UserUrl" id="UserUrl" className='p-2 bg-[#F3F4F7] rounded w-full' />
         </div>
         {/*User Name*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>

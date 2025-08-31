@@ -15,12 +15,12 @@ export default function Personal_Data_Container() {
   const dispatch = useAppDispatch()
   useEffect(()=>{
     dispatch(loggedUser())
-  },[])
+  },[dispatch])
   //Get Data Of User
   useEffect(()=>{
    if(LogedUser?.user?.id) 
     dispatch(getUserById(LogedUser?.user?.id as string))
-  },[LogedUser?.user?.id])
+  },[LogedUser?.user?.id,dispatch])
   return (
     <div className="w-full p-5 ">
       {/*Edit Form*/}
