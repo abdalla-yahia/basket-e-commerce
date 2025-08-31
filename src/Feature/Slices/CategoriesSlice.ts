@@ -6,11 +6,11 @@ import {
   updateCategory,
   deleteCategory,
 } from "../Actions/CategoriesActions";
-import { CreateCategory } from "@/Interfaces/CategoryInterface";
+import { UpdateCategory } from "@/Interfaces/CategoryInterface";
 
 const initialState = {
   AllCategories: {categories:[]},
-  category: {} as {category:CreateCategory},
+  category: {} as {category:UpdateCategory},
   loading: false,
   error: null as string | null,
 };

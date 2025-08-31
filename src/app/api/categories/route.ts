@@ -14,7 +14,11 @@ import { TokenInterFace } from "@/Interfaces/UserInterface";
 
 export async function GET(){
     try {
-        const categories = await prisma.category.findMany()
+        const categories = await prisma.category.findMany({
+            include:{
+                products:true
+            }
+        })
         return NextResponse.json({message:'Get All Categories Successfully',categories},{status:200})
     } catch (error) {
         return NextResponse.json({message:'Faild To Get All Categories',error},{status:500})

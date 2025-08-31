@@ -31,6 +31,7 @@ export default function Add_New_Product_Container() {
         ...prevState,
         title:formData.get('ProductTitle') as string,
         description:formData.get('ProductDescription') as string,
+        offer:formData.get('ProductOffer') as string,
         price:Number(formData.get('ProductPrice')) ,
         oldPrice:Number(formData.get('ProductOldPrice')),
         quantity:Number(formData.get('ProductQuantity')),
@@ -53,6 +54,7 @@ export default function Add_New_Product_Container() {
     const InitialState = {
       title:'',
       description:'',
+      offer:'',
       image:'',
       slug:"", 
       price:0,
@@ -79,7 +81,7 @@ export default function Add_New_Product_Container() {
         {/*Product Image URL*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
             <label htmlFor="ProductUrl">Product Image Url:</label>
-            <input onChange={(e)=>setImages(prev=>[...prev,e.target.value])} type="text" name="ProductUrl" id="ProductUrl" className='p-2 bg-[#F3F4F7] rounded w-full'/>
+            <input onChange={(e)=>setImages([e.target.value])} type="text" name="ProductUrl" id="ProductUrl" className='p-2 bg-[#F3F4F7] rounded w-full'/>
         </div>
         {/*Product Title*/}
           <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
@@ -90,6 +92,11 @@ export default function Add_New_Product_Container() {
           <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
               <label htmlFor="ProductDescription">Product Description:</label>
               <input type="text" name="ProductDescription" id="ProductDescription" className='p-2 bg-[#F3F4F7] rounded w-full'/>
+          </div>
+        {/*Product Offer*/}
+          <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
+              <label htmlFor="ProductOffer">Product Offer:</label>
+              <input type="text" name="ProductOffer" id="ProductOffer" className='p-2 bg-[#F3F4F7] rounded w-full'/>
           </div>
         {/*Product Price*/}
           <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>

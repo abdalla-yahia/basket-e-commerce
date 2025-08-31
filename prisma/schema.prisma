@@ -26,6 +26,7 @@ model User {
   role        Role       @default(USER)
   orders      Orders[]
   addresses   Address[]
+  review      Review[]
   createdAt   DateTime   @default(now())
   updatedAt   DateTime   @updatedAt
   passwordresetCode String?
@@ -59,6 +60,7 @@ model Product {
   price       Float
   quantity    Int
   oldPrice    Float?
+  offer       String?
   image       String?
   gallery     String[]
   brandId     String
@@ -68,8 +70,18 @@ model Product {
   category    Category   @relation(fields: [categoryId], references: [id])
   orders      Orders[]
   cart        Cart?      @relation(fields: [cartId], references: [id])
+  rivew       Review[]
 }
-
+model Review {
+  id        String   @id @default(uuid())
+  rating    Int
+  content   String?
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  product   Product  @relation(fields: [productId], references: [id])
+  productId String
+  createdAt DateTime @default(now())
+}
 model Orders {
   id      Int    @id @default(autoincrement())
   products Product[]

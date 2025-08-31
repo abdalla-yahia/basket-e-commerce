@@ -19,6 +19,8 @@ export interface UpdateProduct {
     quantity?:number
     oldPrice?:number
     image?:string
+    rating?:string
+    offer?:string
     gallery?:string[]
     categoryId?:string
     brandId?:string

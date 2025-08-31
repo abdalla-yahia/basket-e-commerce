@@ -1,7 +1,12 @@
 import Product_Card from "@/Components/Products/Product_Card";
+import Search_Section from "./Search/Search_Section";
 
 export default function Products_Section() {
   return (
+    <>
+    {/*Search Bar*/}
+    <Search_Section/>
+    {/*Products*/}
     <div className="w-full  flex justify-between flex-wrap gap-0 items-start mt-3">
         <Product_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={'22%'} title={'All Natural Italian-Style Chicken Meatballs'} iscounter={true} rating={''} oldprice={'$9.35'} price={'$7.25'} />
         <Product_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233987/product_3_tnqxie.png'} offer={'23%'} title={"Angie's Boomchickapop Sweet & Salty Kettle Corn"} iscounter={true} rating={''} oldprice={'$4.29'} price={'$3.29'} />
@@ -31,5 +36,6 @@ export default function Products_Section() {
         <Product_Card img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756239910/Home-1-Hot-2_tv7gub.png'} offer={'22%'} title={'All Natural Italian-Style Chicken Meatballs'} iscounter={true} rating={''} oldprice={'$9.35'} price={'$7.25'} />
     
     </div>
+    </>
   )
 }

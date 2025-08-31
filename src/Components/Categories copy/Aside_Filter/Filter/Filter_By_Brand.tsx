@@ -12,6 +12,7 @@ export default function Filter_By_Brand() {
   useEffect(()=>{
     dispatch(getAllBrands())
   },[])
+  console.log(AllBrands)
   return (
     <div className="flex flex-col justify-between items-start my-[20px]">
         {/*Filter Title*/}

@@ -23,7 +23,7 @@ export async function GET(_:unknown,{params}:{params:Promise<{slug:string}>}):Pr
         }
         // Get Product
         const product = await prisma.product.findUnique({where:{slug}})
-        return NextResponse.json({message:'Get Product Successfully',product},{status:200})
+        return NextResponse.json({message:'Get Product Successfully',product,status:200},{status:200})
     } catch (error) {
         return NextResponse.json({message:'Faild To Get Product',error},{status:500})
     }
@@ -73,7 +73,7 @@ export async function POST(request:NextRequest,{params}:{params:Promise<{slug:st
             where:{slug},
             data:Validation?.data
         })
-        return NextResponse.json({message:'Product Updated Successfully',product},{status:201})
+        return NextResponse.json({message:'Product Updated Successfully',product,status:201},{status:201})
     } catch (error) {
         return NextResponse.json({message:'Faild To Update Product',error},{status:500})
     }
@@ -113,7 +113,7 @@ export async function DELETE(request:NextRequest,{params}:{params:Promise<{slug:
         }
         //Delete Product
         await prisma.product.delete({where:{slug}})
-        return NextResponse.json({message:'Product Deleted Successfully'},{status:200})
+        return NextResponse.json({message:'Product Deleted Successfully',status:200},{status:200})
     } catch (error) {
         return NextResponse.json({message:'Faild To Delete Product',error},{status:500})
     }

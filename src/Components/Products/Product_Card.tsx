@@ -22,7 +22,7 @@ export default function Product_Card({ img, offer, title, rating, oldprice, pric
         <div className="flex shadow shadow-[rgb(237,238,245)] hover:scale-105 duration-500 hover:z-40 flex-col border border-[#EDEEF5] relative gap-3 bg-white px-6 py-5 justify-center items-start w-1/4">
             <Link href={'/'}>
                 {/*Span Offers*/}
-                {offer && <span className=" absolute bg-[#35AFA0] rounded-[4px] px-2 py-1 top-3 left-3 text-white">{offer}</span>}
+                {offer && <span className=" absolute bg-[#35AFA0] rounded-[4px] px-2 py-1 top-3 left-3 text-white">{offer}%</span>}
                 {/*Image Card*/}
                 <Image className="w-full" src={img} alt={title} width={100} height={150} />
                 {/*Card Content*/}
@@ -71,18 +71,18 @@ export default function Product_Card({ img, offer, title, rating, oldprice, pric
             {/*Price*/}
             <div className="flex justify-between items-center gap-2">
                 {/*Old Price*/}
-                {oldprice && <p className="font-[600] text-[#C2C2D3] text-[15.3px] line-through" style={{ lineHeight: '22.95px', letterSpacing: '-0.1px', fontFamily: 'Dosis' }}>{oldprice}</p>}
+                {oldprice && <p className="font-[600] text-[#C2C2D3] text-[15.3px] line-through" style={{ lineHeight: '22.95px', letterSpacing: '-0.1px', fontFamily: 'Dosis' }}>${oldprice}</p>}
                 {/*Price*/}
-                <p className="font-[600] text-[#D51243] text-[18px]" style={{ lineHeight: '27px', letterSpacing: '-0.1px', fontFamily: 'Dosis' }}>{price}</p>
+                <p className="font-[600] text-[#D51243] text-[18px]" style={{ lineHeight: '27px', letterSpacing: '-0.1px', fontFamily: 'Dosis' }}>${price}</p>
             </div>
             {/*Count*/}
             {iscounter && <div className="flex justify-between items-center w-full border overflow-hidden border-[#EDEEF5] rounded-[50px] ">
                 {/*Decrement Button*/}
-                    <icon.FaMinus title="Decrement Counter" onClick={() =>DecreamentHandller() } className={`${counter === 0 ? 'cursor-not-allowed':'cursor-pointer'} flex justify-center items-center bg-[#EDEEF5] w-1/6 h-[30px] text-[10px] p-2 `}/>
+                    <icon.FaMinus title="Decrement Counter" onClick={() =>DecreamentHandller() } className={`${counter === 0 ? 'cursor-not-allowed':'cursor-pointer'} flex justify-center items-center bg-[#EDEEF5] w-1/6 h-[30px] text-[10px] `}/>
                 {/*Counter*/}
                 <span className="flex w-full justify-center items-center text-[20px]">{counter}</span>
                 {/*Increment Button*/}
-                    <icon.FaPlus title="Increment Counter" onClick={() =>IncreamentHandller() } className=" flex justify-center cursor-pointer items-center bg-[#FFCD00] w-1/6 h-[30px] text-[10px] p-2 "/>
+                    <icon.FaPlus title="Increment Counter" onClick={() =>IncreamentHandller() } className=" flex justify-center cursor-pointer items-center bg-[#FFCD00] w-1/6 h-[30px] text-[10px] "/>
             </div>}
         </div>
     )

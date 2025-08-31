@@ -1,3 +1,5 @@
+import { UpdateProduct } from "./ProductInterface"
+
 export interface CreateCategory {
     title:string
     description?:string
@@ -9,5 +11,5 @@ export interface UpdateCategory {
     title?:string
     description?:string
     image?:string
-    products?:string[]
+    products?:UpdateProduct[]
 }

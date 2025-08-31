@@ -4,7 +4,7 @@ import { CreateProduct,UpdateProduct } from "@/Interfaces/ProductInterface";
 
 const initialState = {
   AllProducts: {products : [] as UpdateProduct[]},
-  product: {} as {product:CreateProduct},
+  product: {} as {product:CreateProduct ,status:number},
   loading: false,
   error: null as string | null,
 };

@@ -18,7 +18,7 @@ export default function Products_Container() {
   return (
     <div className="w-full flex justify-start items-start relative">
       {/*Products Table*/}
-      <table className="w-full border border-gray-200">
+      <table className="w-full border border-gray-200 table">
         <thead className="bg-gray-100">
           <tr>
             <th className="p-2 border border-[#E4E5EE]">Image</th>
@@ -26,7 +26,9 @@ export default function Products_Container() {
             <th className="p-2 border border-[#E4E5EE]">Description</th>
             <th className="p-2 border border-[#E4E5EE]">Category</th>
             <th className="p-2 border border-[#E4E5EE]">Brand</th>
-            <th className="p-2 border border-[#E4E5EE]">Count</th>
+            <th className="p-2 border border-[#E4E5EE]">Quantity</th>
+            <th className="p-2 border border-[#E4E5EE]">Price</th>
+            <th className="p-2 border border-[#E4E5EE]">Offer</th>
             <th className="p-2 border border-[#E4E5EE]">Actions</th>
           </tr>
         </thead>

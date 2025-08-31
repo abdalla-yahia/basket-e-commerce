@@ -12,10 +12,7 @@ import Jwt from "jsonwebtoken";
  * @returns  Get All Categories
  */
 
-export async function GET(
-  _: unknown,
-  { params }: { params: Promise<{ id: string }> }
-): Promise<NextResponse> {
+export async function GET(_: unknown,{ params }: { params: Promise<{ id: string }> }): Promise<NextResponse> {
   try {
     //Get Id From Params
     const { id } = await params;
@@ -27,7 +24,12 @@ export async function GET(
         { status: 404 }
       );
     }
-    const category = await prisma.category.findUnique({ where: { id } });
+    const category = await prisma.category.findUnique({ 
+      where: { id },
+      include:{
+        products:true
+      }
+     });
     return NextResponse.json(
       { message: "Get Category Successfully", category },
       { status: 200 }
