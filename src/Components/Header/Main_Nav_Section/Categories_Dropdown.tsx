@@ -1,17 +1,10 @@
 'use client'
-import { getAllCategories } from "@/Feature/Actions/CategoriesActions"
 import { UpdateCategory } from "@/Interfaces/CategoryInterface"
-import { RootState, useAppDispatch, useAppSelector } from "@/libs/store"
-import { useEffect } from "react"
 import { useRouter } from "next/navigation";
 
-export default function Categories_Dropdown() {
-  const {AllCategories} = useAppSelector((state:RootState)=>state.category)
+export default function Categories_Dropdown({AllCategories}:{AllCategories:{categories:UpdateCategory[]}}) {
+
   const router = useRouter()
-  const dispatch = useAppDispatch()
-  useEffect(()=>{
-    dispatch(getAllCategories())
-  },[])
 
   //Redirect To Link Of Category
   const ChangeCategoryHandeler =(e:string)=>{

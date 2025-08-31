@@ -1,28 +1,18 @@
-'use client'
 import Link from "next/link";
-import useSvgColor from "@/Utils/Icons/SVG-Color";
-import { useEffect, useState } from "react";
-import { RootState, useAppDispatch } from "@/libs/store";
-import { useSelector } from "react-redux";
-import { getAllCategories } from "@/Feature/Actions/CategoriesActions";
 import { UpdateCategory } from "@/Interfaces/CategoryInterface";
 import Image from "next/image";
 
-export default function Main_NavBar() {
-    const {AllCategories} = useSelector((state:RootState)=>state.category)
-        const dispatch = useAppDispatch()
-        useEffect(()=>{
-            dispatch(getAllCategories())
-        },[])
+export default function Main_NavBar({AllCategories}:{AllCategories:{categories:UpdateCategory[]}}) {
+    // const [href, setHref] = useState('')
+    
 
-    const [href, setHref] = useState('')
-    if (href) {
-        window.location.href = href
-    }
+    // if (href) {
+    //     window.location.href = href
+    // }
     return (
         <div>
             <ul className="flex justify-center items-center gap-4">
-                <li className="hover:bg-[#F0FAFF] hover:text-[#35AFA0] cursor-pointer p-2 rounded-full">
+                {/* <li className="hover:bg-[#F0FAFF] hover:text-[#35AFA0] cursor-pointer p-2 rounded-full">
                     <select name="" id="" onChange={(e) => setHref(e.target.value)}>
                         <option disabled value="" selected>Change HomePage</option>
                         <option className=" capitalize" value="/">Home</option>
@@ -31,6 +21,9 @@ export default function Main_NavBar() {
                         <option className=" capitalize" value="/wishlist">Home-4</option>
                         <option className=" capitalize" value="/">Home-5</option>
                     </select>
+                </li> */}
+                <li className="hover:bg-[#F0FAFF] hover:text-[#35AFA0] p-2 rounded-full">
+                    <Link className=" capitalize" href="/">Home</Link>
                 </li>
                 <li className="hover:bg-[#F0FAFF] hover:text-[#35AFA0] p-2 rounded-full">
                     <Link className=" capitalize" href="/products">Shop</Link>
