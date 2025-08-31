@@ -1,11 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {
-  getAllCategories,
-  getCategoryById,
-  createCategory,
-  updateCategory,
-  deleteCategory,
-} from "../Actions/CategoriesActions";
+import {getAllCategories,getCategoryById,createCategory,updateCategory,deleteCategory,} from "../Actions/CategoriesActions";
 import { UpdateCategory } from "@/Interfaces/CategoryInterface";
 
 const initialState = {
@@ -18,7 +12,11 @@ const initialState = {
 const CategorySlice = createSlice({
   name: "categories",
   initialState,
-  reducers: {},
+  reducers: {
+    resetStatus:(state)=>{
+      state.category= {} as {category:UpdateCategory}
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAllCategories.pending, (state) => {
@@ -84,3 +82,4 @@ const CategorySlice = createSlice({
 });
 
 export default CategorySlice.reducer;
+export const {resetStatus} = CategorySlice.actions

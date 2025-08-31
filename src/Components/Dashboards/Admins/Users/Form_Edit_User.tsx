@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import { updateUser } from "@/Feature/Actions/UsersActions";
 import { UpdateUser } from "@/Interfaces/UserInterface";
 import UploadOneImage from "@/Utils/UploadOneImage";
+import { resetState } from "@/Feature/Slices/UsersSlice";
 
 export default function Edit_User_Form({ User, setIsToggle }: { User: UpdateUser, setIsToggle: (arg0: boolean) => void }) {
   const [imageUrl, setImageUrl] = useState(User?.image);
@@ -47,6 +48,7 @@ export default function Edit_User_Form({ User, setIsToggle }: { User: UpdateUser
   const [, ActionStat] = useActionState(UpdateItem, InitialState)
   if (EditUser?.status === 201) {
     setIsToggle(false)
+    dispatch(resetState())
   }
   return (
     <div className="w-[50%] absolute -top-[100%] bg-[#ddd] rounded left-0 flex flex-col justify-start items-center gap-5 p-8">

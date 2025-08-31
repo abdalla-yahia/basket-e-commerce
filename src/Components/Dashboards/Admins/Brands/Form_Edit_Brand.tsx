@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import { updateBrand } from "@/Feature/Actions/BrandsActions";
 import { UpdateBrand } from "@/Interfaces/BrandInterface";
 import UploadOneImage from "@/Utils/UploadOneImage";
+import { resetState } from "@/Feature/Slices/BrandsSlice";
 
 export default function Edit_Brand_Form({ brand, setIsToggle }: { brand: UpdateBrand, setIsToggle: (arg0: boolean) => void }) {
   const [imageUrl, setImageUrl] = useState<string>(brand?.image as string);
@@ -45,6 +46,7 @@ export default function Edit_Brand_Form({ brand, setIsToggle }: { brand: UpdateB
   const [, ActionStat] = useActionState(UpdateItem, InitialState)
   if (EditBrand?.brand?.title) {
     setIsToggle(false)
+    dispatch(resetState())
   }
   return (
     <div className="w-[50%] absolute -top-[100%] bg-[#ddd] rounded left-0 flex flex-col justify-start items-center gap-5 p-8">

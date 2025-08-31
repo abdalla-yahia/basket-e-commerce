@@ -6,7 +6,7 @@ export default function Hot_Products_Container() {
   return (
     <section className="w-[90%] flex justify-between items-start mt-5 gap-5">
             {/*Aside Advertice Section*/}
-            <Image_Section img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756217693/Home-1-Aside-2_ouxjgp.png'} header={'Best bakery products'} title={'Freshest products'} description={'every hour.'} text={'only-from'} price={'$14.99'} href="/"/>
+            <Image_Section img={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756217693/Home-1-Aside-2_ouxjgp.png'} header={'Best bakery products'} title={'Freshest products'} description={'every hour.'} text={'only-from'} price={'$14.99'} href="/products"/>
         <section className="w-[75%] flex flex-col justify-between items-start gap-5">
             {/*Head Image*/}
             <div className="w-full bg-top-right bg-no-repeat h-[125px] overflow-hidden rounded-2xl bg-[#F8EFEA] flex justify-between items-center">

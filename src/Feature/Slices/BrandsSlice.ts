@@ -12,7 +12,11 @@ const initialState = {
 const BrandSlice = createSlice({
   name: "brands",
   initialState,
-  reducers: {},
+  reducers: {
+    resetState:(state)=>{
+      state.brand = {} as {brand:CreateBrand}
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAllBrands.pending, (state) => {
@@ -78,3 +82,4 @@ const BrandSlice = createSlice({
 });
 
 export default BrandSlice.reducer;
+export const {resetState} = BrandSlice.actions

@@ -12,7 +12,11 @@ const initialState = {
 const UserSlice = createSlice({
   name: "users",
   initialState,
-  reducers: {},
+  reducers: {
+    resetState:(state)=>{
+      state.user = {} as { user: UpdateUser ,status:number}
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAllUsers.pending, (state) => {
@@ -78,3 +82,4 @@ const UserSlice = createSlice({
 });
 
 export default UserSlice.reducer;
+export const {resetState} = UserSlice.actions;
