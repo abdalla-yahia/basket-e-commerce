@@ -1,20 +1,19 @@
 'use client'
-import { getProductBySlug } from "@/Feature/Actions/ProductsActions"
-import { RootState, useAppDispatch } from "@/libs/store"
-import { useEffect } from "react"
-import { useAppSelector } from "react-redux"
 import * as icon from '@/Utils/Icons/Icons';
 import Product_Details_Section from "./Product_Details_Section"
 import Related_Products from "./Related_Products"
 import Link from "next/link"
+import { RootState, useAppDispatch, useAppSelector } from '@/libs/store';
+import { useEffect } from 'react';
+import { getProductBySlug } from '@/Feature/Actions/ProductsActions';
+import { UpdateProduct } from '@/Interfaces/ProductInterface';
 
 export default function Product_details_Container({ slug }: { slug: string }) {
-    const { product, error, loading } = useAppSelector((state: RootState) => state.product)
+    const { product } = useAppSelector((state: RootState) => state.product)
     const dispatch = useAppDispatch()
     useEffect(() => {
         dispatch(getProductBySlug(slug))
-    }, [])
-    //Close Button Handller
+    }, [slug,dispatch])
 
     return (
         <div className="w-full">
@@ -28,9 +27,9 @@ export default function Product_details_Container({ slug }: { slug: string }) {
                     <icon.IoClose className="text-[20px] font-bold absolute top-5 right-5 cursor-pointer duration-150 hover:scale-125" />
                 </Link>
                 {/*Product Details*/}
-                <Product_Details_Section />
+                <Product_Details_Section/>
                 {/*Related products*/}
-                <Related_Products />
+                <Related_Products product={product?.product as UpdateProduct}/>
             </div>
         </div>
     )

@@ -24,6 +24,7 @@ export const getCategoryById = createAsyncThunk('categories/getbyid',async(id:st
         const data =await GetHook(`/api/categories/${id}`)
         return data;
     } catch (error) {
+        console.log(error)
         toast.error(`Faild To Get Category`)
         return error
     }

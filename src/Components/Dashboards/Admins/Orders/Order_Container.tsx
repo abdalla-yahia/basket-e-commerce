@@ -1,9 +1,8 @@
 'use client'
 import { getAllOrders } from "@/Feature/Actions/OrdersActions"
 import { UpdateOrder } from "@/Interfaces/OrderInterface"
-import { RootState, useAppDispatch } from "@/libs/store"
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store"
 import { useEffect } from "react"
-import { useAppSelector } from "react-redux"
 import Order_Content from "./Order_Content"
 
 

@@ -1,9 +1,8 @@
 'use client'
 import { getAllCategories } from "@/Feature/Actions/CategoriesActions"
 import { UpdateCategory } from "@/Interfaces/CategoryInterface"
-import { RootState, useAppDispatch } from "@/libs/store"
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store"
 import { useEffect } from "react"
-import { useAppSelector } from "react-redux"
 import Category_Content from "./Category_Content"
 
 

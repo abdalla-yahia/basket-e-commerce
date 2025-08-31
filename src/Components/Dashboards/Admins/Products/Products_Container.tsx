@@ -1,9 +1,8 @@
 'use client'
 import { getAllProduct } from "@/Feature/Actions/ProductsActions"
 import { UpdateProduct } from "@/Interfaces/ProductInterface"
-import { RootState, useAppDispatch } from "@/libs/store"
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store"
 import { useEffect } from "react"
-import { useAppSelector } from "react-redux"
 import Product_content from "./Product_content"
 
 export default function Products_Container() {

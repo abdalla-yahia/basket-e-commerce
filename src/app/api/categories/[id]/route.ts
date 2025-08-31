@@ -9,7 +9,7 @@ import Jwt from "jsonwebtoken";
  * @method GET
  * @param id
  * @path '~/api/categories/[id]'
- * @returns  Get All Categories
+ * @returns  Get One Category
  */
 
 export async function GET(_: unknown,{ params }: { params: Promise<{ id: string }> }): Promise<NextResponse> {

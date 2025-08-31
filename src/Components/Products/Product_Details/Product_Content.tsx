@@ -1,8 +1,10 @@
-'use client'
 import { useState } from "react"
 import * as icon from '@/Utils/Icons/Icons';
+import { RootState, useAppSelector } from "@/libs/store";
 
 export default function Product_Content() {
+    const { product } = useAppSelector((state: RootState) => state.product)
+    
     const [counter, setCounter] = useState(0);
 
     //Increament Count OF Product
@@ -18,9 +20,9 @@ export default function Product_Content() {
   return (
     <div className="w-[50%] overflow-hidden flex flex-col justify-between items-start gap-2 ">
         {/*Product Title*/}
-        <h4 className="text-[#000000] text-[14px] font-[500] ">SkinnyPop Popcorn SkinnyPack Original</h4>
+        <h4 className="text-[#000000] text-[14px] font-[500] ">{product?.product?.title}</h4>
         {/*Product Price*/}
-        <h4 className="text-[#000000] text-[12px] font-[700]">$15.00 - $25.00</h4>      
+        <h4 className="text-[#000000] text-[12px] font-[700]">${product?.product?.price} - ${product?.product?.oldPrice}</h4>      
         {/*Product Size*/}
         <div className="flex flex-col justify-start items-start gap-2">
             <span className="text-[#000000] opacity-70 text-[10px] font-[400] capitalize">available in:</span>
@@ -77,16 +79,7 @@ export default function Product_Content() {
         <div className="flex flex-col justify-between items-start">
             <h2 className="text-black text-[12px] font-[600] mb-1">Product Details:</h2>
             {/*Description*/}
-            <h3 className="text-[#595959] text-[10px] font-[400]">Sugar, Unbleached Enriched Flour (Wheat Flour, Niacin, Reduced
-                Iron, Thiamine Mononitrate Vitamin B1
-                Calcium Phosphate), Cornstarch, Salt,...
-                Sugar, Unbleached Enriched Flour (Wheat Flour, Niacin, Reduced
-                Iron, Thiamine Mononitrate Vitamin B1
-                Calcium Phosphate), Cornstarch, Salt,...
-                Sugar, Unbleached Enriched Flour (Wheat Flour, Niacin, Reduced
-                Iron, Thiamine Mononitrate Vitamin B1
-                Calcium Phosphate), Cornstarch, Salt,...
-                </h3>
+            <h3 className="text-[#595959] text-[10px] font-[400]">{product?.product?.description}</h3>
         </div>
     </div>
   )

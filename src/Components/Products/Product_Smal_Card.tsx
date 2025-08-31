@@ -2,10 +2,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import * as icon from '@/Utils/Icons/Icons';
 
-export default function Product_Smal_Card({ img, offer, title, oldprice, price }: { img: string, offer: string, title: string, oldprice: string, price: string }) {
+export default function Product_Smal_Card({ slug, img, offer, title, oldprice, price }: {slug:string, img: string, offer: string, title: string, oldprice: string, price: string }) {
   return (
     <div className="flex shadow w-[130px]  shadow-[rgb(237,238,245)] flex-col border border-[#EDEEF5] relative gap-2 bg-white px-2 py-3 justify-center items-center">
-            <Link href={'/'}>
+            <Link href={`/products/${slug}`}>
                 {/*Span Offers*/}
                 {offer && <span className="text-[8px] absolute bg-[#35AFA0] rounded-[4px] px-1 py-1 top-3 left-3 text-white">{offer}</span>}
                 {/*Image Card*/}

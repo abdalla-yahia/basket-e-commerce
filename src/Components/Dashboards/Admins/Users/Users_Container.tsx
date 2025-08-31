@@ -1,9 +1,8 @@
 'use client'
 import { getAllUsers } from "@/Feature/Actions/UsersActions"
 import { UpdateUser } from "@/Interfaces/UserInterface"
-import { RootState, useAppDispatch } from "@/libs/store"
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store"
 import { useEffect } from "react"
-import { useAppSelector } from "react-redux"
 import User_Content from "./User_Content"
 
 

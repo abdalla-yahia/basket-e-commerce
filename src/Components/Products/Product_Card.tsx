@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import * as icon from '@/Utils/Icons/Icons';
 
-export default function Product_Card({ img, offer, title, rating, oldprice, price, iscounter }: { img: string, offer: string, title: string, rating: string, oldprice: string, price: string, iscounter?: boolean }) {
+export default function Product_Card({ slug,img, offer, title, rating, oldprice, price, iscounter }: {slug:string, img: string, offer: string, title: string, rating: string, oldprice: string, price: string, iscounter?: boolean }) {
     const [counter, setCounter] = useState(0);
 
     //Increament Count OF Product
@@ -20,7 +20,7 @@ export default function Product_Card({ img, offer, title, rating, oldprice, pric
 
     return (
         <div className="flex shadow shadow-[rgb(237,238,245)] hover:scale-105 duration-500 hover:z-40 flex-col border border-[#EDEEF5] relative gap-3 bg-white px-6 py-5 justify-center items-start w-1/4">
-            <Link href={'/'}>
+            <Link href={`/products/${slug}`}>
                 {/*Span Offers*/}
                 {offer && <span className=" absolute bg-[#35AFA0] rounded-[4px] px-2 py-1 top-3 left-3 text-white">{offer}%</span>}
                 {/*Image Card*/}

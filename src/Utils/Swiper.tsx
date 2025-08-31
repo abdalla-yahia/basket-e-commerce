@@ -31,7 +31,7 @@ export default function ProductGallery({ images }: Props) {
         modules={[Autoplay, Pagination, Navigation, Thumbs]}
         className="rounded-lg shadow mb-2"
       >
-        {images.map((src, i) => (
+        {images?.map((src, i) => (
           <SwiperSlide key={i}>
             <Image
               src={src}
@@ -53,7 +53,7 @@ export default function ProductGallery({ images }: Props) {
         watchSlidesProgress
         modules={[Thumbs]}
       >
-        {images.map((src, i) => (
+        {images?.map((src, i) => (
           <SwiperSlide key={i}>
             <Image
               src={src}

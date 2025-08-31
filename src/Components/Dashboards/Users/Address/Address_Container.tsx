@@ -1,9 +1,8 @@
 'use client'
 import { loggedUser } from "@/Feature/Actions/AuthActions"
 import { getUserById } from "@/Feature/Actions/UsersActions"
-import { RootState, useAppDispatch } from "@/libs/store"
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store"
 import { useEffect } from "react"
-import { useAppSelector } from "react-redux"
 import * as icon from '@/Utils/Icons/Icons';
 import { UpdateAddresse } from "@/Interfaces/AddresseInterface"
 
