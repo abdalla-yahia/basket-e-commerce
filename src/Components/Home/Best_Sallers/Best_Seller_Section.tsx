@@ -28,7 +28,6 @@ export default function Best_Seller_Section() {
       behavior: 'smooth'
     })
   }
-  console.log(AllProducts)
   return (
     <section className="w-[75%] ">
       {/*Section Title*/}
