@@ -32,7 +32,7 @@ export default function Add_New_Product_Container() {
       description: formData.get('ProductDescription') as string,
       offer: formData.get('ProductOffer') as string,
       price: Number(formData.get('ProductPrice')),
-      oldPrice: Number(formData.get('ProductOldPrice')),
+      oldPrice: Number(formData.get('ProductOldPrice') || 0),
       quantity: Number(formData.get('ProductQuantity')),
       categoryId: formData.get('CategoryId') as string,
       brandId: formData.get('BrandId') as string,
