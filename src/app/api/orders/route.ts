@@ -45,7 +45,6 @@ export async function GET(request: NextRequest) {
       select:{
         id:true,
         user:true,
-        cart:true,
         products:true,
         status:true
       }
