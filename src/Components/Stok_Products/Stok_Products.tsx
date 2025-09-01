@@ -27,11 +27,11 @@ export default function Stok_Products() {
             </div>
         </Link>
         {/*Items Container*/}
-        <div className="w-full flex justify-start items-start h-full flex-wrap">
+        <div className="w-full flex items-stretch justify-start h-full flex-wrap">
             {/*Items*/}
             {
                 AllCategories?.categories && AllCategories?.categories?.slice(0,8)?.map((category:UpdateCategory)=>
-                   <Link key={category?.id} href={`/categories/${category?.id}`} className="min-w-1/4 min-h-1/2 flex justify-start items-center gap-2 p-5 border border-[#E4E5EE]">
+                   <Link key={category?.id} href={`/categories/${category?.id}`} className="min-w-1/4 min-h-1/2 flex-1 flex justify-start items-center gap-2 p-5 border border-[#E4E5EE]">
                         <Image src={category?.image || "https://res.cloudinary.com/dghqvxueq/image/upload/v1756257566/product_10_lnu3vr.png"} alt={category?.title as string} width={80} height={50}/>
                         {/*Content*/}
                         <div className="flex flex-col justify-start items-start gap-1">
