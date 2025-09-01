@@ -65,9 +65,12 @@ export default function Add_New_Product_Container() {
   }
 
   const [, ActionStat] = useActionState(CreateItem, InitialState)
-  if(product?.status === 201){
-    setImages([])
+  //Rest Image Galary
+  useEffect(() => {
+  if (product?.status === 201) {
+    setImages([]) 
   }
+}, [product?.status])
   return (
     <div className="w-full flex flex-col justify-start items-center gap-5 p-8">
       {/*Section Title*/}
