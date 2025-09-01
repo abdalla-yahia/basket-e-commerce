@@ -13,7 +13,7 @@ import { IoLogoInstagram,IoMdCheckmark } from "react-icons/io";
 import { FiPhoneCall } from "react-icons/fi";
 import { MdOutlineLocalPostOffice,MdDeliveryDining,MdDashboard,MdInventory2,MdAddBox,MdAddToQueue } from "react-icons/md";
 import { CiCreditCardOff,CiSettings } from "react-icons/ci";
-import { IoPersonCircleOutline,IoPricetagsSharp } from "react-icons/io5";
+import { IoPersonCircleOutline,IoPricetagsSharp,IoBarChart } from "react-icons/io5";
 import { LuLoader } from "react-icons/lu";
 import { RiCoupon3Fill,RiSearchLine } from "react-icons/ri";
 import { SiBrandfolder } from "react-icons/si";
@@ -24,5 +24,5 @@ export {BiSolidErrorAlt,HiOutlineHandRaised,TbError404,RiArrowLeftSLine,RiArrowR
 PiShareFatThin,SlTag,FaPlus,FaMinus,FaFacebookF,IoLogoInstagram,BsTwitterX,IoLogoReddit,FaPinterestP,FaLocationDot,FiPhoneCall,MdOutlineLocalPostOffice,
 CiCreditCardOff,IoPersonCircleOutline,FaRegEye,FaRegEyeSlash,CiSettings,LuLoader,FaChartLine,IoPricetagsSharp,FaTrash,FaRegEdit,IoMdCheckmark,FaHome,
 FaAddressCard,FaMapLocationDot,MdDeliveryDining,MdDashboard,FaUsers,MdInventory2,RiCoupon3Fill,MdAddBox,BiSolidCategory,TbCategoryPlus,SiBrandfolder,MdAddToQueue,
-PiHandbag,RiSearchLine,FaBoxOpen,MdCategory,MdOutlineLocalShipping
+PiHandbag,RiSearchLine,FaBoxOpen,MdCategory,MdOutlineLocalShipping,IoBarChart
 }

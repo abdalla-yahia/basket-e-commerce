@@ -1,5 +1,5 @@
 'use client';
-
+import * as icon from '@/Utils/Icons/Icons'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts';
 
 const stats = [
@@ -48,7 +48,9 @@ function StatCard({ title, value, icon }: { title: string; value: string | numbe
 export default function Admins_Dashboard_Container() {
   return (
     <div className="py-6 space-y-6 w-full">
-      <h1 className="text-2xl font-bold">Admin Dashboard {/* {data?.me?.name} */}</h1>
+      <h1 className="text-2xl font-bold text-primary my-3 gap-3 flex justify-start items-center">
+        <icon.IoBarChart className="text-2xl"/>
+        Admin Dashboard {/* {data?.me?.name} */}</h1>
 
       {/* Stat cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
