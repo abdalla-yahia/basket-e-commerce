@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import * as icon from '@/Utils/Icons/Icons';
 
-export default function Product_Card({ slug,img, offer, title, rating, oldprice, price, iscounter }: {slug:string, img: string, offer: string, title: string, rating: string, oldprice: string, price: string, iscounter?: boolean }) {
+export default function Product_Card({ slug,img, offer, title, rating, oldprice, price,quantity, iscounter }: {slug:string, img: string, offer: string, title: string, rating: string, oldprice: string, price: string,quantity?:number, iscounter?: boolean }) {
     const [counter, setCounter] = useState(0);
 
     //Increament Count OF Product
@@ -27,7 +27,7 @@ export default function Product_Card({ slug,img, offer, title, rating, oldprice,
                 <Image className="w-full" src={img} alt={title} width={100} height={150} />
                 {/*Card Content*/}
                 <h1 className="font-[400] text-[#202435] text-sm" style={{ lineHeight: '19.6px', letterSpacing: '0%' }}>Blue Diamond Almonds Lightly Salted</h1>
-                <h2 className="font-[600] text-[#00B853]  uppercase text-[11px]" style={{ lineHeight: '16.5px', letterSpacing: '-0.1px', fontFamily: 'Dosis' }}>In stock</h2>
+                {(quantity as number > 0) && <h2 className="font-[600] text-[#00B853]  uppercase text-[11px]" style={{ lineHeight: '16.5px', letterSpacing: '-0.1px', fontFamily: 'Dosis' }}>In stock</h2>}
                 {/*Rating*/}
                 <div className="flex justify-between items-center gap-2">
                     <div className="stars"><svg width="69" height="13" viewBox="0 0 69 13" fill="none" xmlns="http://www.w3.org/2000/svg">
