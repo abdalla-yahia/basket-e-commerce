@@ -10,6 +10,7 @@ export const CreateProductValidation = z.object({
   image:z.string().optional(),
   categoryId:z.string(),
   brandId:z.string(),
+  offer:z.string().optional(),
   gallery: z.array(z.string()).optional()
 })
 
@@ -24,4 +25,6 @@ export const UpdataProductValidation = z.object({
   image:z.string().optional(),
   categoryId:z.string().optional(),
   brandId:z.string().optional(),
+  offer:z.string().optional(),
+  gallery: z.array(z.string()).optional()
 })
