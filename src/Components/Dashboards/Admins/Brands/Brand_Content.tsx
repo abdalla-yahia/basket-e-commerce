@@ -37,7 +37,7 @@ export default function Brand_Content({brand}:{brand:UpdateBrand}) {
       }
   return (
      <tr key={brand?.id}>
-        <td className="p-2 border border-[#E4E5EE]">
+        <td className="p-2 border border-[#E4E5EE] flex justify-center items-center">
           <Link href={`/brands/${brand?.id}`}>
             <Image src={brand?.image as string} alt={brand?.title as string} width={40} height={40}/>
           </Link>

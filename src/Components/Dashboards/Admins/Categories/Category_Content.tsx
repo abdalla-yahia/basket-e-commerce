@@ -37,7 +37,7 @@ export default function Category_Content({Category}:{Category:UpdateCategory}) {
       }
   return (
      <tr key={Category?.id}>
-        <td className="p-2 border border-[#E4E5EE]">
+        <td className="p-2 border border-[#E4E5EE] flex justify-center items-center">
           <Link href={`/categories/${Category?.id}`}>
             <Image src={Category?.image as string} alt={Category?.title as string} width={40} height={40}/>
           </Link>

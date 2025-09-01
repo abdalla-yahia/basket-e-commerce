@@ -12,20 +12,21 @@
       "icon": "FaChartLine",
       "href": "/dashboard/users"
     },
+      {
+      "id": 2,
+      "title": "Orders",
+      "icon": "MdDeliveryDining",
+      "href": "/dashboard/users/orders"
+    },
     {
       "id": 3,
       "title": "Address",
       "icon": "FaMapLocationDot",
       "href": "/dashboard/users/addresses"
     },
+ 
     {
       "id": 4,
-      "title": "Orders",
-      "icon": "MdDeliveryDining",
-      "href": "/dashboard/users/orders"
-    },
-    {
-      "id": 2,
       "title": "Setting",
       "icon": "FaAddressCard",
       "href": "/dashboard/users/personal-data"
@@ -59,43 +60,44 @@
     },
     {
       "id": 4,
-      "title": "Orders",
-      "icon": "MdDeliveryDining",
-      "href": "/dashboard/admins/orders"
-    },
-    {
-      "id": 6,
-      "title": "Add New Product",
-      "icon": "MdAddBox",
-      "href": "/dashboard/admins/add-product"
-    },
-    {
-      "id": 7,
       "title": "Categories",
       "icon": "BiSolidCategory",
       "href": "/dashboard/admins/categories"
     },
     {
-      "id": 8,
-      "title": "Add New Category",
-      "icon": "TbCategoryPlus",
-      "href": "/dashboard/admins/add-category"
-    },
-    {
-      "id": 9,
+      "id": 5,
       "title": "Brands",
       "icon": "SiBrandfolder",
       "href": "/dashboard/admins/brands"
     },
     {
-      "id": 10,
+      "id": 6,
+      "title": "Orders",
+      "icon": "MdDeliveryDining",
+      "href": "/dashboard/admins/orders"
+    },
+  
+    {
+      "id": 7,
+      "title": "Add New Category",
+      "icon": "TbCategoryPlus",
+      "href": "/dashboard/admins/add-category"
+    },
+
+    {
+      "id": 8,
       "title": "Add New Brand",
       "icon": "MdAddToQueue",
       "href": "/dashboard/admins/add-brand"
     },
-
+    {
+      "id": 9,
+      "title": "Add New Product",
+      "icon": "MdAddBox",
+      "href": "/dashboard/admins/add-product"
+    },
      {
-      "id": 11,
+      "id": 10,
       "title": "Setting",
       "icon": "FaAddressCard",
       "href": "/dashboard/admins/personal-data"
