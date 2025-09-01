@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
+import * as icon from '@/Utils/Icons/Icons';
 
 export default function UploadImages({images,setImages,}: {images: string[];setImages: (urls: string[]) => void;}) {
   const [previews, setPreviews] = useState<string[]>(images);
@@ -37,6 +38,11 @@ export default function UploadImages({images,setImages,}: {images: string[];setI
     setImages(newUrls);
   };
 
+  const DeleteImageHandler=(src:string)=>{
+    const Filter = previews?.filter(e=>e !== src)
+    setPreviews(Filter)
+    setImages(Filter)
+  }
   return (
     <div className="w-full flex flex-col items-center gap-4">
       <label htmlFor="uploadimages" className="cursor-pointer shadow p-2 rounded" title="Upload Images">
@@ -45,7 +51,10 @@ export default function UploadImages({images,setImages,}: {images: string[];setI
       <div className="flex flex-wrap gap-2">
         {previews.length > 0 ? (
           previews.map((src, i) => (
-            <Image key={i} src={src} alt={`Preview ${i}`} width={150} height={100} className="rounded"/>
+            <div  key={i} className=" relative">
+            <Image src={src} alt={`Preview ${i}`} width={150} height={100} className="rounded "/>
+            <icon.IoClose onClick={()=>DeleteImageHandler(src)} className=" absolute top-0 right-0 text-lg text-red-600 cursor-pointer"/>
+            </div>
           ))
         ) : (
           <Image src="https://static.vecteezy.com/system/resources/previews/009/875/156/large_2x/3d-picture-icon-blue-white-color-free-png.png" alt="Placeholder" width={150} height={100}
