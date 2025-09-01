@@ -17,8 +17,22 @@ export async function GET(){
     try {
         //Get All Products
         const products = await prisma.product.findMany({
-            include:{
-                category:{
+            select:{
+                id:true,
+                slug:true,
+                title:true,
+                description:true,
+                image:true,
+                gallery:true,
+                price:true,
+                oldPrice:true,
+                quantity:true,
+                rivew:true,
+                offer:true,
+                brandId:true,
+                categoryId:true,
+                cartId:true,
+                 category:{
                     select:{
                         id:true,
                         title:true,
@@ -31,7 +45,7 @@ export async function GET(){
                         title:true,
                         image:true
                     }
-                }
+                } 
             }
         })
         return NextResponse.json({message:'Get All Products Successfully',products},{status:200})

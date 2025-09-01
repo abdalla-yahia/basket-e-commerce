@@ -10,7 +10,6 @@ export const getAllProduct = createAsyncThunk('products/getAll',async()=>{
         return res;
     } catch (error) {
         toast.error(`Error To Get All Products`)
-        console.log(error)
         return error
     }
 })

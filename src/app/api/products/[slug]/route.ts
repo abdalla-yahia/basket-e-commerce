@@ -22,7 +22,37 @@ export async function GET(_:unknown,{params}:{params:Promise<{slug:string}>}):Pr
             return NextResponse.json({message:'Product Not Found'},{status:404})
         }
         // Get Product
-        const product = await prisma.product.findUnique({where:{slug}})
+        const product = await prisma.product.findUnique({where:{slug},
+         select:{
+                id:true,
+                slug:true,
+                title:true,
+                description:true,
+                image:true,
+                gallery:true,
+                price:true,
+                oldPrice:true,
+                quantity:true,
+                rivew:true,
+                offer:true,
+                brandId:true,
+                categoryId:true,
+                cartId:true,
+                 category:{
+                    select:{
+                        id:true,
+                        title:true,
+                        image:true
+                    },
+                },
+                brand:{
+                    select:{
+                        id:true,
+                        title:true,
+                        image:true
+                    }
+                } 
+            }})
         return NextResponse.json({message:'Get Product Successfully',product,status:200},{status:200})
     } catch (error) {
         return NextResponse.json({message:'Faild To Get Product',error},{status:500})
