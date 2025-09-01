@@ -14,13 +14,12 @@ export default function Orders_Container() {
     dispatch(getAllOrders())
   }, [dispatch])
 
-  console.log(AllOrders)
   return (
   <div className="w-full flex flex-col justify-start items-start relative">
     {/*Section Title*/}
       <h1 className="text-xl font-bold my-4 text-primary flex justify-between items-center">
         <icon.MdOutlineLocalShipping className="text-3xl mx-2"/>
-        All Orders
+        All Orders {`(${AllOrders?.orders?.length})`}
       </h1>
     {/*Orders Table*/}
     <table className="w-full border border-gray-200">

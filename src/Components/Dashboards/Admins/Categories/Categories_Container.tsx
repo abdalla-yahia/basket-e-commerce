@@ -19,7 +19,7 @@ export default function Categories_Container() {
     {/*Section Title*/}
       <h1 className="text-xl font-bold my-4 text-primary flex justify-between items-center">
         <icon.MdCategory className="text-3xl mx-2"/>
-        All Categories
+        All Categories {`(${AllCategories?.categories?.length})`}
         </h1>
       {/*Categories Table*/}
       <table className="w-full border border-gray-200">

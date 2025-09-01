@@ -19,7 +19,7 @@ export default function Users_Container() {
       {/*Section Title*/}
       <h1 className="text-xl font-bold my-4 text-primary flex justify-between items-center">
         <icon.FaUsers className="text-3xl mx-2"/>
-        All Users
+        All Users {`(${AllUsers?.users?.length})`}
       </h1>
       {/*Users Table*/}
       <table className="w-full border border-gray-200">

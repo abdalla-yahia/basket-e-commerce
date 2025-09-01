@@ -20,7 +20,7 @@ export default function Products_Container() {
       {/*Section Title*/}
       <h1 className="text-xl font-bold my-4 text-primary flex justify-between items-center">
         <icon.FaBoxOpen className="text-3xl mx-2"/>
-        All Products
+        All Products {`(${AllProducts?.products?.length})`}
         </h1>
       {/*Products Table*/}
       <table className="w-full border border-gray-200 table">

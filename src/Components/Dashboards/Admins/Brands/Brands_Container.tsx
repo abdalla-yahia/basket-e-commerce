@@ -14,13 +14,12 @@ export default function Brands_Container() {
     dispatch(getAllBrands())
   }, [dispatch])
 
-  console.log(AllBrands)
   return (
     <div className="w-full flex flex-col justify-start items-start relative">
     {/*Section Title*/}
       <h1 className="text-xl font-bold my-4 text-primary flex justify-between items-center">
         <icon.SiBrandfolder className="text-3xl mx-2"/>
-        All Brands
+        All Brands {`(${AllBrands?.brands?.length})`}
       </h1>
     {/*Brands Table*/}
     <table className="w-full border border-gray-200">
