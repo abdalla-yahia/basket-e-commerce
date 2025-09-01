@@ -37,7 +37,7 @@ export default function UploadImages({images,setImages,}: {images: string[];setI
     setPreviews((prev) => [...prev, ...newPreviews]);
     setImages(newUrls);
   };
-
+  //Delete Image
   const DeleteImageHandler=(src:string)=>{
     const Filter = previews?.filter(e=>e !== src)
     setPreviews(Filter)
