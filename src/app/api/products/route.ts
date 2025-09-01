@@ -90,7 +90,7 @@ export async function POST(requset:NextRequest){
                 ...Validation?.data
             }
         })
-        return NextResponse.json({message:'Create Product Successfully',product},{status:201})
+        return NextResponse.json({message:'Create Product Successfully',product,status:201},{status:201})
     } catch (error) {
         return NextResponse.json({message:'Faild To Create Product',error},{status:500})
     }
