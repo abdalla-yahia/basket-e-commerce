@@ -100,12 +100,12 @@ export default function Add_New_Product_Container() {
         {/*Product Price*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
           <label htmlFor="ProductPrice">Product Price:</label>
-          <input type="number" min={0} name="ProductPrice" id="ProductPrice" className='p-2 bg-[#F3F4F7] rounded w-full' />
+          <input type="text" min={0} name="ProductPrice" id="ProductPrice" className='p-2 bg-[#F3F4F7] rounded w-full' />
         </div>
         {/*Product OldPrice*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
           <label htmlFor="ProductOldPrice">Product OldPrice:</label>
-          <input type="number" min={0} name="ProductOldPrice" id="ProductOldPrice" className='p-2 bg-[#F3F4F7] rounded w-full' />
+          <input type="text" min={0} name="ProductOldPrice" id="ProductOldPrice" className='p-2 bg-[#F3F4F7] rounded w-full' />
         </div>
         {/*Product Quantity*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>

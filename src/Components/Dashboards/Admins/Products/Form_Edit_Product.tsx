@@ -107,12 +107,12 @@ export default function Edit_Product_Form({ product, setIsToggle }: { product: U
         {/*Product Price*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
           <label htmlFor="ProductPrice">Product Price:</label>
-          <input placeholder={product?.price?.toString() || '0'} type="number" min={0} name="ProductPrice" id="ProductPrice" className='p-2 bg-[#F3F4F7] rounded w-full' />
+          <input placeholder={product?.price?.toString() || '0'} type="text" min={0} name="ProductPrice" id="ProductPrice" className='p-2 bg-[#F3F4F7] rounded w-full' />
         </div>
         {/*Product OldPrice*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
           <label htmlFor="ProductOldPrice">Product OldPrice:</label>
-          <input placeholder={product?.oldPrice?.toString() || '0'} type="number" min={0} name="ProductOldPrice" id="ProductOldPrice" className='p-2 bg-[#F3F4F7] rounded w-full' />
+          <input placeholder={product?.oldPrice?.toString() || '0'} type="text" min={0} name="ProductOldPrice" id="ProductOldPrice" className='p-2 bg-[#F3F4F7] rounded w-full' />
         </div>
         {/*Product Quantity*/}
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
