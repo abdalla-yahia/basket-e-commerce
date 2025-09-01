@@ -17,12 +17,12 @@ import { IoPersonCircleOutline,IoPricetagsSharp,IoBarChart } from "react-icons/i
 import { LuLoader } from "react-icons/lu";
 import { RiCoupon3Fill,RiSearchLine } from "react-icons/ri";
 import { SiBrandfolder } from "react-icons/si";
-import { GrDocumentUpdate } from "react-icons/gr";
+import { GrDocumentUpdate,GrDocumentDownload } from "react-icons/gr";
 import { MdDelete,MdCategory,MdOutlineLocalShipping } from "react-icons/md";
 
 export {BiSolidErrorAlt,HiOutlineHandRaised,TbError404,RiArrowLeftSLine,RiArrowRightSLine,FaWhatsapp,IoClose,BsHandbag,CiHeart,GrDocumentUpdate,MdDelete,
 PiShareFatThin,SlTag,FaPlus,FaMinus,FaFacebookF,IoLogoInstagram,BsTwitterX,IoLogoReddit,FaPinterestP,FaLocationDot,FiPhoneCall,MdOutlineLocalPostOffice,
 CiCreditCardOff,IoPersonCircleOutline,FaRegEye,FaRegEyeSlash,CiSettings,LuLoader,FaChartLine,IoPricetagsSharp,FaTrash,FaRegEdit,IoMdCheckmark,FaHome,
 FaAddressCard,FaMapLocationDot,MdDeliveryDining,MdDashboard,FaUsers,MdInventory2,RiCoupon3Fill,MdAddBox,BiSolidCategory,TbCategoryPlus,SiBrandfolder,MdAddToQueue,
-PiHandbag,RiSearchLine,FaBoxOpen,MdCategory,MdOutlineLocalShipping,IoBarChart
+PiHandbag,RiSearchLine,FaBoxOpen,MdCategory,MdOutlineLocalShipping,IoBarChart,GrDocumentDownload
 }
