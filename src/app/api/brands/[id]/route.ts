@@ -24,7 +24,11 @@ export async function GET(
     if (!IsExistes) {
       return NextResponse.json({ message: "Brand Not Found" }, { status: 404 });
     }
-    const brand = await prisma.brand.findUnique({ where: { id } });
+    const brand = await prisma.brand.findUnique({ where: { id },
+    include:{
+      products:true
+    }
+    });
     return NextResponse.json(
       { message: "Get Brand Successfully", brand },
       { status: 200 }

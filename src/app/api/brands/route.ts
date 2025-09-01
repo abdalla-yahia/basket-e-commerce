@@ -19,7 +19,8 @@ export async function GET(){
                 id:true,
                 image:true,
                 description:true,
-                title:true
+                title:true,
+                products:true
             }
         })
         return NextResponse.json({message:'Get All Brands Successfully',brands},{status:200})
