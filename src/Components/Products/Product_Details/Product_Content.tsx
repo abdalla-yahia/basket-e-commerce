@@ -1,16 +1,18 @@
 import { useState } from "react"
 import * as icon from '@/Utils/Icons/Icons';
 import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
-import { useSearchParams } from "next/navigation";
-import { UpdateCart } from "@/Interfaces/CartInterface";
+import { useRouter, useSearchParams } from "next/navigation";
 import { updateCartItem } from "@/Feature/Actions/CartItemsActions";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
+import { createWishList } from "@/Feature/Actions/WishListActions";
 
 export default function Product_Content() {
     const { product } = useAppSelector((state: RootState) => state.product)
+    const { LogedUser } = useAppSelector((state: RootState) => state.auth)
     const quantity = useSearchParams().get('quantity')
     const [counter, setCounter] = useState(parseInt(quantity as string) || 0);
     const dispatch = useAppDispatch()
+    const router = useRouter()
     //Increament Count OF Product
     const IncrementHandller = () =>{
         setCounter(counter + 1)
@@ -27,9 +29,18 @@ export default function Product_Content() {
         product:product?.product as UpdateProduct,
         quantity:counter
     }
+    //Add To Cart
     const AddItemToCartHandler =()=>{
         dispatch(updateCartItem(data))
-        console.log('first')
+        router.push('/products')
+    }
+    const AddProductToWishData = {
+        userId:LogedUser?.user?.id,
+        productId:product?.product?.id
+    }
+    //Add To Wish List Handler
+    const AddToWishListHandler =()=>{
+        dispatch(createWishList(AddProductToWishData as {userId:string,productId:string}))
     }
   return (
     <div className="w-[50%] overflow-hidden flex flex-col justify-between items-start gap-2 ">
@@ -67,7 +78,7 @@ export default function Product_Content() {
         {/*WishList And Share*/}
         <div className="w-full flex justify-between items-center gap-2">
             {/*Wishlist*/}
-            <button title="Add To Widhlist" className="rounded text-[10px] cursor-pointer font-[600] border w-1/2 flex justify-center items-center gap-3 border-[#DEE5EA] p-1 ">
+            <button onClick={()=>AddToWishListHandler()} title="Add To Widhlist" className="rounded text-[10px] cursor-pointer font-[600] border w-1/2 flex justify-center items-center gap-3 border-[#DEE5EA] p-1 ">
                 <icon.CiHeart className="text-black text-[12px]"/>
                 Wishlist
             </button>

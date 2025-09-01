@@ -4,8 +4,7 @@ import { prisma } from "@/libs/Prisma/Prisma_Client";
 export async function POST(req: Request) {
   try {
     const { userId, productId } = await req.json();
-
-    // تأكد إن الـ wishlist موجودة للمستخدم
+    //Check if Existe Wish List
     let wishlist = await prisma.wishlist.findUnique({
       where: { userId },
       include: { products: true },
@@ -20,7 +19,7 @@ export async function POST(req: Request) {
         include: { products: true },
       });
     } else {
-      // لو المنتج مش موجود ضيفه
+      // If Product Not Existes Add It
       const exists = wishlist.products.some((p) => p.id === productId);
       if (!exists) {
         wishlist = await prisma.wishlist.update({
@@ -31,7 +30,7 @@ export async function POST(req: Request) {
       }
     }
 
-    return NextResponse.json(wishlist, { status: 200 });
+    return NextResponse.json({message:"Add Product To WishList Successfully",wishlist}, { status: 200 });
   } catch (error) {
     console.error(error);
     return NextResponse.json({ error: "Failed to add product to wishlist" }, { status: 500 });

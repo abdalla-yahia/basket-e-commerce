@@ -17,9 +17,10 @@ export const getWishlist = createAsyncThunk('WishList/get',async ()=>{
 
 
 //Add To Wish list
-export const createWishList = createAsyncThunk('WishList/create',async(ProductData)=>{
+export const createWishList = createAsyncThunk('WishList/create',async(ProductData:{userId:string,productId:string})=>{
     try {
         const data = await PostHook('/api/wishlist/add',ProductData)
+        toast.success('Add Product To Wish List Successfully')
         return data
     } catch (error) {
         toast.error('Faild to Create products in wishlist')
@@ -31,6 +32,7 @@ export const createWishList = createAsyncThunk('WishList/create',async(ProductDa
 export const updateWishList = createAsyncThunk('WishList/update',async(ProductData)=>{
     try {
         const data = await PostHook('/api/wishlist/remove',ProductData)
+        toast.success('Remove Product From Wish List Successfully')
         return data
     } catch (error) {
         toast.error('Faild to Create products in wishlist')

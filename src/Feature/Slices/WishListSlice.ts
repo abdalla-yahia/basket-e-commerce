@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { getWishlist,createWishList,updateWishList } from "../Actions/WishListActions"
+import { UpdateWishList } from "@/Interfaces/WishListInterface"
 
 
 const initialState = {
-    products:[],
+    products: {wishlist:[] as UpdateWishList[]},
     loading:false,
     error:null as null|string
 

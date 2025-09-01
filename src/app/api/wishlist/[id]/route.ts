@@ -30,7 +30,7 @@ export async function GET(request: NextRequest,{params}:{params:Promise<{id:stri
       include: { products: true },
     });
 
-    return NextResponse.json(wishlist, { status: 200 });
+    return NextResponse.json({message:"Get All Products Wishlist Successfully",wishlist}, { status: 200 });
   } catch (error) {
     console.error(error);
     return NextResponse.json({ error: "Failed to fetch wishlist" }, { status: 500 });

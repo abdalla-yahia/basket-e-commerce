@@ -15,7 +15,7 @@ export async function POST(req: Request) {
       include: { products: true },
     });
 
-    return NextResponse.json(wishlist, { status: 200 });
+    return NextResponse.json({message:"Remove Product From Wish List Successfully",wishlist}, { status: 200 });
   } catch (error) {
     console.error(error);
     return NextResponse.json({ error: "Failed to remove product" }, { status: 500 });
