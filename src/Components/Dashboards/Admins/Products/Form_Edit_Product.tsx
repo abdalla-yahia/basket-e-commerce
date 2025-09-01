@@ -148,7 +148,7 @@ export default function Edit_Product_Form({ product, setIsToggle }: { product: U
           error && <p className="text-red-500">{error}</p>
         }
         {
-          EditProduct?.product?.title && <p className="text-green-500">Created Product Successfully</p>
+          EditProduct?.status === 201 && <p className="text-green-500">Created Product Successfully</p>
         }
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
           <button type="submit" id="ProductDescription" className='p-2 border border-[#F3F4F7] text-white cursor-pointer bg-primary rounded w-full'>
