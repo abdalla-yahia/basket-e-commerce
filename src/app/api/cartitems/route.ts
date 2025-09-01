@@ -4,7 +4,7 @@ import { TokenInterFace } from "@/Interfaces/UserInterface";
 import { prisma } from "@/libs/Prisma/Prisma_Client";
 
 /**
- * @access Only Admin
+ * @access Only Logged users
  * @method GET
  * @param NoParam
  * @path '~/api/CartItems'
@@ -56,7 +56,8 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const { data } = await request.json();
+    //Get Data From Request
+    const data = await request.json();
     //Check If User Is Logein
     const cookie = request.cookies.get("authToken");
     if (!cookie) {
@@ -76,17 +77,59 @@ export async function POST(request: NextRequest) {
         { status: 401 }
       );
     }
-    //Create CartItem
-    const cartItem = await prisma.cartItem.create({
-      data: data,
+    //Check If User Have A Cart
+    let Cart = await prisma.cart.findUnique({ where: { userId: Decode?.id } });
+    
+        if (!Cart) {
+          Cart =  await prisma.cart.create({
+              data:{
+                userId:Decode?.id,
+                title:`${Decode?.name}-Cart`
+              }
+            })
+        }
+    
+    //Check If Product Existes In CartItem Or Not
+        let CartItem = await prisma.cartItem.findUnique({
+      where: {
+        cartId_productId: {
+          cartId: Cart.id,
+          productId: data.productId,
+        },
+      },
     });
+
+    if (!CartItem) {
+      CartItem = await prisma.cartItem.create({
+        data: {
+          productId: data.productId as string,
+          cartId: Cart.id as string,
+          quantity: data.quantity || 1,
+        },
+      });
+    } else {
+      CartItem = await prisma.cartItem.update({
+        where: {
+          cartId_productId: {
+            cartId: Cart.id,
+            productId: data.productId,
+          },
+        },
+        data: {
+          quantity: data.quantity as number,
+        },
+      });
+    }
+
+  
+
     return NextResponse.json(
-      { message: "CartItem Created Successfully", cartItem },
+      { message: "Product Add To Cart Item Successfully" ,CartItem},
       { status: 201 }
     );
   } catch (error) {
     return NextResponse.json(
-      { message: "Faild To Create A New CartItem", error },
+      { message: "Faild To Update CartItem", error },
       { status: 500 }
     );
   }

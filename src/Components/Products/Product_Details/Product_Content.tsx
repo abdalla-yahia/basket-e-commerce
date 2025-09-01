@@ -1,12 +1,16 @@
 import { useState } from "react"
 import * as icon from '@/Utils/Icons/Icons';
-import { RootState, useAppSelector } from "@/libs/store";
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
+import { useSearchParams } from "next/navigation";
+import { UpdateCart } from "@/Interfaces/CartInterface";
+import { updateCartItem } from "@/Feature/Actions/CartItemsActions";
+import { UpdateProduct } from "@/Interfaces/ProductInterface";
 
 export default function Product_Content() {
     const { product } = useAppSelector((state: RootState) => state.product)
-    
-    const [counter, setCounter] = useState(0);
-
+    const quantity = useSearchParams().get('quantity')
+    const [counter, setCounter] = useState(parseInt(quantity as string) || 0);
+    const dispatch = useAppDispatch()
     //Increament Count OF Product
     const IncrementHandller = () =>{
         setCounter(counter + 1)
@@ -16,6 +20,16 @@ export default function Product_Content() {
         if(counter > 0){
         setCounter(counter - 1)
         }
+    }
+    // Data Will Puts In CartItems
+    const data ={
+        productId:product?.product?.id as string,
+        product:product?.product as UpdateProduct,
+        quantity:counter
+    }
+    const AddItemToCartHandler =()=>{
+        dispatch(updateCartItem(data))
+        console.log('first')
     }
   return (
     <div className="w-[50%] overflow-hidden flex flex-col justify-between items-start gap-2 ">
@@ -46,7 +60,7 @@ export default function Product_Content() {
             </button>
         </div>
         {/*Add To Cart*/}
-        <button title="Add To Cart" className="text-white cursor-pointer bg-primary w-full p-1 rounded flex justify-center items-center gap-3">
+        <button onClick={()=>AddItemToCartHandler()} title="Add To Cart" className="text-white cursor-pointer bg-primary w-full p-1 rounded flex justify-center items-center gap-3">
             <icon.BsHandbag />
             Add to Cart
         </button>

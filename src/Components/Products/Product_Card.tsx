@@ -20,7 +20,7 @@ export default function Product_Card({ slug,img, offer, title, rating, oldprice,
 
     return (
         <div className="flex min-h-[340px] shadow shadow-[rgb(237,238,245)] hover:scale-105 duration-500 hover:z-40 flex-col border border-[#EDEEF5] relative gap-3 bg-white px-6 py-5 justify-center items-start w-1/4">
-            <Link href={`/products/${slug}`} >
+            <Link href={`/products/${slug}?quantity=${counter}`} >
                 {/*Span Offers*/}
                 {offer && <span className=" absolute bg-[#35AFA0] rounded-[4px] px-2 py-1 top-3 left-3 text-white">{offer}%</span>}
                 {/*Image Card*/}
@@ -78,11 +78,11 @@ export default function Product_Card({ slug,img, offer, title, rating, oldprice,
             {/*Count*/}
             {iscounter && <div className="flex justify-between items-center w-full border overflow-hidden border-[#EDEEF5] rounded-[50px]">
                 {/*Decrement Button*/}
-                    <icon.FaMinus title="Decrement Counter" onClick={() =>DecreamentHandller() } className={`${counter === 0 ? 'cursor-not-allowed':'cursor-pointer'} flex justify-center items-center bg-[#EDEEF5] w-1/6 h-[30px] text-[10px] p-1`}/>
+                    <icon.FaMinus title="Decrement Counter" onClick={() =>DecreamentHandller() } className={`${counter === 0 ? 'cursor-not-allowed':'cursor-pointer'} flex justify-center items-center bg-[#EDEEF5] w-1/6 h-[30px] text-[10px] p-1.5`}/>
                 {/*Counter*/}
                 <span className="flex w-full justify-center items-center text-[20px]">{counter}</span>
                 {/*Increment Button*/}
-                    <icon.FaPlus title="Increment Counter" onClick={() =>IncreamentHandller() } className=" flex justify-center cursor-pointer items-center bg-[#FFCD00] w-1/6 h-[30px] text-[10px] p-1"/>
+                    <icon.FaPlus title="Increment Counter" onClick={() =>IncreamentHandller() } className=" flex justify-center cursor-pointer items-center bg-[#FFCD00] w-1/6 h-[30px] text-[10px] p-1.5"/>
             </div>}
         </div>
     )

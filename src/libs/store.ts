@@ -13,6 +13,7 @@ import CategorySlice from "@/Feature/Slices/CategoriesSlice";
 import AuthSlice from "@/Feature/Slices/AuthSlice";
 import AddresseSlice from "@/Feature/Slices/AddressesSlice";
 import CartItemSlice from "@/Feature/Slices/CartItemsSlice";
+import WishListSlice from "@/Feature/Slices/WishListSlice";
 
 export const makeStore = () =>
   configureStore({
@@ -26,6 +27,7 @@ export const makeStore = () =>
       category: CategorySlice,
       auth: AuthSlice,
       cartItems:CartItemSlice,
+      wishlist:WishListSlice
     },
   });
 

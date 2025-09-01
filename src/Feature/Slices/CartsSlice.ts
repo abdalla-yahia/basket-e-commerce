@@ -1,12 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {getAllCart,getCartById,createCart,updateCart,deleteCart,} from "../Actions/CartsActions";
+import {getAllCart} from "../Actions/CartsActions";
 import { CreateCart, UpdateCart } from "@/Interfaces/CartInterface";
 
 const initialState = {
-  AllCarts: {carts:[] as UpdateCart[]},
+  AllCarts:{} as {carts:UpdateCart},
   cart: {} as {cart:CreateCart},
   loading: false,
   error: null as string | null,
+  totalPrice: 0,
+  productsCount: 0
 };
 
 const CartSlice = createSlice({
@@ -22,58 +24,19 @@ const CartSlice = createSlice({
       .addCase(getAllCart.fulfilled, (state, action) => {
         state.AllCarts = action.payload;
         state.loading = false;
+        const items = state?.AllCarts?.carts?.items ?? []
+        if(items){
+          state.totalPrice = items?.reduce((acc,rec)=>{
+            return acc + ((rec?.product?.price || 0) * (rec?.quantity || 1))
+          },0) + 2.46
+          state.productsCount = items?.length
+        }
       })
       .addCase(getAllCart.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       })
-      .addCase(getCartById.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(getCartById.fulfilled, (state, action) => {
-        state.cart = action.payload;
-        state.loading = false;
-      })
-      .addCase(getCartById.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload as string;
-      })
-      .addCase(createCart.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(createCart.fulfilled, (state, action) => {
-        state.cart = action.payload;
-        state.loading = false;
-      })
-      .addCase(createCart.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload as string;
-      })
-      .addCase(updateCart.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(updateCart.fulfilled, (state, action) => {
-        state.cart = action.payload;
-        state.loading = false;
-      })
-      .addCase(updateCart.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload as string;
-      })
-      .addCase(deleteCart.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(deleteCart.fulfilled, (state) => {
-        state.loading = false;
-      })
-      .addCase(deleteCart.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload as string;
-      });
+      
   },
 });
 

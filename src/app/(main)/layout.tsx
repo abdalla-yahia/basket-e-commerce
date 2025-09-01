@@ -4,6 +4,7 @@ import Header from "@/Components/Header/Header";
 import { useEffect } from "react";
 import { getAllCategories } from "@/Feature/Actions/CategoriesActions";
 import { useAppDispatch } from "@/libs/store";
+import { getAllCart } from "@/Feature/Actions/CartsActions";
 
 
 
@@ -11,6 +12,7 @@ export default function MainLayout({children,}: Readonly<{children: React.ReactN
     const dispatch = useAppDispatch()
         useEffect(()=>{
             dispatch(getAllCategories())
+            dispatch(getAllCart())
         },[dispatch])
     return(
         <>

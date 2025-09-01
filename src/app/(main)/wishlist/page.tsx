@@ -1,6 +1,7 @@
+import Wishlist_Container from "@/Components/WishList/WishList_Container";
 
 export default function WishList_page() {
   return (
-    <div>WishList_page</div>
+    <Wishlist_Container />
   )
 }

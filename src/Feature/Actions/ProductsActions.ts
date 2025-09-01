@@ -18,7 +18,6 @@ export const getAllProduct = createAsyncThunk('products/getAll',async()=>{
 export const getProductBySlug = createAsyncThunk('products/getbyid',async(slug:string)=>{
     try {
         const data =await GetHook(`/api/products/${slug}`)
-        console.log(data)
         return data;
     } catch (error) {
         toast.error(`Faild To Get Product`)

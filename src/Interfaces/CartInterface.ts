@@ -1,11 +1,15 @@
+import { UpdateProduct } from "./ProductInterface"
+
 export interface CreateCart {
     title:string
-    products?:string[]
-    orderId?:string
+    products?:UpdateProduct[]
+    userId?:string
 }
 export interface UpdateCart {
-    id:string
     title?:string
-    products?:string[]
-    orderId?:string
+    userId?:string
+    items:{
+        product:UpdateProduct
+        quantity:number
+    }[]
 }

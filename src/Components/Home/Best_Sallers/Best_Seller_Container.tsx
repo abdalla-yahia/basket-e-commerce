@@ -1,5 +1,13 @@
-import Best_Seller_Section from "./Best_Seller_Section";
+import dynamic from "next/dynamic";
 import Image_Section from "../../Image_Section/Image_Section";
+const Best_Seller_Section = dynamic(()=> import("./Best_Seller_Section"),{
+   loading: () => (
+    <div className="flex items-center justify-center h-40">
+      <span className="animate-spin rounded-full h-8 w-8 border-4 border-primary border-t-transparent"></span>
+      <p className="text-muted animate-pulse font-bold text-3xl">Loading...</p>
+    </div>
+  ),
+});
 
 export default function Best_Seller_Container() {
   return (

@@ -1,11 +1,7 @@
 import Link from "next/link";
 import * as icon from '@/Utils/Icons/Icons';
-// import axios from "axios";
 
 export default async function Payment_Form() {
-
-// const res = await axios.get("https://restcountries.com/v3.1/all");
-// console.log(res?.data);
 
   return (
     
@@ -14,7 +10,7 @@ export default async function Payment_Form() {
             {/*Contact*/}
             <div className="w-full flex justify-between items-center ">
                 <h2 className="text-black my-[10px] text-[21px] font-[700]" style={{fontFamily:'Roboto',lineHeight:'24px'}}>Contact</h2>
-                <Link href={'/auth/login'} className=" underline text-blue-700 cursor-pointer">Login</Link>
+                <Link href={'/login'} className=" underline text-blue-700 cursor-pointer">Login</Link>
             </div>
             <input className="w-full mt-3 p-3 rounded border border-[#1773B0] text-[#707070]" type="email" name="" id="" placeholder="Email or mobile phone number"/>
             <div className="flex justify-center items-center gap-2 mt-3">

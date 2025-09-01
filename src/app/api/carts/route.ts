@@ -4,7 +4,7 @@ import { TokenInterFace } from "@/Interfaces/UserInterface";
 import { prisma } from "@/libs/Prisma/Prisma_Client";
 
 /**
- * @access Only Admin
+ * @access Only Logged Users
  * @method GET
  * @param NoParam
  * @path '~/api/Carts'
@@ -32,15 +32,18 @@ export async function GET(request: NextRequest) {
         { status: 401 }
       );
     }
-    //Check If User Role Is Admin
-    if (Decode?.role !== "ADMIN") {
-      return NextResponse.json(
-        { message: "These permissions are restricted to admins only" },
-        { status: 403 }
-      );
-    }
+
     //Get All Carts
-    const carts = await prisma.cart.findMany();
+    const carts = await prisma.cart.findUnique({
+      where:{userId:Decode?.id},
+      include:{
+        items:{
+          include:{
+            product:true
+          }
+        }
+      }
+    });
     return NextResponse.json(
       { message: "Get All Carts Successfully", carts },
       { status: 200 }
@@ -99,11 +102,15 @@ export async function POST(request: NextRequest) {
       const product = Cart?.items?.find(item=>item?.id === data?.productId)
       if(product){
         await prisma.cartItem.update({
-          where:{productId:data?.productId},
-          data:{
-            quantity:product?.quantity + data?.product?.quantity
+          where: {
+            cartId_productId: {
+              cartId: Cart.id,
+              productId: data?.productId as string
+            }
+          },
+          data: {
+            quantity: product?.quantity + data?.product?.quantity
           }
-          
         })
       }else {
          await prisma.cartItem.create({
@@ -122,43 +129,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-
-
-
-// // /app/api/cart/add/route.ts
-// import { prisma } from "@/lib/prisma";
-// import { NextResponse } from "next/server";
-
-// export async function POST(req: Request) {
-//   const { userId, productId, quantity } = await req.json();
-
-//   let cart = await prisma.cart.findUnique({
-//     where: { userId },
-//     include: { items: true },
-//   });
-
-//   if (!cart) {
-//     cart = await prisma.cart.create({
-//       data: {
-//         userId,
-//         items: {
-//           create: { productId, quantity },
-//         },
-//       },
-//     });
-//   } else {
-//     const item = cart.items.find((i) => i.productId === productId);
-//     if (item) {
-//       await prisma.cartItem.update({
-//         where: { id: item.id },
-//         data: { quantity: item.quantity + quantity },
-//       });
-//     } else {
-//       await prisma.cartItem.create({
-//         data: { cartId: cart.id, productId, quantity },
-//       });
-//     }
-//   }
-
-//   return NextResponse.json({ success: true });
-// }
