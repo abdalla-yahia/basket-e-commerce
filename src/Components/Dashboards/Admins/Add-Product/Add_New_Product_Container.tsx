@@ -71,6 +71,7 @@ export default function Add_New_Product_Container() {
     setImages([]) 
   }
 }, [product?.status])
+console.log(product?.status)
   return (
     <div className="w-full flex flex-col justify-start items-center gap-5 p-8">
       {/*Section Title*/}

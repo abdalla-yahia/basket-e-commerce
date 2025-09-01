@@ -40,7 +40,7 @@ export default function Best_Seller_Section() {
           <icon.RiArrowRightSLine onClick={() => ArrowRightHandler()} className="text-4xl hover:bg-primary hover:text-white hover:scale-125   w-[25px] h-[25px] duration-150 z-50 text-primary font-extrabold bg-white border border-primary  cursor-pointer rounded-full" />
         </div>
         {/*Products Container*/}
-        <div ref={ref} className="flex justify-between gap-0 items-stretch mt-3  overflow-x-scroll scrollbar-none">
+        <div ref={ref} className="flex justify-between gap-0 mt-3  overflow-x-scroll scrollbar-none">
           {
             AllProducts?.products && AllProducts?.products?.map((product: UpdateProduct) =>
               <Product_Card slug={product?.slug as string} key={product?.id} img={product?.image || 'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={product?.offer || '22%'} title={product?.title as string} rating={product?.rating || '4.5'} oldprice={product?.oldPrice as unknown as string} price={product?.price as unknown as string} quantity={product?.quantity as number} iscounter />
