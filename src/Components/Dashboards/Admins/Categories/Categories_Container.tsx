@@ -4,7 +4,7 @@ import { UpdateCategory } from "@/Interfaces/CategoryInterface"
 import { RootState, useAppDispatch, useAppSelector } from "@/libs/store"
 import { useEffect } from "react"
 import Category_Content from "./Category_Content"
-
+import * as icon from '@/Utils/Icons/Icons'
 
 export default function Categories_Container() {
   const { AllCategories } = useAppSelector((state: RootState) => state.category)
@@ -14,9 +14,13 @@ export default function Categories_Container() {
     dispatch(getAllCategories())
   }, [dispatch])
 
-  console.log(AllCategories)
   return (
-    <div className="w-full flex justify-start items-start relative">
+    <div className="w-full flex flex-col justify-start items-start relative">
+    {/*Section Title*/}
+      <h1 className="text-xl font-bold my-4 text-primary flex justify-between items-center">
+        <icon.MdCategory className="text-3xl mx-2"/>
+        All Categories
+        </h1>
       {/*Categories Table*/}
       <table className="w-full border border-gray-200">
         <thead className="bg-gray-100">

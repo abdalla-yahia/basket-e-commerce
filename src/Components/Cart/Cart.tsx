@@ -1,6 +1,15 @@
+'use client'
+import { getAllCart } from "@/Feature/Actions/CartsActions";
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import Image from "next/image";
+import { useEffect } from "react";
 
 export default function Cart() {
+  const {AllCarts} = useAppSelector((state:RootState)=>state.cart)
+  const dispatch = useAppDispatch()
+  useEffect(()=>{
+    dispatch(getAllCart())
+  },[])
   return (
     <div className="w-full flex flex-col justify-start items-start">
         {/*Map Products*/}

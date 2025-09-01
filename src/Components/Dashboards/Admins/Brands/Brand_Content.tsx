@@ -7,6 +7,7 @@ import { useAppDispatch } from '@/libs/store';
 import { UpdateBrand } from '@/Interfaces/BrandInterface';
 import { deleteBrand } from '@/Feature/Actions/BrandsActions';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Brand_Content({brand}:{brand:UpdateBrand}) {
       const [isToggle,setIsToggle] = useState(false)
@@ -37,9 +38,15 @@ export default function Brand_Content({brand}:{brand:UpdateBrand}) {
   return (
      <tr key={brand?.id}>
         <td className="p-2 border border-[#E4E5EE]">
-          <Image src={brand?.image as string} alt={brand?.title as string} width={40} height={40}/>
+          <Link href={`/brands/${brand?.id}`}>
+            <Image src={brand?.image as string} alt={brand?.title as string} width={40} height={40}/>
+          </Link>
           </td>
-        <td className="p-2 border border-[#E4E5EE]">{brand?.title}</td>
+        <td className="p-2 border border-[#E4E5EE]">
+          <Link href={`/brands/${brand?.id}`}>
+            {brand?.title}
+          </Link>
+          </td>
         <td className="p-2 border border-[#E4E5EE]">{brand?.description}</td>
         <td className="p-2 border border-[#E4E5EE]">
           <div className="w-full flex justify-between items-center px-2">

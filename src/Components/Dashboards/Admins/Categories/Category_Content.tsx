@@ -7,6 +7,7 @@ import { useAppDispatch } from '@/libs/store';
 import { UpdateCategory } from '@/Interfaces/CategoryInterface';
 import { deleteCategory } from '@/Feature/Actions/CategoriesActions';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Category_Content({Category}:{Category:UpdateCategory}) {
       const [isToggle,setIsToggle] = useState(false)
@@ -37,9 +38,15 @@ export default function Category_Content({Category}:{Category:UpdateCategory}) {
   return (
      <tr key={Category?.id}>
         <td className="p-2 border border-[#E4E5EE]">
-          <Image src={Category?.image as string} alt={Category?.title as string} width={40} height={40}/>
+          <Link href={`/categories/${Category?.id}`}>
+            <Image src={Category?.image as string} alt={Category?.title as string} width={40} height={40}/>
+          </Link>
           </td>
-        <td className="p-2 border border-[#E4E5EE]">{Category?.title}</td>
+        <td className="p-2 border border-[#E4E5EE]">
+          <Link href={`/categories/${Category?.id}`}>
+          {Category?.title}
+          </Link>
+          </td>
         <td className="p-2 border border-[#E4E5EE]">{Category?.description}</td>
         <td className="p-2 border border-[#E4E5EE]">
           <div className="w-full flex justify-between items-center px-2">

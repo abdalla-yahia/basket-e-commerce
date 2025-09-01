@@ -28,7 +28,7 @@ export default function Stok_Products() {
             {/*Items*/}
             {
                 AllCategories?.categories && AllCategories?.categories?.slice(0,8)?.map((category:UpdateCategory)=>
-                    <div key={category?.id} className="w-1/4 flex-1 h-1/2 flex justify-start items-center gap-2 p-5 border border-[#E4E5EE]">
+                    <div key={category?.id} className="w-1/4 h-1/2 flex justify-start items-center gap-2 p-5 border border-[#E4E5EE]">
                         <Image src={category?.image || "https://res.cloudinary.com/dghqvxueq/image/upload/v1756257566/product_10_lnu3vr.png"} alt={category?.title as string} width={80} height={50}/>
                         {/*Content*/}
                         <div className="flex flex-col justify-start items-start gap-1">

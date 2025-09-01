@@ -4,6 +4,7 @@ import { UpdateProduct } from "@/Interfaces/ProductInterface"
 import { RootState, useAppDispatch, useAppSelector } from "@/libs/store"
 import { useEffect } from "react"
 import Product_content from "./Product_content"
+import * as icon from '@/Utils/Icons/Icons';
 
 export default function Products_Container() {
   const { AllProducts } = useAppSelector((state: RootState) => state.product)
@@ -15,7 +16,12 @@ export default function Products_Container() {
 
 
   return (
-    <div className="w-full flex justify-start items-start relative">
+    <div className="w-full flex flex-col justify-start items-start relative">
+      {/*Section Title*/}
+      <h1 className="text-xl font-bold my-4 text-primary flex justify-between items-center">
+        <icon.FaBoxOpen className="text-3xl mx-2"/>
+        All Products
+        </h1>
       {/*Products Table*/}
       <table className="w-full border border-gray-200 table">
         <thead className="bg-gray-100">

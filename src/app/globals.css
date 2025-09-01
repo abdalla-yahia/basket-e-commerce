@@ -9,21 +9,20 @@ html::-webkit-scrollbar-thumb {
 }
 
 :root {
-  /* 🌞 Light Mode */
   --background: #ffffff;
   --foreground: #0f172a;
   --primary: #35afa0;
   --fontcolor: #3e445a;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0f172a;
     --foreground: #ffffff;
     --primary: #35afa0;
     --fontcolor: #ffffff;
   }
-}
+} */
 
 @theme inline {
   --color-background: var(--background);

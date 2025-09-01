@@ -45,6 +45,11 @@ export default function Address_Container() {
   }
   return (
     <div className="w-full flex flex-col justify-between items-start gap-3">
+    {/*Section Title*/}
+      <h1 className="text-xl font-bold my-4 text-primary flex justify-between items-center">
+        <icon.FaMapLocationDot className="text-3xl mx-2"/>
+        All Addresses
+      </h1>
       {/*Addresses Cards */}
       {/*Main Address*/}
       <div className="w-[50%] p-4 flex flex-col justify-start items-start rounded-lg bg-gray-200 gap-3">
