@@ -40,10 +40,16 @@ export default function Product_content({product}:{product:UpdateProduct}) {
           isToggle && (<Edit_Product_Form product={product} setIsToggle={setIsToggle}/>)
           }
     <tr key={product?.id}>
-            <td className="p-2 border border-[#E4E5EE] ">
-            <Image src={product?.image as string} alt={product?.title as string} width={40} height={0}/>
+            <td className="p-2 border border-[#E4E5EE] flex justify-center items-center">
+              <Link href={`/products/${product?.slug}`}>
+                <Image src={product?.image as string} alt={product?.title as string} width={40} height={0}/>
+              </Link>
             </td>
-            <td className="p-2 border border-[#E4E5EE]">{product?.title}</td>
+            <td className="p-2 border border-[#E4E5EE]">
+              <Link href={`/products/${product?.slug}`}>
+                {product?.title}
+              </Link>
+              </td>
             <td className="p-2 border border-[#E4E5EE]">{product?.description}</td>
             <td className="p-2 border border-[#E4E5EE]">
               <Link href={`/categories/${product?.category?.id}`}>
