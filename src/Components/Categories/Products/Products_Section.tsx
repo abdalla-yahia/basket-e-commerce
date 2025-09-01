@@ -19,7 +19,7 @@ export default function Products_Section({ id }: { id: string }) {
       <Search_Section ProductCount={category?.category?.products?.length as number ?? 0} />
       {/*Products */}
       <div className="w-full  flex justify-between flex-wrap gap-0 items-start mt-3">
-        <div className="w-full  flex justify-center  flex-wrap gap-2 items-center my-1">
+        <div className="w-full  flex justify-center  flex-wrap gap-2 items-center my-4">
           {category?.category?.image && <Image src={category?.category?.image} alt={category?.category?.title || 'Categpry-Image'} width={50} height={50} />}
           <h2 className="text-2xl font-bold">{category?.category?.title}</h2>
         </div>
