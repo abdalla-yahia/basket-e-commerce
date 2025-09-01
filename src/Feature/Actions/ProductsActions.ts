@@ -31,12 +31,11 @@ export const createProduct = createAsyncThunk('products/create',async(ProductDat
     try {
         const data = await PostHook(`/api/products`, ProductData)
         if(data){
-            toast.success(`Create Product ${data?.product?.name} Successfully`)
+            toast.success(`Create Product ${data?.product?.title} Successfully`)
         }
         return data;
         } catch (error) {
       const message = "Create a new product failed";
-      console.log(error)
       toast.error(message);
       return rejectWithValue(message);
     }
