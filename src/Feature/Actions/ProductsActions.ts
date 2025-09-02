@@ -13,12 +13,23 @@ export const getAllProduct = createAsyncThunk('products/getAll',async()=>{
         return error
     }
 })
+//Get Products By Page Number
 export const getProductsByPageNumber = createAsyncThunk('products/getAllByPage',async(pagenumber:number)=>{
     try {
         const res = GetHook(`/api/products/by-page-number?pageNumber=${pagenumber}`)
         return res;
     } catch (error) {
         toast.error(`Error To Get All Products`)
+        return error
+    }
+})
+//Get Products By Page Number
+export const getProductsBySearchText = createAsyncThunk('products/getAllBySeach',async(query:{pageNumber:number,searchText:string})=>{
+    try {
+        const res = GetHook(`/api/products/by-search?pageNumber=${query?.pageNumber}&search=${query?.searchText}`)
+        return res;
+    } catch (error) {
+        toast.error(`Error To Get Products`)
         return error
     }
 })

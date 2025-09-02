@@ -1,14 +1,15 @@
 import { RootState, useAppSelector } from "@/libs/store"
 
-export default function Search_Section() {
+export default function Search_Section({setSearchText}:{setSearchText:(arg0:string)=>void}) {
   const {AllProducts} = useAppSelector((state:RootState)=>state.product)
+  const {ProductsBySearchText} = useAppSelector((state:RootState)=>state.product)
 
   return (
     <div className="w-full flex justify-between items-center p-5 gap-5  rounded-lg bg-[#F7F8FD]">
         {/*Products Count*/}
-        <span className="text-[#9B9BB4] text-[12px] font-[400]">{AllProducts?.products?.length} products</span>
+        <span className="text-[#9B9BB4] text-[12px] font-[400]">{ ProductsBySearchText?.products?.length || AllProducts?.products?.length} products</span>
         {/*Search Input*/}
-        <input type="text" name="" id="" className="outline-none border-none h-full flex-1" placeholder="Search For Product..."/>
+        <input onChange={(e)=>setSearchText(e.target.value)} type="text" name="" id="" className="outline-none border-none h-full flex-1" placeholder="Search For Product..."/>
         {/*Filter Option*/}
         <div className="flex justify-between items-center">
             <span className="text-[#9B9BB4] text-[12px] font-[400]">Sort by:</span>

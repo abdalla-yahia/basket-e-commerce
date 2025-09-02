@@ -1,23 +1,18 @@
 'use client'
 import Product_Card from "@/Components/Products/Product_Card";
-import { getBrandById } from "@/Feature/Actions/BrandsActions";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
-import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
-import { useEffect } from "react";
+import { RootState, useAppSelector } from "@/libs/store";
 import Search_Section from "./Search/Search_Section";
 import Image from "next/image";
 
-export default function Products_Section({ id }: { id: string }) {
+export default function Products_Section({setSearchText}:{setSearchText:(arg0:string)=>void}) {
   const { brand } = useAppSelector((state: RootState) => state.brand)
-  const dispatch = useAppDispatch()
-  useEffect(() => {
-    dispatch(getBrandById(id))
-  }, [id])
+
   const ProductsCount = brand?.brand?.products?.length as number
   return (
     <>
       {/*Search Bar*/}
-      <Search_Section ProductsCount={ProductsCount} />
+      <Search_Section setSearchText={setSearchText} ProductsCount={ProductsCount} />
       {/*Products*/}
       <div className="w-full  flex justify-between flex-wrap gap-0 items-start mt-3">
          <div className="w-full  flex justify-center  flex-wrap gap-2 items-center my-4">

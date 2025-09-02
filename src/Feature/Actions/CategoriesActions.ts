@@ -30,6 +30,18 @@ export const getCategoryById = createAsyncThunk('categories/getbyid',async(id:st
     }
 })
 
+// Get Products Of Category By Id
+export const getProductsOfCategoryById = createAsyncThunk('categories/getProductsbyid',async(queries:{id:string,pageNumber:number,searchText:string})=>{
+    try {
+        const data =await GetHook(`/api/categories/${queries?.id}/by-queries?pageNumber=${queries?.pageNumber}&search=${queries?.searchText}`)
+        return data;
+    } catch (error) {
+        console.log(error)
+        toast.error(`Faild To Get Products Of Category`)
+        return error
+    }
+})
+
 //Create category
 export const createCategory = createAsyncThunk('categories/create',async(categoryData:CreateCategory)=>{
     try {

@@ -3,13 +3,13 @@ import Search_Section from "./Search/Search_Section";
 import { RootState, useAppSelector } from "@/libs/store";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
 
-export default function Products_Section() {
+export default function Products_Section({setSearchText}:{setSearchText:(arfg0:string)=>void}) {
   const {ProductsByPageNumber} = useAppSelector((state:RootState)=>state.product)
   
   return (
     <>
       {/*Search Bar*/}
-      <Search_Section />
+      <Search_Section setSearchText={setSearchText}/>
       {/*Products*/}
       <div className="w-full  flex justify-between flex-wrap gap-0 items-start mt-3">
         {

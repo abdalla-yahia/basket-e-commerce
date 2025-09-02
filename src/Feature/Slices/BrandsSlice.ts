@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {getAllBrands,getBrandById,createBrand,updateBrand,deleteBrand,} from "../Actions/BrandsActions";
+import {getAllBrands,getBrandById,createBrand,updateBrand,deleteBrand,getProductsOfBrandById} from "../Actions/BrandsActions";
 import { CreateBrand, UpdateBrand } from "@/Interfaces/BrandInterface";
+import { UpdateProduct } from "@/Interfaces/ProductInterface";
 
 const initialState = {
   AllBrands: { brands: [] as UpdateBrand[] }, 
   brand: {} as {brand:CreateBrand} | null,  
+  products:{} as {products:UpdateProduct, pages:number},
   loading: false,
   error: null as string | null,
 };
@@ -43,6 +45,18 @@ const BrandSlice = createSlice({
         state.loading = false;
       })
       .addCase(getBrandById.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(getProductsOfBrandById.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getProductsOfBrandById.fulfilled, (state, action) => {
+        state.products = action.payload;
+        state.loading = false;
+      })
+      .addCase(getProductsOfBrandById.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       })

@@ -4,31 +4,44 @@ import Pagination from "../../../Utils/Pagination";
 import Banar_Section from "./Banar_Section";
 import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { useEffect, useState } from "react";
-import {  getAllProduct, getProductsByPageNumber } from "@/Feature/Actions/ProductsActions";
+import {  getAllProduct, getProductsByPageNumber, getProductsBySearchText } from "@/Feature/Actions/ProductsActions";
 import {Count_Of_Products} from '@/Utils/Constants';
 
 export default function Products_Container() {
   const [pageNumber,setPageNumber] =useState(1)
+  const [searchText,setSearchText] = useState('')
+  
   const {AllProducts} = useAppSelector((state:RootState)=>state.product)
   const {ProductsByPageNumber} = useAppSelector((state:RootState)=>state.product)
   const dispatch = useAppDispatch()
+
+  const query ={
+    pageNumber,
+    searchText
+  }
   //Get All Products
   useEffect(()=>{
-  dispatch(getAllProduct())
-},[])
+    dispatch(getAllProduct())
+  },[dispatch])
+
 //Get Products By Page Number
   useEffect(()=>{
     dispatch(getProductsByPageNumber(pageNumber))
-  },[pageNumber])
+  },[pageNumber,dispatch])
+
+  //Get Products By Search Text
+    useEffect(()=>{
+      dispatch(getProductsBySearchText(query as {pageNumber:number,searchText:string}))
+    },[dispatch,pageNumber,searchText])
+
   //Get Count Of Pages From Server
   const pages = ProductsByPageNumber?.pages;
-  console.log(AllProducts?.products?.length)
   return (
     <div className="flex flex-col justify-between items-center gap-5">
         {/*Section Baner*/}
         <Banar_Section />
         {/*Products Section*/}
-        <Products_Section />
+        <Products_Section setSearchText={setSearchText}/>
         {/*Pagination*/}
         {
            AllProducts?.products?.length > Count_Of_Products &&

@@ -1,22 +1,17 @@
 'use client'
 import Product_Card from "@/Components/Products/Product_Card";
-import { getCategoryById } from "@/Feature/Actions/CategoriesActions";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
-import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
+import { RootState, useAppSelector } from "@/libs/store";
 import Image from "next/image";
-import { useEffect } from "react";
 import Search_Section from "./Search/Search_Section";
 
-export default function Products_Section({ id }: { id: string }) {
+export default function Products_Section({setSearchText}:{setSearchText:((arg0:string)=>void)}) {
   const { category } = useAppSelector((state: RootState) => state.category)
-  const dispatch = useAppDispatch()
-  useEffect(() => {
-    dispatch(getCategoryById(id))
-  }, [id])
+ 
   return (
     <>
       {/*Search Bar*/}
-      <Search_Section ProductCount={category?.category?.products?.length as number ?? 0} />
+      <Search_Section setSearchText={setSearchText} ProductCount={category?.category?.products?.length as number ?? 0} />
       {/*Products */}
       <div className="w-full  flex justify-between flex-wrap gap-0 items-start mt-3">
         <div className="w-full  flex justify-center  flex-wrap gap-2 items-center my-4">

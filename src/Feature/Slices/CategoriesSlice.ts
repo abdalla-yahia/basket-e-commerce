@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {getAllCategories,getCategoryById,createCategory,updateCategory,deleteCategory,} from "../Actions/CategoriesActions";
+import {getAllCategories,getCategoryById,createCategory,updateCategory,deleteCategory,getProductsOfCategoryById} from "../Actions/CategoriesActions";
 import { UpdateCategory } from "@/Interfaces/CategoryInterface";
+import { UpdateProduct } from "@/Interfaces/ProductInterface";
 
 const initialState = {
   AllCategories: {categories:[] as UpdateCategory[]},
   category: {} as {category:UpdateCategory} | null,
+  products: {} as {products:UpdateProduct[],pages:number},
   loading: false,
   error: null as string | null,
 };
@@ -44,6 +46,18 @@ const CategorySlice = createSlice({
         state.loading = false;
       })
       .addCase(getCategoryById.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(getProductsOfCategoryById.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getProductsOfCategoryById.fulfilled, (state, action) => {
+        state.products = action.payload;
+        state.loading = false;
+      })
+      .addCase(getProductsOfCategoryById.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       })

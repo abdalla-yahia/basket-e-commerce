@@ -1,5 +1,8 @@
 import dynamic from "next/dynamic";
 import Aside_Continer from "./Aside_Filter/Aside_Continer";
+import { useAppDispatch } from "@/libs/store";
+import { useEffect } from "react";
+import { getBrandById } from "@/Feature/Actions/BrandsActions";
 const Products_Container = dynamic(()=> import("./Products/Products_Container"),{
   ssr:true,
    loading: () => (
@@ -11,6 +14,11 @@ const Products_Container = dynamic(()=> import("./Products/Products_Container"),
 });
 
 export default function Brands_Container({id}:{id:string}) {
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    dispatch(getBrandById(id))
+  }, [id])
+
   return (
     <section className="w-full flex justify-center items-center mt-[40px]">
         {/*Container*/}
