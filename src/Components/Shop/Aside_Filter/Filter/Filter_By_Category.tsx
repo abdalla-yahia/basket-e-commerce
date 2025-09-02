@@ -26,7 +26,7 @@ const ChevkedInputHandler = (e: ChangeEvent<HTMLInputElement>,category:UpdateCat
       {/*Category Filter*/}
       <ul className="flex flex-col justify-start items-start gap-2 ">
          <li className="flex justify-start items-start gap-4">
-              <input onChange={()=>setCategories([])} checked={categories?.length > 0} className=" appearance-none bg-white border border-[#D9D9E9]  p-2 hover:bg-primary/50 checked:bg-primary " type="checkbox" name='AllCategories' id='AllCategories' />
+              <input onChange={()=>setCategories([])} checked={categories?.length <= 0} className=" appearance-none bg-white border border-[#D9D9E9]  p-2 hover:bg-primary/50 checked:bg-primary " type="checkbox" name='AllCategories' id='AllCategories' />
               <label className="text-[#71778E] text-[14px] font-[400]" htmlFor='AllCategories'>All Categories</label>
             </li>
         {
