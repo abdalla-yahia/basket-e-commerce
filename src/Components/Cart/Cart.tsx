@@ -22,7 +22,7 @@ export default function Cart() {
                  </Link>
                   <h3 className="text-[14px] font-[400]">{product?.product?.title}</h3>
               </div>
-              <span className="text-[14px] font-[400] text-black">${+(product?.product?.price as number) * +(product?.quantity)}</span>
+              <span className="text-[14px] font-[400] text-black">${(+(product?.product?.price as number) * +(product?.quantity)).toFixed(2)}</span>
           </div>
           )
         }

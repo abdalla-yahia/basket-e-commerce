@@ -27,7 +27,7 @@ export default function Products_Container() {
 //Get Products By Page Number
   useEffect(()=>{
     dispatch(getProductsByPageNumber(pageNumber))
-  },[pageNumber,dispatch])
+  },[pageNumber,dispatch,searchText])
 
   //Get Products By Search Text
     useEffect(()=>{
