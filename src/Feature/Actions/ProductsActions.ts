@@ -6,7 +6,16 @@ import { toast } from "react-toastify";
 //Get All products
 export const getAllProduct = createAsyncThunk('products/getAll',async()=>{
     try {
-        const res = GetHook('/api/products')
+        const res = GetHook(`/api/products`)
+        return res;
+    } catch (error) {
+        toast.error(`Error To Get All Products`)
+        return error
+    }
+})
+export const getProductsByPageNumber = createAsyncThunk('products/getAllByPage',async(pagenumber:number)=>{
+    try {
+        const res = GetHook(`/api/products/by-page-number?pageNumber=${pagenumber}`)
         return res;
     } catch (error) {
         toast.error(`Error To Get All Products`)

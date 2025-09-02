@@ -17,6 +17,7 @@ export async function GET(){
     try {
         //Get All Products
         const products = await prisma.product.findMany({
+
             include:{
                 category:{
                     select:{

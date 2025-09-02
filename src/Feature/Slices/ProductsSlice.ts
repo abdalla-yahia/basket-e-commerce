@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {getAllProduct,getProductBySlug,createProduct,updateProduct,deleteProduct} from "../Actions/ProductsActions";
+import {getAllProduct,getProductBySlug,createProduct,updateProduct,deleteProduct,getProductsByPageNumber} from "../Actions/ProductsActions";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
 
 const initialState = {
-  AllProducts: {products : [] as UpdateProduct[]},
+  AllProducts: {products :[] as UpdateProduct[]},
+  ProductsByPageNumber:{} as {products : UpdateProduct[],pages:number},
   product: {} as {product:UpdateProduct ,status:number},
   loading: false,
   error: null as string | null,
@@ -24,6 +25,18 @@ const ProductSlice = createSlice({
         state.loading = false;
       })
       .addCase(getAllProduct.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload as string;
+      })
+      .addCase(getProductsByPageNumber.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getProductsByPageNumber.fulfilled, (state, action) => {
+        state.ProductsByPageNumber = action.payload;
+        state.loading = false;
+      })
+      .addCase(getProductsByPageNumber.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       })
