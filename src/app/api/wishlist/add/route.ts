@@ -1,5 +1,44 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/libs/Prisma/Prisma_Client";
+import { TokenInterFace } from "@/Interfaces/UserInterface";
+import Jwt from "jsonwebtoken";
+
+export async function GET(request: NextRequest) {
+  try {
+  //Check If User Is Logein
+      const cookie = request.cookies.get("authToken");
+      if (!cookie) {
+        return NextResponse.json(
+          { message: "You Are Not Login" },
+          { status: 401 }
+        );
+      }
+      const token = cookie?.value;
+      const Decode = Jwt.verify(
+        token,
+        process.env.JWT_SECRET_KEY as string
+      ) as TokenInterFace;
+      if (!Decode) {
+        return NextResponse.json(
+          { message: "You Are Not Login" },
+          { status: 401 }
+        );
+      }
+    const wishlist = await prisma.wishlist.findFirst({
+      where: { userId: Decode?.id },
+      include: { products: true },
+    });
+
+    //db6f2e81-c121-4691-b068-a74f93b5c7d1
+    //db6f2e81-c121-4691-b068-a74f93b5c7d1
+
+    return NextResponse.json({message:"Get All Products Wishlist Successfully",wishlist}, { status: 200 });
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json({ error: "Failed to fetch wishlist" }, { status: 500 });
+  }
+}
+
 
 export async function POST(req: Request) {
   try {

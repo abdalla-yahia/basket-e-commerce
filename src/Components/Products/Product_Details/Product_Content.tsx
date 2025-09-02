@@ -27,7 +27,7 @@ export default function Product_Content() {
     const data ={
         productId:product?.product?.id as string,
         product:product?.product as UpdateProduct,
-        quantity:counter
+        quantity:counter || 1
     }
     //Add To Cart
     const AddItemToCartHandler =()=>{

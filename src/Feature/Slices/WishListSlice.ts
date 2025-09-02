@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { getWishlist,createWishList,updateWishList } from "../Actions/WishListActions"
-import { UpdateWishList } from "@/Interfaces/WishListInterface"
+import { UpdateProduct } from "@/Interfaces/ProductInterface"
 
 
 const initialState = {
-    products: {wishlist:[] as UpdateWishList[]},
+    productsInWish: {wishlist:{products:[] as UpdateProduct[]}},
     loading:false,
     error:null as null|string
 
@@ -21,7 +21,7 @@ const WishListSlice = createSlice({
         state.error = null
     })
     .addCase(getWishlist.fulfilled,(state,action)=>{
-        state.products = action.payload
+        state.productsInWish = action.payload
         state.loading = false
     })
     .addCase(getWishlist.rejected,(state,action)=>{
@@ -33,7 +33,7 @@ const WishListSlice = createSlice({
         state.error = null
     })
     .addCase(createWishList.fulfilled,(state,action)=>{
-        state.products = action.payload
+        state.productsInWish = action.payload
         state.loading = false
     })
     .addCase(createWishList.rejected,(state,action)=>{
@@ -45,7 +45,7 @@ const WishListSlice = createSlice({
         state.error = null
     })
     .addCase(updateWishList.fulfilled,(state,action)=>{
-        state.products = action.payload
+        state.productsInWish = action.payload
         state.loading = false
     })
     .addCase(updateWishList.rejected,(state,action)=>{

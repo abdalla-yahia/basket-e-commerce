@@ -4,5 +4,5 @@ import { UpdateUser } from "./UserInterface"
 export interface UpdateWishList {
     userId?:string
     user?:UpdateUser
-    products:UpdateProduct[]
+    products?:UpdateProduct[]
 }

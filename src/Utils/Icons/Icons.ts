@@ -2,7 +2,7 @@ import { TbError404,TbCategoryPlus } from 'react-icons/tb';
 import { HiOutlineHandRaised } from "react-icons/hi2";
 import { BiSolidErrorAlt,BiSolidCategory} from "react-icons/bi";
 import { RiArrowRightSLine,RiArrowLeftSLine } from "react-icons/ri";
-import { FaWhatsapp,FaFacebookF,FaPinterestP,FaRegEye,FaRegEyeSlash,FaChartLine,FaAddressCard,FaUsers,FaTrash,FaRegEdit,FaHome,FaBoxOpen,FaShoppingCart } from "react-icons/fa";
+import { FaWhatsapp,FaFacebookF,FaPinterestP,FaRegEye,FaRegEyeSlash,FaChartLine,FaAddressCard,FaUsers,FaTrash,FaRegEdit,FaHome,FaBoxOpen,FaShoppingCart,FaHeart } from "react-icons/fa";
 import { IoClose,IoLogoReddit } from "react-icons/io5";
 import { BsHandbag,BsTwitterX } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
@@ -15,7 +15,7 @@ import { MdOutlineLocalPostOffice,MdDeliveryDining,MdDashboard,MdInventory2,MdAd
 import { CiCreditCardOff,CiSettings } from "react-icons/ci";
 import { IoPersonCircleOutline,IoPricetagsSharp,IoBarChart } from "react-icons/io5";
 import { LuLoader } from "react-icons/lu";
-import { RiCoupon3Fill,RiSearchLine } from "react-icons/ri";
+import { RiCoupon3Fill,RiSearchLine,RiUserHeartLine } from "react-icons/ri";
 import { SiBrandfolder } from "react-icons/si";
 import { GrDocumentUpdate,GrDocumentDownload } from "react-icons/gr";
 import { MdDelete,MdCategory,MdOutlineLocalShipping } from "react-icons/md";
@@ -24,5 +24,5 @@ export {BiSolidErrorAlt,HiOutlineHandRaised,TbError404,RiArrowLeftSLine,RiArrowR
 PiShareFatThin,SlTag,FaPlus,FaMinus,FaFacebookF,IoLogoInstagram,BsTwitterX,IoLogoReddit,FaPinterestP,FaLocationDot,FiPhoneCall,MdOutlineLocalPostOffice,
 CiCreditCardOff,IoPersonCircleOutline,FaRegEye,FaRegEyeSlash,CiSettings,LuLoader,FaChartLine,IoPricetagsSharp,FaTrash,FaRegEdit,IoMdCheckmark,FaHome,
 FaAddressCard,FaMapLocationDot,MdDeliveryDining,MdDashboard,FaUsers,MdInventory2,RiCoupon3Fill,MdAddBox,BiSolidCategory,TbCategoryPlus,SiBrandfolder,MdAddToQueue,
-PiHandbag,RiSearchLine,FaBoxOpen,MdCategory,MdOutlineLocalShipping,IoBarChart,GrDocumentDownload,FaShoppingCart
+PiHandbag,RiSearchLine,FaBoxOpen,MdCategory,MdOutlineLocalShipping,IoBarChart,GrDocumentDownload,FaShoppingCart,FaHeart,RiUserHeartLine
 }
