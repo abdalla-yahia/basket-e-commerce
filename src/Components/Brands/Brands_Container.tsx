@@ -1,3 +1,4 @@
+'use client'
 import dynamic from "next/dynamic";
 import Aside_Continer from "./Aside_Filter/Aside_Continer";
 import { useAppDispatch } from "@/libs/store";
