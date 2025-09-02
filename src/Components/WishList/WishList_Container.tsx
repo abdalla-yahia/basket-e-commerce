@@ -1,6 +1,6 @@
 "use client";
 import { updateCartItem } from '@/Feature/Actions/CartItemsActions';
-import { getWishlist, updateWishList } from '@/Feature/Actions/WishListActions';
+import { updateWishList } from '@/Feature/Actions/WishListActions';
 import { UpdateProduct } from '@/Interfaces/ProductInterface';
 import { RootState, useAppDispatch, useAppSelector } from '@/libs/store';
 import * as icon from '@/Utils/Icons/Icons'

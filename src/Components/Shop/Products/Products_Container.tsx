@@ -4,13 +4,14 @@ import Pagination from "../../../Utils/Pagination";
 import Banar_Section from "./Banar_Section";
 import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { useEffect, useState } from "react";
-import {  getAllProduct, getProductsByPageNumber, getProductsBySearchText } from "@/Feature/Actions/ProductsActions";
+import {  getAllProduct, getProductsByFilter, getProductsByPageNumber, getProductsBySearchText } from "@/Feature/Actions/ProductsActions";
 import {Count_Of_Products} from '@/Utils/Constants';
+import { useSearchParams } from "next/navigation";
 
 export default function Products_Container() {
   const [pageNumber,setPageNumber] =useState(1)
   const [searchText,setSearchText] = useState('')
-  
+  const searchParams = useSearchParams()
   const {AllProducts} = useAppSelector((state:RootState)=>state.product)
   const {ProductsByPageNumber} = useAppSelector((state:RootState)=>state.product)
   const dispatch = useAppDispatch()
@@ -34,6 +35,18 @@ export default function Products_Container() {
       dispatch(getProductsBySearchText(query as {pageNumber:number,searchText:string}))
     },[dispatch,pageNumber,searchText])
 
+    //Set PageNumer While Filter Running
+    useEffect(()=>{
+      const params = new URLSearchParams();
+      if(pageNumber){
+        params.set('pageNumber',pageNumber.toString())
+      }
+    },[pageNumber])
+    //Get Filter Products
+    useEffect(()=>{
+      dispatch(getProductsByFilter())
+    },[searchParams])
+    console.log(searchParams)
   //Get Count Of Pages From Server
   const pages = ProductsByPageNumber?.pages;
   return (

@@ -39,7 +39,7 @@ export default function Products_Container({id}:{id:string}) {
         <Products_Section setSearchText={setSearchText}/>
          {/*Pagination*/}
           {
-              AllProducts?.products?.length > Count_Of_Products &&
+            AllProducts?.products?.length > Count_Of_Products &&
             <Pagination pagesCount={pages as number} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
           }
     </div>

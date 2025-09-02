@@ -6,7 +6,7 @@ import { UpdateProduct } from "@/Interfaces/ProductInterface";
 const initialState = {
   AllBrands: { brands: [] as UpdateBrand[] }, 
   brand: {} as {brand:CreateBrand} | null,  
-  products:{} as {products:UpdateProduct, pages:number},
+  products:{} as {products:UpdateProduct[], pages:number},
   loading: false,
   error: null as string | null,
 };

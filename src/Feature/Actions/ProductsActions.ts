@@ -1,6 +1,7 @@
 import { DeleteHook, GetHook, PostHook } from "@/Base/Hooks";
 import { CreateProduct, UpdateProduct } from "@/Interfaces/ProductInterface";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { useSearchParams } from "next/navigation";
 import { toast } from "react-toastify";
 
 //Get All products
@@ -23,10 +24,21 @@ export const getProductsByPageNumber = createAsyncThunk('products/getAllByPage',
         return error
     }
 })
-//Get Products By Page Number
+//Get Products By Search Text
 export const getProductsBySearchText = createAsyncThunk('products/getAllBySeach',async(query:{pageNumber:number,searchText:string})=>{
     try {
         const res = GetHook(`/api/products/by-search?pageNumber=${query?.pageNumber}&search=${query?.searchText}`)
+        return res;
+    } catch (error) {
+        toast.error(`Error To Get Products`)
+        return error
+    }
+})
+//Get Products By Filter
+export const getProductsByFilter = createAsyncThunk('products/getAllByFilter',async()=>{
+    const searchParams = useSearchParams();
+    try {
+        const res = GetHook(`/api/products/filter?${searchParams?.toString()}`)
         return res;
     } catch (error) {
         toast.error(`Error To Get Products`)
