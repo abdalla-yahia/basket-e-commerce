@@ -1,3 +1,4 @@
+'use client'
 import Products_Section from "./Products_Section";
 import Pagination from "../../../Utils/Pagination";
 import Banar_Section from "./Banar_Section";

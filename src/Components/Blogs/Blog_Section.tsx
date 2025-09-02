@@ -1,3 +1,4 @@
+'use client'
 import Pagination from "@/Utils/Pagination";
 import Blog_Content from "./Blog_Content";
 import { useState } from "react";
