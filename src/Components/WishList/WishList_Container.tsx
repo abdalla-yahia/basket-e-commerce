@@ -5,16 +5,13 @@ import { UpdateProduct } from '@/Interfaces/ProductInterface';
 import { RootState, useAppDispatch, useAppSelector } from '@/libs/store';
 import * as icon from '@/Utils/Icons/Icons'
 import Image from "next/image";
-import { useEffect } from 'react';
 
 
 
 export default function Wishlist_Container() {
   const {productsInWish} = useAppSelector((state:RootState)=>state.wishlist)
   const dispatch = useAppDispatch()
-  useEffect(()=>{
-    dispatch(getWishlist())
-  },[dispatch])
+
   //Remove From WishList Handler
   const RemoveFromWishListHandler =(item:UpdateProduct)=>{
     dispatch(updateWishList({productId:item?.id as string}))

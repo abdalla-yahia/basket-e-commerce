@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { getAllCategories } from "@/Feature/Actions/CategoriesActions";
 import { useAppDispatch } from "@/libs/store";
 import { getAllCart } from "@/Feature/Actions/CartsActions";
+import { getWishlist } from "@/Feature/Actions/WishListActions";
 
 
 
@@ -13,6 +14,8 @@ export default function MainLayout({children,}: Readonly<{children: React.ReactN
         useEffect(()=>{
             dispatch(getAllCategories())
             dispatch(getAllCart())
+            dispatch(getWishlist())
+
         },[dispatch])
     return(
         <>
