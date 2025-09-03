@@ -1,1 +1,1 @@
-export const Count_Of_Products = 9;
+export const Count_Of_Products = 8;
