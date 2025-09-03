@@ -46,15 +46,15 @@
 
 ### 🏠 Home Page
 
-![Basket BNS — Home](public/screenshots/home.png)
+![Basket BNS — Home](public/screen/HomePage.png)
 
 ### 🛍️ Products Page
 
-![Basket BNS — Products](public/screenshots/products.png)
+![Basket BNS — Products](public/screen/Products.png)
 
 ### 📊 Dashboard
 
-![Basket BNS — Dashboard](public/screenshots/dashboard.png)
+![Basket BNS — Dashboard](public/screen/dashboard.png)
 
 ---
 
