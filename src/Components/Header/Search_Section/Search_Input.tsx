@@ -1,11 +1,14 @@
 'use client'
+import { setSearchTextRedux } from '@/Feature/Slices/ProductsSlice';
+import { useAppDispatch } from '@/libs/store';
 import * as icon from '@/Utils/Icons/Icons'; 
 import { useRouter } from 'next/navigation';
 
-export default function Search_Input({setSearchText}:{setSearchText:(arg0:string)=>void}) {
+export default function Search_Input() {
+  const dispatch = useAppDispatch()
   const router = useRouter()
   const Searchandler=(e:string)=>{
-    setSearchText(e)
+    dispatch(setSearchTextRedux(e))
     router.push('/products/shop')
   }
   return (

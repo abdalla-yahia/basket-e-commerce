@@ -1,5 +1,4 @@
 'use client'
-import { getAllCategories } from "@/Feature/Actions/CategoriesActions";
 import { UpdateCategory } from "@/Interfaces/CategoryInterface";
 import { RootState, useAppSelector } from "@/libs/store";
 import Image from "next/image";
@@ -13,7 +12,7 @@ export default function Stok_Products() {
   return (
     <div className='w-full flex justify-between items-start h-[240px] mt-5 overflow-hidden  rounded-2xl border border-[#E4E5EE]'>
       {/*Main Product*/}
-      <Link href={`/categories/${mainCategory?.id}`}>
+      <Link href={`/products/categories/${mainCategory?.id}`}>
         <div className='flex flex-col h-[250px] justify-center items-center p-5 border border-[#E4E5EE]'>
           <Image src={mainCategory?.image || "https://res.cloudinary.com/dghqvxueq/image/upload/v1756257568/product_9_io0fca.png"} alt={mainCategory?.title as string} width={200} height={200} />
           {/*Product Title*/}
