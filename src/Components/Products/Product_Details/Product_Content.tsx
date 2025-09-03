@@ -32,7 +32,7 @@ export default function Product_Content() {
     //Add To Cart
     const AddItemToCartHandler =()=>{
         dispatch(updateCartItem(data))
-        router.push('/products')
+        router.push('/products/shop')
     }
     const AddProductToWishData = {
         userId:LogedUser?.user?.id,

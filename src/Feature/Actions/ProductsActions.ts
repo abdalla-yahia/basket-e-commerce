@@ -1,50 +1,20 @@
 import { DeleteHook, GetHook, PostHook } from "@/Base/Hooks";
 import { CreateProduct, UpdateProduct } from "@/Interfaces/ProductInterface";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { useSearchParams } from "next/navigation";
 import { toast } from "react-toastify";
 
 //Get All products
-export const getAllProduct = createAsyncThunk('products/getAll',async()=>{
+export const getAllProduct = createAsyncThunk('products/getAll',async(params:URLSearchParams)=>{
     try {
-        const res = GetHook(`/api/products`)
+        const res =await GetHook(`/api/products?${params}`)
+        console.log(res)
         return res;
     } catch (error) {
         toast.error(`Error To Get All Products`)
         return error
     }
 })
-//Get Products By Page Number
-export const getProductsByPageNumber = createAsyncThunk('products/getAllByPage',async(pagenumber:number)=>{
-    try {
-        const res = GetHook(`/api/products/by-page-number?pageNumber=${pagenumber}`)
-        return res;
-    } catch (error) {
-        toast.error(`Error To Get All Products`)
-        return error
-    }
-})
-//Get Products By Search Text
-export const getProductsBySearchText = createAsyncThunk('products/getAllBySeach',async(query:{pageNumber:number,searchText:string})=>{
-    try {
-        const res = GetHook(`/api/products/by-search?pageNumber=${query?.pageNumber}&search=${query?.searchText}`)
-        return res;
-    } catch (error) {
-        toast.error(`Error To Get Products`)
-        return error
-    }
-})
-//Get Products By Filter
-export const getProductsByFilter = createAsyncThunk('products/getAllByFilter',async()=>{
-    const searchParams = useSearchParams();
-    try {
-        const res = GetHook(`/api/products/filter?${searchParams?.toString()}`)
-        return res;
-    } catch (error) {
-        toast.error(`Error To Get Products`)
-        return error
-    }
-})
+
 
 // Get Product By Id
 export const getProductBySlug = createAsyncThunk('products/getbyid',async(slug:string)=>{
@@ -58,7 +28,7 @@ export const getProductBySlug = createAsyncThunk('products/getbyid',async(slug:s
 })
 
 //Create Product
-export const createProduct = createAsyncThunk('products/create',async(ProductData:CreateProduct, { rejectWithValue })=>{
+export const createProduct = createAsyncThunk('products/create',async(ProductData:CreateProduct)=>{
     try {
         const data = await PostHook(`/api/products`, ProductData)
         if(data){
@@ -66,9 +36,8 @@ export const createProduct = createAsyncThunk('products/create',async(ProductDat
         }
         return data;
         } catch (error) {
-      const message = "Create a new product failed";
-      toast.error(message);
-      return rejectWithValue(message);
+      toast.error("Create a new product failed");
+      return error;
     }
 })
 

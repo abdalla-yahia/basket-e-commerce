@@ -1,18 +1,12 @@
 'use client'
 import { getAllCategories } from "@/Feature/Actions/CategoriesActions"
 import { UpdateCategory } from "@/Interfaces/CategoryInterface"
-import { RootState, useAppDispatch, useAppSelector } from "@/libs/store"
-import { useEffect } from "react"
+import { RootState, useAppSelector } from "@/libs/store"
 import Category_Content from "./Category_Content"
 import * as icon from '@/Utils/Icons/Icons'
 
 export default function Categories_Container() {
   const { AllCategories } = useAppSelector((state: RootState) => state.category)
-  const dispatch = useAppDispatch()
-  //Fetch All Categories
-  useEffect(() => {
-    dispatch(getAllCategories())
-  }, [dispatch])
 
   return (
     <div className="w-full flex flex-col justify-start items-start relative">

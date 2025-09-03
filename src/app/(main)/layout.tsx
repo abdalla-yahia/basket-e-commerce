@@ -6,24 +6,24 @@ import { getAllCategories } from "@/Feature/Actions/CategoriesActions";
 import { useAppDispatch } from "@/libs/store";
 import { getAllCart } from "@/Feature/Actions/CartsActions";
 import { getWishlist } from "@/Feature/Actions/WishListActions";
+import { getAllBrands } from "@/Feature/Actions/BrandsActions";
 
-
-
-export default function MainLayout({children,}: Readonly<{children: React.ReactNode;}>) {
+export default function MainLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
     const dispatch = useAppDispatch()
-        useEffect(()=>{
-            dispatch(getAllCategories())
-            dispatch(getAllCart())
-            dispatch(getWishlist())
+    useEffect(() => {
+        dispatch(getAllCategories())
+        dispatch(getAllBrands())
+        dispatch(getAllCart())
+        dispatch(getWishlist())
+    }, [dispatch])
 
-        },[dispatch])
-    return(
+    return (
         <>
-        <Header />
+            <Header />
             <main>
                 {children}
             </main>
-        <Footer />
+            <Footer />
         </>
     )
 }

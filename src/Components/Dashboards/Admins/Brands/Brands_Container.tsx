@@ -1,18 +1,11 @@
 'use client'
-import { getAllBrands } from "@/Feature/Actions/BrandsActions"
 import { UpdateBrand } from "@/Interfaces/BrandInterface"
-import { RootState, useAppDispatch, useAppSelector } from "@/libs/store"
-import { useEffect } from "react"
+import { RootState, useAppSelector } from "@/libs/store"
 import Brand_Content from "./Brand_Content"
 import * as icon from '@/Utils/Icons/Icons'
 
 export default function Brands_Container() {
   const { AllBrands } = useAppSelector((state: RootState) => state.brand)
-  const dispatch = useAppDispatch()
-  //Fetch All Brands
-  useEffect(() => {
-    dispatch(getAllBrands())
-  }, [dispatch])
 
   return (
     <div className="w-full flex flex-col justify-start items-start relative">

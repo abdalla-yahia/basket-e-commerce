@@ -5,8 +5,13 @@ import Filter_By_Category from "./Filter/Filter_By_Category";
 import Filter_By_Price from "./Filter/Filter_By_Price";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
+import { getAllProduct } from "@/Feature/Actions/ProductsActions";
 
 export default function Aside_Continer() {
+  const {pageNumber,searchText} = useAppSelector((state:RootState)=>state.product)
+  const dispatch = useAppDispatch()
+  
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -20,27 +25,34 @@ export default function Aside_Continer() {
     min: searchParams.get("minPrice") || "",
     max: searchParams.get("maxPrice") || "",
   });
-  useEffect(()=>{
-      const params = new URLSearchParams();
-      if (categories.length > 0) params.set("categories", categories.join(","));
-      if (brands.length > 0) params.set("brands", brands.join(","));
-      if (price.min) params.set("minPrice", price.min);
-      if (price.max) params.set("maxPrice", price.max);
-  
-      router.push(`/products?${params.toString()}`);
-    
-  },[categories,brands,price])
+  //Set Queries To URL 
+  const params = new URLSearchParams();
+  useEffect(() => {
+    if (categories.length > 0) params.set("categories", categories.join(","));
+    if (brands.length > 0) params.set("brands", brands.join(","));
+    if (price.min) params.set("minPrice", price.min);
+    if (price.max) params.set("maxPrice", price.max);
+    if (pageNumber) params.set('pageNumber', pageNumber.toString())
+    if (searchText) params.set('search', searchText.toString())
+    router.push(`/products/shop?${params.toString()}`);
 
+  }, [categories, brands, price,pageNumber,searchText])
+
+  //Get Filter Products
+  useEffect(() => {
+    dispatch(getAllProduct(params as URLSearchParams))
+  }, [categories, brands, price,pageNumber,searchText])
+  
   return (
     <div className="flex flex-col justify-start items-start">
-        {/*Filter By Category*/}
-        <Filter_By_Category categories={categories} setCategories={setCategories}/>
-        {/*Filter By Brand*/}
-        <Filter_By_Brand brands={brands} setBrands={setBrands}/>
-        {/*Filter By Brand*/}
-        <Filter_By_Price price={price} setPrice={setPrice}/>
-        {/*Image*/}
-        <Image className="w-full my-[40px]" src={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756310846/shop-filter_e4sssz.png'} alt="" width={150} height={450} />
+      {/*Filter By Category*/}
+      <Filter_By_Category categories={categories} setCategories={setCategories} />
+      {/*Filter By Brand*/}
+      <Filter_By_Brand brands={brands} setBrands={setBrands} />
+      {/*Filter By Brand*/}
+      <Filter_By_Price price={price} setPrice={setPrice} />
+      {/*Image*/}
+      <Image className="w-full my-[40px]" src={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756310846/shop-filter_e4sssz.png'} alt="" width={150} height={450} />
     </div>
   )
 }

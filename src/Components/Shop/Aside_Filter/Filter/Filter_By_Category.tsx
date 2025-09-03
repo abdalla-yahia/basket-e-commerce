@@ -1,16 +1,12 @@
 'use client'
 import Filter_Title from "./Filter_Title";
-import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
-import { ChangeEvent, useEffect } from "react";
-import { getAllCategories } from "@/Feature/Actions/CategoriesActions";
+import { RootState, useAppSelector } from "@/libs/store";
+import { ChangeEvent } from "react";
 import { UpdateCategory } from "@/Interfaces/CategoryInterface";
 
 export default function Filter_By_Category({categories,setCategories}:{categories:string[],setCategories:(arg0:string[])=>void}) {
   const { AllCategories } = useAppSelector((state: RootState) => state.category)
-  const dispatch = useAppDispatch()
-  useEffect(() => {
-    dispatch(getAllCategories())
-  }, [])
+
 //Checked Input Handler
 const ChevkedInputHandler = (e: ChangeEvent<HTMLInputElement>,category:UpdateCategory)=>{
   if(e.target.checked){

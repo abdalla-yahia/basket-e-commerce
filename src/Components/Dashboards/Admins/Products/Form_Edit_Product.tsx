@@ -1,14 +1,12 @@
 'use client'
 import UploadImages from "@/Utils/UploadImage";
-import { SetStateAction, useActionState, useEffect, useState } from "react";
+import { SetStateAction, useActionState, useState } from "react";
 import * as icon from '@/Utils/Icons/Icons';
 import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
 import { UpdataProductValidation } from "@/Validation/ProductValidation";
 import { toast } from "react-toastify";
 import { updateProduct } from "@/Feature/Actions/ProductsActions";
-import { getAllBrands } from "@/Feature/Actions/BrandsActions";
-import { getAllCategories } from "@/Feature/Actions/CategoriesActions";
 import { UpdateBrand } from "@/Interfaces/BrandInterface";
 import { UpdateCategory } from "@/Interfaces/CategoryInterface";
 
@@ -19,11 +17,7 @@ export default function Edit_Product_Form({ product, setIsToggle }: { product: U
   const { AllCategories } = useAppSelector((state: RootState) => state.category)
 
   const dispatch = useAppDispatch()
-  //Get All CategoryId And All BrandsId
-  useEffect(() => {
-    dispatch(getAllBrands())
-    dispatch(getAllCategories())
-  }, [dispatch])
+
   //Create Item Handler
   const UpdateItem = (prevState: UpdateProduct, formData: FormData): UpdateProduct => {
     const formstate = {

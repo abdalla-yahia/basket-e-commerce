@@ -1,19 +1,12 @@
 'use client'
 import { getAllProduct } from "@/Feature/Actions/ProductsActions"
 import { UpdateProduct } from "@/Interfaces/ProductInterface"
-import { RootState, useAppDispatch, useAppSelector } from "@/libs/store"
-import { useEffect } from "react"
+import { RootState, useAppSelector } from "@/libs/store"
 import Product_content from "./Product_content"
 import * as icon from '@/Utils/Icons/Icons';
 
 export default function Products_Container() {
   const { AllProducts } = useAppSelector((state: RootState) => state.product)
-  const dispatch = useAppDispatch()
-  //Fetch All Products
-  useEffect(() => {
-    dispatch(getAllProduct())
-  }, [dispatch])
-
 
   return (
     <div className="w-full flex flex-col justify-start items-start relative">

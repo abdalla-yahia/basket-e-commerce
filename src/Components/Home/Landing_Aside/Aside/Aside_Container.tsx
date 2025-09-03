@@ -1,4 +1,4 @@
-import Categories_List from "./Categories/Categories_List";
+import Categories_List from "./Categories_List";
 
 export default function Aside_Container() {
   return (

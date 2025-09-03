@@ -18,11 +18,6 @@ export default function Add_New_Product_Container() {
   const { AllBrands } = useAppSelector((state: RootState) => state.brand)
   const { AllCategories } = useAppSelector((state: RootState) => state.category)
 
-  //Get All CategoryId And All BrandsId
-  useEffect(() => {
-    dispatch(getAllBrands())
-    dispatch(getAllCategories())
-  }, [])
   const dispatch = useAppDispatch()
   //Create Item Handler
   const CreateItem = (prevState: CreateProduct, formData: FormData): CreateProduct => {

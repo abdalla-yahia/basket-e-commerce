@@ -4,6 +4,7 @@ import { prisma } from "@/libs/Prisma/Prisma_Client";
 import { NextRequest, NextResponse } from "next/server";
 import { TokenInterFace } from '@/Interfaces/UserInterface';
 import { CreateProductValidation } from '@/Validation/ProductValidation';
+import { Count_Of_Products } from '@/Utils/Constants';
 
 /**
  * @access Every One
@@ -13,11 +14,37 @@ import { CreateProductValidation } from '@/Validation/ProductValidation';
  * @returns All Products
  */
 
-export async function GET(){
+export async function GET(request:NextRequest){
+    const {searchParams} = request.nextUrl
+    const pageNumber =  searchParams.get('pageNumber') || '1';
+    const SearchText =  searchParams.get('search') || '';
+    const categories =  searchParams.get('categories')?.split(',') || [];
+    const brands     =  searchParams.get('brands')?.split(',') || [];
+    const minPrice   =  Number(searchParams.get('minPrice')) || 0;
+    const maxPrice   =  Number(searchParams.get('maxPrice')) || 99999;
     try {
-        //Get All Products
+        //To Get Total Pages 
+        const AllProducts = await prisma.product.findMany({
+            where:{
+                title:{
+                    startsWith:SearchText,
+                },
+                categoryId : categories?.length ? {in:categories} : undefined,
+                brandId    : brands?.length     ? {in:brands}     : undefined,
+                price      : {gte:minPrice,lte:maxPrice}
+            },
+        })
+        //Get All Products By Search And Filter
         const products = await prisma.product.findMany({
-
+            where:{
+                title:{
+                    startsWith:SearchText,
+                    mode:'insensitive'
+                },
+                categoryId : categories?.length ? {in:categories} : undefined,
+                brandId    : brands?.length     ? {in:brands}     : undefined,
+                price      : {gte:minPrice,lte:maxPrice}
+            },
             include:{
                 category:{
                     select:{
@@ -33,9 +60,18 @@ export async function GET(){
                         image:true
                     }
                 }         
+            },
+            take:Count_Of_Products,
+            skip:Count_Of_Products * (parseInt(pageNumber) - 1),
+            orderBy:{
+                title:'asc',
             }
         })
-        return NextResponse.json({message:'Get All Products Successfully',products},{status:200})
+        console.log({'pageNumber':pageNumber},{'SearchText':SearchText},{'categories':categories},
+            {'brands':brands},{'minPrice':minPrice},{'maxPrice':maxPrice}
+        )
+        const pages = Math.ceil(AllProducts?.length / Count_Of_Products)
+        return NextResponse.json({message:'Get All Products Successfully',products,pages,status:200},{status:200})
     } catch (error) {
         return NextResponse.json({message:'Faild To Get All Products',error},{status:500})
     }

@@ -10,7 +10,7 @@ export default function Categories_Dropdown() {
 
   //Redirect To Link Of Category
   const ChangeCategoryHandeler =(e:string)=>{
-    router.push(`/categories/${e}`)
+    router.push(`/products/categories/${e}`)
   }
   //Get Total Count Of Products On All Categories
   const TotalProducts = AllCategories?.categories?.reduce((acc, rec:UpdateCategory) => {

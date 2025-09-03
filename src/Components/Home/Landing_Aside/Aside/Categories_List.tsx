@@ -1,17 +1,11 @@
 'use client'
-import { getAllCategories } from "@/Feature/Actions/CategoriesActions";
 import { UpdateCategory } from "@/Interfaces/CategoryInterface";
-import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
+import { RootState, useAppSelector } from "@/libs/store";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
 
 export default function Categories_List() {
     const { AllCategories } = useAppSelector((state: RootState) => state.category)
-    const dispatch = useAppDispatch()
-    useEffect(() => {
-        dispatch(getAllCategories())
-    }, [])
 
     return (
         //@To-Do Map-Of Categories

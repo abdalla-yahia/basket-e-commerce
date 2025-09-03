@@ -12,7 +12,7 @@ export default function Slider({ img1, text, textColor, paragraph, paragraphColo
         <span style={{fontFamily:'Dosis'}} className={`text-4xl font-extrabold ${paragraph2Color} text-center`}>{paragraph2}</span>
         </div>
         <div className="hidden md:block w-[50%]">
-          <Link href={'/products'}>
+          <Link href={'/products/shop'}>
             <button onClick={() => ''} className={`${bgcolor} text-white px-6 py-3 rounded-[50px] cursor-pointer text-sm `} >Shop Now &rarr;</button>
           </Link>
         </div>

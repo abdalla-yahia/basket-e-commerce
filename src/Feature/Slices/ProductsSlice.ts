@@ -1,21 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {getAllProduct,getProductBySlug,createProduct,updateProduct,deleteProduct,getProductsByPageNumber,getProductsBySearchText,getProductsByFilter} from "../Actions/ProductsActions";
+import {getAllProduct,getProductBySlug,createProduct,updateProduct,deleteProduct} from "../Actions/ProductsActions";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
 
 const initialState = {
-  AllProducts: {products :[] as UpdateProduct[]},
-  ProductsByPageNumber:{} as {products : UpdateProduct[],pages:number},
-  ProductsBySearchText:{} as {products : UpdateProduct[],pages:number},
-  ProductsByFilter:{} as {products : UpdateProduct[],pages:number},
+  AllProducts: {} as {products : UpdateProduct[],pages:number},
   product: {} as {product:UpdateProduct ,status:number},
   loading: false,
   error: null as string | null,
+  pageNumber:1,
+  searchText:''
 };
 
 const ProductSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {},
+  reducers: {
+    setPageNumberRedux:(state,action)=>{
+      state.pageNumber = action.payload
+    },
+    setSearchTextRedux:(state,action)=>{
+      state.searchText = action.payload
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAllProduct.pending, (state) => {
@@ -27,42 +33,6 @@ const ProductSlice = createSlice({
         state.loading = false;
       })
       .addCase(getAllProduct.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload as string;
-      })
-      .addCase(getProductsByPageNumber.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(getProductsByPageNumber.fulfilled, (state, action) => {
-        state.ProductsByPageNumber = action.payload;
-        state.loading = false;
-      })
-      .addCase(getProductsByPageNumber.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload as string;
-      })
-      .addCase(getProductsBySearchText.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(getProductsBySearchText.fulfilled, (state, action) => {
-        state.ProductsBySearchText = action.payload;
-        state.loading = false;
-      })
-      .addCase(getProductsBySearchText.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload as string;
-      })
-      .addCase(getProductsByFilter.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(getProductsByFilter.fulfilled, (state, action) => {
-        state.ProductsByFilter = action.payload;
-        state.loading = false;
-      })
-      .addCase(getProductsByFilter.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       })
@@ -117,3 +87,4 @@ const ProductSlice = createSlice({
 });
 
 export default ProductSlice.reducer;
+export const {setSearchTextRedux,setPageNumberRedux} = ProductSlice.actions

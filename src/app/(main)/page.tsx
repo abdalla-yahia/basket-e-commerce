@@ -6,7 +6,8 @@ import New_Products_Container from "@/Components/Home/New_Products/New_Products_
 import Stok_Products_Container from "@/Components/Home/Stok_Product/Stok_Products_Container";
 
 export default function Home() {
-  return (
+
+ return (
     <main className="min-h-screen w-full flex flex-col justify-start items-center">
       {/*Landing Section*/}
       <Home_Landing_Container />

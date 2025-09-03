@@ -1,18 +1,14 @@
 'use client'
 import Product_Card from "@/Components/Products/Product_Card";
 import Section_Title from "@/Components/Section_Title/Section_Title";
-import { getAllProduct } from "@/Feature/Actions/ProductsActions";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
-import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
+import { RootState, useAppSelector } from "@/libs/store";
 import * as icon from '@/Utils/Icons/Icons';
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 export default function Best_Seller_Section() {
   const { AllProducts } = useAppSelector((state: RootState) => state.product)
-  const dispatch = useAppDispatch()
-  useEffect(() => {
-    dispatch(getAllProduct())
-  }, [])
+ 
   const ref = useRef<HTMLDivElement>(null)
   //Scroll Box Content To Right Handler
   const ArrowRightHandler = () => {
@@ -31,7 +27,7 @@ export default function Best_Seller_Section() {
   return (
     <section className="w-[75%] ">
       {/*Section Title*/}
-      <Section_Title title={'Best Sellers'} description={'Do not miss the current offers until the end of March.'} href={'/products'} />
+      <Section_Title title={'Best Sellers'} description={'Do not miss the current offers until the end of March.'} href={'/products/shop'} />
       {/*Products*/}
       <div className="relative w-full ">
         {/*Arrow Right Button*/}
