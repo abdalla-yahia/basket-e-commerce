@@ -1,20 +1,26 @@
 'use client'
-import { getAllProduct } from "@/Feature/Actions/ProductsActions"
 import { UpdateProduct } from "@/Interfaces/ProductInterface"
-import { RootState, useAppSelector } from "@/libs/store"
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store"
 import Product_content from "./Product_content"
 import * as icon from '@/Utils/Icons/Icons';
+import { useEffect } from "react";
+import { getAllProduct } from "@/Feature/Actions/ProductsActions";
 
 export default function Products_Container() {
   const { AllProducts } = useAppSelector((state: RootState) => state.product)
-
+  const dispatch = useAppDispatch()
+  const params = new URLSearchParams()
+  params.set('pageNumber', '1')
+  useEffect(() => {
+    dispatch(getAllProduct(params as URLSearchParams))
+  }, [])
   return (
     <div className="w-full flex flex-col justify-start items-start relative">
       {/*Section Title*/}
       <h1 className="text-xl font-bold my-4 text-primary flex justify-between items-center">
-        <icon.FaBoxOpen className="text-3xl mx-2"/>
-        All Products {`(${AllProducts?.products?.length})`}
-        </h1>
+        <icon.FaBoxOpen className="text-3xl mx-2" />
+        All Products {`(${AllProducts?.FullyProducts?.length})`}
+      </h1>
       {/*Products Table*/}
       <table className="w-full border border-gray-200 table">
         <thead className="bg-gray-100">
@@ -32,7 +38,7 @@ export default function Products_Container() {
         </thead>
         <tbody>
           {
-            AllProducts?.products?.map((product: UpdateProduct) =>
+            AllProducts?.FullyProducts?.map((product: UpdateProduct) =>
               <Product_content key={product?.id} product={product} />
             )
           }
