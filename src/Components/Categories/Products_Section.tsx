@@ -8,7 +8,7 @@ import Pagination from "@/Utils/Pagination";
 import { Count_Of_Products } from "@/Utils/Constants";
 
 export default function Products_Section() {
-  const { category } = useAppSelector((state: RootState) => state.category)
+  // const { category } = useAppSelector((state: RootState) => state.category)
   const { products } = useAppSelector((state: RootState) => state.category)
 
   //Get Count Of Pages From Server
@@ -20,8 +20,8 @@ export default function Products_Section() {
       {/*Name Of Category And Its Main Image */}
       <div className="w-full  flex justify-between flex-wrap gap-0 items-start mt-5 mb-6">
         <div className="w-full  flex justify-center  flex-wrap gap-2 items-center ">
-          {category?.category?.image && <Image src={category?.category?.image} alt={category?.category?.title || 'Categpry-Image'} width={50} height={50} />}
-          <h2 className="text-2xl font-bold">{category?.category?.title}</h2>
+          {products?.category?.image && <Image src={products?.category?.image} alt={products?.category?.title || 'Categpry-Image'} width={50} height={50} />}
+          <h2 className="text-2xl font-bold">{products?.category?.title}</h2>
         </div>
         {/*Get All Products Of Specific Category*/}
         {

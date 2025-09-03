@@ -6,9 +6,9 @@ import Search_Section from "./Search_Section";
 import Image from "next/image";
 
 export default function Products_Section() {
-  const { brand, products } = useAppSelector((state: RootState) => state.brand)
+  const { products } = useAppSelector((state: RootState) => state.brand)
 
-  const ProductsCount = brand?.brand?.products?.length as number
+  const ProductsCount = products?.products?.length as number
   return (
     <>
       {/*Search Bar*/}
@@ -16,8 +16,8 @@ export default function Products_Section() {
       {/*Name Of Brand And Its Image*/}
       <div className="w-full  flex justify-between flex-wrap gap-0 items-start mt-5 mb-6">
         <div className="w-full  flex justify-center  flex-wrap gap-2 items-center">
-          {brand?.brand?.image && <Image src={brand?.brand?.image} alt={brand?.brand?.title || 'Categpry-Image'} width={50} height={50} />}
-          <h2 className="text-2xl font-bold">{brand?.brand?.title}</h2>
+          {products?.brand?.image && <Image src={products?.brand?.image} alt={products?.brand?.title || 'Categpry-Image'} width={50} height={50} />}
+          <h2 className="text-2xl font-bold">{products?.brand?.title}</h2>
         </div>
         {/*Get All Products Of Specific brand*/}
         {

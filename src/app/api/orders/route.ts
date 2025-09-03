@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import Jwt from "jsonwebtoken";
 import { TokenInterFace } from "@/Interfaces/UserInterface";
 import { prisma } from "@/libs/Prisma/Prisma_Client";
-import { CreateOrderValidation } from "@/Validation/OrderValidation";
 
 /**
  * @access Only Admin
@@ -42,12 +41,11 @@ export async function GET(request: NextRequest) {
     }
     //Get All Orders
     const orders = await prisma.orders.findMany({
-      select:{
-        id:true,
-        user:true,
-        products:true,
-        status:true
-      }
+      select: {
+        id: true,
+        user: true,
+        status: true,
+      },
     });
     return NextResponse.json(
       { message: "Get All Orders Successfully", orders },
@@ -71,7 +69,6 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const { data } = await request.json();
     //Check If User Is Logein
     const cookie = request.cookies.get("authToken");
     if (!cookie) {
@@ -91,15 +88,45 @@ export async function POST(request: NextRequest) {
         { status: 401 }
       );
     }
-    // Check Vailidation Of Order
-    const Validation = CreateOrderValidation.safeParse(data);
-    if (!Validation) {
-      return NextResponse.json({ message: "Data Not Valid" }, { status: 400 });
+
+    //Check If User Have Cart
+    const cart = await prisma.cart.findUnique({
+      where: { userId: Decode?.id },
+      include: {
+        items: {
+          include: {
+            product: true,
+          },
+        },
+      },
+    });
+
+    if (!cart || cart?.items?.length === 0) {
+      return NextResponse.json({ message: "Cart Is Empty" }, { status: 404 });
     }
+
     //Create Order
     const order = await prisma.orders.create({
-      data: data,
+      data: {
+        userId: Decode?.id,
+        status: "PENDING",
+      },
     });
+
+    // 3. Create order items
+    const orderItemsData = cart?.items?.map((item) => ({
+      orderId: order.id,
+      productId: item.productId,
+      quantity: item.quantity,
+      price: item.product.price,
+    }));
+    //Create Order Item
+    await prisma.orderItem.createMany({
+      data: orderItemsData,
+    });
+    //Clear Cart
+    await prisma.cart.deleteMany({ where: { id: cart?.id } });
+
     return NextResponse.json(
       { message: "Order Created Successfully", order },
       { status: 201 }

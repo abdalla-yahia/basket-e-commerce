@@ -1,12 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {getAllCategories,getCategoryById,createCategory,updateCategory,deleteCategory} from "../Actions/CategoriesActions";
+import {
+  getAllCategories,
+  getCategoryById,
+  createCategory,
+  updateCategory,
+  deleteCategory,
+} from "../Actions/CategoriesActions";
 import { UpdateCategory } from "@/Interfaces/CategoryInterface";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
 
 const initialState = {
-  AllCategories: {categories:[] as UpdateCategory[]},
-  category: {} as {category:UpdateCategory} | null,
-  products: {} as {products:UpdateProduct[],pages:number,status:number},
+  AllCategories: { categories: [] as UpdateCategory[] },
+  category: {} as { category: UpdateCategory } | null,
+  products: {} as {
+    products: UpdateProduct[];
+    pages: number;
+    status: number;
+    category: UpdateCategory;
+  },
   loading: false,
   error: null as string | null,
 };
@@ -16,12 +27,12 @@ const CategorySlice = createSlice({
   initialState,
   reducers: {
     resetStatus: (state) => {
-    state.loading = false
-    state.error = null
-  },
-  clearCategory: (state) => {
-    state.category = null
-  }
+      state.loading = false;
+      state.error = null;
+    },
+    clearCategory: (state) => {
+      state.category = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -88,4 +99,4 @@ const CategorySlice = createSlice({
 });
 
 export default CategorySlice.reducer;
-export const {resetStatus,clearCategory} = CategorySlice.actions
+export const { resetStatus, clearCategory } = CategorySlice.actions;

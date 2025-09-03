@@ -1,4 +1,3 @@
-
 # 🛒 [Basket BNS — E-Commerce Platform](https://basket-bns.vercel.app/)
 
 <p align="center"> 
@@ -46,13 +45,16 @@
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Basket E-Commerce Home](./home_screenshot.png)
 
-### 🛍️ Product Page
-![Basket E-Commerce Product](./product_screenshot.png)
+![Basket BNS — Home](public/screenshots/home.png)
+
+### 🛍️ Products Page
+
+![Basket BNS — Products](public/screenshots/products.png)
 
 ### 📊 Dashboard
-![Basket E-Commerce Dashboard](./dashboard_screenshot.png)
+
+![Basket BNS — Dashboard](public/screenshots/dashboard.png)
 
 ---
 
@@ -143,8 +145,9 @@ pnpm dev
 
 ## 👨‍💻 Developer
 
-**This project was fully developed by Abdalla Yahia as a training task on the Web_Master platform.**  
-- The entire development (frontend + backend + database) was done independently without external help.  
+**This project was fully developed by Abdalla Yahia as a training task on the Web_Master platform.**
+
+- The entire development (frontend + backend + database) was done independently without external help.
 - The design was provided in Figma, and I transformed it into a working full-stack application.
 
 📍 **Location:** Beni-Suef, Egypt  
