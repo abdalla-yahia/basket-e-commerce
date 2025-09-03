@@ -39,8 +39,8 @@ export default function MainLayout({ children, }: Readonly<{ children: React.Rea
         if (price.max) params.set("maxPrice", price.max);
         if (pageNumber) params.set('pageNumber', pageNumber.toString())
         if (searchText) params.set('search', searchText.toString())
-          router.replace(`/products/shop?${params.toString()}`)
-      }, [categories, brands, price,pageNumber,searchText,router])
+          // router.replace(`/products/shop?${params.toString()}`)
+      }, [categories, brands, price,pageNumber,searchText])
     
     
     useEffect(() => {
