@@ -32,7 +32,7 @@ export default function Edit_Order_Form({ Order, setIsToggle }: { Order: UpdateO
     setIsToggle(false)
   }
   return (
-    <div className="w-[50%] absolute -top-[100%] bg-[#ddd] rounded left-0 flex flex-col justify-start items-center gap-5 p-8">
+    <div className="w-[50%] absolute top-0 bg-[#ddd] rounded left-0 flex flex-col justify-start items-center gap-5 p-8">
       {/*Close Form*/}
       <icon.IoClose onClick={() => setIsToggle(false)} className="text-xl absolute top-3 right-3 cursor-pointer" />
       {/*Section Title*/}

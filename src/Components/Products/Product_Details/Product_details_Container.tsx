@@ -13,7 +13,7 @@ export default function Product_details_Container({ slug }: { slug: string }) {
     const dispatch = useAppDispatch()
     useEffect(() => {
         dispatch(getProductBySlug(slug))
-    }, [slug,dispatch])
+    }, [slug, dispatch])
 
     return (
         <div className="w-full">
@@ -23,13 +23,13 @@ export default function Product_details_Container({ slug }: { slug: string }) {
             {/*Product Details Container*/}
             <div className="w-[70%] flex flex-col justify-start items-start h-fit p-8 bg-white absolute top-[70%] left-[50%] -translate-[50%] rounded opacity-100 z-50">
                 {/*Close Button*/}
-                <Link href="/products">
+                <Link href="/products/shop">
                     <icon.IoClose className="text-[20px] font-bold absolute top-5 right-5 cursor-pointer duration-150 hover:scale-125" />
                 </Link>
                 {/*Product Details*/}
-                <Product_Details_Section/>
+                <Product_Details_Section />
                 {/*Related products*/}
-                <Related_Products product={product?.product as UpdateProduct}/>
+                <Related_Products product={product?.product as UpdateProduct} />
             </div>
         </div>
     )

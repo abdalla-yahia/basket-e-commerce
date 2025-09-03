@@ -3,11 +3,13 @@ import Link from "next/link";
 import * as icon from '@/Utils/Icons/Icons';
 import { useAppDispatch } from "@/libs/store";
 import { createOrder } from "@/Feature/Actions/OrdersActions";
+import { redirect } from "next/navigation";
 
 export default function Payment_Form() {
     const dispatch = useAppDispatch()
     const CheckOutHandler = () => {
         dispatch(createOrder('ssd54'))
+        redirect('/')
     }
     return (
 

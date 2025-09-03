@@ -7,8 +7,6 @@ import { CreateProduct } from "@/Interfaces/ProductInterface";
 import { CreateProductValidation } from "@/Validation/ProductValidation";
 import { toast } from "react-toastify";
 import { createProduct } from "@/Feature/Actions/ProductsActions";
-import { getAllBrands } from "@/Feature/Actions/BrandsActions";
-import { getAllCategories } from "@/Feature/Actions/CategoriesActions";
 import { UpdateBrand } from "@/Interfaces/BrandInterface";
 import { UpdateCategory } from "@/Interfaces/CategoryInterface";
 
@@ -52,7 +50,7 @@ export default function Add_New_Product_Container() {
     image: '',
     slug: "",
     price: 0,
-    quantity: 0,
+    quantity: 1,
     oldPrice: 0,
     categoryId: '',
     brandId: '',
@@ -62,11 +60,11 @@ export default function Add_New_Product_Container() {
   const [, ActionStat] = useActionState(CreateItem, InitialState)
   //Rest Image Galary
   useEffect(() => {
-  if (product?.status === 201) {
-    setImages([]) 
-  }
-}, [product?.status])
-console.log(product?.status)
+    if (product?.status === 201) {
+      setImages([])
+    }
+  }, [product?.status])
+  console.log(product?.status)
   return (
     <div className="w-full flex flex-col justify-start items-center gap-5 p-8">
       {/*Section Title*/}
