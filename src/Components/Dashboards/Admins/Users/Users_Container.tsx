@@ -18,11 +18,11 @@ export default function Users_Container() {
     <div className="w-full flex flex-col justify-start items-start relative">
       {/*Section Title*/}
       <h1 className="text-xl font-bold my-4 text-primary flex justify-between items-center">
-        <icon.FaUsers className="text-3xl mx-2"/>
+        <icon.FaUsers className="text-3xl mx-2" />
         All Users {`(${AllUsers?.users?.length})`}
       </h1>
       {/*Users Table*/}
-      <table className="w-full border border-gray-200">
+      <table className="w-full border border-gray-200 text-center">
         <thead className="bg-gray-100">
           <tr>
             <th className="p-2 border border-[#E4E5EE]">Image</th>
