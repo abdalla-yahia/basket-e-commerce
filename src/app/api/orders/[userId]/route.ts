@@ -11,10 +11,10 @@ import { prisma } from "@/libs/Prisma/Prisma_Client";
  * @returns  Get Order By Id
  */
 
-export async function GET(request: NextRequest,{ params }: { params: Promise<{ id: string}> }): Promise<NextResponse> {
+export async function GET(request: NextRequest,{ params }: { params: Promise<{ userId: string}> }): Promise<NextResponse> {
   try {
     //Get Id
-    const { id } = await params;
+    const { userId } = await params;
     //Check If User Is Logein
     const cookie = request.cookies.get("authToken");
     if (!cookie) {
@@ -35,12 +35,12 @@ export async function GET(request: NextRequest,{ params }: { params: Promise<{ i
       );
     }
     //Check If Order Is Exiestes
-    const IsExistes = await prisma.orders.findUnique({ where: {  id: parseInt(id) } });
+    const IsExistes = await prisma.orders.findMany({ where: { userId: userId } });
     if (!IsExistes) {
       return NextResponse.json({ message: "Order Not Found" }, { status: 404 });
     }
     //Get Order
-    const order = await prisma.orders.findUnique({ where: {  id: parseInt(id) } });
+    const order = await prisma.orders.findMany({ where: { userId: userId } });
     return NextResponse.json(
       { message: "Get Order Successfully", order },
       { status: 200 }

@@ -93,7 +93,7 @@ model Review {
 model Orders {
   id       Int          @id @default(autoincrement())
   products Product[]
-  userId   String
+  userId   String      
   status   OrderStatus? @default(PENDING)
   user     User         @relation(fields: [userId], references: [id])
 }
