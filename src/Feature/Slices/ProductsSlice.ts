@@ -1,37 +1,43 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {getAllProduct,getProductBySlug,createProduct,updateProduct,deleteProduct} from "../Actions/ProductsActions";
+import {
+  getAllProduct,
+  getProductBySlug,
+  createProduct,
+  updateProduct,
+  deleteProduct,
+} from "../Actions/ProductsActions";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
 
 const initialState = {
-  AllProducts: {} as {products : UpdateProduct[],pages:number},
-  product: {} as {product:UpdateProduct ,status:number},
+  AllProducts: {} as { products: UpdateProduct[]; pages: number },
+  product: {} as { product: UpdateProduct; status: number },
   loading: false,
   error: null as string | null,
-  pageNumber:1,
-  searchText:'',
-  categories:[] as string[],
-  brands:[] as string[],
-  price:{} as {min:string,max:string}
+  pageNumber: 1,
+  searchText: "" as string,
+  categories: [] as string[],
+  brands: [] as string[],
+  price: {} as { min: string; max: string },
 };
 
 const ProductSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    setPageNumberRedux:(state,action)=>{
-      state.pageNumber = action.payload
+    setPageNumberRedux: (state, action) => {
+      state.pageNumber = action.payload;
     },
-    setSearchTextRedux:(state,action)=>{
-      state.searchText = action.payload
+    setSearchTextRedux: (state, action) => {
+      state.searchText = action.payload;
     },
-    setCategoriesRedux:(state,action)=>{
-      state.categories = action.payload
+    setCategoriesRedux: (state, action) => {
+      state.categories = action.payload;
     },
-    setBrandsRedux:(state,action)=>{
-      state.brands = action.payload
+    setBrandsRedux: (state, action) => {
+      state.brands = action.payload;
     },
-    setPriceRedux:(state,action)=>{
-      state.price = action.payload
+    setPriceRedux: (state, action) => {
+      state.price = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -99,4 +105,10 @@ const ProductSlice = createSlice({
 });
 
 export default ProductSlice.reducer;
-export const {setSearchTextRedux,setPageNumberRedux,setCategoriesRedux,setBrandsRedux,setPriceRedux} = ProductSlice.actions
+export const {
+  setSearchTextRedux,
+  setPageNumberRedux,
+  setCategoriesRedux,
+  setBrandsRedux,
+  setPriceRedux,
+} = ProductSlice.actions;
