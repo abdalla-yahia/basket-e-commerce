@@ -1,14 +1,12 @@
-import Product_Card from "@/Components/Products/Product_Card";
-import Search_Section from "./Search_Section";
 import { RootState, useAppSelector } from "@/libs/store";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
-import Pagination from "@/Utils/Pagination";
-import { Count_Of_Products } from "@/Utils/Constants";
 import { setPageNumberRedux } from "@/Feature/Slices/ProductsSlice";
+import Product_Card from "@/Components/Products/Product_Card";
+import Search_Section from "./Search_Section";
+import Pagination from "@/Utils/Pagination";
 
 export default function Products_Section() {
-  const { AllProducts } = useAppSelector((state: RootState) => state.product)
-  const { pageNumber } = useAppSelector((state: RootState) => state.product)
+  const { AllProducts,pageNumber } = useAppSelector((state: RootState) => state.product)
     
   //Get Count Of Pages From Server
   const pages = AllProducts?.pages;
@@ -26,7 +24,7 @@ export default function Products_Section() {
       </div>
       {/*Pagination*/}
       {
-        AllProducts?.products?.length > Count_Of_Products &&
+        pages > 1 &&
         <Pagination pagesCount={pages as number} pageNumber={pageNumber} setPageNumber={setPageNumberRedux} />
       }
     </>

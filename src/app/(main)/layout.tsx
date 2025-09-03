@@ -8,12 +8,15 @@ import { getAllCart } from "@/Feature/Actions/CartsActions";
 import { getWishlist } from "@/Feature/Actions/WishListActions";
 import { getAllBrands } from "@/Feature/Actions/BrandsActions";
 import { getAllProduct } from "@/Feature/Actions/ProductsActions";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { setBrandsRedux, setCategoriesRedux, setPriceRedux } from "@/Feature/Slices/ProductsSlice";
 
 export default function MainLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
     const {pageNumber,searchText,categories,brands,price} = useAppSelector((state:RootState)=>state.product)  
-     
+    const {cart} = useAppSelector((state:RootState)=>state.cart)  
+    const {productsInWish} = useAppSelector((state:RootState)=>state.wishlist)  
+    const pathname = usePathname()
+    const router = useRouter()
     const dispatch = useAppDispatch()
     // const router = useRouter();
       const searchParams = useSearchParams();
@@ -36,9 +39,8 @@ export default function MainLayout({ children, }: Readonly<{ children: React.Rea
         if (price.max) params.set("maxPrice", price.max);
         if (pageNumber) params.set('pageNumber', pageNumber.toString())
         if (searchText) params.set('search', searchText.toString())
-        // router.push(`/products/shop?${params.toString()}`);
-    
-      }, [categories, brands, price,pageNumber,searchText])
+          router.replace(`/products/shop/${params.toString()}`)
+      }, [categories, brands, price,pageNumber,searchText,router])
     
     
     useEffect(() => {
@@ -46,11 +48,12 @@ export default function MainLayout({ children, }: Readonly<{ children: React.Rea
         dispatch(getAllBrands())
         dispatch(getAllCart())
         dispatch(getWishlist())   
-    }, [dispatch])
+    }, [dispatch,cart,productsInWish])
+
     //Get All Products 
     useEffect(() => {
         dispatch(getAllProduct(params as URLSearchParams))
-    }, [categories, brands, price,pageNumber,searchText])
+    }, [pathname,categories, brands, price,pageNumber,searchText])
 
     return (
         <>
