@@ -8,7 +8,10 @@ const initialState = {
   loading: false,
   error: null as string | null,
   pageNumber:1,
-  searchText:''
+  searchText:'',
+  categories:[] as string[],
+  brands:[] as string[],
+  price:{} as {min:string,max:string}
 };
 
 const ProductSlice = createSlice({
@@ -20,7 +23,16 @@ const ProductSlice = createSlice({
     },
     setSearchTextRedux:(state,action)=>{
       state.searchText = action.payload
-    }
+    },
+    setCategoriesRedux:(state,action)=>{
+      state.categories = action.payload
+    },
+    setBrandsRedux:(state,action)=>{
+      state.brands = action.payload
+    },
+    setPriceRedux:(state,action)=>{
+      state.price = action.payload
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -87,4 +99,4 @@ const ProductSlice = createSlice({
 });
 
 export default ProductSlice.reducer;
-export const {setSearchTextRedux,setPageNumberRedux} = ProductSlice.actions
+export const {setSearchTextRedux,setPageNumberRedux,setCategoriesRedux,setBrandsRedux,setPriceRedux} = ProductSlice.actions

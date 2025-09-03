@@ -1,6 +1,11 @@
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import Filter_Title from "./Filter_Title";
+import { setPriceRedux } from "@/Feature/Slices/ProductsSlice";
 
-export default function Filter_By_Price({price,setPrice}:{price: {min:string,max:string},setPrice:(arg0:{min:string,max:string})=>void}) {
+export default function Filter_By_Price() {
+  const {price} =useAppSelector((state:RootState)=>state.product)
+  const dispatch = useAppDispatch()
+  
   return (
     <div className="flex flex-col justify-between items-start my-[20px]">
         {/*Filter Title*/}
@@ -11,14 +16,14 @@ export default function Filter_By_Price({price,setPrice}:{price: {min:string,max
             <div className="flex flex-col justify-start items-start gap-2">
                 {/*Title & Input*/}
                 <span className="text-[#71778E] text-[13px] font-[400]" style={{lineHeight:'19.5px',letterSpacing:'-0.1px'}}>From</span>
-                <input onChange={(e)=>setPrice({...price,min:e.target.value})} className="bg-[#F3F4F7] rounded p-3 w-full" type="number" min={0} max={99999} name="Min" id="" placeholder="0"/>
+                <input defaultValue={price?.min} onChange={(e)=>dispatch(setPriceRedux({...price,min:e.target.value}))} className="bg-[#F3F4F7] rounded p-3 w-full" type="number" min={0} max={99999} name="Min" id="" placeholder="0"/>
             </div>
             <span className="mx-[15px]">ـــ</span>
             {/*Price To*/}
             <div className="flex flex-col justify-start items-start gap-2">
                 {/*Title & Input*/}
                 <span className="text-[#71778E] text-[13px] font-[400]" style={{lineHeight:'19.5px',letterSpacing:'-0.1px'}}>To</span>
-                <input onChange={(e)=>setPrice({...price,max:e.target.value})} className="bg-[#F3F4F7] rounded p-3 w-full" type="number" min={0} max={99999} name="Max" id="" placeholder="65.00"/>
+                <input defaultValue={price?.max} onChange={(e)=>dispatch(setPriceRedux({...price,max:e.target.value}))} className="bg-[#F3F4F7] rounded p-3 w-full" type="number" min={0} max={99999} name="Max" id="" placeholder="65.00"/>
             </div>
         </div>
     </div>

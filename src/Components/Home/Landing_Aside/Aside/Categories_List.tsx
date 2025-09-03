@@ -16,7 +16,7 @@ export default function Categories_List() {
                     AllCategories?.categories?.map((category: UpdateCategory) =>
                         <li key={category?.id} className="flex justify-center items-center gap-3 hover:text-primary">
                             <Image src={category?.image as string || ''} alt={category?.title as string} width={20} height={20} style={{ filter: 'grayscale(1)' }} />
-                            <Link href={`/categories/${category?.id}`}>{category?.title}</Link>
+                            <Link href={`/products/categories/${category?.id}`}>{category?.title}</Link>
                         </li>
 
                     )
@@ -25,13 +25,13 @@ export default function Categories_List() {
             {/*List Of Filters*/}
             <ul className="flex flex-col w-full px-6 py-4 justify-between items-start gap-5 ">
                 <li>
-                    <Link href="/products">Value of the Day</Link>
+                    <Link href="/products/shop">Value of the Day</Link>
                 </li>
                 <li>
-                    <Link href="/products">Top 100 Offers</Link>
+                    <Link href="/products/shop">Top 100 Offers</Link>
                 </li>
                 <li>
-                    <Link href="/products">New Arrivals</Link>
+                    <Link href="/products/shop">New Arrivals</Link>
                 </li>
             </ul>
         </div>
