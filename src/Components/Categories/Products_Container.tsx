@@ -6,7 +6,6 @@ import { useEffect } from "react";
 import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { Count_Of_Products } from "@/Utils/Constants";
 import { getCategoryById } from "@/Feature/Actions/CategoriesActions";
-import { setPageNumberRedux } from "@/Feature/Slices/ProductsSlice";
 
 export default function Products_Container({ id }: { id: string }) {
   const { pageNumber, searchText } = useAppSelector((state: RootState) => state.product)

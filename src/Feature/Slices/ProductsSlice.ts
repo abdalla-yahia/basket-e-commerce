@@ -9,7 +9,12 @@ import {
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
 
 const initialState = {
-  AllProducts: {} as { products: UpdateProduct[]; pages: number },
+  AllProducts: {} as {
+    products: UpdateProduct[];
+    FullyProducts: UpdateProduct[];
+    pages: number;
+    status: number;
+  },
   product: {} as { product: UpdateProduct; status: number },
   loading: false,
   error: null as string | null,

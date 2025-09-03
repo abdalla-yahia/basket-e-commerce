@@ -13,9 +13,9 @@ export default function Products_Section() {
     <>
       {/*Search Bar*/}
       <Search_Section ProductsCount={ProductsCount} />
-      {/*Products*/}
-      <div className="w-full  flex justify-between flex-wrap gap-0 items-start mt-3">
-        <div className="w-full  flex justify-center  flex-wrap gap-2 items-center my-4">
+      {/*Name Of Brand And Its Image*/}
+      <div className="w-full  flex justify-between flex-wrap gap-0 items-start mt-5 mb-6">
+        <div className="w-full  flex justify-center  flex-wrap gap-2 items-center">
           {brand?.brand?.image && <Image src={brand?.brand?.image} alt={brand?.brand?.title || 'Categpry-Image'} width={50} height={50} />}
           <h2 className="text-2xl font-bold">{brand?.brand?.title}</h2>
         </div>

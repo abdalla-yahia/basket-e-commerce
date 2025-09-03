@@ -16,10 +16,10 @@ export default function Products_Section() {
   return (
     <>
       {/*Search Bar*/}
-      <Search_Section ProductCount={category?.category?.products?.length as number ?? 0} />
-      {/*Products */}
-      <div className="w-full  flex justify-between flex-wrap gap-0 items-start mt-3">
-        <div className="w-full  flex justify-center  flex-wrap gap-2 items-center my-4">
+      <Search_Section ProductCount={products?.products?.length as number ?? 0} />
+      {/*Name Of Category And Its Main Image */}
+      <div className="w-full  flex justify-between flex-wrap gap-0 items-start mt-5 mb-6">
+        <div className="w-full  flex justify-center  flex-wrap gap-2 items-center ">
           {category?.category?.image && <Image src={category?.category?.image} alt={category?.category?.title || 'Categpry-Image'} width={50} height={50} />}
           <h2 className="text-2xl font-bold">{category?.category?.title}</h2>
         </div>

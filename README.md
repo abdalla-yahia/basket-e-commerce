@@ -1,52 +1,67 @@
-# 🛒 Basket BNS — E-Commerce Platform
 
-<p align="center"> <a href="https://basket-bns.vercel.app/"> <img src="https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel" alt="Live Demo" /> </a> <img src="https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge&logo=github" alt="Build Passing" /> <img src="https://img.shields.io/badge/Next.js-15.5-000000?style=for-the-badge&logo=next.js" alt="Next.js" /> <img src="https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql" alt="PostgreSQL" /> <img src="https://img.shields.io/badge/Prisma-ORM-2D3748?style=for-the-badge&logo=prisma" alt="Prisma" /> <img src="https://img.shields.io/badge/Redux-Toolkit-764ABC?style=for-the-badge&logo=redux" alt="Redux Toolkit" /> <img src="https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind CSS" /> </p>
+# 🛒 [Basket BNS — E-Commerce Platform](https://basket-bns.vercel.app/)
 
-* Basket BNS is a modern full-stack e-commerce platform built with Next.js 15.5 (frontend & backend), Redux Toolkit (state management), and PostgreSQL (database).
-The platform provides a seamless shopping experience for customers while offering powerful management tools for administrators.
+<p align="center"> 
+  <a href="https://basket-bns.vercel.app/"> 
+    <img src="https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge&logo=vercel" alt="Live Demo" /> 
+  </a> 
+  <img src="https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge&logo=github" alt="Build Passing" /> 
+  <img src="https://img.shields.io/badge/Next.js-15.5-000000?style=for-the-badge&logo=next.js" alt="Next.js" /> 
+  <img src="https://img.shields.io/badge/PostgreSQL-Database-336791?style=for-the-badge&logo=postgresql" alt="PostgreSQL" /> 
+  <img src="https://img.shields.io/badge/Prisma-ORM-2D3748?style=for-the-badge&logo=prisma" alt="Prisma" /> 
+  <img src="https://img.shields.io/badge/Redux-Toolkit-764ABC?style=for-the-badge&logo=redux" alt="Redux Toolkit" /> 
+  <img src="https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind CSS" /> 
+</p>
+
+- Basket BNS is a modern full-stack e-commerce platform built with Next.js 15.5 (frontend & backend), Redux Toolkit (state management), and PostgreSQL (database).
+  The platform provides a seamless shopping experience for customers while offering powerful management tools for administrators.
 
 ## 🚀 Features
+
 ### 👤 User Dashboard
 
 - View all orders with real-time status tracking.
-
 - Cancel orders before shipment.
-
 - Update account details (name, email, phone, address, password).
-
 - Responsive design for mobile and desktop.
 
 ### 🛠️ Admin Dashboard
 
 - Manage Categories, Brands, and Products (Add, Edit, Delete).
-
 - Track and manage all customer orders.
-
 - Manage users (update or deactivate accounts).
-
 - Admin profile management.
 
 ## 🔍 Search & Filters
 
 - Search products by name.
-
 - Filter by Brand, Category, and Price range.
 
 ## ⚡ State Management
+
 - **Redux Toolkit** is used for managing the global state, ensuring high performance and scalability for complex workflows.
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home Page
+![Basket E-Commerce Home](./home_screenshot.png)
+
+### 🛍️ Product Page
+![Basket E-Commerce Product](./product_screenshot.png)
+
+### 📊 Dashboard
+![Basket E-Commerce Dashboard](./dashboard_screenshot.png)
 
 ---
 
 ## 📊 Other Highlights
 
 - Optimized server-side rendering (SSR) with Next.js.
-
 - Scalable PostgreSQL database integration.
-
 - Secure authentication & authorization.
-
 - State Management powered by Redux Toolkit.
-
 - Clean UI designed from Figma.
 
 ## 🗂️ Project Structure
@@ -72,65 +87,33 @@ basket-bns/
 ## 🛠️ Tech Stack
 
 - Frontend: Next.js 15.5, TypeScript, Tailwind CSS
-
 - Backend: Next.js API Routes
-
 - Database: PostgreSQL with Prisma ORM
-
 - State Management: Redux Toolkit
-
 - Deployment: Vercel
-
 - Design Source: Figma
 
 ## 🌍 Future Improvements
 
 - Multi-language support (English / Arabic).
-
 - Multi-currency support (USD, EGP, SAR, etc.).
-
-Wishlist & Favorites system.
-
+- Wishlist & Favorites system.
 - Advanced analytics for Admin Dashboard.
-
 - Payment gateway integration (Stripe, PayPal).
 
 ## ▶️ Usage (Demo Steps)
 
 ### Visit the Website:
-#### 👉 [Basket BNS Live Demo](https://basket-bns.vercel.app/)
 
-- Sign Up / Log In:
+👉 [Basket BNS Live Demo](https://basket-bns.vercel.app/)
 
-- Create a new account or log in with existing credentials.
-
-- Browse Products:
-
-- Use the search bar or filters (brand, category, price).
-
-- Add to Cart & Place Order:
-
-- Select products and add them to your cart.
-
-- Proceed to checkout and confirm your order.
-
-#### Track Orders:
-
-- Go to the User Dashboard to view your orders.
-
-- Check status updates (Pending, Shipped, Delivered).
-
-- Cancel the order if still pending.
-
-#### Admin Access (for testing):
-
-- Log in as an admin to access the Admin Dashboard.
-
-- Manage products, categories, brands, users, and orders.
+- **Sign Up / Log In:** Create a new account or log in with existing credentials.
+- **Browse Products:** Use the search bar or filters (brand, category, price).
+- **Add to Cart & Place Order:** Select products and add them to your cart, then proceed to checkout.
+- **Track Orders:** Go to the User Dashboard to view your orders, check status updates, and cancel if still pending.
+- **Admin Access (for testing):** Log in as an admin to manage products, categories, brands, users, and orders.
 
 ## ⚙️ Installation & Local Setup (For Developers)
-
-- Follow these steps to run the project locally:
 
 ```
 # 1. Clone the repository
@@ -155,27 +138,17 @@ pnpm prisma migrate dev
 pnpm dev
 
 ```
-* 👉 The app will now be running on http://localhost:3000
 
-📷 ![Basket E-Commerce Screenshot](./public/screenshot.png)
-
-🎥 Live Demo Flow
-
-Browse → Add to Cart → Checkout → Track Order
+👉 The app will now be running on http://localhost:3000
 
 ## 👨‍💻 Developer
 
- *** This project was fully developed by Abdalla Yahia as a training task on the Web_Master platform. ***
-
-- The entire development (frontend + backend + database) was done independently without external help.
-
+**This project was fully developed by Abdalla Yahia as a training task on the Web_Master platform.**  
+- The entire development (frontend + backend + database) was done independently without external help.  
 - The design was provided in Figma, and I transformed it into a working full-stack application.
 
- *** 📍 Location: Beni-Suef, Egypt ***
-*** 📧 Email: abdallayahia75@gmail.com ***
-
-*** 🔗 LinkedIn: linkedin.com/in/abdalla-yahia ***
-
-*** 💻 GitHub: github.com/abdalla-yahia ***
-
-*** 📱 Phone: +2012-111-00554 ***
+📍 **Location:** Beni-Suef, Egypt  
+📧 **Email:** abdallayahia75@gmail.com  
+🔗 **LinkedIn:** [linkedin.com/in/abdalla-yahia](https://linkedin.com/in/abdalla-yahia)  
+💻 **GitHub:** [github.com/abdalla-yahia](https://github.com/abdalla-yahia)  
+📱 **Phone:** +2012-111-00554

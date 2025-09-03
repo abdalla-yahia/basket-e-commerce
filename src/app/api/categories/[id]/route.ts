@@ -13,43 +13,61 @@ import { Count_Of_Products } from "@/Utils/Constants";
  * @returns  Get Products On Category
  */
 
-export async function GET(request:NextRequest,{params}:{params:Promise<{id:string}>}):Promise<NextResponse>{
-    try {
-        const {id} = await params;
-        const searchText = request.nextUrl.searchParams.get('search') || ''
-        const pageNumber = request.nextUrl.searchParams.get('pageNumber') || '1'
+export async function GET(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+): Promise<NextResponse> {
+  try {
+    const { id } = await params;
+    const searchText = request.nextUrl.searchParams.get("search") || "";
+    const pageNumber = request.nextUrl.searchParams.get("pageNumber") || "1";
 
-        //Get Products Of Category
-        
-        
-        const AllProducts = await prisma.category.findUnique({
-            where:{id},select:{products:true}
-        })
-        
-           const products = await prisma.category.findUnique(
-                {where:{id:id},
-                select:{
-                    products:{
-                      where:{
-                        title:{
-                          startsWith:searchText,
-                          mode:'insensitive'
-                        }
-                      },
-                        take:Count_Of_Products,
-                        skip:Count_Of_Products * (parseInt(pageNumber) - 1),
-                        orderBy:{
-                            title:'asc',
-                        }
-                    }
-                }
-            })
-            
-        const pages = Math.ceil(AllProducts?.products?.length as number / Count_Of_Products)
-        return NextResponse.json({message:"Get Products Of Category Successfully",products:products?.products,pages,status:200},{status:200})
-    } catch (error) {
-        return NextResponse.json({message:'Faild To Get Products On Category',error},{status:500})
-    }
+    //Get All Products Of Category
+    const AllProducts = await prisma.category.findUnique({
+      where: { id },
+      select: { products: true },
+    });
+    // Get Products By Filter And Page Number
+    const products = await prisma.category.findUnique({
+      where: { id: id },
+      select: {
+        products: {
+          where: {
+            title: {
+              startsWith: searchText,
+              mode: "insensitive",
+            },
+          },
+          take: Count_Of_Products,
+          skip: Count_Of_Products * (parseInt(pageNumber) - 1),
+          orderBy: {
+            title: "asc",
+          },
+        },
+      },
+    });
+    //Get Category
+    const category = await prisma.category.findUnique({ where: { id: id } });
+    //Get Count Of Pages
+    const pages = Math.ceil(
+      (AllProducts?.products?.length as number) / Count_Of_Products
+    );
+    return NextResponse.json(
+      {
+        message: "Get Products Of Category Successfully",
+        category,
+        products: products?.products,
+        pages,
+        status: 200,
+      },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      { message: "Faild To Get Products On Category", error },
+      { status: 500 }
+    );
+  }
 }
 
 /**

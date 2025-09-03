@@ -8,7 +8,7 @@ import { useRef } from "react";
 
 export default function Best_Seller_Section() {
   const { AllProducts } = useAppSelector((state: RootState) => state.product)
- 
+
   const ref = useRef<HTMLDivElement>(null)
   //Scroll Box Content To Right Handler
   const ArrowRightHandler = () => {
@@ -37,7 +37,7 @@ export default function Best_Seller_Section() {
         {/*Products Container*/}
         <div ref={ref} className="flex justify-between gap-0 mt-3  overflow-x-scroll scrollbar-none">
           {
-            AllProducts?.products && AllProducts?.products?.map((product: UpdateProduct) =>
+            AllProducts?.FullyProducts && AllProducts?.FullyProducts?.map((product: UpdateProduct) =>
               <Product_Card slug={product?.slug as string} key={product?.id} img={product?.image || 'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={product?.offer as string} title={product?.title as string} rating={product?.rating || '4.5'} oldprice={product?.oldPrice as unknown as string} price={product?.price as unknown as string} quantity={product?.quantity as number} iscounter />
             )
           }

@@ -22,13 +22,12 @@ export async function GET(
     const searchText = request.nextUrl.searchParams.get("search") || "";
     const pageNumber = request.nextUrl.searchParams.get("pageNumber") || "1";
 
-    //Get Products Of brand
-
+    //Get All Products Of brand
     const AllProducts = await prisma.brand.findUnique({
       where: { id },
       select: { products: true },
     });
-    //Get Products Of Brand
+    //Get Products Of Brand By Filter And Page Number
     const products = await prisma.brand.findUnique({
       where: { id: id },
       select: {
@@ -47,11 +46,14 @@ export async function GET(
         },
       },
     });
-
+    //Get Brand
+    const brand = await prisma.brand.findUnique({ where: { id: id } });
+    //Get Count Of Pages
     const pages = (AllProducts?.products?.length as number) / Count_Of_Products;
     return NextResponse.json(
       {
         message: "Get Products Of brand Successfully",
+        brand,
         products: products?.products,
         pages,
         status: 200,
