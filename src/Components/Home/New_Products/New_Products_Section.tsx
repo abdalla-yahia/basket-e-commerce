@@ -14,7 +14,7 @@ export default function New_Products_Section() {
       <div className="rounded-lg px-4 md:px-20 py-2 md:py-6 my-3 flex justify-center items-center gap-2 bg-[#FFEEF2]">
         {/*Link To Purchase*/}
         <p className="text-[#ED174A] text-[12px] md:text-[16px] font-[400]" style={{ lineHeight: '24px', letterSpacing: '-0.1px' }}>Super discount for your
-          <Link className="mx-2 font-bold underline" href={'/'} >first purchase.</Link>
+          <Link className="mx-2 font-bold underline" href={'/products/shop'} >first purchase.</Link>
         </p>
         {/*Code*/}
         <p className="border-2 border-dotted border-[#FF6048] text-[#FF6048] font-bold md:font-extrabold rounded-2xl px-2 py-1 md:px-4 md:py-2">FREE25BAC</p>
