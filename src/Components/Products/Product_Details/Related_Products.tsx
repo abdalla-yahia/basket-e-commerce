@@ -8,11 +8,19 @@ import { getCategoryById } from "@/Feature/Actions/CategoriesActions";
 
 export default function Related_Products({product}:{product:UpdateProduct}) {
   const {category} = useAppSelector((state:RootState)=>state.category)
+  const { pageNumber,searchText } = useAppSelector((state: RootState) => state.product)
+
   const dispatch = useAppDispatch()
+
+  const query = {
+    id:product?.categoryId,
+    pageNumber,
+    searchText
+  }
   useEffect(()=>{
     if(product?.categoryId)
-    dispatch(getCategoryById(product?.categoryId as string))
-  },[product?.categoryId,dispatch])
+    dispatch(getCategoryById(query as {id:string,pageNumber:number,searchText:string}))
+  },[product?.categoryId,pageNumber,searchText])
 
   const ref = useRef<HTMLDivElement>(null)
   //Scroll Box Content To Right Handler
