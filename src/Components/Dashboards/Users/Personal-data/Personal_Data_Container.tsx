@@ -1,25 +1,14 @@
 'use client'
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { UpdateUser } from "@/Interfaces/UserInterface";
-import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
-import { loggedUser } from "@/Feature/Actions/AuthActions";
-import { getUserById } from "@/Feature/Actions/UsersActions";
+import { RootState, useAppSelector } from "@/libs/store";
 import Edit_User_Form from "../../Admins/Users/Form_Edit_User";
 
 export default function Personal_Data_Container() {
   const [Toggle, setToggle] = useState(false)
-  const { LogedUser } = useAppSelector((state: RootState) => state.auth)
   const { user } = useAppSelector((state: RootState) => state.user)
-  const dispatch = useAppDispatch()
-  useEffect(() => {
-    dispatch(loggedUser())
-  }, [])
-  //Get Data Of User
-  useEffect(() => {
-    if (LogedUser?.user?.id)
-      dispatch(getUserById(LogedUser?.user?.id as string))
-  }, [LogedUser?.user?.id])
+
   return (
     <div className="w-full p-5 ">
       {/*Edit Form*/}

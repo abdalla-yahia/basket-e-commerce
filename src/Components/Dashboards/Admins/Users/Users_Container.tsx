@@ -1,18 +1,10 @@
-'use client'
-import { getAllUsers } from "@/Feature/Actions/UsersActions"
 import { UpdateUser } from "@/Interfaces/UserInterface"
-import { RootState, useAppDispatch, useAppSelector } from "@/libs/store"
-import { useEffect } from "react"
+import { RootState, useAppSelector } from "@/libs/store"
 import User_Content from "./User_Content"
 import * as icon from '@/Utils/Icons/Icons'
 
 export default function Users_Container() {
   const { AllUsers } = useAppSelector((state: RootState) => state.user)
-  const dispatch = useAppDispatch()
-  //Fetch All Users
-  useEffect(() => {
-    dispatch(getAllUsers())
-  }, [dispatch])
 
   return (
     <div className="w-full flex flex-col justify-start items-start relative">

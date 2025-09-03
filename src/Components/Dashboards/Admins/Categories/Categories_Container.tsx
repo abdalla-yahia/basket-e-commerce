@@ -1,5 +1,3 @@
-'use client'
-import { getAllCategories } from "@/Feature/Actions/CategoriesActions"
 import { UpdateCategory } from "@/Interfaces/CategoryInterface"
 import { RootState, useAppSelector } from "@/libs/store"
 import Category_Content from "./Category_Content"
@@ -10,11 +8,11 @@ export default function Categories_Container() {
 
   return (
     <div className="w-full flex flex-col justify-start items-start relative">
-    {/*Section Title*/}
+      {/*Section Title*/}
       <h1 className="text-xl font-bold my-4 text-primary flex justify-between items-center">
-        <icon.MdCategory className="text-3xl mx-2"/>
+        <icon.MdCategory className="text-3xl mx-2" />
         All Categories {`(${AllCategories?.categories?.length})`}
-        </h1>
+      </h1>
       {/*Categories Table*/}
       <table className="w-full border border-gray-200">
         <thead className="bg-gray-100">

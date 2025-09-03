@@ -11,7 +11,6 @@ import { UpdateOrder } from '@/Interfaces/OrderInterface';
 
 export default function User_Content({ User }: { User: UpdateUser }) {
   const [isToggle, setIsToggle] = useState(false)
-
   const dispatch = useAppDispatch()
 
   //Delete User Handler By Id

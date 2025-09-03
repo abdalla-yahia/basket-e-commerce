@@ -1,23 +1,12 @@
 'use client'
-import { loggedUser } from "@/Feature/Actions/AuthActions"
-import { getUserById } from "@/Feature/Actions/UsersActions"
-import { RootState, useAppDispatch, useAppSelector } from "@/libs/store"
-import { useEffect } from "react"
+import { RootState, useAppSelector } from "@/libs/store"
 import * as icon from '@/Utils/Icons/Icons';
 import { UpdateAddresse } from "@/Interfaces/AddresseInterface"
 
 export default function Address_Container() {
-  const { LogedUser } = useAppSelector((state: RootState) => state.auth)
   const { user } = useAppSelector((state: RootState) => state.user)
-  const dispatch = useAppDispatch()
-  useEffect(() => {
-    dispatch(loggedUser())
-  }, [])
-  useEffect(() => {
-    dispatch(getUserById(LogedUser?.user?.id as string))
-  }, [LogedUser?.user?.id])
+
   //Edit Address Handeler
-  console.log(user)
   const EditAddressHandler = () => {
 
   }
@@ -45,9 +34,9 @@ export default function Address_Container() {
   }
   return (
     <div className="w-full flex flex-col justify-between items-start gap-3">
-    {/*Section Title*/}
+      {/*Section Title*/}
       <h1 className="text-xl font-bold my-4 text-primary flex justify-between items-center">
-        <icon.FaMapLocationDot className="text-3xl mx-2"/>
+        <icon.FaMapLocationDot className="text-3xl mx-2" />
         All Addresses
       </h1>
       {/*Addresses Cards */}
