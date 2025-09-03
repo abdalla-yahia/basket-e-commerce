@@ -3,10 +3,6 @@ import Image from "next/image";
 import Filter_By_Brand from "./Filter/Filter_By_Brand";
 import Filter_By_Category from "./Filter/Filter_By_Category";
 import Filter_By_Price from "./Filter/Filter_By_Price";
-import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
-import { getAllProduct } from "@/Feature/Actions/ProductsActions";
 
 export default function Aside_Continer() {
   

@@ -1,11 +1,12 @@
 'use client'
 import Filter_Title from "./Filter_Title";
 import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
-import { ChangeEvent } from "react";
+import { ChangeEvent, useState } from "react";
 import { UpdateBrand } from "@/Interfaces/BrandInterface";
 import { setBrandsRedux } from "@/Feature/Slices/ProductsSlice"; 
 
 export default function Filter_By_Brand() {
+  const [isToggle, setIsToggle] = useState(false)
   const { AllBrands } = useAppSelector((state: RootState) => state.brand)
   const { brands } = useAppSelector((state: RootState) => state.product)
   const dispatch = useAppDispatch();
@@ -29,7 +30,7 @@ export default function Filter_By_Brand() {
               <label className="text-[#71778E] text-[14px] font-[400]" htmlFor='AllBrands'>All Brands</label>
             </li>
         {
-          AllBrands?.brands?.map((brand: UpdateBrand) =>
+          AllBrands?.brands?.slice(0,isToggle ? AllBrands?.brands?.length : 5)?.map((brand: UpdateBrand) =>
             <li key={brand?.id} className="w-full flex justify-between items-center gap-4">
               <div className="flex justify-start items-start gap-4"> 
                 <input onChange={(e)=>ChekedInputHandler(e,brand)} checked={brands?.includes(brand?.id)} className=" appearance-none bg-white border border-[#D9D9E9]  p-2 hover:bg-primary/50 checked:bg-primary " type="checkbox" name="" id={brand?.title} />
@@ -39,6 +40,8 @@ export default function Filter_By_Brand() {
               </li>
           )
         }
+        <li className="cursor-pointer text-lg text-primary font-bold" onClick={() => setIsToggle(!isToggle)}>{isToggle ? 'less..' : 'more...'}</li>
+
       </ul>
     </div>
   )
