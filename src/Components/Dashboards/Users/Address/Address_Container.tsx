@@ -1,11 +1,12 @@
 'use client'
-import { RootState, useAppSelector } from "@/libs/store"
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store"
 import * as icon from '@/Utils/Icons/Icons';
 import { UpdateAddresse } from "@/Interfaces/AddresseInterface"
+import { deleteAddresse } from "@/Feature/Actions/AddressesActions";
 
 export default function Address_Container() {
   const { user } = useAppSelector((state: RootState) => state.user)
-
+  const dispatch = useAppDispatch()
   //Edit Address Handeler
   const EditAddressHandler = () => {
 
@@ -21,7 +22,7 @@ export default function Address_Container() {
       buttons: ["Cancel", "Delete"]
     })
       .then((willDelete) => {
-        // dispatch(deleteAddress(id as string));
+        dispatch(deleteAddresse(id as string));
         if (willDelete) {
           swal("Order deleted successfully!", {
             icon: "success",

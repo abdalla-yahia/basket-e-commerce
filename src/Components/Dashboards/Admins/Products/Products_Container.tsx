@@ -1,3 +1,4 @@
+'use client'
 import { UpdateProduct } from "@/Interfaces/ProductInterface"
 import { RootState, useAppSelector } from "@/libs/store"
 import Product_content from "./Product_content"

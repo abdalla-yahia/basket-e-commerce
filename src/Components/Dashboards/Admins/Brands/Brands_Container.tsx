@@ -1,3 +1,4 @@
+'use client'
 import { UpdateBrand } from "@/Interfaces/BrandInterface"
 import { RootState, useAppSelector } from "@/libs/store"
 import Brand_Content from "./Brand_Content"

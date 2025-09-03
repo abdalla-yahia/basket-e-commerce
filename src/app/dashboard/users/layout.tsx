@@ -11,7 +11,8 @@ export default function UsersLayout({ children, }: Readonly<{ children: React.Re
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(loggedUser())
-  }, [])
+  }, [dispatch])
+
   useEffect(() => {
     dispatch(getUserById(LogedUser?.user?.id as string))
   }, [LogedUser?.user?.id])

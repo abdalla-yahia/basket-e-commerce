@@ -2,6 +2,7 @@
 import Aside_Dashboard from "@/Components/Dashboards/Aside/Aside_Dashboard";
 import { getAllBrands } from "@/Feature/Actions/BrandsActions";
 import { getAllCategories } from "@/Feature/Actions/CategoriesActions";
+import { getAllOrders } from "@/Feature/Actions/OrdersActions";
 import { getAllProduct } from "@/Feature/Actions/ProductsActions";
 import { getAllUsers } from "@/Feature/Actions/UsersActions";
 import { useAppDispatch } from "@/libs/store";
@@ -16,6 +17,7 @@ export default function AdminsLayout({ children, }: Readonly<{ children: React.R
     dispatch(getAllCategories())
     dispatch(getAllUsers())
     dispatch(getAllProduct(params as URLSearchParams))
+    dispatch(getAllOrders())
 
   }, [dispatch])
   return (

@@ -1,3 +1,4 @@
+'use client'
 import { UpdateCategory } from "@/Interfaces/CategoryInterface"
 import { RootState, useAppSelector } from "@/libs/store"
 import Category_Content from "./Category_Content"
