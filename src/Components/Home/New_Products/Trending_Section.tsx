@@ -9,7 +9,7 @@ export default function Trending_Section() {
     const { AllProducts } = useAppSelector((state: RootState) => state.product)
 
     return (
-        <aside className="hidden md:flex min-w-[20%] flex-col  justify-start items-start">
+        <aside className="hidden md:flex w-[20%] flex-col  justify-start items-start">
             {/*Download App*/}
             <ul className="flex mb-8 max-w-full  flex-col justify-between items-start gap-3 border border-[#E4E5EE] rounded-lg">
                 <li className="flex gap-2 justify-center items-center  border-b border-b-[#E4E5EE] w-full p-3">
@@ -30,7 +30,7 @@ export default function Trending_Section() {
             </ul>
             {/*Trending Section*/}
             <h2 className="max-w-full uppercase font-[600] text-[15px] text-[#202435]">Trending Search</h2>
-            <div className="max-w-full  flex mt-2 flex-col justify-between items-start gap-3 border border-[#E4E5EE] rounded-lg">
+            <div className="w-full  flex mt-2 flex-col justify-between items-start gap-3 border border-[#E4E5EE] rounded-lg">
                 {/*Items*/}
                 {
                     AllProducts?.products && AllProducts?.products?.slice(0, 6)?.map((product: UpdateProduct) =>
