@@ -26,14 +26,14 @@ export default function Related_Products({product}:{product:UpdateProduct}) {
   //Scroll Box Content To Right Handler
   const ArrowRightHandler = ()=>{
     ref?.current?.scrollBy({
-      left:25,
+      left:-25,
       behavior:'smooth'
     })
   }
   //Scroll Box Content To Left Handler
   const ArrlowLeftHandler = ()=>{
     ref?.current?.scrollBy({
-      left:-25,
+      left:25,
       behavior:'smooth'
     })
   }
