@@ -1,3 +1,4 @@
+'use client'
 import { UpdateUser } from "@/Interfaces/UserInterface"
 import { RootState, useAppSelector } from "@/libs/store"
 import User_Content from "./User_Content"
