@@ -1,6 +1,7 @@
 import { RootState, useAppSelector } from "@/libs/store"
+import {setSearchTextRedux} from '@/Feature/Slices/ProductsSlice';
 
-export default function Search_Section({setSearchText}:{setSearchText:(arg0:string)=>void}) {
+export default function Search_Section() {
   const {AllProducts} = useAppSelector((state:RootState)=>state.product)
 
   return (
@@ -8,7 +9,7 @@ export default function Search_Section({setSearchText}:{setSearchText:(arg0:stri
         {/*Products Count*/}
         <span className="text-[#9B9BB4] text-[12px] font-[400]">{ AllProducts?.products?.length} products</span>
         {/*Search Input*/}
-        <input onChange={(e)=>setSearchText(e.target.value)} type="text" name="" id="" className="outline-none border-none h-full flex-1" placeholder="Search For Product..."/>
+        <input onChange={(e)=>setSearchTextRedux(e.target.value)} type="text" name="" id="" className="outline-none border-none h-full flex-1" placeholder="Search For Product..."/>
         {/*Filter Option*/}
         <div className="flex justify-between items-center">
             <span className="text-[#9B9BB4] text-[12px] font-[400]">Sort by:</span>

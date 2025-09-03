@@ -1,10 +1,12 @@
-export default function Search_Section({setSearchText,ProductCount}:{ProductCount:number,setSearchText:((arg0:string)=>void)}) {
+import { setSearchTextRedux } from "@/Feature/Slices/ProductsSlice";
+
+export default function Search_Section({ProductCount}:{ProductCount:number}) {
   return (
     <div className="w-full flex justify-between items-center p-5 gap-5  rounded-lg bg-[#F7F8FD]">
         {/*Products Count*/}
         <span className="text-[#9B9BB4] text-[12px] font-[400]">{ProductCount} products</span>
         {/*Search Input*/}
-        <input onChange={(e)=>setSearchText(e.target.value)} type="text" name="" id="" className="outline-none border-none h-full flex-1" placeholder="Search For Product..."/>
+        <input onChange={(e)=>setSearchTextRedux(e.target.value)} type="text" name="" id="" className="outline-none border-none h-full flex-1" placeholder="Search For Product..."/>
         {/*Filter Option*/}
         <div className="flex justify-between items-center">
             <span className="text-[#9B9BB4] text-[12px] font-[400]">Sort by:</span>

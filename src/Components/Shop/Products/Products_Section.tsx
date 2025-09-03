@@ -4,16 +4,18 @@ import { RootState, useAppSelector } from "@/libs/store";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
 import Pagination from "@/Utils/Pagination";
 import { Count_Of_Products } from "@/Utils/Constants";
+import { setPageNumberRedux } from "@/Feature/Slices/ProductsSlice";
 
-export default function Products_Section({pageNumber, setPageNumber, setSearchText }: {pageNumber:number, setPageNumber: (arfg0: number) => void, setSearchText: (arfg0: string) => void }) {
+export default function Products_Section() {
   const { AllProducts } = useAppSelector((state: RootState) => state.product)
+  const { pageNumber } = useAppSelector((state: RootState) => state.product)
     
   //Get Count Of Pages From Server
   const pages = AllProducts?.pages;
   return (
     <>
       {/*Search Bar*/}
-      <Search_Section setSearchText={setSearchText} />
+      <Search_Section  />
       {/*Products*/}
       <div className="w-full  flex justify-between flex-wrap gap-0 items-start mt-3">
         {
@@ -25,7 +27,7 @@ export default function Products_Section({pageNumber, setPageNumber, setSearchTe
       {/*Pagination*/}
       {
         AllProducts?.products?.length > Count_Of_Products &&
-        <Pagination pagesCount={pages as number} pageNumber={pageNumber} setPageNumber={setPageNumber} />
+        <Pagination pagesCount={pages as number} pageNumber={pageNumber} setPageNumber={setPageNumberRedux} />
       }
     </>
   )

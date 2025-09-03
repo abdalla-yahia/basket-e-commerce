@@ -6,11 +6,7 @@ import { toast } from "react-toastify";
 //Get All categories
 export const getAllCategories = createAsyncThunk('categories/getAll',async()=>{
     try {
-        const res = GetHook('/api/categories',{
-            headers:{
-                'cache':'force-cache'
-            }
-        })
+        const res = GetHook('/api/categories')
         return res;
     } catch (error) {
         toast.error(`Error To Get All categories`)
@@ -19,9 +15,9 @@ export const getAllCategories = createAsyncThunk('categories/getAll',async()=>{
 })
 
 // Get Category By Id
-export const getCategoryById = createAsyncThunk('categories/getbyid',async(id:string)=>{
+export const getCategoryById = createAsyncThunk('categories/getbyid',async(queries:{id:string,pageNumber:number,searchText:string})=>{
     try {
-        const data =await GetHook(`/api/categories/${id}`)
+        const data =await GetHook(`/api/categories/${queries?.id}?pageNumber=${queries?.pageNumber}&search=${queries?.searchText}`)
         return data;
     } catch (error) {
         console.log(error)
@@ -30,17 +26,7 @@ export const getCategoryById = createAsyncThunk('categories/getbyid',async(id:st
     }
 })
 
-// Get Products Of Category By Id
-export const getProductsOfCategoryById = createAsyncThunk('categories/getProductsbyid',async(queries:{id:string,pageNumber:number,searchText:string})=>{
-    try {
-        const data =await GetHook(`/api/categories/${queries?.id}/by-queries?pageNumber=${queries?.pageNumber}&search=${queries?.searchText}`)
-        return data;
-    } catch (error) {
-        console.log(error)
-        toast.error(`Faild To Get Products Of Category`)
-        return error
-    }
-})
+
 
 //Create category
 export const createCategory = createAsyncThunk('categories/create',async(categoryData:CreateCategory)=>{

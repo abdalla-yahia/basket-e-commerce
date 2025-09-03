@@ -4,15 +4,21 @@ import { UpdateProduct } from "@/Interfaces/ProductInterface";
 import { RootState, useAppSelector } from "@/libs/store";
 import Image from "next/image";
 import Search_Section from "./Search_Section";
+import Pagination from "@/Utils/Pagination";
+import { Count_Of_Products } from "@/Utils/Constants";
+import { setPageNumberRedux } from "@/Feature/Slices/ProductsSlice";
 
-export default function Products_Section({ setSearchText }: { setSearchText: ((arg0: string) => void) }) {
+export default function Products_Section() {
   const { category } = useAppSelector((state: RootState) => state.category)
   const { products } = useAppSelector((state: RootState) => state.category)
-
+  const {pageNumber} =useAppSelector((state: RootState) => state.product)
+  
+ //Get Count Of Pages From Server
+  const pages = products?.pages;
   return (
     <>
       {/*Search Bar*/}
-      <Search_Section setSearchText={setSearchText} ProductCount={category?.category?.products?.length as number ?? 0} />
+      <Search_Section  ProductCount={category?.category?.products?.length as number ?? 0} />
       {/*Products */}
       <div className="w-full  flex justify-between flex-wrap gap-0 items-start mt-3">
         <div className="w-full  flex justify-center  flex-wrap gap-2 items-center my-4">
@@ -27,6 +33,11 @@ export default function Products_Section({ setSearchText }: { setSearchText: ((a
           )
         }
       </div>
+         {/*Pagination*/}
+            {
+              products?.products?.length > Count_Of_Products &&
+              <Pagination pagesCount={pages as number} pageNumber={pageNumber} setPageNumber={setPageNumberRedux} />
+            }
     </>
   )
 }

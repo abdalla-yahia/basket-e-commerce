@@ -20,7 +20,7 @@ export default function Main_NavBar() {
                         <li key={category?.id} className="flex justify-center items-center gap-2 hover:bg-[#F0FAFF] hover:text-[#35AFA0] p-2 rounded-full">
                             {/*Icon*/}
                             <Image src={category?.image as string || ''} alt={category?.title as string} width={20} height={20} style={{ filter: 'grayscale(1)' }} />
-                            <Link className=" capitalize" href={`/categories/${category?.id}`}>{category?.title}</Link>
+                            <Link className=" capitalize" href={`/products/categories/${category?.id}`}>{category?.title}</Link>
                         </li>
                     )
                 }
