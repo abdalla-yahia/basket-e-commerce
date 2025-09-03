@@ -1,12 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {getAllBrands,getBrandById,createBrand,updateBrand,deleteBrand,getProductsOfBrandById} from "../Actions/BrandsActions";
+import {
+  getAllBrands,
+  getBrandById,
+  createBrand,
+  updateBrand,
+  deleteBrand,
+} from "../Actions/BrandsActions";
 import { CreateBrand, UpdateBrand } from "@/Interfaces/BrandInterface";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
 
 const initialState = {
-  AllBrands: { brands: [] as UpdateBrand[] }, 
-  brand: {} as {brand:CreateBrand} | null,  
-  products:{} as {products:UpdateProduct[], pages:number},
+  AllBrands: { brands: [] as UpdateBrand[] },
+  brand: {} as { brand: CreateBrand } | null,
+  products: {} as { products: UpdateProduct[]; pages: number },
   loading: false,
   error: null as string | null,
 };
@@ -15,12 +21,12 @@ const BrandSlice = createSlice({
   name: "brands",
   initialState,
   reducers: {
-    resetState:(state)=>{
-      state.brand = {} as {brand:CreateBrand}
+    resetState: (state) => {
+      state.brand = {} as { brand: CreateBrand };
     },
-    clearBrand:(state)=>{
-      state.brand = null
-    }
+    clearBrand: (state) => {
+      state.brand = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -41,22 +47,10 @@ const BrandSlice = createSlice({
         state.error = null;
       })
       .addCase(getBrandById.fulfilled, (state, action) => {
-        state.brand = action.payload;
-        state.loading = false;
-      })
-      .addCase(getBrandById.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.payload as string;
-      })
-      .addCase(getProductsOfBrandById.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(getProductsOfBrandById.fulfilled, (state, action) => {
         state.products = action.payload;
         state.loading = false;
       })
-      .addCase(getProductsOfBrandById.rejected, (state, action) => {
+      .addCase(getBrandById.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
       })
@@ -99,4 +93,4 @@ const BrandSlice = createSlice({
 });
 
 export default BrandSlice.reducer;
-export const {resetState,clearBrand} = BrandSlice.actions
+export const { resetState, clearBrand } = BrandSlice.actions;

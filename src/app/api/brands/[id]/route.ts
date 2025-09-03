@@ -3,6 +3,7 @@ import { prisma } from "@/libs/Prisma/Prisma_Client";
 import { NextRequest, NextResponse } from "next/server";
 import Jwt from "jsonwebtoken";
 import { UpdateBrandValidation } from "@/Validation/BrandValidation";
+import { Count_Of_Products } from "@/Utils/Constants";
 
 /**
  * @access All Users
@@ -13,34 +14,57 @@ import { UpdateBrandValidation } from "@/Validation/BrandValidation";
  */
 
 export async function GET(
-  _: unknown,
+  request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ): Promise<NextResponse> {
   try {
-    //Get Id From Params
     const { id } = await params;
-    //Check If Brand Existes
-    const IsExistes = await prisma.brand.findUnique({ where: { id } });
-    if (!IsExistes) {
-      return NextResponse.json({ message: "Brand Not Found" }, { status: 404 });
-    }
-    const brand = await prisma.brand.findUnique({ where: { id },
-    include:{
-      products:true
-    }
+    const searchText = request.nextUrl.searchParams.get("search") || "";
+    const pageNumber = request.nextUrl.searchParams.get("pageNumber") || "1";
+
+    //Get Products Of brand
+
+    const AllProducts = await prisma.brand.findUnique({
+      where: { id },
+      select: { products: true },
     });
+    //Get Products Of Brand
+    const products = await prisma.brand.findUnique({
+      where: { id: id },
+      select: {
+        products: {
+          where: {
+            title: {
+              startsWith: searchText,
+              mode: "insensitive",
+            },
+          },
+          take: Count_Of_Products,
+          skip: Count_Of_Products * (parseInt(pageNumber) - 1),
+          orderBy: {
+            title: "asc",
+          },
+        },
+      },
+    });
+
+    const pages = (AllProducts?.products?.length as number) / Count_Of_Products;
     return NextResponse.json(
-      { message: "Get Brand Successfully", brand },
+      {
+        message: "Get Products Of brand Successfully",
+        products: products?.products,
+        pages,
+        status: 200,
+      },
       { status: 200 }
     );
   } catch (error) {
     return NextResponse.json(
-      { message: "Faild To Get Brand", error },
+      { message: "Faild To Get Products On brand", error },
       { status: 500 }
     );
   }
 }
-
 /**
  * @access Only Admins
  * @method POST
@@ -49,7 +73,10 @@ export async function GET(
  * @returns  Get Updated Brand
  */
 
-export async function POST(request: NextRequest,{ params }: { params: Promise<{ id: string }> }): Promise<NextResponse> {
+export async function POST(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+): Promise<NextResponse> {
   try {
     //Get Data From Body
     const data = await request.json();
@@ -64,7 +91,10 @@ export async function POST(request: NextRequest,{ params }: { params: Promise<{ 
       );
     }
     const token = cookie?.value;
-    const Decode = Jwt.verify(token,process.env.JWT_SECRET_KEY as string) as TokenInterFace;
+    const Decode = Jwt.verify(
+      token,
+      process.env.JWT_SECRET_KEY as string
+    ) as TokenInterFace;
     if (!Decode) {
       return NextResponse.json(
         { message: "You Are Not Login" },
