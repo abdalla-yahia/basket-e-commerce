@@ -5,10 +5,10 @@ import React from 'react'
 
 export default function News_Letter_Section() {
   return (
-    <div className="w-full h-[400px] flex justify-center items-end bg-primary  pt-[40px]" style={{backgroundImage:`url('')`}}>
-          <div className='w-[90%] flex justify-between items-center '>
+    <div className="w-full h-[400px] flex justify-center items-end bg-primary pt-[20px]  md:pt-[40px]" style={{backgroundImage:`url('')`}}>
+          <div className='w-[90%] flex flex-col md:flex-row justify-between items-center '>
           {/*News Letter Contact*/}
-          <div className="flex w-1/2 flex-col justify-start items-start gap-2">
+          <div className="flex w-full md:w-1/2 flex-col justify-start items-start gap-2">
             <p className="font-[300] text-[16px] text-white">
               <span className=" underline mr-2">$20 discount</span> 
               for your first order
@@ -16,9 +16,9 @@ export default function News_Letter_Section() {
             {/*Title*/}
             <h3 className="font-[600] text-[26px] text-white ">Join our newsletter and get...</h3>
             {/*Description*/}
-            <p className="font-[400] w-[50%] mb-[20px] text-[13px] text-white opacity-50">Join our email subscription now to get updates on promotions and coupons.</p>
+            <p className="font-[400] w-[80%] md:w-[50%] mb-[20px] text-[13px] text-white opacity-50">Join our email subscription now to get updates on promotions and coupons.</p>
             {/*Email Input */}
-            <div className="flex justify-between w-[75%] items-center rounded px-1 py-1 pl-4 gap-4 bg-[#E4E5EE]">
+            <div className="flex justify-between w-full md:w-[75%] items-center rounded px-1 py-1 pl-4 gap-4 bg-[#E4E5EE]">
               {/*Icon*/}
               <div className="icon">
                 <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">

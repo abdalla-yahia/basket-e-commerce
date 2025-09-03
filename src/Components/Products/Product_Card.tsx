@@ -19,17 +19,17 @@ export default function Product_Card({ slug,img, offer, title, rating, oldprice,
     }
 
     return (
-        <div className="flex min-h-[340px] shadow shadow-[rgb(237,238,245)] hover:scale-105 duration-500 hover:z-40 flex-col border border-[#EDEEF5] relative gap-3 bg-white px-6 py-5 justify-center items-start w-1/4">
-            <Link href={`/products/${slug}?quantity=${counter}`} >
+        <div className="flex min-h-[180px] md:min-h-[340px] shadow shadow-[rgb(237,238,245)] hover:scale-105 duration-500 hover:z-40 flex-col border border-[#EDEEF5] relative gap-3 bg-white px-3 py-4 justify-between items-stretch grow w-1/4">
+            <Link href={`/products/${slug}?quantity=${counter}`} className="flex flex-col justify-center items-center w-full">
                 {/*Span Offers*/}
                 {offer && <span className=" absolute bg-[#35AFA0] rounded-[4px] px-2 py-1 top-3 left-3 text-white">{offer}%</span>}
                 {/*Image Card*/}
                 <Image className="w-full" src={img} alt={title} width={100} height={150} />
                 {/*Card Content*/}
-                <h1 className="font-[400] text-[#202435] text-sm" style={{ lineHeight: '19.6px', letterSpacing: '0%' }}>{title}</h1>
-                {(quantity as number > 0) && <h2 className="font-[600] text-[#00B853]  uppercase text-[11px]" style={{ lineHeight: '16.5px', letterSpacing: '-0.1px', fontFamily: 'Dosis' }}>In stock</h2>}
+                <h1 className="font-[400] text-[#202435] text-[12px] md:text-sm" style={{ lineHeight: '19.6px', letterSpacing: '0%' }}>{title}</h1>
+                {(quantity as number > 0) && <h2 className="font-[600] text-[#00B853]  uppercase text-[8px] md:text-[11px]" style={{ lineHeight: '16.5px', letterSpacing: '-0.1px', fontFamily: 'Dosis' }}>({quantity}) In stock</h2>}
                 {/*Rating*/}
-                <div className="flex justify-between items-center gap-2">
+                <div className="hidden md:flex justify-between items-center gap-2">
                     <div className="stars"><svg width="69" height="13" viewBox="0 0 69 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_1_316)">
                             <path d="M9.91 5.3155C9.91 5.17356 9.80032 5.08323 9.58096 5.04452L6.58086 4.59935L5.24533 1.88958C5.16791 1.73474 5.07113 1.65731 4.955 1.65731C4.83887 1.65731 4.74209 1.73474 4.66467 1.88958L3.32914 4.59935L0.329043 5.04452C0.109681 5.08323 0 5.17356 0 5.3155C0 5.40582 0.0516146 5.5026 0.154844 5.60583L2.32266 7.71558L1.80006 10.6963C1.80006 10.7479 1.80006 10.7866 1.80006 10.8125C1.80006 10.8899 1.81941 10.9576 1.85812 11.0157C1.89684 11.0738 1.96135 11.1028 2.05168 11.1028C2.1162 11.1028 2.19362 11.077 2.28395 11.0254L4.955 9.63177L7.62605 11.0254C7.71638 11.077 7.7938 11.1028 7.85832 11.1028C7.94865 11.1028 8.01316 11.0738 8.05188 11.0157C8.09059 10.9576 8.10994 10.8899 8.10994 10.8125C8.10994 10.7608 8.10994 10.7221 8.10994 10.6963L7.58734 7.71558L9.75516 5.60583C9.85839 5.5026 9.91 5.40582 9.91 5.3155Z" fill="#FFCD00" />
@@ -71,18 +71,18 @@ export default function Product_Card({ slug,img, offer, title, rating, oldprice,
             {/*Price*/}
             <div className="flex justify-between items-center gap-2">
                 {/*Old Price*/}
-                {oldprice && <p className="font-[600] text-[#C2C2D3] text-[15.3px] line-through" style={{ lineHeight: '22.95px', letterSpacing: '-0.1px', fontFamily: 'Dosis' }}>${oldprice}</p>}
+                {oldprice && <p className="font-[600] text-[#C2C2D3] text-[10px] md:text-[15.3px] line-through" style={{ lineHeight: '22.95px', letterSpacing: '-0.1px', fontFamily: 'Dosis' }}>${oldprice}</p>}
                 {/*Price*/}
-                <p className="font-[600] text-[#D51243] text-[18px]" style={{ lineHeight: '27px', letterSpacing: '-0.1px', fontFamily: 'Dosis' }}>${price}</p>
+                <p className="font-[600] text-[#D51243] text-[14px] md:text-[18px]" style={{ lineHeight: '27px', letterSpacing: '-0.1px', fontFamily: 'Dosis' }}>${price}</p>
             </div>
             {/*Count*/}
             {iscounter && <div className="flex justify-between items-center w-full border overflow-hidden border-[#EDEEF5] rounded-[50px]">
                 {/*Decrement Button*/}
-                    <icon.FaMinus title="Decrement Counter" onClick={() =>DecreamentHandller() } className={`${counter === 0 ? 'cursor-not-allowed':'cursor-pointer'} flex justify-center items-center bg-[#EDEEF5] w-1/6 h-[30px] text-[10px] p-1.5`}/>
+                    <icon.FaMinus title="Decrement Counter" onClick={() =>DecreamentHandller() } className={`${counter === 0 ? 'cursor-not-allowed':'cursor-pointer'} flex justify-center items-center bg-[#EDEEF5] w-1/6 h-[12px] md:h-[30px] text-[10px] md:text-[20px] md:p-1.5`}/>
                 {/*Counter*/}
-                <span className="flex w-full justify-center items-center text-[20px]">{counter}</span>
+                <span className="flex w-full justify-center items-center  text-[12px] md:text-[20px]">{counter}</span>
                 {/*Increment Button*/}
-                    <icon.FaPlus title="Increment Counter" onClick={() =>IncreamentHandller() } className=" flex justify-center cursor-pointer items-center bg-[#FFCD00] w-1/6 h-[30px] text-[10px] p-1.5"/>
+                    <icon.FaPlus title="Increment Counter" onClick={() =>IncreamentHandller() } className=" flex justify-center cursor-pointer items-center bg-[#FFCD00] w-1/6 h-[12px] md:h-[30px] text-[10px] md:text-[20px] md:p-1.5"/>
             </div>}
         </div>
     )

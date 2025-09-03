@@ -46,17 +46,20 @@ import {
   IoBarChart,
 } from "react-icons/io5";
 import { LuLoader } from "react-icons/lu";
-import { RiCoupon3Fill, RiSearchLine, RiUserHeartLine } from "react-icons/ri";
-import { SiBrandfolder } from "react-icons/si";
+import { RiCoupon3Fill, RiSearchLine, RiUserHeartLine,RiDiscountPercentLine } from "react-icons/ri";
+import { SiBrandfolder,SiCodefresh } from "react-icons/si";
 import {
   GrDocumentUpdate,
   GrDocumentDownload,
   GrCurrency,
 } from "react-icons/gr";
-import { MdDelete, MdCategory, MdOutlineLocalShipping } from "react-icons/md";
+import { MdDelete, MdCategory, MdOutlineLocalShipping,MdOutlinePriceChange } from "react-icons/md";
 import { LiaShippingFastSolid } from "react-icons/lia";
 
 export {
+  MdOutlinePriceChange,
+  RiDiscountPercentLine,
+  SiCodefresh,
   GrCurrency,
   BiSolidErrorAlt,
   HiOutlineHandRaised,
@@ -116,4 +119,5 @@ export {
   FaHeart,
   RiUserHeartLine,
   LiaShippingFastSolid,
+
 };

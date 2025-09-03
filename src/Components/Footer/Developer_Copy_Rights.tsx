@@ -5,7 +5,7 @@ export default function Developer_Copy_Rights() {
   return (
     <>
       {/**Site Developer */}
-      <div className="w-full flex flex-col md:flex-row justify-center items-center text-xs text-gray-500 gap-1">
+      <div className="w-full flex flex-wrap justify-center items-center text-xs text-gray-500 gap-1">
         <span>Developed by</span>
         <Link
           href="https://www.linkedin.com/in/abdalla-yahia/"

@@ -5,7 +5,7 @@ export default function NavList() {
   const {productsInWish} = useAppSelector((state:RootState)=>state.wishlist)
   const count = productsInWish?.wishlist?.products?.length
   return (
-    <ul className="flex justify-between items-center gap-2">
+    <ul className="w-[90%] md:w-fit flex justify-between items-center gap-2">
         <li className="hover:bg-[#F0FAFF] hover:text-[#35AFA0] p-2 rounded-4xl">
             <Link href='/about' className="cursor-pointer hover:text-fontcolor">About Us</Link>
         </li>

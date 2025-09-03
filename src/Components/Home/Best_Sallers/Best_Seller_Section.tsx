@@ -25,7 +25,7 @@ export default function Best_Seller_Section() {
     })
   }
   return (
-    <section className="w-[75%] ">
+    <section className="w-full md:w-[75%] ">
       {/*Section Title*/}
       <Section_Title title={'Best Sellers'} description={'Do not miss the current offers until the end of March.'} href={'/products/shop'} />
       {/*Products*/}

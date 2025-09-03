@@ -17,7 +17,7 @@ export default function Categories_Dropdown() {
   return acc + (rec?.products?.length as number || 0);
 }, 0);
   return (
-    <div className="flex px-[15px] py-[16px] gap-2 rounded-[50px] bg-[#35AFA0] text-white relative">
+    <div className="hidden md:flex px-[15px] py-[16px] gap-2 rounded-[50px] bg-[#35AFA0] text-white relative">
       {/*Icon List*/}
       <div className="icon">
         <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">

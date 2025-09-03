@@ -1,7 +1,7 @@
 
 export default function Currency_Language() {
   return (
-    <div className="flex gap-3">
+    <div className="hidden md:flex gap-3">
                     {/*Selected Curancy*/}
                     <select name="" id=""  >
                         <option value="USD" selected>USD</option>

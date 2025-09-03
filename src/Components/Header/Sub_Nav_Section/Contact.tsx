@@ -3,7 +3,7 @@ import useSvgColor from '@/Utils/Icons/SVG-Color';
 
 export default function Contact() {
   return (
-    <div className="flex justify-between items-center gap-2">
+    <div className="hidden md:flex justify-between items-center gap-2">
       {/*Secure*/}
       <div className='flex justify-center items-center gap-2'>
         {/* <icon.HiOutlineHandRaised /> */}

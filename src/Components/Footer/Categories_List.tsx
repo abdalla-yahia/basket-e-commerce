@@ -3,9 +3,9 @@ import Link from "next/link";
 export default function Categories_List() {
   return (
     <div className="w-full pt-[30px] pb-[80px] bg-[#F7F8FD] flex justify-center items-center" >
-        <div className="w-[90%] flex justify-between items-center">
+        <div className="w-[90%] flex flex-wrap md:flex-nowrap justify-between items-center">
             {/*Categories Lists*/}
-            <ul className="flex flex-col justify-between items-start gap-2">
+            <ul className="my-[15px] flex flex-col justify-between items-start gap-2">
                 {/*Main Category*/}
                 <li className="font-[600] text-[15px] text-[#202435] uppercase mb-[15px]" style={{fontFamily:'Dosis',lineHeight:'18px'}}>
                     <Link href="/">Fruit & Vegetables</Link>
@@ -34,7 +34,7 @@ export default function Categories_List() {
                     <Link href="/">Party Trays</Link>
                 </li>
             </ul>
-            <ul className="flex flex-col justify-between items-start gap-2">
+            <ul className="my-[15px] flex flex-col justify-between items-start gap-2">
                 {/*Main Category*/}
                 <li className="font-[600] text-[15px] text-[#202435] uppercase mb-[15px]" style={{fontFamily:'Dosis',lineHeight:'18px'}}>
                     <Link href="/">Breakfast & Dairy</Link>
@@ -63,7 +63,7 @@ export default function Categories_List() {
                     <Link href="/">Party Trays</Link>
                 </li>
             </ul>
-            <ul className="flex flex-col justify-between items-start gap-2">
+            <ul className="my-[15px] flex flex-col justify-between items-start gap-2">
                 {/*Main Category*/}
                 <li className="font-[600] text-[15px] text-[#202435] uppercase mb-[15px]" style={{fontFamily:'Dosis',lineHeight:'18px'}}>
                     <Link href="/">Meat & Seafood</Link>
@@ -92,7 +92,7 @@ export default function Categories_List() {
                     <Link href="/">Party Trays</Link>
                 </li>
             </ul>
-            <ul className="flex flex-col justify-between items-start gap-2">
+            <ul className="my-[15px] flex flex-col justify-between items-start gap-2">
                 {/*Main Category*/}
                 <li className="font-[600] text-[15px] text-[#202435] uppercase mb-[15px]" style={{fontFamily:'Dosis',lineHeight:'18px'}}>
                     <Link href="/">Beverages</Link>
@@ -121,7 +121,7 @@ export default function Categories_List() {
                     <Link href="/">Party Trays</Link>
                 </li>
             </ul>
-            <ul className="flex flex-col justify-between items-start gap-2">
+            <ul className="my-[15px] hidden md:flex flex-col justify-between items-start gap-2">
                 {/*Main Category*/}
                 <li className="font-[600] text-[15px] text-[#202435] uppercase mb-[15px]" style={{fontFamily:'Dosis',lineHeight:'18px'}}>
                     <Link href="/">Breads & Bakery</Link>

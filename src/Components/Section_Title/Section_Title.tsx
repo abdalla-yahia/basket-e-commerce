@@ -5,10 +5,10 @@ export default function Section_Title({title,description,href}:{title:string,des
     <div className="w-full flex justify-between items-center">
         {/*Title*/}
         <div>
-            <h1 className="font-[600] text-[#202435] uppercase text-[20px]" style={{fontFamily:'Dosis',lineHeight:'24px',alignItems:'middle'}}>{title}</h1>
-            <p className="font-[400] text-[12px] text-[#9B9BB4]" style={{lineHeight:'18px',letterSpacing:'-0.1px'}}>{description}</p>
+            <h1 className="font-[600] text-[#202435] uppercase text-[14px] md:text-[20px]" style={{fontFamily:'Dosis',lineHeight:'24px',alignItems:'middle'}}>{title}</h1>
+            <p className="font-[400] text-[8px] md:text-[12px] text-[#9B9BB4]" style={{lineHeight:'18px',letterSpacing:'-0.1px'}}>{description}</p>
         </div>
-        <button className=" cursor-pointer border border-[#D9D9E9] rounded-[50px] px-8 py-3 hover:bg-primary hover:text-[#FFFF] duration-300">
+        <button className=" cursor-pointer border border-[#D9D9E9] rounded-[50px] px-2 md:px-8 py-1 md:py-3 hover:bg-primary hover:text-[#FFFF] text-[10px] md:text-[14px] duration-300">
             <Link href={href}>View All</Link>
              &rarr; 
              </button>

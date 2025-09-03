@@ -9,17 +9,17 @@ export default function New_Products_Section() {
   const { AllProducts } = useAppSelector((state: RootState) => state.product)
 
   return (
-    <section className="w-[75%]">
+    <section className="w-full md:w-[75%]">
       {/*Free Advertising Code*/}
-      <div className="rounded-lg px-20 py-6 my-3 flex justify-center items-center gap-2 bg-[#FFEEF2]">
+      <div className="rounded-lg px-4 md:px-20 py-2 md:py-6 my-3 flex justify-center items-center gap-2 bg-[#FFEEF2]">
         {/*Link To Purchase*/}
-        <p className="text-[#ED174A] text-[16px] font-[400]" style={{ lineHeight: '24px', letterSpacing: '-0.1px' }}>Super discount for your
+        <p className="text-[#ED174A] text-[12px] md:text-[16px] font-[400]" style={{ lineHeight: '24px', letterSpacing: '-0.1px' }}>Super discount for your
           <Link className="mx-2 font-bold underline" href={'/'} >first purchase.</Link>
         </p>
         {/*Code*/}
-        <p className="border-2 border-dotted border-[#FF6048] text-[#FF6048] font-extrabold rounded-2xl px-4 py-2">FREE25BAC</p>
+        <p className="border-2 border-dotted border-[#FF6048] text-[#FF6048] font-bold md:font-extrabold rounded-2xl px-2 py-1 md:px-4 md:py-2">FREE25BAC</p>
         {/*How To Use*/}
-        <span className="text-[12px] text-[#9B9BB4] font-[400]">Use discount code in checkout!</span>
+        <span className="text-[8px] md:text-[12px] text-[#9B9BB4] font-[400]">Use discount code in checkout!</span>
       </div>
       {/*Section Title*/}
       <Section_Title title={'New Products'} description={'New products with updated stocks.'} href={'/products/shop'} />
