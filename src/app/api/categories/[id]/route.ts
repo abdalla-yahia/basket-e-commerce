@@ -44,9 +44,9 @@ export async function GET(request:NextRequest,{params}:{params:Promise<{id:strin
                     }
                 }
             })
-
+            
         const pages = Math.ceil(AllProducts?.products?.length as number / Count_Of_Products)
-        return NextResponse.json({message:"Get Products Of Category Successfully",products,pages,status:200},{status:200})
+        return NextResponse.json({message:"Get Products Of Category Successfully",products:products?.products,pages,status:200},{status:200})
     } catch (error) {
         return NextResponse.json({message:'Faild To Get Products On Category',error},{status:500})
     }
