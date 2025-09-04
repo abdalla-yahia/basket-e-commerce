@@ -30,7 +30,7 @@ export default function RootLayout({
         <ReduxProvider >
           {children}
         </ReduxProvider>
-      <ToastContainer/>
+      <ToastContainer limit={1}/>
       </body>
     </html>
   );

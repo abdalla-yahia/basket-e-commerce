@@ -3,6 +3,8 @@ import { ForgetPassword, ResetPassword, UserLogineInterface, VerifyCode } from "
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
 
+let hasShownLoginToast = false;
+
 // Logein User
 export const loginUser = createAsyncThunk('auth/login',async(loginData:UserLogineInterface)=>{
     try {
@@ -31,18 +33,19 @@ export const logoutUser = createAsyncThunk('auth/logout',async()=>{
         return error
     }
 })
-
 // Get Logged User
-export const loggedUser = createAsyncThunk('auth/logged',async()=>{
-    try {
-        const data = await GetHook(`/api/auth/me`)
-        return data;
-    } catch (error) {
-        toast.warn(`Attention: You are not logged in yet!`)
-        return error
+export const loggedUser = createAsyncThunk("auth/logged", async () => {
+  try {
+    const data = await GetHook(`/api/auth/me`);
+    return data;
+  } catch (error) {
+    if (!hasShownLoginToast) {
+      toast.warn(`Attention: You are not logged in yet!`);
+      hasShownLoginToast = true;
     }
-})
-
+    return error;
+  }
+});
 //Forget Password
 export const forgetPassword  = createAsyncThunk('auth/forget-password',async(email:ForgetPassword)=>{
     try{
