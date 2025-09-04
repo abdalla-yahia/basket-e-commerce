@@ -47,11 +47,11 @@ export default function Compare_Page() {
               ))}
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-center">
             <tr>
-              <td className="p-3 border font-semibold flex justify-center items-center">image</td>
+              <td className="p-3 border font-semibold ">image</td>
               {products.map((p) => (
-                <td key={p.id} className="p-3 border">
+                <td key={p.id} className="p-3 border ">
                   <Image src={p.image} alt="image" width={50} height={50} />
                 </td>
               ))}
