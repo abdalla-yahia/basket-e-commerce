@@ -63,8 +63,10 @@ export async function GET(request: NextRequest) {
           },
         },
       },
-      take: Count_Of_Products,
-      skip: Count_Of_Products * (parseInt(pageNumber) - 1),
+      ...(SearchText?{}:{
+        take: Count_Of_Products,
+        skip: Count_Of_Products * (parseInt(pageNumber) - 1),
+      }),
       orderBy: {
         title: "asc",
       },
