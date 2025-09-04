@@ -8,18 +8,19 @@ import { getCategoryById } from "@/Feature/Actions/CategoriesActions";
 
 export default function Related_Products({product}:{product:UpdateProduct}) {
   const {category} = useAppSelector((state:RootState)=>state.category)
-  const { pageNumber,searchText } = useAppSelector((state: RootState) => state.product)
+  const { pageNumber,searchText,brands } = useAppSelector((state: RootState) => state.product)
 
   const dispatch = useAppDispatch()
 
   const query = {
     id:product?.categoryId,
     pageNumber,
-    searchText
+    searchText,
+    brands
   }
   useEffect(()=>{
     if(product?.categoryId)
-    dispatch(getCategoryById(query as {id:string,pageNumber:number,searchText:string}))
+    dispatch(getCategoryById(query as {id:string,pageNumber:number,searchText:string,brands:string[]}))
   },[product?.categoryId,pageNumber,searchText])
 
   const ref = useRef<HTMLDivElement>(null)
