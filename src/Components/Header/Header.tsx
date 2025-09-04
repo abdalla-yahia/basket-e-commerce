@@ -6,7 +6,7 @@ import SearchBar_Container from './Search_Section/SearchBar_Container';
 export default function Header() {
 
   return (
-    <header className=" w-full h-[257.5px] flex flex-col justify-center items-center">
+    <header className=" w-full h-[257.5px] flex flex-col justify-center items-center overflow-x-hidden">
         {/*Top Header*/}
         <div className="w-full h-[36px] bg-primary flex justify-center items-center">
             <div className="w-[90%] flex justify-center items-center text-center">

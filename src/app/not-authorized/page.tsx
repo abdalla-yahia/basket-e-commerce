@@ -9,7 +9,7 @@ export default function NotAuthorizedPage() {
       <div className="bg-white shadow-lg rounded-2xl p-8 flex flex-col items-center max-w-md">
         <icon.LuShieldAlert className="w-16 h-16 text-red-500 mb-4" />
         <h1 className="text-2xl font-bold text-gray-800 mb-2">
-          Access Denied 🚫
+          Access Denied 
         </h1>
         <p className="text-gray-600 text-center mb-6">
           You don’t have the necessary permissions to access this page. <br />
