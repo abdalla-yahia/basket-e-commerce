@@ -15,6 +15,7 @@
     "bcrypt": "^6.0.0",
     "cloudinary": "^2.7.0",
     "cookie": "^1.0.2",
+    "jose": "^6.1.0",
     "jsonwebtoken": "^9.0.2",
     "next": "15.5.0",
     "nodemailer": "^7.0.5",
