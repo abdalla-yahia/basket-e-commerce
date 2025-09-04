@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 type Product = {
   id: number;
@@ -48,6 +49,14 @@ export default function Compare_Page() {
           </thead>
           <tbody>
             <tr>
+              <td className="p-3 border font-semibold flex justify-center items-center">image</td>
+              {products.map((p) => (
+                <td key={p.id} className="p-3 border">
+                  <Image src={p.image} alt="image" width={50} height={50} />
+                </td>
+              ))}
+            </tr>
+            <tr>
               <td className="p-3 border font-semibold">Price</td>
               {products.map((p) => (
                 <td key={p.id} className="p-3 border">
@@ -79,14 +88,7 @@ export default function Compare_Page() {
                 </td>
               ))}
             </tr>
-            <tr>
-              <td className="p-3 border font-semibold">image</td>
-              {products.map((p) => (
-                <td key={p.id} className="p-3 border">
-                  {p.image}
-                </td>
-              ))}
-            </tr>
+            
           </tbody>
         </table>
       </div>
