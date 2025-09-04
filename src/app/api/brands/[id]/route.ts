@@ -19,13 +19,30 @@ export async function GET(
 ): Promise<NextResponse> {
   try {
     const { id } = await params;
-    const searchText = request.nextUrl.searchParams.get("search") || "";
-    const pageNumber = request.nextUrl.searchParams.get("pageNumber") || "1";
+         const { searchParams } = request.nextUrl;
+  const pageNumber = searchParams.get("pageNumber") || "1";
+  const SearchText = searchParams.get("search") || "";
+  const categories = searchParams.get("categories")?.split(",") || [];
+  const minPrice = Number(searchParams.get("minPrice")) || 0;
+  const maxPrice = Number(searchParams.get("maxPrice")) || 99999;
+
 
     //Get All Products Of brand
     const AllProducts = await prisma.brand.findUnique({
       where: { id },
-      select: { products: true },
+      select: {
+        products: {
+          where: {
+            title:SearchText? {
+              startsWith: SearchText,
+              mode: "insensitive",
+            }:'',
+            categoryId:categories?.length > 1 ? {in:categories} : undefined,
+            price:{gte:maxPrice, lte:minPrice}
+          },
+          
+        },
+      },
     });
     //Get Products Of Brand By Filter And Page Number
     const products = await prisma.brand.findUnique({
@@ -33,13 +50,17 @@ export async function GET(
       select: {
         products: {
           where: {
-            title: {
-              startsWith: searchText,
+            title:SearchText? {
+              startsWith: SearchText,
               mode: "insensitive",
-            },
+            }:'',
+            categoryId:categories?.length > 1 ? {in:categories} : undefined,
+            price:{gte:maxPrice, lte:minPrice}
           },
-          take: Count_Of_Products,
-          skip: Count_Of_Products * (parseInt(pageNumber) - 1),
+          ...(SearchText?{}:{
+            take: Count_Of_Products,
+            skip: Count_Of_Products * (parseInt(pageNumber) - 1),
+        }),
           orderBy: {
             title: "asc",
           },
