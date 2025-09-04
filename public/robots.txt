@@ -1,0 +1,15 @@
+# robots.txt for Basket Online Store
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private paths
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://basket-bns.vercel.app/sitemap.xml
+
+# Crawl-delay (optional if you want to reduce server load)
+# Crawl-delay: 5

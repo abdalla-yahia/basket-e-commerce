@@ -1,0 +1,44 @@
+{
+  "name": "Basket - Online Shopping Store",
+  "short_name": "Basket",
+  "description": "Basket is your trusted online shopping store in Egypt. Discover great deals on groceries, household essentials, and more with affordable prices, fast delivery, and excellent customer service.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#35afa0",
+  "theme_color": "#35afa0",
+  "icons": [
+    {
+      "src": "/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon/favicon.ico",
+      "sizes": "16x16 32x32 48x48 64x64 96x96 128x128 192x192 256x256",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "lang": "en",
+  "dir": "ltr",
+  "orientation": "portrait"
+}
