@@ -69,7 +69,7 @@ export default function Product_Card({ slug,img, offer, title, rating, oldprice,
                 </div>
             </Link>
             {/*Price*/}
-            <div className="flex justify-between items-center gap-2">
+            <div className="flex justify-start items-center gap-2">
                 {/*Old Price*/}
                 {oldprice && <p className="font-[600] text-[#C2C2D3] text-[10px] md:text-[15.3px] line-through" style={{ lineHeight: '22.95px', letterSpacing: '-0.1px', fontFamily: 'Dosis' }}>${oldprice}</p>}
                 {/*Price*/}
