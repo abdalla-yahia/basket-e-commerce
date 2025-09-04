@@ -2,7 +2,6 @@
 import * as icon from '@/Utils/Icons/Icons';
 import Product_Details_Section from "./Product_Details_Section"
 import Related_Products from "./Related_Products"
-import Link from "next/link"
 import { RootState, useAppDispatch, useAppSelector } from '@/libs/store';
 import { useEffect } from 'react';
 import { getProductBySlug } from '@/Feature/Actions/ProductsActions';
