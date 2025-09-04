@@ -21,7 +21,7 @@ export default function Product_details_Container({ slug }: { slug: string }) {
             <div className="w-full bg-black/50 fixed top-0 left-0 h-full z-40 flex justify-center items-center">
             </div>
             {/*Product Details Container*/}
-            <div className="w-[70%] flex flex-col justify-start items-start h-fit p-8 bg-white absolute top-[70%] left-[50%] -translate-[50%] rounded opacity-100 z-50">
+            <div className="w-[90%] md:w-[70%] flex flex-col gap-8 md:gap-0 justify-start items-start h-fit p-8 bg-white absolute top-[80%] md:top-[70%] left-[50%] -translate-[50%] rounded opacity-100 z-50">
                 {/*Close Button*/}
                 <Link href="/products/shop">
                     <icon.IoClose className="text-[20px] font-bold absolute top-5 right-5 cursor-pointer duration-150 hover:scale-125" />

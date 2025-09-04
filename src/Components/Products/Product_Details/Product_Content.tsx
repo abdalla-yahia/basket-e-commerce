@@ -43,7 +43,7 @@ export default function Product_Content() {
         dispatch(createWishList(AddProductToWishData as { userId: string, productId: string }))
     }
     return (
-        <div className="w-[50%] overflow-hidden flex flex-col justify-between items-start gap-2 ">
+        <div className="w-full md:w-[50%] overflow-hidden flex flex-col justify-between items-start gap-2 ">
             {/*Product Title*/}
             <h4 className="text-[#000000] text-[14px] font-[500] ">{product?.product?.title}</h4>
             {/*Product Price*/}
