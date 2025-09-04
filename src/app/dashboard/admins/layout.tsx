@@ -5,21 +5,49 @@ import { getAllCategories } from "@/Feature/Actions/CategoriesActions";
 import { getAllOrders } from "@/Feature/Actions/OrdersActions";
 import { getAllProduct } from "@/Feature/Actions/ProductsActions";
 import { getAllUsers } from "@/Feature/Actions/UsersActions";
-import { useAppDispatch } from "@/libs/store";
+import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { useEffect } from "react";
+import { setBrandsRedux, setCategoriesRedux, setPageNumberRedux, setPriceRedux, setSearchTextRedux } from "@/Feature/Slices/ProductsSlice";
+import { usePathname, useSearchParams } from "next/navigation";
 
 export default function AdminsLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
-  const dispatch = useAppDispatch()
+    const { pageNumber, searchText, categories, brands, price } = useAppSelector((state: RootState) => state.product)
+    const pathname = usePathname()
+    const dispatch = useAppDispatch()
+    const searchParams = useSearchParams();
+    //Get Query From Url After Reload Page
+    useEffect(() => {
+      dispatch(setPageNumberRedux(searchParams.get("pageNumber") || '1'))
+      dispatch(setSearchTextRedux(searchParams.get("search") || ''))
+      dispatch(setCategoriesRedux(searchParams.get("categories")?.split(",") || []))
+      dispatch(setBrandsRedux(searchParams.get("brands")?.split(",") || []))
+      dispatch(setPriceRedux({
+        min: searchParams.get("minPrice") || "",
+        max: searchParams.get("maxPrice") || "",
+      }))
+    }, [])
   const params = new URLSearchParams()
-  params.set('pageNumber', '1')
+   useEffect(() => {
+    if (categories.length > 0) params.set("categories", categories.join(","));
+    if (brands.length > 0) params.set("brands", brands.join(","));
+    if (price.min) params.set("minPrice", price.min);
+    if (price.max) params.set("maxPrice", price.max);
+    if (pageNumber) params.set('pageNumber', pageNumber.toString())
+    if (searchText) params.set('search', searchText.toString())
+  }, [categories, brands, price, pageNumber, searchText])
+
   useEffect(() => {
     dispatch(getAllBrands())
     dispatch(getAllCategories())
     dispatch(getAllUsers())
-    dispatch(getAllProduct(params as URLSearchParams))
     dispatch(getAllOrders())
-
   }, [dispatch])
+
+    //Get All Products 
+  useEffect(() => {
+    dispatch(getAllProduct(params as URLSearchParams))
+  }, [pathname, categories, brands, price, pageNumber, searchText])
+
   return (
     <section className="w-full flex justify-center items-center mt-[40px]">
       <div className="w-[90%] flex justify-between items-start gap-5">

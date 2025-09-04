@@ -10,13 +10,13 @@ export default function Aside_Dashboard({role}:{role:string}) {
             role === 'users' ? (dashboardIcons?.users?.map(icon=>{
                      return (icon?.id === 0) ? 
                 (
-                  <Link key={icon?.id} href={icon?.href} className='w-full bg-primary text-white text-2xl border duration-100 cursor-pointer p-3  flex justify-between items-start gap-3'>
-                    {icon?.title}
+                  <Link key={icon?.id} href={icon?.href} className='w-full bg-primary text-white text-sm md:text-2xl border duration-100 cursor-pointer p-3  flex justify-between items-start gap-3'>
+                    <span className='hidden md:block'>{icon?.title}</span>
                     <Dashboard_Icon icon={icon?.icon as keyof typeof icons}/>
                 </Link>
                 ):
                 (<Link key={icon?.id} href={icon?.href} className='w-full hover:bg-primary hover:text-white duration-100 cursor-pointer p-3  flex justify-between items-start gap-3'>
-                    {icon?.title}
+                    <span className='hidden md:block'>{icon?.title}</span>
                     <Dashboard_Icon icon={icon?.icon as keyof typeof icons}/>
                 </Link>)
                 }
@@ -25,13 +25,13 @@ export default function Aside_Dashboard({role}:{role:string}) {
              role === 'admins' ? (dashboardIcons?.admins?.map(icon=>{
                  return (icon?.id === 0) ? 
                 (
-                  <Link key={icon?.id} href={icon?.href} className='w-full bg-primary text-white text-2xl border duration-100 cursor-pointer p-3  flex justify-between items-start gap-3'>
-                    {icon?.title}
+                  <Link key={icon?.id} href={icon?.href} className='w-full bg-primary text-white text-sm md:text-2xl border duration-100 cursor-pointer p-3  flex justify-between items-start gap-3'>
+                    <span className='hidden md:block'>{icon?.title}</span>
                     <Dashboard_Icon icon={icon?.icon as keyof typeof icons}/>
                 </Link>
                 ):
                 (<Link key={icon?.id} href={icon?.href} className='w-full hover:bg-primary hover:text-white duration-100 cursor-pointer p-3  flex justify-between items-start gap-3'>
-                    {icon?.title}
+                    <span className='hidden md:block'>{icon?.title}</span>
                     <Dashboard_Icon icon={icon?.icon as keyof typeof icons}/>
                 </Link>)
                 }

@@ -8,7 +8,7 @@ export default function Orders_Container() {
   const { AllOrders } = useAppSelector((state: RootState) => state.order)
 
   return (
-    <div className="w-full flex flex-col justify-start items-start relative">
+    <div className="w-full overflow-x-auto scrollbar-none flex flex-col justify-start items-start relative">
       {/*Section Title*/}
       <h1 className="text-xl font-bold my-4 text-primary flex justify-between items-center">
         <icon.MdOutlineLocalShipping className="text-3xl mx-2" />
