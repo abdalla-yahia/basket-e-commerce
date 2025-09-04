@@ -5,18 +5,17 @@ import { RootState, useAppSelector } from "@/libs/store";
 import Image from "next/image";
 import Search_Section from "./Search_Section";
 import Pagination from "@/Utils/Pagination";
-import { Count_Of_Products } from "@/Utils/Constants";
 
 export default function Products_Section() {
-  // const { category } = useAppSelector((state: RootState) => state.category)
   const { products } = useAppSelector((state: RootState) => state.category)
 
+  const ProductsCount = products?.products?.length as number
   //Get Count Of Pages From Server
   const pages = products?.pages;
   return (
     <>
       {/*Search Bar*/}
-      <Search_Section ProductCount={products?.products?.length as number ?? 0} />
+      <Search_Section ProductCount={ProductsCount ?? 0} />
       {/*Name Of Category And Its Main Image */}
       <div className="w-full  flex justify-between flex-wrap gap-0 items-start mt-5 mb-[35px]">
         <div className="w-full  flex justify-center  flex-wrap gap-2 items-center ">
@@ -33,7 +32,7 @@ export default function Products_Section() {
       </div>
       {/*Pagination*/}
       {
-        products?.products?.length > Count_Of_Products &&
+         pages > 1 &&
         <Pagination pagesCount={pages as number} />
       }
     </>

@@ -4,15 +4,18 @@ import { UpdateProduct } from "@/Interfaces/ProductInterface";
 import { RootState, useAppSelector } from "@/libs/store";
 import Search_Section from "./Search_Section";
 import Image from "next/image";
+import Pagination from "@/Utils/Pagination";
 
 export default function Products_Section() {
   const { products } = useAppSelector((state: RootState) => state.brand)
 
   const ProductsCount = products?.products?.length as number
+   //Get Count Of Pages From Server
+  const pages = products?.pages;
   return (
     <>
       {/*Search Bar*/}
-      <Search_Section ProductsCount={ProductsCount} />
+      <Search_Section ProductsCount={ProductsCount ?? 0} />
       {/*Name Of Brand And Its Image*/}
       <div className="w-full  flex justify-between flex-wrap gap-0 items-start mt-5 mb-[35px]">
         <div className="w-full  flex justify-center  flex-wrap gap-2 items-center">
@@ -26,7 +29,11 @@ export default function Products_Section() {
           }
           )
         }
-
+         {/*Pagination*/}
+              {
+                 pages > 1 &&
+                <Pagination pagesCount={pages as number} />
+              }
       </div>
     </>
   )
