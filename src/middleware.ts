@@ -1,31 +1,33 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import jwt from "jsonwebtoken";
+import Jwt from "jsonwebtoken";
 import { TokenInterFace } from "./Interfaces/UserInterface";
 
 export function middleware(request: NextRequest) {
-  const token = request.cookies.get("authToken")?.value;
-
-  if (!token) {
-    return NextResponse.redirect(new URL("/login", request.url));
-  }
-
   try {
-    const decoded = jwt.verify(
+    const cookie = request.cookies.get("authToken");
+    if (!cookie) {
+      return NextResponse.redirect(new URL("/login", request.url));
+    }
+
+    const token = cookie.value;
+    const decoded = Jwt.verify(
       token,
       process.env.JWT_SECRET_KEY as string
     ) as TokenInterFace;
 
     const pathname = request.nextUrl.pathname;
 
+    // Admin dashboard
     if (pathname.startsWith("/dashboard/admins")) {
       if (decoded.role !== "ADMIN") {
         return NextResponse.redirect(new URL("/not-authorized", request.url));
       }
     }
 
+    // User dashboard
     if (pathname.startsWith("/dashboard/users")) {
-      if (decoded.role !== "USER" && decoded.role !== "ADMIN") {
+      if (!["USER", "ADMIN"].includes(decoded.role)) {
         return NextResponse.redirect(new URL("/not-authorized", request.url));
       }
     }
