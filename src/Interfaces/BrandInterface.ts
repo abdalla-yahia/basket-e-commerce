@@ -1,33 +1,15 @@
+import { UpdateProduct } from "./ProductInterface"
+
 export interface CreateBrand {
     title:string
     description?:string
     image?:string
-    products?:{
-        id:string
-        slug:string
-        title:string
-        image?:string
-        price:number
-        oldPrice?:number
-        quantity:number
-        gallary?:string[]
-        offer?:string    
-    }[]
+   products?:UpdateProduct[]
 }
 export interface UpdateBrand {
     id:string
     title?:string
     description?:string
     image?:string
-    products?:{
-        id?:string
-        slug?:string
-        title:string
-        image?:string
-        price?:number
-        oldPrice?:number
-        quantity?:number
-        gallary?:string[]
-        offer?:string
-    }[]
+   products?:UpdateProduct[]
 }

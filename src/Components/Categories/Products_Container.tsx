@@ -4,23 +4,22 @@ import Pagination from "@/Utils/Pagination";
 import Banar_Section from "@/Utils/Banar_Section";
 import { useEffect } from "react";
 import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
-import { Count_Of_Products } from "@/Utils/Constants";
 import { getCategoryById } from "@/Feature/Actions/CategoriesActions";
 
 export default function Products_Container({ id }: { id: string }) {
-  const { pageNumber, searchText } = useAppSelector((state: RootState) => state.product)
-  const { AllProducts } = useAppSelector((state: RootState) => state.product)
+  const { pageNumber, searchText,brands } = useAppSelector((state: RootState) => state.product)
   const { products } = useAppSelector((state: RootState) => state.category)
   const dispatch = useAppDispatch()
 
   const query = {
     id,
     pageNumber,
-    searchText
+    searchText,
+    brands
   }
   useEffect(() => {
-    dispatch(getCategoryById(query as { id: string, pageNumber: number, searchText: string }))
-  }, [id, pageNumber, searchText])
+    dispatch(getCategoryById(query as { id: string, pageNumber: number, searchText: string,brands:string[] }))
+  }, [id, pageNumber, searchText,brands])
 
   //Get Count Of Pages From Server
   const pages = products?.pages;
@@ -32,7 +31,7 @@ export default function Products_Container({ id }: { id: string }) {
       <Products_Section />
       {/*Pagination*/}
       {
-        AllProducts?.products?.length > Count_Of_Products &&
+        pages > 1 &&
         <Pagination pagesCount={pages as number} />
       }
     </div>

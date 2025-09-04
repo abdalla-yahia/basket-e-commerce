@@ -13,7 +13,7 @@ export default function Customer_Comments_Container() {
                 <p className="text-[#71778E] font-[400] text-[13px]">Lorem ipsum dolor sit amet,consectetur adipiscing elit, sed doeiusmod tempor incididunt ut.</p>
                 {/*Custommer Information*/}
                 <div className="flex gap-2 justify-start items-center mt-[25px]">
-                    <img className="rounded-full" src="https://i.pravatar.cc/150?img=3" alt="user" width={50} height={50}/>
+                    <img className="rounded-full" src="https://i.pravatar.cc/155?img=3" alt="user" width={50} height={50}/>
                     <div className="details flex flex-col justify-start items-center">
                         <h4 className="text-[#202435] text-[14px] font-[600]">Tina Mcdonnell</h4>
                         <span className="text-[#202435] text-[12px] font-[400] opacity-50">Sales Manager</span>

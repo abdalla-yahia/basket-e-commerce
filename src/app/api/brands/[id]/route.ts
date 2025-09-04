@@ -34,10 +34,10 @@ export async function GET(
         products: {
           where: {
             title:SearchText? {
-              startsWith: SearchText,
+              contains: SearchText,
               mode: "insensitive",
-            }:'',
-            categoryId:categories?.length > 1 ? {in:categories} : undefined,
+            }:undefined,
+            categoryId:categories?.length ? {in:categories} : undefined,
             price:{gte:maxPrice, lte:minPrice}
           },
           
@@ -51,10 +51,10 @@ export async function GET(
         products: {
           where: {
             title:SearchText? {
-              startsWith: SearchText,
+              contains: SearchText,
               mode: "insensitive",
-            }:'',
-            categoryId:categories?.length > 1 ? {in:categories} : undefined,
+            }:undefined,
+            categoryId:categories?.length ? {in:categories} : undefined,
             price:{gte:maxPrice, lte:minPrice}
           },
           ...(SearchText?{}:{
@@ -70,7 +70,7 @@ export async function GET(
     //Get Brand
     const brand = await prisma.brand.findUnique({ where: { id: id } });
     //Get Count Of Pages
-    const pages = (AllProducts?.products?.length as number) / Count_Of_Products;
+    const pages = Math.ceil(AllProducts?.products?.length as number / Count_Of_Products);
     return NextResponse.json(
       {
         message: "Get Products Of brand Successfully",

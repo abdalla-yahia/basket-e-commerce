@@ -15,6 +15,7 @@ const initialState = {
   products: {} as {
     products: UpdateProduct[];
     pages: number;
+    status:number,
     brand: UpdateBrand;
   },
   loading: false,

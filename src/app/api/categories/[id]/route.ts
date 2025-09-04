@@ -36,7 +36,7 @@ export async function GET(
               contains: SearchText,
               mode: "insensitive",
             },
-            brandId:brands?.length > 0 ? {in:brands} : undefined,
+            brandId:brands?.length ? {in:brands} : undefined,
             price:{gte:minPrice, lte:maxPrice}
           },
         },
@@ -48,11 +48,11 @@ export async function GET(
       select: {
         products: {
           where: {
-            title: {
+            title:SearchText? {
               contains: SearchText,
               mode: "insensitive",
-            },
-            brandId:brands?.length > 0 ? {in:brands} : undefined,
+            }:undefined,
+            brandId:brands?.length ? {in:brands} : undefined,
             price:{gte:minPrice, lte:maxPrice}
           },
           ...(SearchText?{}:{

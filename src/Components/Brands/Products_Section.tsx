@@ -12,6 +12,7 @@ export default function Products_Section() {
   const ProductsCount = products?.products?.length as number
    //Get Count Of Pages From Server
   const pages = products?.pages;
+  console.log(products)
   return (
     <>
       {/*Search Bar*/}
