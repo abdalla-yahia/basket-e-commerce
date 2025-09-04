@@ -1,4 +1,4 @@
-import { PostHook } from "@/Base/Hooks";
+import { DeleteHook, PostHook } from "@/Base/Hooks";
 import { UpdateCartItem } from "@/Interfaces/CartItemInterface";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
@@ -31,12 +31,21 @@ export const updateCartItem = createAsyncThunk(
       if (data) {
         toast.success(data?.message);
       }
-      console.log(data);
       return data;
     } catch (error) {
-      console.log(error);
       toast.error(`Faild To Update CartItem`);
       return error;
     }
   }
 );
+
+//Delete Item From Cart Of Logged user
+export const deleteItemFromCart = createAsyncThunk('carts/deleteItemFromCart',async(id:string)=>{
+    try {
+        const res = await DeleteHook(`/api/cartitems/${id}`)
+        return res;
+    } catch (error) {
+        toast.error(`Fiald To Delete Item From Cart`)
+        return error
+    }
+})
