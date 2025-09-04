@@ -7,25 +7,26 @@ export function middleware(request: NextRequest) {
   try {
     const cookie = request.cookies.get("authToken");
     if (!cookie) {
+      console.log("❌ No cookie found");
       return NextResponse.redirect(new URL("/login", request.url));
     }
 
-    const token = cookie.value;
+    const token = cookie.value.replace("Bearer ", "");
     const decoded = Jwt.verify(
       token,
       process.env.JWT_SECRET_KEY as string
     ) as TokenInterFace;
 
+    console.log("✅ Middleware decoded:", decoded);
+
     const pathname = request.nextUrl.pathname;
 
-    // Admin dashboard
-    if (pathname.startsWith("/dashboard/admins")) {
+    if (pathname.startsWith("/dashboard/admin")) {
       if (decoded.role !== "ADMIN") {
         return NextResponse.redirect(new URL("/not-authorized", request.url));
       }
     }
 
-    // User dashboard
     if (pathname.startsWith("/dashboard/users")) {
       if (!["USER", "ADMIN"].includes(decoded.role)) {
         return NextResponse.redirect(new URL("/not-authorized", request.url));
@@ -34,10 +35,15 @@ export function middleware(request: NextRequest) {
 
     return NextResponse.next();
   } catch (err) {
+    console.error("❌ Middleware error:", err);
     return NextResponse.redirect(new URL("/login", request.url));
   }
 }
 
 export const config = {
-  matcher: ["/dashboard/admins/:path*", "/dashboard/users/:path*"],
+  matcher: [
+    "/dashboard/admin/:path*",
+    "/dashboard/admins/:path*",
+    "/dashboard/users/:path*",
+  ],
 };
