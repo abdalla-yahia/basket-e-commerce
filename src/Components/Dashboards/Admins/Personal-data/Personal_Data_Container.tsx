@@ -29,7 +29,7 @@ export default function Personal_Data_Container() {
       {/*User Information*/}
       <div className="w-full p-5 flex flex-col justify-between items-start gap-2">
         {/*Image And Name*/}
-        <div className="flex justify-between items-center gap-2">
+        <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-2">
           {/*Image*/}
           <Image className="rounded-full" src={user?.user?.image || 'https://static.vecteezy.com/system/resources/previews/060/423/145/non_2x/business-avatar-icon-with-a-simple-clean-design-featuring-a-man-in-a-suit-suitable-for-online-profiles-or-websites-free-png.png'} alt="admin-image" width={220} height={220} />
           {/*Main Information*/}
@@ -66,7 +66,7 @@ export default function Personal_Data_Container() {
           </div>
         </div>
         {/*Actions Button */}
-        <button onClick={() => setToggle(!Toggle)} title="Edit Admin" className="w-[20%] my-5 ml-auto rounded-xl p-1 bg-primary/70 hover:bg-primary text-white cursor-pointer  font-[500] duration-150 text-xl flex justify-center items-center">Edit</button>
+        <button onClick={() => setToggle(!Toggle)} title="Edit Admin" className="w-full md:w-[20%] my-5 ml-auto rounded-xl p-1 bg-primary/70 hover:bg-primary text-white cursor-pointer  font-[500] duration-150 text-xl flex justify-center items-center">Edit</button>
       </div>
     </div>
   )

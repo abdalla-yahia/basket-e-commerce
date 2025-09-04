@@ -47,7 +47,7 @@ export default function Add_New_Brand_Container() {
         Create Anew Brand
       </h1>
       {/*Form */}
-      <form action={ActionStat} className="w-[70%]">
+      <form action={ActionStat} className="w-full md:w-[70%]">
         {/*Brand Image*/}
         <UploadOneImage imageUrl={imageUrl} setImageUrl={setImageUrl as (urls: string) => SetStateAction<string>} />
         {/*Brand Image URL*/}

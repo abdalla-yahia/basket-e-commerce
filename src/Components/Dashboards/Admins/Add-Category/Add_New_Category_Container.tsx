@@ -47,7 +47,7 @@ export default function Add_New_Category_Container() {
         Create Anew Category
       </h1>
       {/*Form */}
-      <form action={ActionStat} className="w-[70%]">
+      <form action={ActionStat} className="w-full md:w-[70%]">
         {/*Category Image*/}
         <UploadOneImage imageUrl={imageUrl} setImageUrl={setImageUrl as (urls: string) => SetStateAction<string>} />
         {/*Category Image URL*/}

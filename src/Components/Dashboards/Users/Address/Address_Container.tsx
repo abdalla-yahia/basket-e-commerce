@@ -42,7 +42,7 @@ export default function Address_Container() {
       </h1>
       {/*Addresses Cards */}
       {/*Main Address*/}
-      <div className="w-[50%] p-4 flex flex-col justify-start items-start rounded-lg bg-gray-200 gap-3">
+      <div className="w-full md:w-[50%] p-4 flex flex-col justify-start items-start rounded-lg bg-gray-200 gap-3">
         {/*Address Title*/}
         <div className="flex gap-2 px-2">
           <h2 className="text-[14px] font-bold text-gray-700">Address Title: </h2>
@@ -70,7 +70,7 @@ export default function Address_Container() {
       <div className="w-full flex justify-between items-start gap-3">
         {
           user?.user?.addresses?.map((address: UpdateAddresse) =>
-            <div key={address?.id} className="w-[50%] p-4 flex flex-col justify-start items-start rounded-lg bg-gray-200 gap-3">
+            <div key={address?.id} className="w-full md:w-[50%] p-4 flex flex-col justify-start items-start rounded-lg bg-gray-200 gap-3">
               {/*Address Title*/}
               <div className="flex gap-2 px-2">
                 <h2 className="text-[14px] font-bold text-gray-700">Address Title: </h2>

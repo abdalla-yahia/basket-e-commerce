@@ -64,7 +64,6 @@ export default function Add_New_Product_Container() {
       setImages([])
     }
   }, [product?.status])
-  console.log(product?.status)
   return (
     <div className="w-full flex flex-col justify-start items-center gap-5 p-8">
       {/*Section Title*/}
@@ -74,7 +73,7 @@ export default function Add_New_Product_Container() {
         Create Anew Product
       </h1>
       {/*Form */}
-      <form action={ActionStat} className="w-[70%]">
+      <form action={ActionStat} className="w-full md:w-[70%]">
         {/*Product Image*/}
         <UploadImages images={imageUrl} setImages={setImages as (urls: string[]) => SetStateAction<string[]>} />
         {/*Product Image URL*/}
