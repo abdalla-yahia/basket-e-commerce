@@ -19,7 +19,7 @@ export default function Product_Card({ slug,img, offer, title, rating, oldprice,
     }
 
     return (
-        <div className="flex min-h-[180px] md:min-h-[340px] shadow shadow-[rgb(237,238,245)] hover:scale-105 duration-500 hover:z-40 flex-col border border-[#EDEEF5] relative gap-3 bg-white px-3 py-4 justify-between items-stretch flex-shrink-0">
+        <div className="flex min-h-[180px] md:min-h-[340px] shadow shadow-[rgb(237,238,245)] hover:scale-105 duration-500 hover:z-40 flex-col border border-[#EDEEF5] relative gap-3 bg-white px-3 py-4 justify-between items-stretch w-full md:w-1/4 flex-shrink-0">
             <Link href={`/products/${slug}?quantity=${counter}`} className="flex flex-col justify-center items-center w-full">
                 {/*Span Offers*/}
                 {offer && <span className=" absolute bg-[#35AFA0] rounded-[4px] px-2 py-1 top-3 left-3 text-white">{offer}%</span>}
