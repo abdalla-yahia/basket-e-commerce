@@ -9,9 +9,9 @@ export default function Categories_List() {
     const { AllCategories } = useAppSelector((state: RootState) => state.category)
     const [isToggle,setIsToggle] = useState(false)
     return (
-        <div className=" flex flex-col w-full md:w-[80%] text-[#3E445A] font-[400] text-sm justify-between items-center md:items-start gap-5 border border-[#E4E5EE] rounded-b-[7px]">
+        <div className=" flex flex-col  w-full md:w-[80%] text-[#3E445A] font-[400] text-sm  justify-start md:justify-between items-start gap-5 border border-[#E4E5EE] rounded-b-[7px]">
             {/*List Of Categories*/}
-            <ul className="overflow-x-auto scrollbar-none flex-1 flex flex-row md:flex-col md:w-full px-6 py-4 justify-between items-center md:items-start gap-5 md:pb-8 border-b border-[#D9D9E9]">
+            <ul className="overflow-x-auto scrollbar-none flex-1 flex flex-row md:flex-col md:w-full px-6 py-4 justify-start md:justify-between items-center md:items-start gap-5 md:pb-8 border-b border-[#D9D9E9]">
                 {
                     AllCategories?.categories?.slice(0,isToggle ? AllCategories?.categories?.length : 5)?.map((category: UpdateCategory) =>
                         <li key={category?.id} className="flex-shrink-0 md:w-full  flex justify-center md:justify-between items-center gap-3 hover:text-primary group">

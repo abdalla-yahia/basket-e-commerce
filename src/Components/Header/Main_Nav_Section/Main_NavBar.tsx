@@ -7,7 +7,7 @@ export default function Main_NavBar() {
     const { AllCategories } = useAppSelector((state: RootState) => state.category)
 
     return (
-        <div className="flex w-full  justify-center md:justify-end ">
+        <div className="shadow mt-4 flex w-full  justify-center md:justify-end ">
             <ul className="flex w-full justify-between md:justify-end items-center gap-4">
                 <li className="hover:bg-[#F0FAFF] hover:text-[#35AFA0] p-2 rounded-full">
                     <Link className=" capitalize" href="/">Home</Link>

@@ -5,7 +5,7 @@ import Search_Input from './Search_Input'
 
 export default function SearchBar_Container() {
   return (
-    <div className='h-[92.5px] w-full flex justify-center items-center'>
+    <div className='h-[50px] md:h-[92.5px] w-full flex justify-center items-center'>
       <div className='w-[90%]  h-[92.5px] flex-wrap flex justify-between items-center gap-2 mt-[30px]'>
         {/*Logo*/}
         <Logo />
