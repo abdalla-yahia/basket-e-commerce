@@ -61,7 +61,7 @@ export default function Add_New_Product_Container() {
   //Rest Image Galary
   useEffect(() => {
     if (product?.status === 201) {
-      setImages([])
+      window?.location.reload()
     }
   }, [product?.status])
   return (

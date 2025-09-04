@@ -63,6 +63,8 @@ export default function Edit_Product_Form({ product, setIsToggle }: { product: U
   //Close Window After Update Success
   if (EditProduct?.status === 201) {
     setIsToggle(false)
+    window?.location.reload()
+
   }
   return (
     <div className="w-[50%] absolute top-0 bg-[#ddd] rounded left-0 flex flex-col justify-start items-center gap-5 p-8">
