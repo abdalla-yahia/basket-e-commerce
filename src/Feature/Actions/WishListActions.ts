@@ -8,7 +8,7 @@ export const getWishlist = createAsyncThunk('WishList/get',async ()=>{
         const data = await GetHook(`/api/wishlist/add`)
         return data;
     } catch (error) {
-        toast.error('Faild to get products in wishlist')
+        // toast.error('Faild to get products in wishlist')
         return error
     }
 })

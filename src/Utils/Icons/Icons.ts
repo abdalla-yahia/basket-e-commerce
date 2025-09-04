@@ -55,8 +55,10 @@ import {
 } from "react-icons/gr";
 import { MdDelete, MdCategory, MdOutlineLocalShipping,MdOutlinePriceChange } from "react-icons/md";
 import { LiaShippingFastSolid } from "react-icons/lia";
+import { LuShieldAlert } from "react-icons/lu";
 
 export {
+  LuShieldAlert,
   MdOutlinePriceChange,
   RiDiscountPercentLine,
   SiCodefresh,
