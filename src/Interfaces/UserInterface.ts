@@ -1,5 +1,6 @@
 import { OrderStatus } from "@prisma/client"
 import { UpdateAddresse } from "./AddresseInterface"
+import { UpdateProduct } from "./ProductInterface"
 
 export interface CreateUser {
     name:string   
@@ -17,15 +18,33 @@ export interface UpdateUser {
     address?:string
     image?:string
     role?:string
-    gender?:string
+    gender?:string,
+    review?:string
+    wishlist?:{
+        products:UpdateProduct[]
+    }
     orders?:{
             id:string
             status:OrderStatus
-            products?:{
+            createdAt?:string
+            items?:{
+                id:string
+                product:{
+                    id:string
+                    slug?:string
+                    title?:string
+                    image?:string
+                    price?:number
+                }
+                quantity:number
+                price:number
+            }[]
+            product?:{
                 id:string
                 slug?:string
                 title?:string
                 image?:string
+                price?:number
             }[]
             }[]
     addresses?:UpdateAddresse[],

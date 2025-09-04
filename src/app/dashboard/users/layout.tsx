@@ -15,7 +15,8 @@ export default function UsersLayout({ children, }: Readonly<{ children: React.Re
 
   useEffect(() => {
     dispatch(getUserById(LogedUser?.user?.id as string))
-  }, [LogedUser?.user?.id])
+  }, [LogedUser?.user?.id]);
+  
   return (
     <section className="w-full flex justify-center items-center mt-[40px]">
       <div className="w-[90%] flex justify-between items-start gap-5">

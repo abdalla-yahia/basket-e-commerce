@@ -17,6 +17,7 @@ import {
   FaBoxOpen,
   FaShoppingCart,
   FaHeart,
+  FaMoneyBillWave,
 } from "react-icons/fa";
 import { IoClose, IoLogoReddit } from "react-icons/io5";
 import { BsHandbag, BsTwitterX } from "react-icons/bs";
@@ -53,11 +54,13 @@ import {
   GrDocumentDownload,
   GrCurrency,
 } from "react-icons/gr";
-import { MdDelete, MdCategory, MdOutlineLocalShipping,MdOutlinePriceChange } from "react-icons/md";
+import { MdDelete, MdCategory, MdOutlineLocalShipping,MdOutlinePriceChange,MdRateReview } from "react-icons/md";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { LuShieldAlert } from "react-icons/lu";
 
 export {
+  MdRateReview,
+  FaMoneyBillWave,
   LuShieldAlert,
   MdOutlinePriceChange,
   RiDiscountPercentLine,

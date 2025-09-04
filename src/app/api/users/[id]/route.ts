@@ -41,8 +41,27 @@ export async function GET(
         gender: true,
         image: true,
         address: true,
-        orders: true,
+        orders:{
+          select:{
+            id:true,
+            status:true,
+            items:{
+              select:{
+                product:true,
+                price:true,
+                quantity:true
+              }
+            },
+            createdAt:true
+          }
+        },
         createdAt: true,
+        wishlist:{
+          select:{
+            products:true
+          }
+        },
+        review:true
       },
     });
     if (!IsExestes) {

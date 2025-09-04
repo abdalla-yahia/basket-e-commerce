@@ -37,7 +37,7 @@ export default function Admins_Dashboard_Container() {
       {/* Stat cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/*USERS COUNT*/}
-        <div className="bg-white dark:bg-gray-900 p-4 rounded shadow flex items-center gap-4">
+        <div className="bg-white  p-4 rounded shadow flex items-center gap-4">
           <div className="text-3xl">
             <icon.FaUsers className='text-primary' />
           </div>
@@ -47,7 +47,7 @@ export default function Admins_Dashboard_Container() {
           </div>
         </div>
         {/*ORDERS*/}
-        <div className="bg-white dark:bg-gray-900 p-4 rounded shadow flex items-center gap-4">
+        <div className="bg-white  p-4 rounded shadow flex items-center gap-4">
           <div className="text-3xl">
             <icon.LiaShippingFastSolid className='text-primary' />
           </div>
@@ -57,7 +57,7 @@ export default function Admins_Dashboard_Container() {
           </div>
         </div>
         {/*TOTAL PRODUCTS*/}
-        <div className="bg-white dark:bg-gray-900 p-4 rounded shadow flex items-center gap-4">
+        <div className="bg-white  p-4 rounded shadow flex items-center gap-4">
           <div className="text-3xl">
             <icon.FaBoxOpen className='text-primary' />
           </div>
@@ -67,7 +67,7 @@ export default function Admins_Dashboard_Container() {
           </div>
         </div>
         {/*TOTAL SALE*/}
-        <div className="bg-white dark:bg-gray-900 p-4 rounded shadow flex items-center gap-4">
+        <div className="bg-white  p-4 rounded shadow flex items-center gap-4">
           <div className="text-3xl">
             <icon.GrCurrency className='text-primary' />
           </div>
@@ -102,7 +102,7 @@ export default function Admins_Dashboard_Container() {
         </ResponsiveContainer>
       </div>
 
-      <div className="bg-white dark:bg-gray-900 py-4 rounded shadow w-full">
+      <div className="bg-white  py-4 rounded shadow w-full">
         <h2 className="text-xl font-semibold mb-4">Weekly Sales</h2>
         <ResponsiveContainer width="100%" height={300}>
           <LineChart data={salesData}>
@@ -116,12 +116,12 @@ export default function Admins_Dashboard_Container() {
       </div>
 
       {/* Last orders */}
-      <div className="bg-white dark:bg-gray-900 py-4 rounded shadow w-full">
+      <div className="bg-white  py-4 rounded shadow w-full">
         <h2 className="text-xl font-semibold mb-4">Latest Orders</h2>
         <div className="overflow-auto">
           <table className="min-w-full text-left">
             <thead>
-              <tr className="bg-gray-100 dark:bg-gray-800">
+              <tr className="bg-gray-100 ">
                 <th className="p-2">Order ID</th>
                 <th className="p-2">Customer</th>
                 <th className="p-2">Status</th>
@@ -130,7 +130,7 @@ export default function Admins_Dashboard_Container() {
             </thead>
             <tbody>
               {AllOrders?.orders?.map((order) => (
-                <tr key={order.id} className="border-b dark:border-gray-700">
+                <tr key={order.id} className="border-b ">
                   <td className="p-2">{order.id}</td>
                   <td className="p-2">{order.user?.name}</td>
                   <td className="p-2">
