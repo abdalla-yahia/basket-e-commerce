@@ -39,10 +39,10 @@ export async function GET(request: NextRequest) {
     //Get All Products By Search And Filter
     const products = await prisma.product.findMany({
       where: {
-        title: {
-          startsWith: SearchText,
+        title:SearchText ? {
+          contains: SearchText,
           mode: "insensitive",
-        },
+        } : undefined,
         categoryId: categories?.length ? { in: categories } : undefined,
         brandId: brands?.length ? { in: brands } : undefined,
         price: { gte: minPrice, lte: maxPrice },
