@@ -55,7 +55,6 @@ export const updateUser = createAsyncThunk(
       }
       return data;
     } catch (error) {
-      console.log(error);
       toast.error(`Faild To Update User`);
       return error;
     }

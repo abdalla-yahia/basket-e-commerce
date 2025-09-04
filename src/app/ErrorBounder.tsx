@@ -30,7 +30,7 @@ export default class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError && !prevState.hasError) {
       this.timeoutId = setTimeout(() => {
         this.setState({ hasError: false, errorMessage: '' });
-      }, 5000); // ⏳ يختفي بعد 5 ثواني
+      }, 5000); 
     }
   }
 
@@ -49,7 +49,7 @@ export default class ErrorBoundary extends Component<Props, State> {
         {this.state.hasError && (
           <div className="fixed bottom-5 right-5 bg-red-600 text-white p-3 rounded-lg shadow-lg max-w-xs text-sm z-50 flex items-start justify-between gap-2">
             <div>
-              <strong>⚠ خطأ:</strong> {this.state.errorMessage}
+              <strong>⚠ Wrong:</strong> {this.state.errorMessage}
             </div>
             <button
               className="text-white hover:text-gray-200 font-bold ml-2"

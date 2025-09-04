@@ -37,7 +37,6 @@ export default function Forget_Password_Container() {
     if (forget_Password?.status === 200) {
         router?.replace('/verify-code')
     }
-    console.log(forget_Password)
     return (
         <div className='w-full md:w-[50%] flex flex-col justify-center items-center'>
             {/*Main Title*/}

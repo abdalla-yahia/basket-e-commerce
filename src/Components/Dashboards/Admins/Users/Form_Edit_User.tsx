@@ -25,7 +25,6 @@ export default function Edit_User_Form({ User, setIsToggle }: { User: UpdateUser
       image: formData.get('UserUrl') as string || imageUrl,
     }
     //Check Validation 
-    console.log(formstate)
     const Validation = UpdateUserValidation?.safeParse(formstate)
     if (!Validation?.success) {
       toast.warning(Validation?.error?.issues?.map(e => e?.message)?.join(', '))

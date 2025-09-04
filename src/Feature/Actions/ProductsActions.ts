@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 export const getAllProduct = createAsyncThunk('products/getAll',async(params:URLSearchParams)=>{
     try {
         const res =await GetHook(`/api/products?${params}`)
-        console.log(res)
         return res;
     } catch (error) {
         toast.error(`Error To Get All Products`)
@@ -64,7 +63,6 @@ export const deleteProduct = createAsyncThunk('products/delete',async(slug:strin
         }
         return data;
     } catch (error) {
-        console.log(error)
         toast.error(`Faild To Delete Product `)
         return error
     }

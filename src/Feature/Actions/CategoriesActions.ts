@@ -27,7 +27,6 @@ export const getCategoryById = createAsyncThunk(
       );
       return data;
     } catch (error) {
-      console.log(error);
       toast.error(`Faild To Get Category`);
       return error;
     }

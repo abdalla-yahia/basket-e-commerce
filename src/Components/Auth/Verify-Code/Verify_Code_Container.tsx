@@ -28,7 +28,6 @@ export default function Verify_Code_Container() {
     if (Verify_code?.status === 200) {
         router?.replace('/reset-password')
     }
-    console.log(Verify_code)
     return (
         <div className='w-full md:w-[50%] flex flex-col justify-center items-center'>
             {/*Main Title*/}

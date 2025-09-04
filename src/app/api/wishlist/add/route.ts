@@ -29,8 +29,7 @@ export async function GET(request: NextRequest) {
       include: { products: true },
     });
 
-    //db6f2e81-c121-4691-b068-a74f93b5c7d1
-    //db6f2e81-c121-4691-b068-a74f93b5c7d1
+    
 
     return NextResponse.json({message:"Get All Products Wishlist Successfully",wishlist}, { status: 200 });
   } catch (error) {

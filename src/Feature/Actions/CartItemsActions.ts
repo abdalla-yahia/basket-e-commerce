@@ -12,10 +12,8 @@ export const createCartItem = createAsyncThunk(
       if (data) {
         toast.success(data?.message);
       }
-      console.log(data);
       return data;
     } catch (error) {
-      console.log(error);
       toast.error(`Faild To Create CartItem`);
       return error;
     }

@@ -24,7 +24,6 @@ export default function Edit_Category_Form({ Category, setIsToggle }: { Category
       image: formData.get('CategoryUrl') as string || imageUrl,
     }
     //Check Validation 
-    console.log(formstate)
     const Validation = UpdateCategoryValidation?.safeParse(formstate)
     if (!Validation?.success) {
       toast.warning(Validation?.error?.issues?.map(e => e?.message)?.join(', '))

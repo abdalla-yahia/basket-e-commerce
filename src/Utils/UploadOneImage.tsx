@@ -26,10 +26,9 @@ export default function UploadOneImage({imageUrl,setImageUrl,}: {imageUrl: strin
       const data = await res.json();
 
       if (data.secure_url) {
-        setImageUrl(data.secure_url); // هنا بيسجل لينك Cloudinary الجديد
+        setImageUrl(data.secure_url); 
       }
     } catch (err) {
-      console.error("Upload failed", err);
     } finally {
       setUploading(false);
     }

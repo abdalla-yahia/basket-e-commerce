@@ -24,7 +24,6 @@ export default function Edit_Brand_Form({ brand, setIsToggle }: { brand: UpdateB
       image: formData.get('BrandUrl') as string || imageUrl,
     }
     //Check Validation 
-    console.log(formstate)
     const Validation = UpdateBrandValidation?.safeParse(formstate)
     if (!Validation?.success) {
       toast.warning(Validation?.error?.issues?.map(e => e?.message)?.join(', '))

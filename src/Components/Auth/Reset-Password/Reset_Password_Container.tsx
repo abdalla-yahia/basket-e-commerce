@@ -44,7 +44,6 @@ export default function Reset_Password_Container() {
     if (Reset_Password?.status === 201) {
         router?.replace('/login')
     }
-    console.log(Reset_Password)
     return (
         <div className='w-full md:w-[50%] flex flex-col justify-center items-center'>
             {/*Main Title*/}

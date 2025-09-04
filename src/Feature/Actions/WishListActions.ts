@@ -33,7 +33,6 @@ export const updateWishList = createAsyncThunk('WishList/update',async(ProductDa
         toast.success('Remove Product From Wish List Successfully')
         return data
     } catch (error) {
-        console.log(error)
         toast.error('Faild to Remove products From wishlist')
         return error
     }
