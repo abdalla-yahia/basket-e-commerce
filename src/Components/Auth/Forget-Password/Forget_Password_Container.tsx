@@ -39,7 +39,7 @@ export default function Forget_Password_Container() {
     }
     console.log(forget_Password)
     return (
-        <div className='w-[50%] flex flex-col justify-center items-center'>
+        <div className='w-full md:w-[50%] flex flex-col justify-center items-center'>
             {/*Main Title*/}
             <h1 className="text-4xl text-primary my-[20px] font-[700]">Enter Your Email</h1>
             <form action={ActionState} className="w-[70%] p-4 shadow shadow-[#000000]/8 rounded flex flex-col justify-start items-start">

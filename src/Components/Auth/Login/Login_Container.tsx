@@ -38,7 +38,7 @@ export default function Login_Container() {
     const [, ActionState] = useActionState(UserLogin, InitalState)
 
     return (
-        <div className='w-[50%] flex flex-col justify-center items-center'>
+        <div className='w-full md:w-[50%] flex flex-col justify-center items-center'>
             {/*Main Title*/}
             <h1 className="text-4xl text-primary my-[20px] font-[700]">Login User</h1>
             <form action={ActionState} className="w-[70%] p-4 shadow shadow-[#000000]/8 rounded flex flex-col justify-start items-start">

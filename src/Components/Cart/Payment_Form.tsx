@@ -59,7 +59,7 @@ export default function Payment_Form() {
 
                     <span className="text-[#707070] text-[14px] font-[400]">This store can’t accept payments right now.</span>
                 </div>
-                <button onClick={() => CheckOutHandler()} className="text-[19px] cursor-pointer font-[700] w-full p-2 rounded bg-[#F5F5F5] border border-[#DEDEDE]" style={{ fontFamily: 'Roboto' }}>Pay now</button>
+                <button onClick={() => CheckOutHandler()} className="text-[19px] cursor-pointer font-[700] w-full p-2 rounded bg-[#F5F5F5] border border-[#DEDEDE] hover:bg-primary hover:text-white" style={{ fontFamily: 'Roboto' }}>Pay now</button>
             </div>
         </div>
     )

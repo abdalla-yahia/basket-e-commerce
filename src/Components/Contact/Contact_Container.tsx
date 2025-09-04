@@ -2,37 +2,37 @@ import * as icon from '@/Utils/Icons/Icons';
 
 export default function Contact_Container() {
   return (
-    <div className="w-[90%] flex flex-col justify-center items-center gap-9">
+    <div className="w-[90%] flex flex-col justify-center items-center gap-3 md:gap-9">
         {/*Header*/}
         <div className="w-[50%] flex flex-col justify-center items-center text-center gap-5 ">
-           <h1 className="text-[#202435] text-[40px] font-[400]" style={{lineHeight:'48px'}}>Get In Touch</h1>
-            <p className="text-[#202435] text-[14px] font-[400]  text-center w-full" style={{lineHeight:'24px'}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita quaerat unde quam dolor culpa veritatis inventore, aut commodi eum veniam vel.</p>
+           <h1 className="text-[#202435] text-[20px] md:text-[40px] font-[400]" style={{lineHeight:'48px'}}>Get In Touch</h1>
+            <p className="text-[#202435] text-[8px] md:text-[14px] font-[400]  text-center w-full" style={{lineHeight:'24px'}}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita quaerat unde quam dolor culpa veritatis inventore, aut commodi eum veniam vel.</p>
         </div>
         {/*Contact*/}
-        <div className="w-full flex justify-between items-center gap-6">
+        <div className="w-full flex justify-between items-center gap-2 md:gap-6">
             {/*Map Contact*/}
-            <div className='w-1/3 flex flex-col gap-9 justify-center p-7 rounded-2xl items-center bg-[#F3F3F6] border border-[#EDEEF5]'>
-                <icon.FaLocationDot className='text-primary text-[36px]'/>
-                <h2 className='text-[#202435] text-[15px] font-[500] '>102 Street 2714 Donovan</h2>
-                <p className='text-[#202435] text-[13px] font-[400] '>Lorem ipsum dolar site amet discont</p>
+            <div className='w-1/3 flex flex-col gap-3 md:gap-9 justify-center p-3 md:p-7 rounded-2xl items-center bg-[#F3F3F6] border border-[#EDEEF5]'>
+                <icon.FaLocationDot className='text-primary text-[18px] md:text-[36px]'/>
+                <h2 className='text-[#202435] text-[10px] md:text-[15px] font-[500] line-clamp-1 '>102 Street 2714 Donovan</h2>
+                <p className='text-[#202435] text-[8px] md:text-[13px] font-[400] '>Lorem ipsum dolar site amet discont</p>
             </div>
-            <div className='w-1/3 flex flex-col gap-9 justify-center p-7 rounded-2xl items-center bg-[#F3F3F6] border border-[#EDEEF5]'>
-                <icon.FiPhoneCall className='text-primary text-[36px]'/>
-                <h2 className='text-[#202435] text-[15px] font-[500] '>+02 1234 567 88</h2>
-                <p className='text-[#202435] text-[13px] font-[400] '>Lorem ipsum dolar site amet discont</p>
+            <div className='w-1/3 flex flex-col gap-3 md:gap-9 justify-center p-3 md:p-7 rounded-2xl items-center bg-[#F3F3F6] border border-[#EDEEF5]'>
+                <icon.FiPhoneCall className='text-primary text-[18px] md:text-[36px]'/>
+                <h2 className='text-[#202435] text-[10px] md:text-[15px] font-[500] line-clamp-1 '>+02 1234 567 88</h2>
+                <p className='text-[#202435] text-[8px] md:text-[13px] font-[400] '>Lorem ipsum dolar site amet discont</p>
             </div>
-            <div className='w-1/3 flex flex-col gap-9 justify-center p-7 rounded-2xl items-center bg-[#F3F3F6] border border-[#EDEEF5]'>
-                <icon.MdOutlineLocalPostOffice className='text-primary text-[36px]'/>
-                <h2 className='text-[#202435] text-[15px] font-[500] '>info@example.com</h2>
-                <p className='text-[#202435] text-[13px] font-[400] '>Lorem ipsum dolar site amet discont</p>
+            <div className='w-1/3 flex flex-col gap-3 md:gap-9 justify-center p-3 md:p-7 rounded-2xl items-center bg-[#F3F3F6] border border-[#EDEEF5]'>
+                <icon.MdOutlineLocalPostOffice className='text-primary text-[18px] md:text-[36px]'/>
+                <h2 className='text-[#202435] text-[10px] md:text-[15px] font-[500] line-clamp-1 '>info@example.com</h2>
+                <p className='text-[#202435] text-[8px] md:text-[13px] font-[400] '>Lorem ipsum dolar site amet discont</p>
             </div>
         </div>
         {/*Form Content*/}
-        <div className='w-full flex flex-col justify-center items-center p-[40px] rounded-xl shadow-2xl shadow-[#000000]/8 border border-[#EDEEF5]'>
+        <div className='w-full flex flex-col justify-center items-center p-[8px] md:p-[40px] rounded-xl shadow-2xl shadow-[#000000]/8 border border-[#EDEEF5]'>
             {/*Send Us*/}
-            <div className='w-[70%] flex flex-col justify-center items-center text-center p-7 border-b border-b-[#EDEEF5]'>
-                <h2 className='text-[40px] font-[400]' style={{lineHeight:'48px'}}>Send Us</h2>
-                <h5 className='text-[14px] font-[400]' style={{lineHeight:'24px'}}>Contact us for all your questions and opinions, or you can solve your problems in a shorter time with our contact offices.</h5>
+            <div className='w-[70%] flex flex-col justify-center items-center text-center p-3 md:p-7 border-b border-b-[#EDEEF5]'>
+                <h2 className='text-[20px] md:text-[40px] font-[400]' style={{lineHeight:'48px'}}>Send Us</h2>
+                <h5 className='text-[8px] md:text-[14px] font-[400]' style={{lineHeight:'24px'}}>Contact us for all your questions and opinions, or you can solve your problems in a shorter time with our contact offices.</h5>
             </div>
             {/*Contact Form*/}
             <form action="" className='w-[70%] flex flex-col justify-center py-8 items-center gap-5'>              
