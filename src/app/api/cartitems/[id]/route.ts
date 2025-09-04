@@ -36,8 +36,8 @@ export async function DELETE(request: NextRequest,{params}:{params:Promise<{id:s
       );
     }
 
-    //Check If Product Existes In Cart
-    const IsExiste = await prisma.cartItem.findFirst({
+    //Check If Existes In Cart
+    const IsExiste = await prisma.cartItem.findUnique({
       where:{
         id: id
       }
@@ -46,7 +46,7 @@ export async function DELETE(request: NextRequest,{params}:{params:Promise<{id:s
       return NextResponse.json({message:'Item Not Found In Cart'},{status:404})
     }
     await prisma.cartItem.delete({
-      where:{id}
+      where:{id: id}
     })
 
     return NextResponse.json(

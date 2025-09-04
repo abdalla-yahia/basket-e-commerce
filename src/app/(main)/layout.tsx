@@ -13,6 +13,10 @@ import { setBrandsRedux, setCategoriesRedux, setPageNumberRedux, setPriceRedux, 
 
 export default function MainLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   const { pageNumber, searchText, categories, brands, price } = useAppSelector((state: RootState) => state.product)
+  const { AllCarts } = useAppSelector((state: RootState) => state.cart)
+  const { productsInWish } = useAppSelector((state: RootState) => state.wishlist)
+  
+  
   const pathname = usePathname()
   const dispatch = useAppDispatch()
   const searchParams = useSearchParams();
@@ -39,13 +43,13 @@ export default function MainLayout({ children, }: Readonly<{ children: React.Rea
     if (searchText) params.set('search', searchText.toString())
   }, [categories, brands, price, pageNumber, searchText])
 
-
+  //Get All Categories, Brands, Items In Carts, Items In WishList
   useEffect(() => {
     dispatch(getAllCategories())
     dispatch(getAllBrands())
     dispatch(getAllCart())
     dispatch(getWishlist())
-  }, [dispatch, pathname])
+  }, [dispatch, pathname,AllCarts?.carts?.items?.length,productsInWish?.wishlist?.products?.length])
 
   //Get All Products 
   useEffect(() => {

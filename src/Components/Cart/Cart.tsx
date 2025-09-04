@@ -19,18 +19,18 @@ export default function Cart() {
             icon: "warning",
             dangerMode: true,
             buttons: ["Cancel", "Delete"]
-          })
-          .then((willDelete) => {
-            dispatch(deleteItemFromCart(id as string));
-            if (willDelete) {
-              swal("Item deleted successfully!", {
-                icon: "success",
-              });
-              window.location.reload();
-            } else {
-              swal("The Item is safe and was not deleted!");
-            }
-          });
+        })
+        .then((willDelete) => {
+          dispatch(deleteItemFromCart(id as string));
+          if (willDelete) {
+            swal("Item deleted successfully!", {
+              icon: "success",
+            });
+            window.location.reload();
+          } else {
+            swal("The Item is safe and was not deleted!");
+          }
+        });
   }
   return (
     <div className="w-full flex flex-col justify-start items-start">
@@ -39,7 +39,7 @@ export default function Cart() {
           AllCarts?.carts && AllCarts?.carts?.items.map((item)=>
           <div key={item?.product?.id} className="w-full flex justify-between items-center my-[8px]">
               <div className="flex justify-between items-center gap-2 rounded">
-                <icon.FaTrash onClick={()=>DeleteItemFromCartHandler(item?.product?.id as string)} className="text-red-500 text-xl cursor-pointer mr-2 hover:scale-110 duration-150"/>
+                <icon.FaTrash onClick={()=>DeleteItemFromCartHandler(item?.id as string)} className="text-red-500 text-xl cursor-pointer mr-2 hover:scale-110 duration-150"/>
                  <Link href={`/products/${item?.product?.slug}?quantity=${item?.quantity}`}>
                     <div className="border border-[#D6D6D6] relative">
                         <Image src={item?.product?.image || 'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} alt="product" width={50} height={50}/>

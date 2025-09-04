@@ -4,10 +4,11 @@ import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { useRouter, useSearchParams } from "next/navigation";
 import { updateCartItem } from "@/Feature/Actions/CartItemsActions";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
-import { createWishList } from "@/Feature/Actions/WishListActions";
+import { createWishList, updateWishList } from "@/Feature/Actions/WishListActions";
 
 export default function Product_Content() {
     const { product } = useAppSelector((state: RootState) => state.product)
+    const { productsInWish } = useAppSelector((state: RootState) => state.wishlist)
     const { LogedUser } = useAppSelector((state: RootState) => state.auth)
     const quantity = useSearchParams().get('quantity')
     const [counter, setCounter] = useState(parseInt(quantity as string) || 1);
@@ -34,6 +35,7 @@ export default function Product_Content() {
         dispatch(updateCartItem(data))
         router.push('/products/shop')
     }
+    //Data Will Puts In WishList
     const AddProductToWishData = {
         userId: LogedUser?.user?.id,
         productId: product?.product?.id
@@ -41,6 +43,10 @@ export default function Product_Content() {
     //Add To Wish List Handler
     const AddToWishListHandler = () => {
         dispatch(createWishList(AddProductToWishData as { userId: string, productId: string }))
+    }
+    //Remove From WishList Handler
+    const RemoveFromWishListHandler =(item:UpdateProduct)=>{
+    dispatch(updateWishList({productId:item?.id as string}))
     }
     return (
         <div className="w-full md:w-[50%] overflow-hidden flex flex-col justify-between items-start gap-2 ">
@@ -78,10 +84,19 @@ export default function Product_Content() {
             {/*WishList And Share*/}
             <div className="w-full flex justify-between items-center gap-2">
                 {/*Wishlist*/}
-                <button onClick={() => AddToWishListHandler()} title="Add To Widhlist" className="rounded text-[10px] cursor-pointer font-[600] border w-1/2 flex justify-center items-center gap-3 border-[#DEE5EA] p-1 ">
-                    <icon.CiHeart className="text-black text-[12px]" />
-                    Wishlist
-                </button>
+                {
+                    productsInWish?.wishlist?.products?.find(e=>e?.id === product?.product?.id ) ?
+                    //Remove From Wish List
+                    <button onClick={() => RemoveFromWishListHandler(product?.product)} title="Add To Widhlist" className="rounded text-[10px] cursor-pointer font-[600] border w-1/2 flex justify-center items-center gap-3 border-[#DEE5EA] p-1 ">
+                    <icon.FaHeart className="text-primary text-[12px] cursor-pointer" />
+                    Remove From Wishlist
+                    </button> :
+                    //Add To Wish list
+                    <button onClick={() => AddToWishListHandler()} title="Add To Widhlist" className="rounded text-[10px] cursor-pointer font-[600] border w-1/2 flex justify-center items-center gap-3 border-[#DEE5EA] p-1 ">
+                        <icon.CiHeart className="text-black text-[12px] cursor-pointer" />
+                        Add To Wishlist
+                    </button>
+                }
                 {/*Share*/}
                 <button title="Share" className="rounded text-[10px] font-[600] cursor-pointer border w-1/2 flex justify-center items-center gap-3 border-[#DEE5EA] p-1 ">
                     <icon.PiShareFatThin className="text-black text-[12px]" />

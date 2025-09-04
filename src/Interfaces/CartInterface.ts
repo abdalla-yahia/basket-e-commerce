@@ -9,6 +9,7 @@ export interface UpdateCart {
     title?:string
     userId?:string
     items:{
+        id:string
         product:UpdateProduct
         quantity:number
     }[]
