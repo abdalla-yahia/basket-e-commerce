@@ -26,18 +26,18 @@ export default function Filter_By_Category() {
       {/*Category Filter*/}
       <ul className="flex flex-col justify-start items-start gap-2 ">
         <li className="flex justify-start items-start gap-4">
-          <input onChange={() => dispatch(setCategoriesRedux([]))} checked={categories?.length <= 0} className=" appearance-none bg-white border border-[#D9D9E9]  p-2 hover:bg-primary/50 checked:bg-primary " type="checkbox" name='AllCategories' id='AllCategories' />
-          <label className="text-[#71778E] text-[14px] font-[400]" htmlFor='AllCategories'>All Categories</label>
+          <input onChange={() => dispatch(setCategoriesRedux([]))} checked={categories?.length <= 0} className=" appearance-none bg-white border border-[#D9D9E9] p-1 md:p-2 hover:bg-primary/50 checked:bg-primary " type="checkbox" name='AllCategories' id='AllCategories' />
+          <label className="text-[#71778E] text-[8px] md:text-[14px] font-[400]" htmlFor='AllCategories'>All Categories</label>
         </li>
         {
           AllCategories?.categories?.slice(0, isToggle ? AllCategories?.categories?.length : 5)?.map((category: UpdateCategory) =>
             <li key={category?.id} className="flex justify-start items-start gap-4">
-              <input checked={categories.includes(category?.id)} onChange={(e) => ChevkedInputHandler(e, category)} className=" appearance-none bg-white border border-[#D9D9E9]  p-2 hover:bg-primary/50 checked:bg-primary " type="checkbox" name={category?.title} id={category?.id} />
-              <label className="text-[#71778E] text-[14px] font-[400]" htmlFor={category?.id}>{category?.title}</label>
+              <input checked={categories.includes(category?.id)} onChange={(e) => ChevkedInputHandler(e, category)} className=" appearance-none bg-white border border-[#D9D9E9] p-1 md:p-2 hover:bg-primary/50 checked:bg-primary " type="checkbox" name={category?.title} id={category?.id} />
+              <label className="text-[#71778E] text-[8px] md:text-[14px] font-[400]" htmlFor={category?.id}>{category?.title}</label>
             </li>
           )
         }
-        <li className="cursor-pointer text-lg text-primary font-bold" onClick={() => setIsToggle(!isToggle)}>{isToggle ? 'less..' : 'more...'}</li>
+        <li className="cursor-pointer text-[10px] md:text-lg text-primary font-bold" onClick={() => setIsToggle(!isToggle)}>{isToggle ? 'less..' : 'more...'}</li>
 
       </ul>
     </div>

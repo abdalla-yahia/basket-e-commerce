@@ -32,7 +32,7 @@ html::-webkit-scrollbar-thumb {
 }
 @layer theme, base, components, utilities;
 
-@plugin ['tailwind-scrollbar' ,"tailwindcss-fluid-type"];
+@plugin 'tailwind-scrollbar';
 
 @layer utilities {
   .bg {

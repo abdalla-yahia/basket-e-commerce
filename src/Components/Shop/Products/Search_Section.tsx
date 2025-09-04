@@ -9,13 +9,13 @@ export default function Search_Section() {
     dispatch(setSearchTextRedux(e))
   }
   return (
-    <div className="w-full flex justify-between items-center p-5 gap-5  rounded-lg bg-[#F7F8FD]">
+    <div className="w-full text-[8px] md:text-[12px] flex justify-between items-center p-2 md:p-5 gap-5 rounded md:rounded-lg bg-[#F7F8FD]">
       {/*Products Count*/}
-      <span className="text-[#9B9BB4] text-[12px] font-[400]">{AllProducts?.products?.length} products</span>
+      <span className="text-[#9B9BB4] text-[8px] md:text-[12px] font-[400]">{AllProducts?.products?.length} products</span>
       {/*Search Input*/}
       <input onChange={(e) => SearchHandler(e.target.value)} type="text" name="" id="" className="outline-none border-none h-full flex-1" placeholder="Search For Product..." />
       {/*Filter Option*/}
-      <div className="flex justify-between items-center">
+      <div className="hidden  md:flex justify-between items-center">
         <span className="text-[#9B9BB4] text-[12px] font-[400]">Sort by:</span>
         <select name="" id="" className="text-[#202435] text-[13px] font-[500]">
           <option value="">Alphabetically, A-Z</option>

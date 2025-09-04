@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 import { TokenInterFace } from "./Interfaces/UserInterface";
 
 export function middleware(request: NextRequest) {
-  const token = request.cookies.get("token")?.value;
+  const token = request.cookies.get("authToken")?.value;
 
   if (!token) {
     return NextResponse.redirect(new URL("/login", request.url));

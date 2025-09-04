@@ -29,7 +29,6 @@
     "sweetalert": "^2.1.2",
     "swiper": "^11.2.10",
     "tailwind-scrollbar": "^4.0.2",
-    "tailwindcss-fluid-type": "^2.0.7",
     "zod": "^4.1.1"
   },
   "devDependencies": {

@@ -14,7 +14,7 @@ export default function NavList() {
         </li>
         <li className="hover:bg-[#F0FAFF] hover:text-[#35AFA0] p-2 rounded-4xl relative">
             <Link href='/wishlist' className="cursor-pointer hover:text-fontcolor">Wishlist</Link>
-            <span className=" absolute top-0 right-0 bg-primary/50 rounded-full p-1 text-white w-4 h-4 flex justify-center items-center">{count}</span>
+            <span className=" absolute top-0 right-0 bg-orange-500 rounded-full p-1 text-white w-4 h-4 flex justify-center items-center">{count}</span>
         </li>
     </ul>
   )

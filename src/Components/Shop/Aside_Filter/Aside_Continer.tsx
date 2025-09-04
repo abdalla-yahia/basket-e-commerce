@@ -5,9 +5,7 @@ import Filter_By_Category from "./Filter/Filter_By_Category";
 import Filter_By_Price from "./Filter/Filter_By_Price";
 
 export default function Aside_Continer() {
-  
 
-  
   return (
     <div className="flex flex-col justify-start items-start">
       {/*Filter By Category*/}

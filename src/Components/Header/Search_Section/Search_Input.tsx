@@ -12,9 +12,9 @@ export default function Search_Input() {
     router.push('/products/shop')
   }
   return (
-    <div className="h-[40px] md:h-[60px] grow bg-[#F3F4F7] flex justify-between items-center px-[16px] py-[8px] rounded-xl">
+    <div className="h-[40px] md:h-[60px] hidden md:flex-auto lg:flex-1  bg-[#F3F4F7] md:flex justify-between items-center px-[16px] py-[8px] rounded-xl">
       {/*Input Search*/}
-      <input onChange={(e) => SearchHandler(e.target.value)} className="text-[#9595A9] w-full h-full outline-none border-none" type="search" name="" id="" placeholder="Search for Products, fruit, meat, eggs .etc..." />
+      <input onChange={(e) => SearchHandler(e.target.value)} className="text-[#9595A9] h-full outline-none border-none" type="search" name="" id="" placeholder="Search for Products, fruit, meat, eggs .etc..." />
       {/*Icon Search*/}
       <icon.RiSearchLine className='text-2xl' />
     </div>

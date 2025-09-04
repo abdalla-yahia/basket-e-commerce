@@ -7,23 +7,23 @@ export default function Filter_By_Price() {
   const dispatch = useAppDispatch()
   
   return (
-    <div className="flex flex-col justify-between items-start my-[20px]">
+    <div className="flex flex-col justify-between items-start my-[10px] md:my-[20px]">
         {/*Filter Title*/}
         <Filter_Title title="Price" />
         {/*Price Filter*/}
-        <div className="flex justify-between items-center gap-5">
+        <div className="w-full flex justify-between items-center gap-1 md:gap-5">
             {/*Price From*/}
-            <div className="flex flex-col justify-start items-start gap-2">
+            <div className="w-full flex flex-col justify-start items-start gap-0 md:gap-2">
                 {/*Title & Input*/}
-                <span className="text-[#71778E] text-[13px] font-[400]" style={{lineHeight:'19.5px',letterSpacing:'-0.1px'}}>From</span>
-                <input defaultValue={price?.min} onChange={(e)=>dispatch(setPriceRedux({...price,min:e.target.value}))} className="bg-[#F3F4F7] rounded p-3 w-full" type="number" min={0} max={99999} name="Min" id="" placeholder="0"/>
+                <span className="text-[#71778E] text-[8px] md:text-[13px] font-[400]" style={{lineHeight:'19.5px',letterSpacing:'-0.1px'}}>From</span>
+                <input defaultValue={price?.min} onChange={(e)=>dispatch(setPriceRedux({...price,min:e.target.value}))} className="bg-[#F3F4F7] flex-1 rounded p-2 md:p-3 w-full" type="number" min={0} max={99999} name="Min" id="" placeholder="0"/>
             </div>
-            <span className="mx-[15px]">ـــ</span>
+            <span>ـــ</span>
             {/*Price To*/}
-            <div className="flex flex-col justify-start items-start gap-2">
+            <div className="w-full flex flex-col justify-start items-start gap-0 md:gap-2">
                 {/*Title & Input*/}
-                <span className="text-[#71778E] text-[13px] font-[400]" style={{lineHeight:'19.5px',letterSpacing:'-0.1px'}}>To</span>
-                <input defaultValue={price?.max} onChange={(e)=>dispatch(setPriceRedux({...price,max:e.target.value}))} className="bg-[#F3F4F7] rounded p-3 w-full" type="number" min={0} max={99999} name="Max" id="" placeholder="65.00"/>
+                <span className="text-[#71778E] text-[8px] md:text-[13px] font-[400]" style={{lineHeight:'19.5px',letterSpacing:'-0.1px'}}>To</span>
+                <input defaultValue={price?.max} onChange={(e)=>dispatch(setPriceRedux({...price,max:e.target.value}))} className="bg-[#F3F4F7] flex-1 rounded p-2 md:p-3 w-full" type="number" min={0} max={99999} name="Max" id="" placeholder="65.00"/>
             </div>
         </div>
     </div>

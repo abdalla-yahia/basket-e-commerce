@@ -26,21 +26,21 @@ export default function Filter_By_Brand() {
       {/*Brand Filter*/}
       <ul className="w-full flex flex-col justify-start items-start gap-2 ">
          <li className="flex justify-start items-start gap-4">
-              <input onChange={()=>dispatch(setBrandsRedux([]))} checked={brands?.length <= 0} className=" appearance-none bg-white border border-[#D9D9E9]  p-2 hover:bg-primary/50 checked:bg-primary " type="checkbox" name='AllBrands' id='AllBrands' />
-              <label className="text-[#71778E] text-[14px] font-[400]" htmlFor='AllBrands'>All Brands</label>
+              <input onChange={()=>dispatch(setBrandsRedux([]))} checked={brands?.length <= 0} className=" appearance-none bg-white border border-[#D9D9E9]  p-1 md:p-2 hover:bg-primary/50 checked:bg-primary " type="checkbox" name='AllBrands' id='AllBrands' />
+              <label className="text-[#71778E] text-[8px] md:text-[14px] font-[400]" htmlFor='AllBrands'>All Brands</label>
             </li>
         {
           AllBrands?.brands?.slice(0,isToggle ? AllBrands?.brands?.length : 5)?.map((brand: UpdateBrand) =>
             <li key={brand?.id} className="w-full flex justify-between items-center gap-4">
               <div className="flex justify-start items-start gap-4"> 
-                <input onChange={(e)=>ChekedInputHandler(e,brand)} checked={brands?.includes(brand?.id)} className=" appearance-none bg-white border border-[#D9D9E9]  p-2 hover:bg-primary/50 checked:bg-primary " type="checkbox" name="" id={brand?.title} />
-                <label className="text-[#71778E] text-[14px] font-[400]" htmlFor={brand?.title}>{brand?.title}</label>
+                <input onChange={(e)=>ChekedInputHandler(e,brand)} checked={brands?.includes(brand?.id)} className=" appearance-none bg-white border border-[#D9D9E9]  p-1 md:p-2 hover:bg-primary/50 checked:bg-primary " type="checkbox" name="" id={brand?.title} />
+                <label className="text-[#71778E] text-[8px] md:text-[14px] font-[400]" htmlFor={brand?.title}>{brand?.title}</label>
               </div>
-              <span className="text-[#71778E] text-[14px] font-[400]">{`(${brand?.products?.length})`}</span>
+              <span className="text-[#71778E] text-[8px] md:text-[14px] font-[400]">{`(${brand?.products?.length})`}</span>
               </li>
           )
         }
-        <li className="cursor-pointer text-lg text-primary font-bold" onClick={() => setIsToggle(!isToggle)}>{isToggle ? 'less..' : 'more...'}</li>
+        <li className="cursor-pointer text-[10px] md:text-lg text-primary font-bold" onClick={() => setIsToggle(!isToggle)}>{isToggle ? 'less..' : 'more...'}</li>
 
       </ul>
     </div>
