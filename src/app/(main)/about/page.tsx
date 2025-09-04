@@ -21,13 +21,13 @@ export default function About_Us_Page() {
           <p className="text-[#202435] text-[14px] font-[400] my-[40px]" style={{lineHeight:'24px'}}>In nec purus eget neque accumsan finibus. Duis condimentum elit ut libero commodo iaculis. Donec augue diam, tristique et ultricies nec, consectetur quis enim. Nullam id rutrum ex. Aliquam a lectus id lacus rhoncus dapibus non ac justo. Vivamus lacinia vestibulum metus in dapibus. Vestibulum sit amet sollicitudin enim. Ut id interdum turpis. Curabitur porta auctor quam, pretium facilisis nisl. Pellentesque efficitur elit ante, vel vulputate tortor blandit nec.</p>
         </div>
         {/*Image & Content*/}
-        <div className="w-full flex justify-start items-start gap-5 relative">
+        <div className="w-full flex flex-col md:flex-row justify-start items-start gap-5 relative">
           {/*Image*/}
-          <div className="w-[50%]">
+          <div className="w-full md:w-[50%]">
             <Image className="w-full" src={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756349956/about_qzg4r9.png'} alt="" width={650} height={900} />
           </div>
           {/*Content*/}
-          <div className="w-[50%] flex flex-col justify-start items-start py-[40px] gap-12">
+          <div className="w-full md:w-[50%] flex flex-col justify-start items-start py-[40px] gap-12">
             {/*Information Of CEO*/}
             <h4 className="pl-[40px] text-[#202435] text-[16px] font-[600] " style={{lineHeight:'24px',letterSpacing:'-0.1px'}}>Rachel Leonard - Bacola CEO</h4>
             <h2 className="w-[80%] text-[#202435] text-[28px] font-[600] " style={{lineHeight:'33.6px'}}>Duis convallis luctus pretium. Pellentesque habitant morbi</h2>

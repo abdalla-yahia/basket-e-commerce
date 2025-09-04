@@ -13,7 +13,7 @@ export function middleware(request: NextRequest) {
   try {
     const decoded = jwt.verify(
       token,
-      process.env.JWT_SECRET_KEY!
+      process.env.JWT_SECRET_KEY as string
     ) as TokenInterFace;
 
     const pathname = request.nextUrl.pathname;
