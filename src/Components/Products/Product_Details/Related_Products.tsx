@@ -11,7 +11,7 @@ export default function Related_Products({product}:{product:UpdateProduct}) {
   const { pageNumber,searchText,brands } = useAppSelector((state: RootState) => state.product)
 
   const dispatch = useAppDispatch()
-
+console.log(products)
   const query = {
     id:product?.categoryId,
     pageNumber,
@@ -21,7 +21,7 @@ export default function Related_Products({product}:{product:UpdateProduct}) {
   useEffect(()=>{
     if(product?.categoryId)
     dispatch(getCategoryById(query as {id:string,pageNumber:number,searchText:string,brands:string[]}))
-  },[product?.categoryId,pageNumber,searchText])
+  },[product?.categoryId,pageNumber,searchText,brands])
 
   const ref = useRef<HTMLDivElement>(null)
   //Scroll Box Content To Right Handler

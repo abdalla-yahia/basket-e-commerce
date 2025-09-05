@@ -66,7 +66,9 @@ export async function GET(
       },
     });
     //Get Category
-    const category = await prisma.category.findUnique({ where: { id: id } });
+    const category = await prisma.category.findUnique({ where: { id: id },
+    include:{products:true}
+    });
     //Get Count Of Pages
     const pages = Math.ceil(
       (AllProducts?.products?.length as number) / Count_Of_Products
