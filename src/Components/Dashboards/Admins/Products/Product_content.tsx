@@ -53,12 +53,12 @@ export default function Product_content({ product }: { product: UpdateProduct })
         </td>
         <td className="p-2 border border-[#E4E5EE]">{product?.description}</td>
         <td className="p-2 border border-[#E4E5EE]">
-          <Link href={`/categories/${product?.category?.id}`}>
+          <Link href={`/products/categories/${product?.category?.id}`}>
             {product?.category?.title}
           </Link>
         </td>
         <td className="p-2 border border-[#E4E5EE]">
-          <Link href={`/brands/${product?.brand?.id}`}>
+          <Link href={`/products/brands/${product?.brand?.id}`}>
             {product?.brand?.title}
           </Link>
         </td>
