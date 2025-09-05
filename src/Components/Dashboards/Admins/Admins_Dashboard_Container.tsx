@@ -16,12 +16,12 @@ const salesData = [
 ];
 
 const STATUS_COLORS: Record<string, string> = {
-  Pending: "#FEF08A",   // yellow-200
-  Processing: "#BAE6FD", // sky-200
-  Shipped: "#FDBA74",   // orange-300
-  Completed: "#86EFAC", // green-300
-  Cancelled: "#FCA5A5", // red-300
-  Returned: "#FECACA",  // red-200
+  PENDING: "#FEF08A",   
+  PREPARING: "#BAE6FD",
+  SHIPPED: "#FDBA74",   
+  DELIVERED: "#86EFAC", 
+  CANCELED: "#FCA5A5", 
+  RETURNED: "#FECACA",  
 };
 
 export default function Admins_Dashboard_Container() {
