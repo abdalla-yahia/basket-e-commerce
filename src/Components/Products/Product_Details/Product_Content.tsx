@@ -20,7 +20,7 @@ export default function Product_Content() {
     }
     //Decreament Count Of Product
     const DecrementHandller = () => {
-        if (counter > 0) {
+        if (counter > 1) {
             setCounter(counter - 1)
         }
     }
@@ -63,10 +63,10 @@ export default function Product_Content() {
                     <span className="border border-[#E5E7EB] text-[#595959] p-1 cursor-pointer rounded">large</span>
                 </div>
             </div>
-            {/*Product Count*/}
+            {/*Product Counter*/}
             <div className="w-full bg-[#F3F5F9] rounded flex justify-center items-center gap-10 p-1">
                 {/*Decrement Button*/}
-                <button title="Decrement Counter" onClick={() => DecrementHandller()} className={`${counter > 0 ? 'cursor-pointer' : 'cursor-not-allowed'} text-[15px] text-[#595959] `}>
+                <button title="Decrement Counter" onClick={() => DecrementHandller()} className={`${counter > 1 ? 'cursor-pointer' : 'cursor-not-allowed'} text-[15px] text-[#595959] `}>
                     <icon.FaMinus />
                 </button>
                 {/*Counter*/}
