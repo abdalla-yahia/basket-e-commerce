@@ -7,7 +7,7 @@ import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { getCategoryById } from "@/Feature/Actions/CategoriesActions";
 
 export default function Related_Products({product}:{product:UpdateProduct}) {
-  const {category} = useAppSelector((state:RootState)=>state.category)
+  const {products} = useAppSelector((state:RootState)=>state.category)
   const { pageNumber,searchText,brands } = useAppSelector((state: RootState) => state.product)
 
   const dispatch = useAppDispatch()
@@ -51,7 +51,7 @@ export default function Related_Products({product}:{product:UpdateProduct}) {
             {/*Products Container*/}
             <div ref={ref} className="flex justify-start gap-0 items-start mt-3  overflow-x-scroll scrollbar-none">
                 {
-                  category?.category && category?.category?.products?.map((product:UpdateProduct)=>
+                  products?.category && products?.category?.products?.map((product:UpdateProduct)=>
                     <Product_Smal_Card slug={product?.slug as string} key={product?.id} img={product?.image || 'https://res.cloudinary.com/dghqvxueq/image/upload/v1756233979/product_2_kmlstf.png'} offer={product?.offer || 'On Sale'} title={product?.title as string} oldprice={product?.oldPrice as unknown as string} price={product?.price as unknown as string}/>
                   )
                 }
