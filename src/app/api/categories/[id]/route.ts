@@ -22,7 +22,7 @@ export async function GET(
      const { searchParams } = request.nextUrl;
   const pageNumber = searchParams.get("pageNumber") || "1";
   const SearchText = searchParams.get("search") || "";
-  const brands = searchParams.get("brands")?.split(",") || [];
+  const brands = searchParams.get("brands")?.split(",").filter((b) => b.trim() !== "") || [];
   const minPrice = Number(searchParams.get("minPrice")) || 0;
   const maxPrice = Number(searchParams.get("maxPrice")) || 99999;
 
@@ -31,14 +31,14 @@ export async function GET(
       where: { id },
       select: {
         products: {
-          where: {
-            title: {
-              contains: SearchText,
-              mode: "insensitive",
-            },
-            brandId:brands?.length ? {in:brands} : undefined,
-            price:{gte:minPrice, lte:maxPrice}
-          },
+           where: {
+        title:SearchText ? {
+          contains: SearchText,
+          mode: "insensitive",
+        } : undefined,
+        brandId: brands?.length ? { in: brands } : undefined,
+        price: { gte: minPrice, lte: maxPrice },
+      },
         },
       },
     });
@@ -47,18 +47,18 @@ export async function GET(
       where: { id: id },
       select: {
         products: {
-          where: {
-            title:SearchText? {
+        where: {
+            title:SearchText ? {
               contains: SearchText,
               mode: "insensitive",
-            }:undefined,
-            brandId:brands?.length ? {in:brands} : undefined,
-            price:{gte:minPrice, lte:maxPrice}
+            } : undefined,
+            brandId: brands?.length ? { in: brands } : undefined,
+            price: { gte: minPrice, lte: maxPrice },
           },
           ...(SearchText?{}:{
             take: Count_Of_Products,
             skip: Count_Of_Products * (parseInt(pageNumber) - 1),
-        }),
+          }),
           orderBy: {
             title: "asc",
           },

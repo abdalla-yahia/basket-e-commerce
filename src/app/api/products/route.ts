@@ -18,8 +18,8 @@ export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
   const pageNumber = searchParams.get("pageNumber") || "1";
   const SearchText = searchParams.get("search") || "";
-  const categories = searchParams.get("categories")?.split(",") || [];
-  const brands = searchParams.get("brands")?.split(",") || [];
+  const categories = searchParams.get("categories")?.split(",") .filter((b) => b.trim() !== "")|| [];
+  const brands = searchParams.get("brands")?.split(",").filter((b) => b.trim() !== "") || [];
   const minPrice = Number(searchParams.get("minPrice")) || 0;
   const maxPrice = Number(searchParams.get("maxPrice")) || 99999;
   try {
@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
     const AllProducts = await prisma.product.findMany({
       where: {
         title: {
-          startsWith: SearchText,
+          contains: SearchText,
         },
         categoryId: categories?.length ? { in: categories } : undefined,
         brandId: brands?.length ? { in: brands } : undefined,
@@ -47,7 +47,14 @@ export async function GET(request: NextRequest) {
         brandId: brands?.length ? { in: brands } : undefined,
         price: { gte: minPrice, lte: maxPrice },
       },
-      include: {
+      ...(SearchText?{}:{
+        take: Count_Of_Products,
+        skip: Count_Of_Products * (parseInt(pageNumber) - 1),
+      }),
+      orderBy: {
+        title: "asc",
+      },
+       include: {
         category: {
           select: {
             id: true,
@@ -62,13 +69,6 @@ export async function GET(request: NextRequest) {
             image: true,
           },
         },
-      },
-      ...(SearchText?{}:{
-        take: Count_Of_Products,
-        skip: Count_Of_Products * (parseInt(pageNumber) - 1),
-      }),
-      orderBy: {
-        title: "asc",
       },
     });
 

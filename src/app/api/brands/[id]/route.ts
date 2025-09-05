@@ -22,24 +22,24 @@ export async function GET(
          const { searchParams } = request.nextUrl;
   const pageNumber = searchParams.get("pageNumber") || "1";
   const SearchText = searchParams.get("search") || "";
-  const categories = searchParams.get("categories")?.split(",") || [];
+  const categories = searchParams.get("categories")?.split(",").filter((b) => b.trim() !== "") || [];
   const minPrice = Number(searchParams.get("minPrice")) || 0;
   const maxPrice = Number(searchParams.get("maxPrice")) || 99999;
 
 
     //Get All Products Of brand
     const AllProducts = await prisma.brand.findUnique({
-      where: { id },
+      where: { id:id },
       select: {
         products: {
-          where: {
-            title:SearchText? {
-              contains: SearchText,
-              mode: "insensitive",
-            }:undefined,
-            categoryId:categories?.length ? {in:categories} : undefined,
-            price:{gte:maxPrice, lte:minPrice}
-          },
+           where: {
+        title:SearchText ? {
+          contains: SearchText,
+          mode: "insensitive",
+        } : undefined,
+        categoryId: categories?.length ? { in: categories } : undefined,
+        price: { gte: minPrice, lte: maxPrice },
+      },
           
         },
       },
@@ -49,21 +49,21 @@ export async function GET(
       where: { id: id },
       select: {
         products: {
-          where: {
-            title:SearchText? {
-              contains: SearchText,
-              mode: "insensitive",
-            }:undefined,
-            categoryId:categories?.length ? {in:categories} : undefined,
-            price:{gte:maxPrice, lte:minPrice}
-          },
-          ...(SearchText?{}:{
-            take: Count_Of_Products,
-            skip: Count_Of_Products * (parseInt(pageNumber) - 1),
-        }),
-          orderBy: {
-            title: "asc",
-          },
+           where: {
+        title:SearchText ? {
+          contains: SearchText,
+          mode: "insensitive",
+        } : undefined,
+        categoryId: categories?.length ? { in: categories } : undefined,
+        price: { gte: minPrice, lte: maxPrice },
+      },
+      ...(SearchText?{}:{
+        take: Count_Of_Products,
+        skip: Count_Of_Products * (parseInt(pageNumber) - 1),
+      }),
+      orderBy: {
+        title: "asc",
+      },
         },
       },
     });

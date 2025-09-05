@@ -2,13 +2,10 @@ import { RootState, useAppSelector } from "@/libs/store";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
 import Product_Card from "@/Components/Products/Product_Card";
 import Search_Section from "./Search_Section";
-import Pagination from "@/Utils/Pagination";
 
 export default function Products_Section() {
   const { AllProducts } = useAppSelector((state: RootState) => state.product)
 
-  //Get Count Of Pages From Server
-  const pages = AllProducts?.pages;
   return (
     <>
       {/*Search Bar*/}
@@ -21,11 +18,7 @@ export default function Products_Section() {
           )
         }
       </div>
-      {/*Pagination*/}
-      {
-        pages > 1 &&
-        <Pagination pagesCount={pages as number} />
-      }
+     
     </>
   )
 }

@@ -4,15 +4,12 @@ import { UpdateProduct } from "@/Interfaces/ProductInterface";
 import { RootState, useAppSelector } from "@/libs/store";
 import Search_Section from "./Search_Section";
 import Image from "next/image";
-import Pagination from "@/Utils/Pagination";
 
 export default function Products_Section() {
   const { products } = useAppSelector((state: RootState) => state.brand)
 
   const ProductsCount = products?.products?.length as number
    //Get Count Of Pages From Server
-  const pages = products?.pages;
-  console.log(products)
   return (
     <>
       {/*Search Bar*/}
@@ -30,11 +27,7 @@ export default function Products_Section() {
           }
           )
         }
-         {/*Pagination*/}
-              {
-                 pages > 1 &&
-                <Pagination pagesCount={pages as number} />
-              }
+
       </div>
     </>
   )

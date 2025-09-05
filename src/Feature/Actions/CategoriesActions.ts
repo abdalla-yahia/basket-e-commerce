@@ -18,10 +18,9 @@ export const getAllCategories = createAsyncThunk(
 );
 
 // Get Category By Id
-export const getCategoryById = createAsyncThunk(
-  "categories/getbyid",
-  async (queries: { id: string; pageNumber: number; searchText: string,brands:string[] }) => {
-    try {
+export const getCategoryById = createAsyncThunk("categories/getbyid",async (queries: { id: string; pageNumber: number; searchText: string,brands:string[] }) => {
+    
+  try {
       const data = await GetHook(
         `/api/categories/${queries?.id}?pageNumber=${queries?.pageNumber}&search=${queries?.searchText}&brands=${queries?.brands}`
       );
