@@ -44,14 +44,38 @@ export default function Order_Content({Order}:{Order:UpdateOrder}) {
           </td>
         <td className="p-2 border border-[#E4E5EE]">
           {/*Order Status*/}
-          {
-          status == 'PENDING'   ? <p className='rounded-xl p-0.5 flex justify-center bg-sky-200 text-sky-600'>{status?.toLowerCase()}</p>:
-          status == 'PREPARING' ? <p className='rounded-xl p-0.5 flex justify-center bg-yellow-200 text-yellow-600'>{status?.toLowerCase()}</p>:
-          status == 'SHIPPED'   ? <p className='rounded-xl p-0.5 flex justify-center bg-orange-300 text-orange-600'>{status?.toLowerCase()}</p>:
-          status == 'DELIVERED' ? <p className='rounded-xl p-0.5 flex justify-center bg-green-300 text-green-700'>{status?.toLowerCase()}</p>:
-          status == 'CANCELED'  ? <p className='rounded-xl p-0.5 flex justify-center bg-red-200 text-black'>{status?.toLowerCase()}</p>:
-           <p className='rounded-xl p-0.5 flex justify-center bg-red-300 text-black'>{status?.toLowerCase()}</p>
-          }
+       {
+  status === 'PENDING' && (
+    <p className="rounded-xl px-2 py-0.5 flex justify-center bg-yellow-400 text-yellow-900">
+      {status.toLowerCase()}
+    </p>
+  ) ||
+  status === 'PREPARING' && (
+    <p className="rounded-xl px-2 py-0.5 flex justify-center bg-sky-600 text-white">
+      {status.toLowerCase()}
+    </p>
+  ) ||
+  status === 'SHIPPED' && (
+    <p className="rounded-xl px-2 py-0.5 flex justify-center bg-orange-500 text-white">
+      {status.toLowerCase()}
+    </p>
+  ) ||
+  status === 'DELIVERED' && (
+    <p className="rounded-xl px-2 py-0.5 flex justify-center bg-green-500 text-white">
+      {status.toLowerCase()}
+    </p>
+  ) ||
+  status === 'CANCELED' && (
+    <p className="rounded-xl px-2 py-0.5 flex justify-center bg-red-600 text-white">
+      {status.toLowerCase()}
+    </p>
+  ) ||
+  status === 'RETURNED' && (
+    <p className="rounded-xl px-2 py-0.5 flex justify-center bg-red-700 text-white">
+      {status.toLowerCase()}
+    </p>
+  )
+}
           </td>
         <td className="p-2 border border-[#E4E5EE]">{Order?.products?.map(product=>
           <Link key={product?.id} href={`/products/${product?.slug}`}>
