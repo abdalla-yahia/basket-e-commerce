@@ -33,7 +33,7 @@ export default function Product_Content() {
     //Add To Cart
     const AddItemToCartHandler = () => {
         dispatch(updateCartItem(data))
-        router.push('/products/shop')
+        router.back()
     }
     //Data Will Puts In WishList
     const AddProductToWishData = {

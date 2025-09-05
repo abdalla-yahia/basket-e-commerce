@@ -21,7 +21,7 @@ export default function Wishlist_Container() {
     const AddItemToCartHandler =(item:UpdateProduct)=>{
         dispatch(updateCartItem({
           productId:item?.id as string,
-          product:item,
+          product:item as UpdateProduct,
           quantity:1
         }))
     }
@@ -61,8 +61,8 @@ export default function Wishlist_Container() {
                   <p className="text-gray-500">${item?.price}</p>
                 </div>
 
-                <button className="mt-4 flex items-center cursor-pointer justify-center gap-2 bg-primary text-white rounded-xl py-2 px-4 hover:bg-primary/50 transition">
-                  <icon.FaShoppingCart onClick={()=>AddItemToCartHandler(item)} className="w-5 h-5" />
+                <button onClick={()=>AddItemToCartHandler(item)} className="mt-4 flex items-center cursor-pointer justify-center gap-2 bg-primary text-white rounded-xl py-2 px-4 hover:bg-primary/50 transition">
+                  <icon.FaShoppingCart  className="w-5 h-5" />
                   Add to Cart
                 </button>
               </div>
