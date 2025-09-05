@@ -153,14 +153,38 @@ const orderStatusData = useMemo(() => {
                   <td className="p-2">{order.user?.name}</td>
                   <td className="p-2">
                     {/*Order Status*/}
-                    {
-                      order.status == 'PENDING' ? <p className='rounded-xl p-0.5 flex justify-center bg-sky-200 text-sky-600'>{order.status?.toLowerCase()}</p> :
-                        order.status == 'PREPARING' ? <p className='rounded-xl p-0.5 flex justify-center bg-blue-300 text-blue-600'>{order.status?.toLowerCase()}</p> :
-                          order.status == 'SHIPPED' ? <p className='rounded-xl p-0.5 flex justify-center bg-green-200 text-green-600'>{order.status?.toLowerCase()}</p> :
-                            order.status == 'DELIVERED' ? <p className='rounded-xl p-0.5 flex justify-center bg-green-300 text-green-700'>{order.status?.toLowerCase()}</p> :
-                              order.status == 'CANCELED' ? <p className='rounded-xl p-0.5 flex justify-center bg-red-200 text-black'>{order.status?.toLowerCase()}</p> :
-                                <p className='rounded-xl p-0.5 flex justify-center bg-red-300 text-black'>{order.status?.toLowerCase()}</p>
-                    }
+                {
+  order.status === 'PENDING' ? (
+    <p className="rounded-xl px-2 py-0.5 flex justify-center bg-yellow-400 text-yellow-900">
+      {order?.status?.toLowerCase()}
+    </p>
+  ) : order.status === 'PREPARING' ? (
+    <p className="rounded-xl px-2 py-0.5 flex justify-center bg-sky-600 text-white">
+      {order?.status?.toLowerCase()}
+    </p>
+  ) : order.status === 'SHIPPED' ? (
+    <p className="rounded-xl px-2 py-0.5 flex justify-center bg-orange-500 text-white">
+      {order?.status?.toLowerCase()}
+    </p>
+  ) : order.status === 'DELIVERED' ? (
+    <p className="rounded-xl px-2 py-0.5 flex justify-center bg-green-500 text-white">
+      {order?.status?.toLowerCase()}
+    </p>
+  ) : order.status === 'CANCELED' ? (
+    <p className="rounded-xl px-2 py-0.5 flex justify-center bg-red-600 text-white">
+      {order?.status?.toLowerCase()}
+    </p>
+  ) : order.status === 'RETURNED' ? (
+    <p className="rounded-xl px-2 py-0.5 flex justify-center bg-red-700 text-white">
+      {order?.status?.toLowerCase()}
+    </p>
+  ) : (
+    <p className="rounded-xl px-2 py-0.5 flex justify-center bg-gray-400 text-black">
+      {order?.status}
+    </p>
+  )
+}
+
                   </td>
                   <td className="p-2">{new Date().toLocaleString(('ar-eg'), { year: '2-digit', month: 'short', day: '2-digit' })}</td>
                 </tr>
