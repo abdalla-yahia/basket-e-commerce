@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 export default function UsersLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   const { LogedUser } = useAppSelector((state: RootState) => state.auth)
-
+  
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(loggedUser())

@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {getAllOrders,getOrderById,createOrder,updateOrder,deleteOrder,} from "../Actions/OrdersActions";
-import { CreateOrder, UpdateOrder } from "@/Interfaces/OrderInterface";
+import { UpdateOrder } from "@/Interfaces/OrderInterface";
 
 const initialState = {
   AllOrders: {orders:[] as UpdateOrder[]},
-  order: {} as {order:CreateOrder},
+  order: {} as {order:UpdateOrder,status:number},
   loading: false,
   error: null as string | null,
 };

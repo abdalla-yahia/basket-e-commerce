@@ -28,11 +28,11 @@ export default function Edit_Order_Form({ Order, setIsToggle }: { Order: UpdateO
   }
 
   const [, ActionStat] = useActionState(UpdateItem, InitialState)
-  if (EditOrder?.order?.title) {
+  if (EditOrder?.status === 201) {
     setIsToggle(false)
   }
   return (
-    <div className="w-[50%] absolute top-0 bg-[#ddd] rounded left-0 flex flex-col justify-start items-center gap-5 p-8">
+    <div className="w-[50%] absolute z-50 top-0 bg-[#ddd] rounded left-0 flex flex-col justify-start items-center gap-5 p-8">
       {/*Close Form*/}
       <icon.IoClose onClick={() => setIsToggle(false)} className="text-xl absolute top-3 right-3 cursor-pointer" />
       {/*Section Title*/}
@@ -62,7 +62,7 @@ export default function Edit_Order_Form({ Order, setIsToggle }: { Order: UpdateO
           error && <p className="text-red-500">{error}</p>
         }
         {
-          EditOrder?.order?.title && <p className="text-green-500">Created Order Successfully</p>
+          EditOrder?.status === 201 && <p className="text-green-500">Updated Order Successfully</p>
         }
         <div className='flex flex-col justify-start items-start w-full gap-3 py-4'>
           <button type="submit" id="OrderDescription" className='p-2 border border-[#F3F4F7] text-white cursor-pointer bg-primary rounded w-full'>

@@ -107,7 +107,7 @@ export async function POST(
       data: data,
     });
     return NextResponse.json(
-      { message: "Order Updated Successfully", order },
+      { message: "Order Updated Successfully", order,status:201 },
       { status: 201 }
     );
   } catch (error) {

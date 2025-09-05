@@ -12,6 +12,10 @@ import { usePathname, useSearchParams } from "next/navigation";
 
 export default function AdminsLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
     const { pageNumber, searchText, categories, brands, price } = useAppSelector((state: RootState) => state.product)
+    const { order } = useAppSelector((state: RootState) => state.order)
+    const { user } = useAppSelector((state: RootState) => state.user)
+    const { category } = useAppSelector((state: RootState) => state.category)
+    const { brand } = useAppSelector((state: RootState) => state.brand)
     const pathname = usePathname()
     const dispatch = useAppDispatch()
     const searchParams = useSearchParams();
@@ -41,7 +45,7 @@ export default function AdminsLayout({ children, }: Readonly<{ children: React.R
     dispatch(getAllCategories())
     dispatch(getAllUsers())
     dispatch(getAllOrders())
-  }, [dispatch])
+  }, [dispatch,order,user,category,brand])
 
     //Get All Products 
   useEffect(() => {
