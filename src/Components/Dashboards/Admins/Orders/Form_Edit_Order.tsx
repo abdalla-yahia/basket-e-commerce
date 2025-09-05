@@ -1,5 +1,5 @@
 'use client'
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import * as icon from '@/Utils/Icons/Icons';
 import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { updateOrder } from "@/Feature/Actions/OrdersActions";
@@ -28,9 +28,11 @@ export default function Edit_Order_Form({ Order, setIsToggle }: { Order: UpdateO
   }
 
   const [, ActionStat] = useActionState(UpdateItem, InitialState)
-  if (EditOrder?.status === 201) {
-    setIsToggle(false)
-  }
+  useEffect(()=>{
+    if (EditOrder?.status == 201) {
+      setIsToggle(false)
+    }
+  },[EditOrder?.status])
   return (
     <div className="w-[50%] absolute z-50 top-0 bg-[#ddd] rounded left-0 flex flex-col justify-start items-center gap-5 p-8">
       {/*Close Form*/}
