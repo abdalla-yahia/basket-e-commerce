@@ -15,14 +15,14 @@ const salesData = [
   { day: 'Friday', sales: 2200 },
 ];
 
-
-const orderStatus = [
-  { name: "Completed", value: 45 },
-  { name: "Pending", value: 35 },
-  { name: "Canceled", value: 18 },
-];
-const COLORS = ["#00C49F", "#FFBB28", "#FF4D4F"];
-
+const STATUS_COLORS: Record<string, string> = {
+  Pending: "#FEF08A",   // yellow-200
+  Processing: "#BAE6FD", // sky-200
+  Shipped: "#FDBA74",   // orange-300
+  Completed: "#86EFAC", // green-300
+  Cancelled: "#FCA5A5", // red-300
+  Returned: "#FECACA",  // red-200
+};
 
 export default function Admins_Dashboard_Container() {
   const { LogedUser } = useAppSelector((state: RootState) => state.auth)
@@ -30,7 +30,7 @@ export default function Admins_Dashboard_Container() {
   const { AllOrders } = useAppSelector((state: RootState) => state.order)
   const { AllProducts } = useAppSelector((state: RootState) => state.product)
 
-  const orderStatusData = useMemo(() => {
+const orderStatusData = useMemo(() => {
   if (!AllOrders?.orders) return [];
   const statusCount: Record<string, number> = {};
 
@@ -42,6 +42,7 @@ export default function Admins_Dashboard_Container() {
   return Object.entries(statusCount).map(([status, count]) => ({
     name: status,
     value: count,
+    color: STATUS_COLORS[status] || "#D1D5DB", 
   }));
 }, [AllOrders?.orders]);
 
@@ -107,12 +108,12 @@ export default function Admins_Dashboard_Container() {
               labelLine={false}
               outerRadius={80}
               dataKey="value"
-              label={({ name }) => name} 
+              label={({ name }) => name}
             >
-              {orderStatusData.map((entry, index) => (
-                <Cell key={index} fill={COLORS[index % COLORS.length]} />
-              ))}
-            </Pie>
+  {orderStatusData.map((entry, index) => (
+    <Cell key={index} fill={entry.color} />
+  ))}
+</Pie>
             <Legend />
             <Tooltip />
           </PieChart>

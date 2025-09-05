@@ -46,8 +46,8 @@ export default function Order_Content({Order}:{Order:UpdateOrder}) {
           {/*Order Status*/}
           {
           status == 'PENDING'   ? <p className='rounded-xl p-0.5 flex justify-center bg-sky-200 text-sky-600'>{status?.toLowerCase()}</p>:
-          status == 'PREPARING' ? <p className='rounded-xl p-0.5 flex justify-center bg-blue-300 text-blue-600'>{status?.toLowerCase()}</p>:
-          status == 'SHIPPED'   ? <p className='rounded-xl p-0.5 flex justify-center bg-green-200 text-green-600'>{status?.toLowerCase()}</p>:
+          status == 'PREPARING' ? <p className='rounded-xl p-0.5 flex justify-center bg-yellow-200 text-yellow-600'>{status?.toLowerCase()}</p>:
+          status == 'SHIPPED'   ? <p className='rounded-xl p-0.5 flex justify-center bg-orange-300 text-orange-600'>{status?.toLowerCase()}</p>:
           status == 'DELIVERED' ? <p className='rounded-xl p-0.5 flex justify-center bg-green-300 text-green-700'>{status?.toLowerCase()}</p>:
           status == 'CANCELED'  ? <p className='rounded-xl p-0.5 flex justify-center bg-red-200 text-black'>{status?.toLowerCase()}</p>:
            <p className='rounded-xl p-0.5 flex justify-center bg-red-300 text-black'>{status?.toLowerCase()}</p>
