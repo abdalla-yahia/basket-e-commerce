@@ -1,6 +1,7 @@
 'use client';
 import { RootState, useAppSelector } from '@/libs/store';
 import * as icon from '@/Utils/Icons/Icons'
+import { useMemo } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts';
 
 
@@ -28,13 +29,29 @@ export default function Admins_Dashboard_Container() {
   const { AllUsers } = useAppSelector((state: RootState) => state.user)
   const { AllOrders } = useAppSelector((state: RootState) => state.order)
   const { AllProducts } = useAppSelector((state: RootState) => state.product)
+
+  const orderStatusData = useMemo(() => {
+  if (!AllOrders?.orders) return [];
+  const statusCount: Record<string, number> = {};
+
+  AllOrders.orders.forEach((order) => {
+    const status = order.status || "Unknown";
+    statusCount[status] = (statusCount[status] || 0) + 1;
+  });
+
+  return Object.entries(statusCount).map(([status, count]) => ({
+    name: status,
+    value: count,
+  }));
+}, [AllOrders?.orders]);
+
   return (
     <div className="py-6 space-y-6 w-full">
       {/*Page Title*/}
       <h1 className="text-2xl font-bold text-primary my-3 gap-3 flex justify-start items-center">
         <icon.IoBarChart className="text-2xl" />
         Admin Dashboard {LogedUser?.user?.name}</h1>
-      {/* Stat cards */}
+      {/* State cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/*USERS COUNT*/}
         <div className="bg-white  p-4 rounded shadow flex items-center gap-4">
@@ -83,16 +100,16 @@ export default function Admins_Dashboard_Container() {
         <h2 className="text-lg font-semibold mb-4">Orders Status</h2>
         <ResponsiveContainer width="100%" height={250}>
           <PieChart>
-            <Pie
-              data={orderStatus}
+           <Pie
+              data={orderStatusData}
               cx="50%"
               cy="50%"
               labelLine={false}
               outerRadius={80}
               dataKey="value"
-              label={({ name }) => name}
+              label={({ name }) => name} 
             >
-              {orderStatus.map((entry, index) => (
+              {orderStatusData.map((entry, index) => (
                 <Cell key={index} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>

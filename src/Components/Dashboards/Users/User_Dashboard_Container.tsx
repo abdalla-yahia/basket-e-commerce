@@ -1,5 +1,4 @@
 'use client';
-import { UpdateOrder } from '@/Interfaces/OrderInterface';
 import { RootState, useAppSelector } from '@/libs/store';
 import * as icon from '@/Utils/Icons/Icons';
 
@@ -13,12 +12,6 @@ const chartData = [
   { month: 'June', amount: 700 },
   { month: 'July', amount: 1200 },
   { month: 'August', amount: 900 },
-];
-
-const lastOrders = [
-  { id: 'ORD3001', date: '2025-08-01', status: 'Delivered', total: '450 EGP' },
-  { id: 'ORD3002', date: '2025-07-28', status: 'In Progress', total: '320 EGP' },
-  { id: 'ORD3003', date: '2025-07-25', status: 'Canceled', total: '250 EGP' },
 ];
 
 
