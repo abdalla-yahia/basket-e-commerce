@@ -29,9 +29,9 @@ export default function Edit_Order_Form({ Order, setIsToggle }: { Order: UpdateO
 
   const [, ActionStat] = useActionState(UpdateItem, InitialState)
   useEffect(()=>{
-
     if (EditOrder?.status == 201) {
       setIsToggle(false)
+      window.location.reload()    
     }
   },[EditOrder])
   return (

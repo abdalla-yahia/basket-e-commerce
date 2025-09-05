@@ -31,6 +31,7 @@ export default function Edit_Order_Form({ Order, setIsToggle }: { Order: UpdateO
   useEffect(()=>{
     if (EditOrder?.status == 201) {
       setIsToggle(false)
+       window.location.reload()   
     }
   },[EditOrder?.status])
   return (
