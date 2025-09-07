@@ -15,9 +15,9 @@ export const getAllBrands = createAsyncThunk("brands/getAll", async () => {
 });
 
 // Get Brand By Id
-export const getBrandById = createAsyncThunk("brands/getbrandbyid",async (queries: { id: string; pageNumber: number; searchText: string,categories:string[] }) => {
+export const getBrandById = createAsyncThunk("brands/getbrandbyid",async (queries: { id: string; pageNumber: number; searchText: string,categories:string[],sort:string }) => {
     try {
-      const data = await GetHook(`/api/brands/${queries?.id}?pageNumber=${queries?.pageNumber}&search=${queries?.searchText}&categories=${queries?.categories}`);
+      const data = await GetHook(`/api/brands/${queries?.id}?pageNumber=${queries?.pageNumber}&search=${queries?.searchText}&categories=${queries?.categories}&sort=${queries?.sort}`);
       return data;
     } catch (error) {
       toast.error(`Faild To Get Brand,${error}`);

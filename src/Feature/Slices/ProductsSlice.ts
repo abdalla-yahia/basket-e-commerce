@@ -23,6 +23,7 @@ const initialState = {
   categories: [] as string[],
   brands: [] as string[],
   price: {} as { min: string; max: string },
+  sort:'' as string
 };
 
 const ProductSlice = createSlice({
@@ -43,6 +44,9 @@ const ProductSlice = createSlice({
     },
     setPriceRedux: (state, action) => {
       state.price = action.payload;
+    },
+    setSortRedux: (state, action) => {
+      state.sort = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -116,4 +120,5 @@ export const {
   setCategoriesRedux,
   setBrandsRedux,
   setPriceRedux,
+  setSortRedux
 } = ProductSlice.actions;

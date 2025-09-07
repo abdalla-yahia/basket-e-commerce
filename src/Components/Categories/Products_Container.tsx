@@ -7,7 +7,7 @@ import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { getCategoryById } from "@/Feature/Actions/CategoriesActions";
 
 export default function Products_Container({ id }: { id: string }) {
-  const { pageNumber, searchText,brands } = useAppSelector((state: RootState) => state.product)
+  const { pageNumber, searchText,brands,sort } = useAppSelector((state: RootState) => state.product)
   const { products } = useAppSelector((state: RootState) => state.category)
   const dispatch = useAppDispatch()
 
@@ -15,11 +15,12 @@ export default function Products_Container({ id }: { id: string }) {
     id,
     pageNumber,
     searchText,
-    brands
+    brands,
+    sort
   }
   useEffect(() => {
-    dispatch(getCategoryById(query as { id: string, pageNumber: number, searchText: string,brands:string[] }))
-  }, [id, pageNumber, searchText,brands])
+    dispatch(getCategoryById(query as { id: string, pageNumber: number, searchText: string,brands:string[],sort:string }))
+  }, [id, pageNumber, searchText,brands,sort])
 
   //Get Count Of Pages From Server
   const pages = products?.pages;

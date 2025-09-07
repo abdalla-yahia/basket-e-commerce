@@ -18,10 +18,41 @@ export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
   const pageNumber = searchParams.get("pageNumber") || "1";
   const SearchText = searchParams.get("search") || "";
+  const Sort = searchParams.get("sort") || "";
   const categories = searchParams.get("categories")?.split(",") .filter((b) => b.trim() !== "")|| [];
   const brands = searchParams.get("brands")?.split(",").filter((b) => b.trim() !== "") || [];
   const minPrice = Number(searchParams.get("minPrice")) || 0;
   const maxPrice = Number(searchParams.get("maxPrice")) || 99999;
+
+  type SortOrder = "asc" | "desc";
+  //Function To Get Sort Type From SearchParams
+  function getSortOption(Sort: string) {
+  const sort: { title?: SortOrder; price?: SortOrder; createdAt?: SortOrder } = {};
+
+  switch (Sort) {
+    case "az":
+      sort.title = "asc";
+      break;
+    case "za":
+      sort.title = "desc";
+      break;
+    case "price-high-low":
+      sort.price = "desc";
+      break;
+    case "price-low-high":
+      sort.price = "asc";
+      break;
+    case "new-old":
+      sort.createdAt = "desc";
+      break;
+    case "old-new":
+      sort.createdAt = "asc";
+      break;
+  }
+
+  return { orderBy: sort };
+}
+
   try {
     //Get All Products On Site
     const FullyProducts = await prisma.product.findMany({});
@@ -51,9 +82,8 @@ export async function GET(request: NextRequest) {
         take: Count_Of_Products,
         skip: Count_Of_Products * (parseInt(pageNumber) - 1),
       }),
-      orderBy: {
-        title: "asc",
-      },
+      ...(getSortOption(Sort))
+      ,
        include: {
         category: {
           select: {

@@ -7,7 +7,7 @@ import { RootState, useAppDispatch, useAppSelector } from "@/libs/store";
 import { getBrandById } from "@/Feature/Actions/BrandsActions";
 
 export default function Products_Container({ id }: { id: string }) {
-  const { pageNumber, searchText,categories } = useAppSelector((state: RootState) => state.product)
+  const { pageNumber, searchText,categories,sort } = useAppSelector((state: RootState) => state.product)
   const { products } = useAppSelector((state: RootState) => state.brand)
   const dispatch = useAppDispatch()
 
@@ -15,11 +15,12 @@ export default function Products_Container({ id }: { id: string }) {
      id,
      pageNumber,
      searchText,
-     categories
+     categories,
+     sort
    }
    useEffect(() => {
-     dispatch(getBrandById(query as { id: string, pageNumber: number, searchText: string,categories:string[] }))
-   }, [id, pageNumber, searchText,categories])
+     dispatch(getBrandById(query as { id: string, pageNumber: number, searchText: string,categories:string[],sort:string }))
+   }, [id, pageNumber, searchText,categories,sort])
 
   //Get Count Of Pages From Server
   const pages = products?.pages;

@@ -12,7 +12,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { setBrandsRedux, setCategoriesRedux, setPageNumberRedux, setPriceRedux, setSearchTextRedux } from "@/Feature/Slices/ProductsSlice";
 
 export default function MainLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
-  const { pageNumber, searchText, categories, brands, price } = useAppSelector((state: RootState) => state.product)
+  const { pageNumber, searchText, categories, brands, price,sort } = useAppSelector((state: RootState) => state.product)
   const { AllCarts } = useAppSelector((state: RootState) => state.cart)
   const { productsInWish } = useAppSelector((state: RootState) => state.wishlist)
   
@@ -24,6 +24,7 @@ export default function MainLayout({ children, }: Readonly<{ children: React.Rea
   useEffect(() => {
     dispatch(setPageNumberRedux(searchParams.get("pageNumber") || '1'))
     dispatch(setSearchTextRedux(searchParams.get("search") || ''))
+    dispatch(setSearchTextRedux(searchParams.get("sort") || ''))
     dispatch(setCategoriesRedux(searchParams.get("categories")?.split(",") || []))
     dispatch(setBrandsRedux(searchParams.get("brands")?.split(",") || []))
     dispatch(setPriceRedux({
@@ -41,7 +42,8 @@ export default function MainLayout({ children, }: Readonly<{ children: React.Rea
     if (price.max) params.set("maxPrice", price.max);
     if (pageNumber) params.set('pageNumber', pageNumber.toString())
     if (searchText) params.set('search', searchText.toString())
-  }, [categories, brands, price, pageNumber, searchText])
+    if (sort) params.set('sort', sort.toString())
+  }, [categories, brands, price, pageNumber, searchText,sort])
 
   //Get All Categories, Brands, Items In Carts, Items In WishList
   useEffect(() => {
@@ -54,7 +56,7 @@ export default function MainLayout({ children, }: Readonly<{ children: React.Rea
   //Get All Products 
   useEffect(() => {
     dispatch(getAllProduct(params as URLSearchParams))
-  }, [pathname, categories, brands, price, pageNumber, searchText])
+  }, [pathname, categories, brands, price, pageNumber, searchText,sort])
 
   return (
     <>
