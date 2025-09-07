@@ -19,7 +19,7 @@ export default function Product_Card({ slug,img, offer, title, rating, oldprice,
     }
 
     return (
-        <div className="flex min-h-[180px] md:min-h-[340px] shadow shadow-[rgb(237,238,245)] hover:scale-105 duration-500 hover:z-40 flex-col border border-[#EDEEF5] relative gap-3 bg-white px-3 py-4 justify-between items-stretch w-full md:w-1/4 flex-shrink-0">
+        <div className="flex min-h-[180px] md:min-h-[340px] shadow shadow-[rgb(237,238,245)] hover:-translate-y-5 duration-300 hover:z-40 flex-col border border-[#EDEEF5] relative gap-3 bg-white px-3 py-4 justify-between items-stretch w-full md:w-1/4 flex-shrink-0">
             <Link href={`/products/${slug}?quantity=${counter}`} className="flex flex-col justify-center items-center w-full">
                 {/*Span Offers*/}
                 {offer && <span className=" absolute bg-[#35AFA0] rounded-[4px] px-2 py-1 top-3 left-3 text-white">{offer}%</span>}
@@ -78,11 +78,11 @@ export default function Product_Card({ slug,img, offer, title, rating, oldprice,
             {/*Count*/}
             {iscounter && <div className="flex justify-between items-center w-full border overflow-hidden border-[#EDEEF5] rounded-[50px]">
                 {/*Decrement Button*/}
-                    <icon.FaMinus title="Decrement Counter" onClick={() =>DecreamentHandller() } className={`${counter === 0 ? 'cursor-not-allowed':'cursor-pointer'} flex justify-center items-center bg-[#EDEEF5] w-1/6 h-[12px] md:h-[30px] text-[10px] md:text-[20px] md:p-1.5`}/>
+                    <icon.FaMinus title="Decrement Counter" onClick={() =>DecreamentHandller() } className={`${counter === 0 ? 'cursor-not-allowed':'cursor-pointer'} flex justify-center items-center bg-[#EDEEF5] w-1/6  h-[20px] md:h-[30px] text-[10px] md:text-[20px] md:p-1.5`}/>
                 {/*Counter*/}
                 <span className="flex w-full justify-center items-center  text-[12px] md:text-[20px]">{counter}</span>
                 {/*Increment Button*/}
-                    <icon.FaPlus title="Increment Counter" onClick={() =>IncreamentHandller() } className=" flex justify-center cursor-pointer items-center bg-[#FFCD00] w-1/6 h-[12px] md:h-[30px] text-[10px] md:text-[20px] md:p-1.5"/>
+                    <icon.FaPlus title="Increment Counter" onClick={() =>IncreamentHandller() } className=" flex justify-center cursor-pointer items-center bg-[#FFCD00] w-1/6  h-[20px] md:h-[30px] text-[10px] md:text-[20px]  md:p-1.5"/>
             </div>}
         </div>
     )

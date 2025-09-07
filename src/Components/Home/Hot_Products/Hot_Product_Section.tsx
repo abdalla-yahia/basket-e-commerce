@@ -47,7 +47,7 @@ export default function Hot_Products_Section() {
                     {/*Image*/}
                     <Image src={'https://res.cloudinary.com/dghqvxueq/image/upload/v1756239910/Home-1-Hot-2_tv7gub.png'} alt="offer-image" width={150} height={100} className=" flex-shrink-0"/>
                     {/*Offer*/}
-                    <span className=" absolute top-[2%] left-[34%] md:left-[5%]   p-2 w-[66px] h-[66px] bg-[#ED174A] text-white text-[15px] md:text-[18px] font-[600] rounded-full text-center" style={{ fontFamily: 'Dosis', letterSpacing: '-0.1px', lineHeight: '36px' }}>18%</span>
+                    <span className=" absolute top-[2%] left-[34%] md:left-[5%] flex justify-center items-center  p-2 w-[66px] h-[66px] bg-[#ED174A] text-white text-[25px] md:text-[18px] font-[600] rounded-full text-center" style={{ fontFamily: 'Dosis', letterSpacing: '-0.1px', lineHeight: '36px' }}>18%</span>
                 </div>
                 {/*Content Section*/}
                 <div className="flex flex-col w-full md:w-[80%] gap-3 justify-start items-start ">
