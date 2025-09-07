@@ -33,7 +33,7 @@ const products: Product[] = [
 export default function Compare_Page() {
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-6">🔍 Compare Products</h1>
+      <h1 className="text-2xl font-bold mb-6"> Compare Products</h1>
 
       <div className="overflow-x-auto">
         <table className="min-w-full border border-gray-200 text-center">
