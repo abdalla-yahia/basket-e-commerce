@@ -4,23 +4,37 @@ import Section_Title from "@/Components/Section_Title/Section_Title";
 import { UpdateProduct } from "@/Interfaces/ProductInterface";
 import { RootState, useAppSelector } from "@/libs/store";
 import * as icon from '@/Utils/Icons/Icons';
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Best_Seller_Section() {
   const { AllProducts } = useAppSelector((state: RootState) => state.product)
-
+  const [cardWidth, setCardWidth] = useState(0);
   const ref = useRef<HTMLDivElement>(null)
+
+  //Set Cardwidth After Render Card
+  useEffect(() => {
+    function updateCardWidth() {
+      const card = document.querySelector(".Product-Card") as HTMLElement;
+      if (card) {
+        setCardWidth(+card.offsetWidth); 
+      }
+    }
+    window.addEventListener("resize", updateCardWidth);
+    updateCardWidth();
+    return () => window.removeEventListener("resize", updateCardWidth);
+  }, [AllProducts]);
+
   //Scroll Box Content To Right Handler
   const ArrowRightHandler = () => {
     ref?.current?.scrollBy({
-      left: -55,
+      left: -cardWidth,
       behavior: 'smooth'
     })
   }
   //Scroll Box Content To Left Handler
   const ArrlowLeftHandler = () => {
     ref?.current?.scrollBy({
-      left: 55,
+      left: cardWidth,
       behavior: 'smooth'
     })
   }
@@ -32,7 +46,7 @@ export default function Best_Seller_Section() {
       <div className="relative w-full h-fit">
         {/*Arrow Right Button*/}
         <div className=" w-fit flex justify-center items-center bg-transparent  absolute top-[50%] translate-y-[50%] right-0 z-50">
-          <icon.RiArrowRightSLine onClick={() => ArrowRightHandler()} className="text-4xl hover:bg-primary hover:text-white hover:scale-125   w-[25px] h-[25px] duration-150 z-50 text-primary font-extrabold bg-white border border-primary  cursor-pointer rounded-full" />
+          <icon.RiArrowRightSLine onClick={() => ArrowRightHandler()} className={` text-4xl hover:bg-primary hover:text-white hover:scale-125   w-[25px] h-[25px] duration-150 z-50 text-primary font-extrabold bg-white border border-primary  cursor-pointer rounded-full`} />
         </div>
         {/*Products Container*/}
         <div ref={ref} className="flex justify-between gap-0  overflow-x-scroll scrollbar-none">
