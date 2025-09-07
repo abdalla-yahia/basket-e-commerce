@@ -1,40 +1,47 @@
 'use client'
 import { UpdateCategory } from "@/Interfaces/CategoryInterface"
 import { RootState, useAppSelector } from "@/libs/store";
+import DropDown_Component from "@/Utils/DropDown_Component";
 import { useRouter } from "next/navigation";
-
+import { useEffect, useRef, useState } from "react";
+import * as icon from '@/Utils/Icons/Icons'
 export default function Categories_Dropdown() {
   const {AllCategories} = useAppSelector((state:RootState)=>state.category)
-
+  const [isToggle,setIsToggle] = useState(false)
+  const [itemSelected,setItemSelected] = useState('All Categories')
   const router = useRouter()
+  const dropDownRef = useRef<HTMLDivElement>(null);
 
   //Redirect To Link Of Category
-  const ChangeCategoryHandeler =(e:string)=>{
-    router.push(`/products/categories/${e}`)
+  const ChangeCategoryHandeler =(id:string,title:string)=>{
+    setItemSelected(title)
+    router.push(`/products/categories/${id}`)
   }
   //Get Total Count Of Products On All Categories
   const TotalProducts = AllCategories?.categories?.reduce((acc, rec:UpdateCategory) => {
   return acc + (rec?.products?.length as number || 0);
 }, 0);
+
+  //Close DropDown If User Click On Body
+  useEffect(()=>{
+    function ClickOutSideDropDownHandler(e: MouseEvent) {
+      if (!dropDownRef?.current?.contains(e.target as Node)) {
+        setIsToggle(false);
+      }
+    }
+    window.addEventListener("click", ClickOutSideDropDownHandler);
+    return () => window.removeEventListener("click", ClickOutSideDropDownHandler);
+  },[])
   return (
-    <div className="hidden md:flex px-[15px] py-[16px] gap-2 rounded-[50px] bg-[#35AFA0] text-white relative">
-      {/*Icon List*/}
-      <div className="icon">
-        <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12.493 6.243H0.507C0.368333 6.243 0.249167 6.29284 0.1495 6.3925C0.0498333 6.49217 0 6.61134 0 6.75C0 6.88867 0.0498333 7.00784 0.1495 7.1075C0.249167 7.20717 0.368333 7.257 0.507 7.257H12.493C12.6403 7.257 12.7617 7.20717 12.857 7.1075C12.9523 7.00784 13 6.8865 13 6.7435C13 6.6005 12.9523 6.48134 12.857 6.386C12.7617 6.29067 12.6403 6.243 12.493 6.243ZM12.493 2.174H0.507C0.368333 2.174 0.249167 2.22384 0.1495 2.3235C0.0498333 2.42317 0 2.54234 0 2.681C0 2.81967 0.0498333 2.941 0.1495 3.045C0.249167 3.149 0.368333 3.201 0.507 3.201H12.493C12.6317 3.201 12.7508 3.15117 12.8505 3.0515C12.9502 2.95184 13 2.82834 13 2.681C13 2.53367 12.9523 2.41234 12.857 2.317C12.7617 2.22167 12.6403 2.174 12.493 2.174ZM12.493 10.299H0.507C0.368333 10.299 0.249167 10.3488 0.1495 10.4485C0.0498333 10.5482 0 10.6673 0 10.806C0 10.9447 0.0498333 11.066 0.1495 11.17C0.249167 11.274 0.368333 11.326 0.507 11.326H12.493C12.6317 11.326 12.7508 11.2762 12.8505 11.1765C12.9502 11.0768 13 10.9555 13 10.8125C13 10.6695 12.9502 10.5482 12.8505 10.4485C12.7508 10.3488 12.6317 10.299 12.493 10.299Z" fill="white"/>
-        </svg>
-      </div>
+    <div ref={dropDownRef} onClick={()=>{setIsToggle(!isToggle)}} className="hidden md:flex justify-between items-center px-[15px] py-[10px] gap-2 rounded-[50px] bg-[#35AFA0] text-white relative">
+      {/*List Icon*/}
+      <icon.BsList className="text-3xl"/>
+      {/*Item Title*/}
+       <p className=" uppercase w-full text-center whitespace-nowrap text-[15px] font-[600]" style={{fontFamily:'Dosis'}}>{itemSelected}</p>
+       {/*Arrow Down Icon*/}
+       <icon.MdKeyboardArrowDown className="text-3xl"/>
       {/*DropDown List*/}
-      <select onChange={(e)=>ChangeCategoryHandeler(e.target.value)} name="" id="" className="font-semibold" style={{fontFamily:'Dosis'}}>
-        <option value="" disabled selected>ALL CATEGORIES</option>
-        {
-          AllCategories?.categories && AllCategories?.categories?.map((category:UpdateCategory)=>
-             <option key={category?.id} value={category?.id} className=" appearance-none bg-white uppercase text-primary hover:bg-primary hover:text-white rounded">
-              {category?.title}
-              </option>
-          )
-        }
-      </select>
+      <DropDown_Component  isToggle={isToggle} setIsToggle={setIsToggle} ChangeCategoryHandeler={ChangeCategoryHandeler} items={AllCategories?.categories as UpdateCategory[]} setItemSelected={setItemSelected}/>
       {/*Products Count*/}
       <p className="bg-[#EDEEF5] text-[#71778E] rounded-[18px] text-[8px] px-1 absolute font-semibold top-10/12 left-9" style={{lineHeight:'15px',fontFamily:'Dosis',letterSpacing:'0px'}}>
         TOTAL {TotalProducts} PRODUCTS

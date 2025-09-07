@@ -54,11 +54,14 @@ import {
   GrDocumentDownload,
   GrCurrency,
 } from "react-icons/gr";
-import { MdDelete, MdCategory, MdOutlineLocalShipping,MdOutlinePriceChange,MdRateReview } from "react-icons/md";
+import { MdDelete, MdCategory, MdOutlineLocalShipping,MdOutlinePriceChange,MdRateReview,MdKeyboardArrowDown } from "react-icons/md";
 import { LiaShippingFastSolid } from "react-icons/lia";
 import { LuShieldAlert } from "react-icons/lu";
+import { BsList } from "react-icons/bs";
 
 export {
+  BsList,
+  MdKeyboardArrowDown,
   MdRateReview,
   FaMoneyBillWave,
   LuShieldAlert,
