@@ -19,7 +19,7 @@ export default function Main_NavBar() {
                     AllCategories?.categories?.slice(0, 3)?.map((category: UpdateCategory) =>
                         <li key={category?.id} className="hidden sm:flex group justify-center  items-center gap-2 hover:bg-[#F0FAFF] hover:text-[#35AFA0] p-2 rounded-full text-center">
                             {/*Icon*/}
-                            <Image src={category?.image as string || ''} alt={category?.title as string} width={20} height={20} className="hidden md:block grayscale-100 group-hover:grayscale-0 duration-200" />
+                            <Image src={category?.image as string || ''} alt={category?.title as string} width={20} height={20} className="hidden lg:block grayscale-100 group-hover:grayscale-0 duration-200" />
                             <Link className=" capitalize line-clamp-1 md:line-clamp-2" href={`/products/categories/${category?.id}`}>{category?.title}</Link>
                         </li>
                     )
