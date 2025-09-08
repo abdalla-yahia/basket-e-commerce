@@ -1,7 +1,7 @@
 'use client'
 import { UpdateCategory } from "@/Interfaces/CategoryInterface"
 import { RootState, useAppSelector } from "@/libs/store";
-import DropDown_Component from "@/Utils/DropDown_Component";
+import Categories_DropDown_Component from "@/Utils/Categories_DropDown_Component";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import * as icon from '@/Utils/Icons/Icons'
@@ -41,7 +41,7 @@ export default function Categories_Dropdown() {
        {/*Arrow Down Icon*/}
        <icon.MdKeyboardArrowDown className="text-3xl"/>
       {/*DropDown List*/}
-      <DropDown_Component  isToggle={isToggle} setIsToggle={setIsToggle} ChangeCategoryHandeler={ChangeCategoryHandeler} items={AllCategories?.categories as UpdateCategory[]} setItemSelected={setItemSelected}/>
+      <Categories_DropDown_Component  isToggle={isToggle} setIsToggle={setIsToggle} ChangeCategoryHandeler={ChangeCategoryHandeler} items={AllCategories?.categories as UpdateCategory[]} setItemSelected={setItemSelected}/>
       {/*Products Count*/}
       <p className="bg-[#EDEEF5] text-[#71778E] rounded-[18px] text-[8px] px-1 absolute font-semibold top-10/12 left-9" style={{lineHeight:'15px',fontFamily:'Dosis',letterSpacing:'0px'}}>
         TOTAL {TotalProducts} PRODUCTS

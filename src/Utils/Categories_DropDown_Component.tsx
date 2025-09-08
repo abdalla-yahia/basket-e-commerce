@@ -3,7 +3,7 @@ import { UpdateCategory } from "@/Interfaces/CategoryInterface"
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-export default function DropDown_Component({isToggle,setIsToggle,items,ChangeCategoryHandeler,setItemSelected}:{isToggle:boolean,setIsToggle:(arg0:boolean)=>void,items:UpdateCategory[],ChangeCategoryHandeler:(arg0:string,arg1:string)=>void,setItemSelected:(arg0:string)=>void}) {
+export default function Categories_DropDown_Component({isToggle,setIsToggle,items,ChangeCategoryHandeler,setItemSelected}:{isToggle:boolean,setIsToggle:(arg0:boolean)=>void,items:UpdateCategory[],ChangeCategoryHandeler:(arg0:string,arg1:string)=>void,setItemSelected:(arg0:string)=>void}) {
     const router = useRouter()
   
     return (
