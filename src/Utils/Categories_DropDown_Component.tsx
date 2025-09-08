@@ -8,7 +8,7 @@ export default function Categories_DropDown_Component({isToggle,setIsToggle,item
   
     return (
         <>
-            {isToggle &&<div  className="Custom-Drop-Down w-full absolute top-[100%] left-0 rounded-b-xl border border-[#eee]">
+            {isToggle &&<div  className="Custom-Drop-Down z-50 w-full absolute top-[100%] left-0 rounded-b-xl border border-[#eee]">
                 {/*List*/}
                 <ul className="w-full shadow flex flex-col justify-start items-start py-2 px-1 bg-white rounded-b-xl gap-2">
                     <li onClick={()=>{setIsToggle(false);router.push(`/products/shop`);setItemSelected('All Categories')}}  className="group flex justify-start items-center gap-1  cursor-pointer text-black w-full p-1 hover:bg-primary hover:text-white duration-200">
