@@ -43,8 +43,8 @@ export default function Categories_Dropdown() {
       {/*DropDown List*/}
       <Categories_DropDown_Component  isToggle={isToggle} setIsToggle={setIsToggle} ChangeCategoryHandeler={ChangeCategoryHandeler} items={AllCategories?.categories as UpdateCategory[]} setItemSelected={setItemSelected}/>
       {/*Products Count*/}
-      <p className="bg-[#EDEEF5] text-[#71778E] rounded-[18px] text-[8px] px-1 absolute font-semibold top-10/12 left-9" style={{lineHeight:'15px',fontFamily:'Dosis',letterSpacing:'0px'}}>
-        TOTAL {TotalProducts} PRODUCTS
+      <p className="bg-[#EDEEF5] text-[#71778E] rounded-[18px] text-[8px] px-1 absolute font-semibold top-[80%] -translate-x-[50%] left-[50%]" style={{lineHeight:'15px',fontFamily:'Dosis',letterSpacing:'0px'}}>
+        TOTAL <span className="font-[600] text-primary text-[10px]">{TotalProducts} </span>PRODUCTS
       </p>
     </div>
   )
